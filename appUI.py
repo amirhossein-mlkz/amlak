@@ -9,7 +9,7 @@ from PySide6 import QtCore
 from uiFiles.main_UI import Ui_MainWindow
 from uiUtils.guiBackend import GUIBackend
 from uiUtils.uiStyler import Styler
-from PySide6.QtUiTools import QUiLoader
+from pagesUI.dashboardUI import dashboardPageUI
 
 
 # ui_file = QFile("mainwindow.ui")
@@ -38,14 +38,28 @@ class mainUI(QMainWindow):
         uiStyler = Styler(self.ui)
         uiStyler.render()
 
-        self.menu_btns = {
-            (self.ui.sidebar_dashboard_btn, '')
+        self.dashboard_menu_items = {
+            'dashboard':{'btn':self.ui.sidebar_dashboard_btn, 'page':self.ui.page_dashboard},
         }
-        
-        
-        
 
+        self.dashboardPageUI = dashboardPageUI(self.ui)        
+        
         self._center()
+        self.__sidebar_buttons_connector()
+
+    def __sidebar_buttons_connector(self,):
+        for name, menu in self.dashboard_menu_items.items():
+            GUIBackend.button_connector_argument_pass(menu['btn'],
+                                                      self.page_change_event,
+                                                      args=(name,)
+                                                      )
+    
+    def page_change_event(self, name ):
+        """this function called when page change
+        """
+        GUIBackend.set_stack_widget_page(self.ui.pages, 
+                                         self.dashboard_menu_items[name]['page'] 
+                                         )
 
     def _center(self):
         # Get primary screen
@@ -63,45 +77,18 @@ class mainUI(QMainWindow):
                       center_point.y() - self.frameGeometry().height() // 2)
 
 
-    def mousePressEvent(self, event):
-        if event.button() == QtCore.Qt.LeftButton:
-            self.offset = QtCore.QPoint(event.position().x(),event.position().y())
-        else:
-            super().mousePressEvent(event)
-
-    def mouseMoveEvent(self, event):
-        if self.offset is not None and event.buttons() == QtCore.Qt.LeftButton and event.y() < self.ui.top_frame.height():
-            if time.time() - self.move_refresh_time > Constant.RefreshRates.MOUSE_MOVE:
-                self.move_refresh_time = time.time()
-                self.move(self.pos() + QtCore.QPoint(event.scenePosition().x(), event.scenePosition().y()) - self.offset)
-
-        else:
-            super().mouseMoveEvent(event)
-
-    def mouseReleaseEvent(self, event):
-        self.offset = None
-        super().mouseReleaseEvent(event)
-
-    def mouseDoubleClickEvent(self, event):
-        if event.y() < self.ui.top_frame.height():
-            self.maxmize_minimize()
-            super().mouseDoubleClickEvent(event)
-
+    
  
     def go_to_page(self, page_name:str):
         """change page to the page with page_name
         """
-        self.ui.main_stackedWidget.setCurrentWidget(self.pages[page_name])
-        self.sidebar_btns_style_handler(page_name)
+        GUIBackend.set_stack_widget_page(self.ui.page,
+                                         self.dashboard_menu_items[page_name]['page'])
         self.current_page_name = page_name
 
 
 
-    def internal_page_change_event(self, ):
-        """this function called when page change
-        """
-        self.external_page_change_event(self.previouse_page_name,
-                                                self.current_page_name)
+    
             
         
     def set_access_pages(self, pages:list[str], flag:bool = True):

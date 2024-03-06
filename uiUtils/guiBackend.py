@@ -119,6 +119,17 @@ class GUIBackend:
         ui.showMinimized()
 
     #----------------------------------------------------------------
+    @staticmethod
+    def __mouse_event_generator(func, args):
+        def _func(e):
+            func(*args)
+        return _func
+    
+    def widget_press_connector( wgt:QtWidgets.QWidget, func, args):
+        wgt.mousePressEvent = GUIBackend.__mouse_event_generator(func, args)
+
+    #----------------------------------------------------------------
+    
 
     @staticmethod
     def emit_signal(signal:QtCore.Signal):
@@ -921,6 +932,10 @@ class GUIBackend:
             idx (_type_): custom index to set as current index
         """
         stw.setCurrentIndex(idx)
+
+    @staticmethod
+    def set_stack_widget_page(stw: QtWidgets.QStackedWidget, page:QtWidgets.QWidget ):
+        stw.setCurrentWidget(page)
 
     @staticmethod
     def get_stack_widget_idx(stw: QtWidgets.QStackedWidget ) -> int:

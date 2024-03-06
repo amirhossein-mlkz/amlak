@@ -638,7 +638,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
     <item>
      <widget class="QStackedWidget" name="pages">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_dashboard">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1104,7 +1104,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>4</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1745,7 +1745,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-1431</y>
+                 <y>0</y>
                  <width>742</width>
                  <height>2040</height>
                 </rect>
@@ -2811,7 +2811,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-693</y>
+                 <y>-790</y>
                  <width>732</width>
                  <height>1234</height>
                 </rect>

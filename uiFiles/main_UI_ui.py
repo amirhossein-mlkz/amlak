@@ -1369,7 +1369,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1431, 742, 2040))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 742, 2040))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -2003,7 +2003,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -693, 732, 1234))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -790, 732, 1234))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -4894,8 +4894,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(4)
+        self.pages.setCurrentIndex(0)
+        self.form_stackwidget.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(2)
 
 
