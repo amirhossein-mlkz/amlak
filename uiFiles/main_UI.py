@@ -17,18 +17,19 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QButtonGroup, QCheckBox,
     QComboBox, QFrame, QGridLayout, QHBoxLayout,
-    QHeaderView, QLabel, QLayout, QLineEdit,
-    QMainWindow, QMenuBar, QPushButton, QRadioButton,
-    QScrollArea, QSizePolicy, QSpacerItem, QSpinBox,
-    QStackedWidget, QStatusBar, QTabWidget, QTableWidget,
-    QTableWidgetItem, QTextEdit, QVBoxLayout, QWidget)
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QMenuBar, QPushButton, QRadioButton, QScrollArea,
+    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
+    QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
+    QTextEdit, QVBoxLayout, QWidget)
 import assets_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(886, 682)
+        MainWindow.resize(969, 751)
+        MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
 "#centralwidget{\n"
@@ -627,6 +628,12 @@ class Ui_MainWindow(object):
 " padding-top:40px;\n"
 "}\n"
 "\n"
+"QLabel[styleClass=\"form-field-error\"]{\n"
+"\n"
+"color:rgb(197, 63, 59);\n"
+"\n"
+"}\n"
+"\n"
 "QPushButton[styleClass=\"form-btn\"]{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(46, 76, 153, 255), stop:1 rgba(76, 126, 255, 255));\n"
 "	color: rgba(255, 255, 255, 210);\n"
@@ -640,9 +647,9 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton[styleClass=\"form-btn\"]:disable{\n"
-"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
-"	color: rgba(120, 120, 120"
-                        ", 255);\n"
+"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, sto"
+                        "p:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
+"	color: rgba(120, 120, 120, 255);\n"
 "}\n"
 "\n"
 "QPushButton[styleClass=\"form-btn\"]:hover{\n"
@@ -932,40 +939,53 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.label_6, 0, Qt.AlignHCenter)
 
-        self.gridLayout_2 = QGridLayout()
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setHorizontalSpacing(100)
-        self.gridLayout_2.setVerticalSpacing(20)
-        self.widget_6 = QWidget(self.form_step1)
-        self.widget_6.setObjectName(u"widget_6")
+        self.gridLayout_11 = QGridLayout()
+        self.gridLayout_11.setObjectName(u"gridLayout_11")
+        self.gridLayout_11.setContentsMargins(-1, 31, -1, -1)
+        self.frame_32 = QFrame(self.form_step1)
+        self.frame_32.setObjectName(u"frame_32")
+        self.frame_32.setFrameShape(QFrame.StyledPanel)
+        self.frame_32.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_2.addWidget(self.widget_6, 0, 1, 1, 1)
+        self.gridLayout_11.addWidget(self.frame_32, 0, 1, 1, 1)
+
+        self.melkCategoryFormFrame = QFrame(self.form_step1)
+        self.melkCategoryFormFrame.setObjectName(u"melkCategoryFormFrame")
+        self.verticalLayout_55 = QVBoxLayout(self.melkCategoryFormFrame)
+        self.verticalLayout_55.setObjectName(u"verticalLayout_55")
+        self.verticalLayout_55.setContentsMargins(1, 1, -1, -1)
+        self.melkCategoryFormLbl = QLabel(self.melkCategoryFormFrame)
+        self.melkCategoryFormLbl.setObjectName(u"melkCategoryFormLbl")
+
+        self.verticalLayout_55.addWidget(self.melkCategoryFormLbl)
+
+        self.melkCategoryFormError = QLabel(self.melkCategoryFormFrame)
+        self.melkCategoryFormError.setObjectName(u"melkCategoryFormError")
+
+        self.verticalLayout_55.addWidget(self.melkCategoryFormError)
+
+        self.melkCategoryFormInpt = QComboBox(self.melkCategoryFormFrame)
+        self.melkCategoryFormInpt.setObjectName(u"melkCategoryFormInpt")
+        self.melkCategoryFormInpt.setMinimumSize(QSize(87, 37))
+
+        self.verticalLayout_55.addWidget(self.melkCategoryFormInpt)
+
+
+        self.gridLayout_11.addWidget(self.melkCategoryFormFrame, 0, 2, 1, 1)
+
+        self.frame_33 = QFrame(self.form_step1)
+        self.frame_33.setObjectName(u"frame_33")
+        self.frame_33.setFrameShape(QFrame.StyledPanel)
+        self.frame_33.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_11.addWidget(self.frame_33, 0, 0, 1, 1)
+
+
+        self.verticalLayout_8.addLayout(self.gridLayout_11)
 
         self.verticalSpacer_22 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.gridLayout_2.addItem(self.verticalSpacer_22, 3, 2, 1, 1)
-
-        self.melkCategoryInpt = QComboBox(self.form_step1)
-        self.melkCategoryInpt.setObjectName(u"melkCategoryInpt")
-        self.melkCategoryInpt.setMinimumSize(QSize(87, 37))
-
-        self.gridLayout_2.addWidget(self.melkCategoryInpt, 2, 2, 1, 1)
-
-        self.widget_5 = QWidget(self.form_step1)
-        self.widget_5.setObjectName(u"widget_5")
-
-        self.gridLayout_2.addWidget(self.widget_5, 0, 0, 1, 1)
-
-        self.melkCategoryLbl = QLabel(self.form_step1)
-        self.melkCategoryLbl.setObjectName(u"melkCategoryLbl")
-
-        self.gridLayout_2.addWidget(self.melkCategoryLbl, 1, 2, 1, 1)
-
-        self.gridLayout_2.setColumnStretch(0, 1)
-        self.gridLayout_2.setColumnStretch(1, 1)
-        self.gridLayout_2.setColumnStretch(2, 1)
-
-        self.verticalLayout_8.addLayout(self.gridLayout_2)
+        self.verticalLayout_8.addItem(self.verticalSpacer_22)
 
         self.form_stackwidget.addWidget(self.form_step1)
         self.form_step2 = QWidget()
@@ -977,62 +997,112 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.label_34, 0, Qt.AlignHCenter)
 
-        self.gridLayout_10 = QGridLayout()
-        self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.gridLayout_10.setHorizontalSpacing(50)
-        self.gridLayout_10.setVerticalSpacing(20)
-        self.gridLayout_10.setContentsMargins(-1, 0, -1, -1)
-        self.regionFormLbl = QLabel(self.form_step2)
+        self.gridLayout_1_1 = QGridLayout()
+        self.gridLayout_1_1.setObjectName(u"gridLayout_1_1")
+        self.gridLayout_1_1.setHorizontalSpacing(100)
+        self.gridLayout_1_1.setVerticalSpacing(20)
+        self.gridLayout_1_1.setContentsMargins(0, 24, -1, -1)
+        self.regionFormFrame = QFrame(self.form_step2)
+        self.regionFormFrame.setObjectName(u"regionFormFrame")
+        self.verticalLayout_57 = QVBoxLayout(self.regionFormFrame)
+        self.verticalLayout_57.setObjectName(u"verticalLayout_57")
+        self.regionFormLbl = QLabel(self.regionFormFrame)
         self.regionFormLbl.setObjectName(u"regionFormLbl")
 
-        self.gridLayout_10.addWidget(self.regionFormLbl, 0, 1, 1, 1)
+        self.verticalLayout_57.addWidget(self.regionFormLbl)
 
-        self.cityFormLbl = QLabel(self.form_step2)
-        self.cityFormLbl.setObjectName(u"cityFormLbl")
+        self.regionFormError = QLabel(self.regionFormFrame)
+        self.regionFormError.setObjectName(u"regionFormError")
 
-        self.gridLayout_10.addWidget(self.cityFormLbl, 0, 2, 1, 1)
+        self.verticalLayout_57.addWidget(self.regionFormError)
 
-        self.streetFormLbl = QLabel(self.form_step2)
-        self.streetFormLbl.setObjectName(u"streetFormLbl")
-
-        self.gridLayout_10.addWidget(self.streetFormLbl, 0, 0, 1, 1)
-
-        self.cityFormInpt = QComboBox(self.form_step2)
-        self.cityFormInpt.setObjectName(u"cityFormInpt")
-
-        self.gridLayout_10.addWidget(self.cityFormInpt, 1, 2, 1, 1)
-
-        self.regionFormInpt = QSpinBox(self.form_step2)
+        self.regionFormInpt = QSpinBox(self.regionFormFrame)
         self.regionFormInpt.setObjectName(u"regionFormInpt")
 
-        self.gridLayout_10.addWidget(self.regionFormInpt, 1, 1, 1, 1)
+        self.verticalLayout_57.addWidget(self.regionFormInpt)
 
-        self.streetFormInpt = QLineEdit(self.form_step2)
+
+        self.gridLayout_1_1.addWidget(self.regionFormFrame, 0, 1, 1, 1)
+
+        self.cityFormFrame = QFrame(self.form_step2)
+        self.cityFormFrame.setObjectName(u"cityFormFrame")
+        self.verticalLayout_56 = QVBoxLayout(self.cityFormFrame)
+        self.verticalLayout_56.setObjectName(u"verticalLayout_56")
+        self.cityFormLbl = QLabel(self.cityFormFrame)
+        self.cityFormLbl.setObjectName(u"cityFormLbl")
+
+        self.verticalLayout_56.addWidget(self.cityFormLbl)
+
+        self.cityFormError = QLabel(self.cityFormFrame)
+        self.cityFormError.setObjectName(u"cityFormError")
+
+        self.verticalLayout_56.addWidget(self.cityFormError)
+
+        self.cityFormInpt = QComboBox(self.cityFormFrame)
+        self.cityFormInpt.setObjectName(u"cityFormInpt")
+
+        self.verticalLayout_56.addWidget(self.cityFormInpt)
+
+
+        self.gridLayout_1_1.addWidget(self.cityFormFrame, 0, 2, 1, 1)
+
+        self.streetFormFrame = QFrame(self.form_step2)
+        self.streetFormFrame.setObjectName(u"streetFormFrame")
+        self.verticalLayout_58 = QVBoxLayout(self.streetFormFrame)
+        self.verticalLayout_58.setObjectName(u"verticalLayout_58")
+        self.streetFormLbl = QLabel(self.streetFormFrame)
+        self.streetFormLbl.setObjectName(u"streetFormLbl")
+
+        self.verticalLayout_58.addWidget(self.streetFormLbl)
+
+        self.streetFormError = QLabel(self.streetFormFrame)
+        self.streetFormError.setObjectName(u"streetFormError")
+
+        self.verticalLayout_58.addWidget(self.streetFormError)
+
+        self.streetFormInpt = QLineEdit(self.streetFormFrame)
         self.streetFormInpt.setObjectName(u"streetFormInpt")
 
-        self.gridLayout_10.addWidget(self.streetFormInpt, 1, 0, 1, 1)
+        self.verticalLayout_58.addWidget(self.streetFormInpt)
 
-        self.gridLayout_10.setColumnStretch(0, 1)
-        self.gridLayout_10.setColumnStretch(1, 1)
-        self.gridLayout_10.setColumnStretch(2, 1)
 
-        self.verticalLayout_11.addLayout(self.gridLayout_10)
+        self.gridLayout_1_1.addWidget(self.streetFormFrame, 0, 0, 1, 1)
 
-        self.gridLayout_11 = QGridLayout()
-        self.gridLayout_11.setObjectName(u"gridLayout_11")
-        self.gridLayout_11.setContentsMargins(-1, 17, -1, -1)
-        self.addressFormLbl = QLabel(self.form_step2)
+        self.gridLayout_1_1.setColumnStretch(0, 1)
+        self.gridLayout_1_1.setColumnStretch(1, 1)
+        self.gridLayout_1_1.setColumnStretch(2, 1)
+
+        self.verticalLayout_11.addLayout(self.gridLayout_1_1)
+
+        self.gridLayout_1_2 = QGridLayout()
+        self.gridLayout_1_2.setObjectName(u"gridLayout_1_2")
+        self.gridLayout_1_2.setContentsMargins(-1, 13, -1, -1)
+        self.addressFormFrame = QFrame(self.form_step2)
+        self.addressFormFrame.setObjectName(u"addressFormFrame")
+        self.verticalLayout_60 = QVBoxLayout(self.addressFormFrame)
+        self.verticalLayout_60.setSpacing(6)
+        self.verticalLayout_60.setObjectName(u"verticalLayout_60")
+        self.verticalLayout_60.setContentsMargins(-1, 1, -1, -1)
+        self.addressFormLbl = QLabel(self.addressFormFrame)
         self.addressFormLbl.setObjectName(u"addressFormLbl")
 
-        self.gridLayout_11.addWidget(self.addressFormLbl, 0, 0, 1, 1)
+        self.verticalLayout_60.addWidget(self.addressFormLbl)
 
-        self.addressFormInpt = QTextEdit(self.form_step2)
+        self.addressFormError = QLabel(self.addressFormFrame)
+        self.addressFormError.setObjectName(u"addressFormError")
+
+        self.verticalLayout_60.addWidget(self.addressFormError)
+
+        self.addressFormInpt = QTextEdit(self.addressFormFrame)
         self.addressFormInpt.setObjectName(u"addressFormInpt")
 
-        self.gridLayout_11.addWidget(self.addressFormInpt, 1, 0, 1, 1)
+        self.verticalLayout_60.addWidget(self.addressFormInpt)
 
 
-        self.verticalLayout_11.addLayout(self.gridLayout_11)
+        self.gridLayout_1_2.addWidget(self.addressFormFrame, 0, 0, 1, 1)
+
+
+        self.verticalLayout_11.addLayout(self.gridLayout_1_2)
 
         self.form_stackwidget.addWidget(self.form_step2)
         self.form_step3 = QWidget()
@@ -1045,7 +1115,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 610, 948))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 732, 1086))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1054,133 +1124,234 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_20.addWidget(self.label_49, 0, Qt.AlignHCenter)
 
-        self.gridLayout_6 = QGridLayout()
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.gridLayout_6.setHorizontalSpacing(100)
-        self.gridLayout_6.setVerticalSpacing(20)
-        self.owner2MobileNumberFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.owner2MobileNumberFormInpt.setObjectName(u"owner2MobileNumberFormInpt")
-
-        self.gridLayout_6.addWidget(self.owner2MobileNumberFormInpt, 4, 1, 1, 1)
-
-        self.owner1PhoneNumberFormLbl = QLabel(self.scrollAreaWidgetContents_3)
+        self.gridLayout_2 = QGridLayout()
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(100)
+        self.gridLayout_2.setVerticalSpacing(50)
+        self.gridLayout_2.setContentsMargins(-1, 20, -1, 20)
+        self.verticalFrame_8 = QFrame(self.scrollAreaWidgetContents_3)
+        self.verticalFrame_8.setObjectName(u"verticalFrame_8")
+        self.owner1PhoneNumberFormFrame = QVBoxLayout(self.verticalFrame_8)
+        self.owner1PhoneNumberFormFrame.setObjectName(u"owner1PhoneNumberFormFrame")
+        self.owner1PhoneNumberFormLbl = QLabel(self.verticalFrame_8)
         self.owner1PhoneNumberFormLbl.setObjectName(u"owner1PhoneNumberFormLbl")
 
-        self.gridLayout_6.addWidget(self.owner1PhoneNumberFormLbl, 0, 0, 1, 1)
+        self.owner1PhoneNumberFormFrame.addWidget(self.owner1PhoneNumberFormLbl)
 
-        self.guardPhoneNumberFormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.guardPhoneNumberFormLbl.setObjectName(u"guardPhoneNumberFormLbl")
+        self.owner1PhoneNumberFormError = QLabel(self.verticalFrame_8)
+        self.owner1PhoneNumberFormError.setObjectName(u"owner1PhoneNumberFormError")
 
-        self.gridLayout_6.addWidget(self.guardPhoneNumberFormLbl, 9, 1, 1, 1)
+        self.owner1PhoneNumberFormFrame.addWidget(self.owner1PhoneNumberFormError)
 
-        self.verticalSpacer_11 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout_6.addItem(self.verticalSpacer_11, 2, 2, 1, 1)
-
-        self.ownerName1FormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.ownerName1FormLbl.setObjectName(u"ownerName1FormLbl")
-
-        self.gridLayout_6.addWidget(self.ownerName1FormLbl, 0, 2, 1, 1)
-
-        self.tenantNameFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.tenantNameFormInpt.setObjectName(u"tenantNameFormInpt")
-
-        self.gridLayout_6.addWidget(self.tenantNameFormInpt, 7, 2, 1, 1)
-
-        self.ownerName1FormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.ownerName1FormInpt.setObjectName(u"ownerName1FormInpt")
-
-        self.gridLayout_6.addWidget(self.ownerName1FormInpt, 1, 2, 1, 1)
-
-        self.guardPhoneNumberFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.guardPhoneNumberFormInpt.setObjectName(u"guardPhoneNumberFormInpt")
-
-        self.gridLayout_6.addWidget(self.guardPhoneNumberFormInpt, 10, 1, 1, 1)
-
-        self.guardNameFormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.guardNameFormLbl.setObjectName(u"guardNameFormLbl")
-
-        self.gridLayout_6.addWidget(self.guardNameFormLbl, 9, 2, 1, 1)
-
-        self.ownerName2FormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.ownerName2FormLbl.setObjectName(u"ownerName2FormLbl")
-
-        self.gridLayout_6.addWidget(self.ownerName2FormLbl, 3, 2, 1, 1)
-
-        self.verticalSpacer_15 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout_6.addItem(self.verticalSpacer_15, 5, 2, 1, 1)
-
-        self.owner2MobileNumberFormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.owner2MobileNumberFormLbl.setObjectName(u"owner2MobileNumberFormLbl")
-
-        self.gridLayout_6.addWidget(self.owner2MobileNumberFormLbl, 3, 1, 1, 1)
-
-        self.owner1MobileNumberFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.owner1MobileNumberFormInpt.setObjectName(u"owner1MobileNumberFormInpt")
-
-        self.gridLayout_6.addWidget(self.owner1MobileNumberFormInpt, 1, 1, 1, 1)
-
-        self.guardNameFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.guardNameFormInpt.setObjectName(u"guardNameFormInpt")
-
-        self.gridLayout_6.addWidget(self.guardNameFormInpt, 10, 2, 1, 1)
-
-        self.tenantPhoneNumberFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
-        self.tenantPhoneNumberFormInpt.setObjectName(u"tenantPhoneNumberFormInpt")
-
-        self.gridLayout_6.addWidget(self.tenantPhoneNumberFormInpt, 7, 1, 1, 1)
-
-        self.owner1PhoneNumberFormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
+        self.owner1PhoneNumberFormInpt = QLineEdit(self.verticalFrame_8)
         self.owner1PhoneNumberFormInpt.setObjectName(u"owner1PhoneNumberFormInpt")
 
-        self.gridLayout_6.addWidget(self.owner1PhoneNumberFormInpt, 1, 0, 1, 1)
+        self.owner1PhoneNumberFormFrame.addWidget(self.owner1PhoneNumberFormInpt)
 
-        self.ownerName2FormInpt = QLineEdit(self.scrollAreaWidgetContents_3)
+
+        self.gridLayout_2.addWidget(self.verticalFrame_8, 0, 0, 1, 1)
+
+        self.owner2MobileNumberFormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.owner2MobileNumberFormFrame.setObjectName(u"owner2MobileNumberFormFrame")
+        self.verticalLayout_64 = QVBoxLayout(self.owner2MobileNumberFormFrame)
+        self.verticalLayout_64.setObjectName(u"verticalLayout_64")
+        self.owner2MobileNumberFormLbl = QLabel(self.owner2MobileNumberFormFrame)
+        self.owner2MobileNumberFormLbl.setObjectName(u"owner2MobileNumberFormLbl")
+
+        self.verticalLayout_64.addWidget(self.owner2MobileNumberFormLbl)
+
+        self.owner2MobileNumberFormError = QLabel(self.owner2MobileNumberFormFrame)
+        self.owner2MobileNumberFormError.setObjectName(u"owner2MobileNumberFormError")
+
+        self.verticalLayout_64.addWidget(self.owner2MobileNumberFormError)
+
+        self.owner2MobileNumberFormInpt = QLineEdit(self.owner2MobileNumberFormFrame)
+        self.owner2MobileNumberFormInpt.setObjectName(u"owner2MobileNumberFormInpt")
+
+        self.verticalLayout_64.addWidget(self.owner2MobileNumberFormInpt)
+
+
+        self.gridLayout_2.addWidget(self.owner2MobileNumberFormFrame, 1, 1, 1, 1)
+
+        self.ownerName2FormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.ownerName2FormFrame.setObjectName(u"ownerName2FormFrame")
+        self.verticalLayout_63 = QVBoxLayout(self.ownerName2FormFrame)
+        self.verticalLayout_63.setObjectName(u"verticalLayout_63")
+        self.ownerName2FormLbl = QLabel(self.ownerName2FormFrame)
+        self.ownerName2FormLbl.setObjectName(u"ownerName2FormLbl")
+
+        self.verticalLayout_63.addWidget(self.ownerName2FormLbl)
+
+        self.ownerName2FormError = QLabel(self.ownerName2FormFrame)
+        self.ownerName2FormError.setObjectName(u"ownerName2FormError")
+
+        self.verticalLayout_63.addWidget(self.ownerName2FormError)
+
+        self.ownerName2FormInpt = QLineEdit(self.ownerName2FormFrame)
         self.ownerName2FormInpt.setObjectName(u"ownerName2FormInpt")
 
-        self.gridLayout_6.addWidget(self.ownerName2FormInpt, 4, 2, 1, 1)
+        self.verticalLayout_63.addWidget(self.ownerName2FormInpt)
 
-        self.tenantNameFormLbl = QLabel(self.scrollAreaWidgetContents_3)
+
+        self.gridLayout_2.addWidget(self.ownerName2FormFrame, 1, 2, 1, 1)
+
+        self.verticalFrame_11 = QFrame(self.scrollAreaWidgetContents_3)
+        self.verticalFrame_11.setObjectName(u"verticalFrame_11")
+        self.tenantNameFormFrame = QVBoxLayout(self.verticalFrame_11)
+        self.tenantNameFormFrame.setObjectName(u"tenantNameFormFrame")
+        self.tenantNameFormLbl = QLabel(self.verticalFrame_11)
         self.tenantNameFormLbl.setObjectName(u"tenantNameFormLbl")
 
-        self.gridLayout_6.addWidget(self.tenantNameFormLbl, 6, 2, 1, 1)
+        self.tenantNameFormFrame.addWidget(self.tenantNameFormLbl)
 
-        self.owner1MobileNumberFormLbl = QLabel(self.scrollAreaWidgetContents_3)
-        self.owner1MobileNumberFormLbl.setObjectName(u"owner1MobileNumberFormLbl")
+        self.tenantNameFormError = QLabel(self.verticalFrame_11)
+        self.tenantNameFormError.setObjectName(u"tenantNameFormError")
 
-        self.gridLayout_6.addWidget(self.owner1MobileNumberFormLbl, 0, 1, 1, 1)
+        self.tenantNameFormFrame.addWidget(self.tenantNameFormError)
 
-        self.tenantPhoneNumberFormLbl = QLabel(self.scrollAreaWidgetContents_3)
+        self.tenantNameFormInpt = QLineEdit(self.verticalFrame_11)
+        self.tenantNameFormInpt.setObjectName(u"tenantNameFormInpt")
+
+        self.tenantNameFormFrame.addWidget(self.tenantNameFormInpt)
+
+
+        self.gridLayout_2.addWidget(self.verticalFrame_11, 2, 2, 1, 1)
+
+        self.verticalFrame_12 = QFrame(self.scrollAreaWidgetContents_3)
+        self.verticalFrame_12.setObjectName(u"verticalFrame_12")
+        self.tenantPhoneNumberFormFrame = QVBoxLayout(self.verticalFrame_12)
+        self.tenantPhoneNumberFormFrame.setObjectName(u"tenantPhoneNumberFormFrame")
+        self.tenantPhoneNumberFormLbl = QLabel(self.verticalFrame_12)
         self.tenantPhoneNumberFormLbl.setObjectName(u"tenantPhoneNumberFormLbl")
 
-        self.gridLayout_6.addWidget(self.tenantPhoneNumberFormLbl, 6, 1, 1, 1)
+        self.tenantPhoneNumberFormFrame.addWidget(self.tenantPhoneNumberFormLbl)
 
-        self.verticalSpacer_16 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.tenantPhoneNumberFormError = QLabel(self.verticalFrame_12)
+        self.tenantPhoneNumberFormError.setObjectName(u"tenantPhoneNumberFormError")
 
-        self.gridLayout_6.addItem(self.verticalSpacer_16, 8, 2, 1, 1)
+        self.tenantPhoneNumberFormFrame.addWidget(self.tenantPhoneNumberFormError)
 
-        self.gridLayout_6.setColumnStretch(0, 1)
-        self.gridLayout_6.setColumnStretch(1, 1)
-        self.gridLayout_6.setColumnStretch(2, 1)
+        self.tenantPhoneNumberFormInpt = QLineEdit(self.verticalFrame_12)
+        self.tenantPhoneNumberFormInpt.setObjectName(u"tenantPhoneNumberFormInpt")
 
-        self.verticalLayout_20.addLayout(self.gridLayout_6)
+        self.tenantPhoneNumberFormFrame.addWidget(self.tenantPhoneNumberFormInpt)
 
-        self.verticalLayout_21 = QVBoxLayout()
-        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.verticalLayout_21.setContentsMargins(0, 25, -1, -1)
-        self.ownerDescriptionFormLbl = QLabel(self.scrollAreaWidgetContents_3)
+
+        self.gridLayout_2.addWidget(self.verticalFrame_12, 2, 1, 1, 1)
+
+        self.guardNameFormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.guardNameFormFrame.setObjectName(u"guardNameFormFrame")
+        self.verticalLayout_67 = QVBoxLayout(self.guardNameFormFrame)
+        self.verticalLayout_67.setObjectName(u"verticalLayout_67")
+        self.guardNameFormLbl = QLabel(self.guardNameFormFrame)
+        self.guardNameFormLbl.setObjectName(u"guardNameFormLbl")
+
+        self.verticalLayout_67.addWidget(self.guardNameFormLbl)
+
+        self.guardNameFormError = QLabel(self.guardNameFormFrame)
+        self.guardNameFormError.setObjectName(u"guardNameFormError")
+
+        self.verticalLayout_67.addWidget(self.guardNameFormError)
+
+        self.guardNameFormInpt = QLineEdit(self.guardNameFormFrame)
+        self.guardNameFormInpt.setObjectName(u"guardNameFormInpt")
+
+        self.verticalLayout_67.addWidget(self.guardNameFormInpt)
+
+
+        self.gridLayout_2.addWidget(self.guardNameFormFrame, 3, 2, 1, 1)
+
+        self.guardPhoneNumberFormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.guardPhoneNumberFormFrame.setObjectName(u"guardPhoneNumberFormFrame")
+        self.verticalLayout_68 = QVBoxLayout(self.guardPhoneNumberFormFrame)
+        self.verticalLayout_68.setObjectName(u"verticalLayout_68")
+        self.guardPhoneNumberFormLbl = QLabel(self.guardPhoneNumberFormFrame)
+        self.guardPhoneNumberFormLbl.setObjectName(u"guardPhoneNumberFormLbl")
+
+        self.verticalLayout_68.addWidget(self.guardPhoneNumberFormLbl)
+
+        self.guardPhoneNumberFormError = QLabel(self.guardPhoneNumberFormFrame)
+        self.guardPhoneNumberFormError.setObjectName(u"guardPhoneNumberFormError")
+
+        self.verticalLayout_68.addWidget(self.guardPhoneNumberFormError)
+
+        self.guardPhoneNumberFormInpt = QLineEdit(self.guardPhoneNumberFormFrame)
+        self.guardPhoneNumberFormInpt.setObjectName(u"guardPhoneNumberFormInpt")
+
+        self.verticalLayout_68.addWidget(self.guardPhoneNumberFormInpt)
+
+
+        self.gridLayout_2.addWidget(self.guardPhoneNumberFormFrame, 3, 1, 1, 1)
+
+        self.ownerName1FormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.ownerName1FormFrame.setObjectName(u"ownerName1FormFrame")
+        self.verticalLayout_131 = QVBoxLayout(self.ownerName1FormFrame)
+        self.verticalLayout_131.setObjectName(u"verticalLayout_131")
+        self.ownerName1FormLbl = QLabel(self.ownerName1FormFrame)
+        self.ownerName1FormLbl.setObjectName(u"ownerName1FormLbl")
+
+        self.verticalLayout_131.addWidget(self.ownerName1FormLbl)
+
+        self.ownerName1FormError = QLabel(self.ownerName1FormFrame)
+        self.ownerName1FormError.setObjectName(u"ownerName1FormError")
+
+        self.verticalLayout_131.addWidget(self.ownerName1FormError)
+
+        self.ownerName1FormInpt = QLineEdit(self.ownerName1FormFrame)
+        self.ownerName1FormInpt.setObjectName(u"ownerName1FormInpt")
+
+        self.verticalLayout_131.addWidget(self.ownerName1FormInpt)
+
+
+        self.gridLayout_2.addWidget(self.ownerName1FormFrame, 0, 2, 1, 1)
+
+        self.owner1MobileNumberFormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.owner1MobileNumberFormFrame.setObjectName(u"owner1MobileNumberFormFrame")
+        self.verticalLayout_132 = QVBoxLayout(self.owner1MobileNumberFormFrame)
+        self.verticalLayout_132.setObjectName(u"verticalLayout_132")
+        self.owner1MobileNumberFormLbl = QLabel(self.owner1MobileNumberFormFrame)
+        self.owner1MobileNumberFormLbl.setObjectName(u"owner1MobileNumberFormLbl")
+
+        self.verticalLayout_132.addWidget(self.owner1MobileNumberFormLbl)
+
+        self.owner1MobileNumberFormError = QLabel(self.owner1MobileNumberFormFrame)
+        self.owner1MobileNumberFormError.setObjectName(u"owner1MobileNumberFormError")
+
+        self.verticalLayout_132.addWidget(self.owner1MobileNumberFormError)
+
+        self.owner1MobileNumberFormInpt = QLineEdit(self.owner1MobileNumberFormFrame)
+        self.owner1MobileNumberFormInpt.setObjectName(u"owner1MobileNumberFormInpt")
+
+        self.verticalLayout_132.addWidget(self.owner1MobileNumberFormInpt)
+
+
+        self.gridLayout_2.addWidget(self.owner1MobileNumberFormFrame, 0, 1, 1, 1)
+
+
+        self.verticalLayout_20.addLayout(self.gridLayout_2)
+
+        self.ownerDescriptionFormFrame = QFrame(self.scrollAreaWidgetContents_3)
+        self.ownerDescriptionFormFrame.setObjectName(u"ownerDescriptionFormFrame")
+        self.cc = QVBoxLayout(self.ownerDescriptionFormFrame)
+        self.cc.setObjectName(u"cc")
+        self.cc.setContentsMargins(1, 25, -1, -1)
+        self.ownerDescriptionFormLbl = QLabel(self.ownerDescriptionFormFrame)
         self.ownerDescriptionFormLbl.setObjectName(u"ownerDescriptionFormLbl")
 
-        self.verticalLayout_21.addWidget(self.ownerDescriptionFormLbl)
+        self.cc.addWidget(self.ownerDescriptionFormLbl)
 
-        self.ownerDescriptionFormInpt = QTextEdit(self.scrollAreaWidgetContents_3)
+        self.ownerDescriptionFormError = QLabel(self.ownerDescriptionFormFrame)
+        self.ownerDescriptionFormError.setObjectName(u"ownerDescriptionFormError")
+
+        self.cc.addWidget(self.ownerDescriptionFormError)
+
+        self.ownerDescriptionFormInpt = QTextEdit(self.ownerDescriptionFormFrame)
         self.ownerDescriptionFormInpt.setObjectName(u"ownerDescriptionFormInpt")
 
-        self.verticalLayout_21.addWidget(self.ownerDescriptionFormInpt)
+        self.cc.addWidget(self.ownerDescriptionFormInpt)
 
 
-        self.verticalLayout_20.addLayout(self.verticalLayout_21)
+        self.verticalLayout_20.addWidget(self.ownerDescriptionFormFrame)
 
         self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
 
@@ -1198,7 +1369,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 662, 1597))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1431, 742, 2040))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -1206,68 +1377,101 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.label_19, 0, Qt.AlignHCenter)
 
-        self.gridLayout_8 = QGridLayout()
-        self.gridLayout_8.setObjectName(u"gridLayout_8")
-        self.gridLayout_8.setHorizontalSpacing(100)
-        self.gridLayout_8.setVerticalSpacing(20)
-        self.gridLayout_8.setContentsMargins(-1, 0, -1, -1)
-        self.label_21 = QLabel(self.scrollAreaWidgetContents)
-        self.label_21.setObjectName(u"label_21")
-        self.label_21.setStyleSheet(u"label")
+        self.gridLayout_6 = QGridLayout()
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.gridLayout_6.setHorizontalSpacing(100)
+        self.gridLayout_6.setVerticalSpacing(20)
+        self.gridLayout_6.setContentsMargins(-1, 20, -1, 20)
+        self.unitPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.unitPriceFormFrame.setObjectName(u"unitPriceFormFrame")
+        self.unitPriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.unitPriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_65 = QVBoxLayout(self.unitPriceFormFrame)
+        self.verticalLayout_65.setObjectName(u"verticalLayout_65")
+        self.unitPriceFormLbl = QLabel(self.unitPriceFormFrame)
+        self.unitPriceFormLbl.setObjectName(u"unitPriceFormLbl")
+        self.unitPriceFormLbl.setStyleSheet(u"label")
 
-        self.gridLayout_8.addWidget(self.label_21, 0, 2, 1, 1)
+        self.verticalLayout_65.addWidget(self.unitPriceFormLbl)
 
-        self.widget_2 = QWidget(self.scrollAreaWidgetContents)
-        self.widget_2.setObjectName(u"widget_2")
+        self.unitPriceFormError = QLabel(self.unitPriceFormFrame)
+        self.unitPriceFormError.setObjectName(u"unitPriceFormError")
 
-        self.gridLayout_8.addWidget(self.widget_2, 0, 0, 1, 1)
+        self.verticalLayout_65.addWidget(self.unitPriceFormError)
 
-        self.spinBox_3 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_3.setObjectName(u"spinBox_3")
+        self.unitPriceFormInpt = QLineEdit(self.unitPriceFormFrame)
+        self.unitPriceFormInpt.setObjectName(u"unitPriceFormInpt")
 
-        self.gridLayout_8.addWidget(self.spinBox_3, 1, 2, 1, 1)
+        self.verticalLayout_65.addWidget(self.unitPriceFormInpt)
 
-        self.gridLayout_8.setColumnStretch(0, 1)
-        self.gridLayout_8.setColumnStretch(1, 1)
-        self.gridLayout_8.setColumnStretch(2, 1)
 
-        self.verticalLayout_14.addLayout(self.gridLayout_8)
+        self.gridLayout_6.addWidget(self.unitPriceFormFrame, 2, 0, 1, 1)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.meterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.meterageFormFrame.setObjectName(u"meterageFormFrame")
+        self.verticalLayout_70 = QVBoxLayout(self.meterageFormFrame)
+        self.verticalLayout_70.setObjectName(u"verticalLayout_70")
+        self.meterageFormLbl = QLabel(self.meterageFormFrame)
+        self.meterageFormLbl.setObjectName(u"meterageFormLbl")
+        self.meterageFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_14.addItem(self.verticalSpacer_4)
+        self.verticalLayout_70.addWidget(self.meterageFormLbl)
 
-        self.verticalLayout_13 = QVBoxLayout()
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(-1, -1, -1, 0)
-        self.price_for_sell_frame = QFrame(self.scrollAreaWidgetContents)
-        self.price_for_sell_frame.setObjectName(u"price_for_sell_frame")
-        self.gridLayout_5 = QGridLayout(self.price_for_sell_frame)
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.gridLayout_5.setHorizontalSpacing(100)
-        self.gridLayout_5.setVerticalSpacing(20)
-        self.label_23 = QLabel(self.price_for_sell_frame)
-        self.label_23.setObjectName(u"label_23")
-        self.label_23.setStyleSheet(u"label")
+        self.meterageFormError = QLabel(self.meterageFormFrame)
+        self.meterageFormError.setObjectName(u"meterageFormError")
 
-        self.gridLayout_5.addWidget(self.label_23, 0, 0, 1, 1)
+        self.verticalLayout_70.addWidget(self.meterageFormError)
 
-        self.label_20 = QLabel(self.price_for_sell_frame)
+        self.meterageFormInpt = QSpinBox(self.meterageFormFrame)
+        self.meterageFormInpt.setObjectName(u"meterageFormInpt")
+
+        self.verticalLayout_70.addWidget(self.meterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.meterageFormFrame, 0, 2, 1, 1)
+
+        self.totalPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.totalPriceFormFrame.setObjectName(u"totalPriceFormFrame")
+        self.totalPriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.totalPriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_62 = QVBoxLayout(self.totalPriceFormFrame)
+        self.verticalLayout_62.setObjectName(u"verticalLayout_62")
+        self.totalPriceFormLbl = QLabel(self.totalPriceFormFrame)
+        self.totalPriceFormLbl.setObjectName(u"totalPriceFormLbl")
+        self.totalPriceFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_62.addWidget(self.totalPriceFormLbl)
+
+        self.totalPriceFormError = QLabel(self.totalPriceFormFrame)
+        self.totalPriceFormError.setObjectName(u"totalPriceFormError")
+
+        self.verticalLayout_62.addWidget(self.totalPriceFormError)
+
+        self.totalPriceFormInpt = QLineEdit(self.totalPriceFormFrame)
+        self.totalPriceFormInpt.setObjectName(u"totalPriceFormInpt")
+
+        self.verticalLayout_62.addWidget(self.totalPriceFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.totalPriceFormFrame, 2, 1, 1, 1)
+
+        self.frame_36 = QFrame(self.scrollAreaWidgetContents)
+        self.frame_36.setObjectName(u"frame_36")
+        self.frame_36.setMinimumSize(QSize(0, 0))
+        self.frame_36.setFrameShape(QFrame.StyledPanel)
+        self.frame_36.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_61 = QVBoxLayout(self.frame_36)
+        self.verticalLayout_61.setObjectName(u"verticalLayout_61")
+        self.label_20 = QLabel(self.frame_36)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setStyleSheet(u"label")
 
-        self.gridLayout_5.addWidget(self.label_20, 0, 2, 1, 1)
-
-        self.label_22 = QLabel(self.price_for_sell_frame)
-        self.label_22.setObjectName(u"label_22")
-        self.label_22.setStyleSheet(u"label")
-
-        self.gridLayout_5.addWidget(self.label_22, 0, 1, 1, 1)
+        self.verticalLayout_61.addWidget(self.label_20)
 
         self.verticalLayout_15 = QVBoxLayout()
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(-1, -1, 20, -1)
-        self.radioButton_2 = QRadioButton(self.price_for_sell_frame)
+        self.radioButton_2 = QRadioButton(self.frame_36)
         self.buttonGroup_2 = QButtonGroup(MainWindow)
         self.buttonGroup_2.setObjectName(u"buttonGroup_2")
         self.buttonGroup_2.addButton(self.radioButton_2)
@@ -1276,7 +1480,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_15.addWidget(self.radioButton_2, 0, Qt.AlignLeft)
 
-        self.radioButton = QRadioButton(self.price_for_sell_frame)
+        self.radioButton = QRadioButton(self.frame_36)
         self.buttonGroup_2.addButton(self.radioButton)
         self.radioButton.setObjectName(u"radioButton")
         self.radioButton.setLayoutDirection(Qt.RightToLeft)
@@ -1284,235 +1488,506 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.addWidget(self.radioButton, 0, Qt.AlignLeft)
 
 
-        self.gridLayout_5.addLayout(self.verticalLayout_15, 1, 2, 1, 1)
-
-        self.lineEdit_2 = QLineEdit(self.price_for_sell_frame)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.gridLayout_5.addWidget(self.lineEdit_2, 1, 1, 1, 1)
-
-        self.lineEdit_3 = QLineEdit(self.price_for_sell_frame)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.gridLayout_5.addWidget(self.lineEdit_3, 1, 0, 1, 1)
-
-        self.gridLayout_5.setColumnStretch(0, 1)
-        self.gridLayout_5.setColumnStretch(1, 1)
-        self.gridLayout_5.setColumnStretch(2, 1)
-
-        self.verticalLayout_13.addWidget(self.price_for_sell_frame)
-
-        self.price_for_rent_frame = QFrame(self.scrollAreaWidgetContents)
-        self.price_for_rent_frame.setObjectName(u"price_for_rent_frame")
-        self.gridLayout_9 = QGridLayout(self.price_for_rent_frame)
-        self.gridLayout_9.setObjectName(u"gridLayout_9")
-        self.gridLayout_9.setHorizontalSpacing(100)
-        self.gridLayout_9.setVerticalSpacing(20)
-        self.gridLayout_9.setContentsMargins(-1, 1, -1, -1)
-        self.label_24 = QLabel(self.price_for_rent_frame)
-        self.label_24.setObjectName(u"label_24")
-        self.label_24.setStyleSheet(u"label")
-
-        self.gridLayout_9.addWidget(self.label_24, 0, 2, 1, 1)
-
-        self.lineEdit_4 = QLineEdit(self.price_for_rent_frame)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-
-        self.gridLayout_9.addWidget(self.lineEdit_4, 1, 2, 1, 1)
-
-        self.label_25 = QLabel(self.price_for_rent_frame)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setStyleSheet(u"label")
-
-        self.gridLayout_9.addWidget(self.label_25, 0, 1, 1, 1)
-
-        self.lineEdit_5 = QLineEdit(self.price_for_rent_frame)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-
-        self.gridLayout_9.addWidget(self.lineEdit_5, 1, 1, 1, 1)
-
-        self.widget = QWidget(self.price_for_rent_frame)
-        self.widget.setObjectName(u"widget")
-
-        self.gridLayout_9.addWidget(self.widget, 1, 0, 1, 1)
-
-        self.gridLayout_9.setColumnStretch(0, 1)
-        self.gridLayout_9.setColumnStretch(1, 1)
-        self.gridLayout_9.setColumnStretch(2, 1)
-
-        self.verticalLayout_13.addWidget(self.price_for_rent_frame)
+        self.verticalLayout_61.addLayout(self.verticalLayout_15)
 
 
-        self.verticalLayout_14.addLayout(self.verticalLayout_13)
+        self.gridLayout_6.addWidget(self.frame_36, 2, 2, 1, 1)
 
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.landMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.landMeterageFormFrame.setObjectName(u"landMeterageFormFrame")
+        self.verticalLayout_136 = QVBoxLayout(self.landMeterageFormFrame)
+        self.verticalLayout_136.setObjectName(u"verticalLayout_136")
+        self.landMeterageFormLbl = QLabel(self.landMeterageFormFrame)
+        self.landMeterageFormLbl.setObjectName(u"landMeterageFormLbl")
+        self.landMeterageFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_14.addItem(self.verticalSpacer_3)
+        self.verticalLayout_136.addWidget(self.landMeterageFormLbl)
 
-        self.gridLayout_7 = QGridLayout()
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.gridLayout_7.setSizeConstraint(QLayout.SetDefaultConstraint)
-        self.gridLayout_7.setHorizontalSpacing(100)
-        self.gridLayout_7.setVerticalSpacing(20)
-        self.gridLayout_7.setContentsMargins(-1, -1, -1, 20)
-        self.verticalLayout_16 = QVBoxLayout()
+        self.landMeterageFormError = QLabel(self.landMeterageFormFrame)
+        self.landMeterageFormError.setObjectName(u"landMeterageFormError")
+
+        self.verticalLayout_136.addWidget(self.landMeterageFormError)
+
+        self.landMeterageFormInpt = QSpinBox(self.landMeterageFormFrame)
+        self.landMeterageFormInpt.setObjectName(u"landMeterageFormInpt")
+
+        self.verticalLayout_136.addWidget(self.landMeterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.landMeterageFormFrame, 0, 0, 1, 1)
+
+        self.openingWidthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.openingWidthFormFrame.setObjectName(u"openingWidthFormFrame")
+        self.verticalLayout_139 = QVBoxLayout(self.openingWidthFormFrame)
+        self.verticalLayout_139.setObjectName(u"verticalLayout_139")
+        self.openingWidthFormLbl = QLabel(self.openingWidthFormFrame)
+        self.openingWidthFormLbl.setObjectName(u"openingWidthFormLbl")
+        self.openingWidthFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_139.addWidget(self.openingWidthFormLbl)
+
+        self.openingWidthFormError = QLabel(self.openingWidthFormFrame)
+        self.openingWidthFormError.setObjectName(u"openingWidthFormError")
+
+        self.verticalLayout_139.addWidget(self.openingWidthFormError)
+
+        self.openingWidthFormInpt = QSpinBox(self.openingWidthFormFrame)
+        self.openingWidthFormInpt.setObjectName(u"openingWidthFormInpt")
+
+        self.verticalLayout_139.addWidget(self.openingWidthFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.openingWidthFormFrame, 1, 0, 1, 1)
+
+        self.floorCounFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.floorCounFormFrame.setObjectName(u"floorCounFormFrame")
+        self.floorCounFormFrame.setMinimumSize(QSize(0, 0))
+        self.floorCounFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorCounFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.floorCounFormFrame)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.floorCounFormLbl = QLabel(self.floorCounFormFrame)
+        self.floorCounFormLbl.setObjectName(u"floorCounFormLbl")
+        self.floorCounFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormLbl)
+
+        self.floorCounFormError = QLabel(self.floorCounFormFrame)
+        self.floorCounFormError.setObjectName(u"floorCounFormError")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormError)
+
+        self.floorCounFormInpt = QSpinBox(self.floorCounFormFrame)
+        self.floorCounFormInpt.setObjectName(u"floorCounFormInpt")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.floorCounFormFrame, 6, 2, 1, 1)
+
+        self.compensationFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.compensationFormFrame.setObjectName(u"compensationFormFrame")
+        self.compensationFormFrame.setMinimumSize(QSize(0, 0))
+        self.compensationFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_75 = QVBoxLayout(self.compensationFormFrame)
+        self.verticalLayout_75.setObjectName(u"verticalLayout_75")
+        self.compensationFormLbl = QLabel(self.compensationFormFrame)
+        self.compensationFormLbl.setObjectName(u"compensationFormLbl")
+        self.compensationFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_75.addWidget(self.compensationFormLbl)
+
+        self.compensationFormError = QLabel(self.compensationFormFrame)
+        self.compensationFormError.setObjectName(u"compensationFormError")
+
+        self.verticalLayout_75.addWidget(self.compensationFormError)
+
+        self.compensationFormOptionsFrame = QFrame(self.compensationFormFrame)
+        self.compensationFormOptionsFrame.setObjectName(u"compensationFormOptionsFrame")
+        self.compensationFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_77 = QVBoxLayout(self.compensationFormOptionsFrame)
+        self.verticalLayout_77.setObjectName(u"verticalLayout_77")
+
+        self.verticalLayout_75.addWidget(self.compensationFormOptionsFrame)
+
+
+        self.gridLayout_6.addWidget(self.compensationFormFrame, 9, 2, 1, 1)
+
+        self.floorFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.floorFormFrame.setObjectName(u"floorFormFrame")
+        self.verticalLayout_69 = QVBoxLayout(self.floorFormFrame)
+        self.verticalLayout_69.setObjectName(u"verticalLayout_69")
+        self.floorFormLbl = QLabel(self.floorFormFrame)
+        self.floorFormLbl.setObjectName(u"floorFormLbl")
+        self.floorFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_69.addWidget(self.floorFormLbl)
+
+        self.floorFormError = QLabel(self.floorFormFrame)
+        self.floorFormError.setObjectName(u"floorFormError")
+
+        self.verticalLayout_69.addWidget(self.floorFormError)
+
+        self.floorFormInpt = QSpinBox(self.floorFormFrame)
+        self.floorFormInpt.setObjectName(u"floorFormInpt")
+
+        self.verticalLayout_69.addWidget(self.floorFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.floorFormFrame, 5, 2, 1, 1)
+
+        self.participationFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.participationFormFrame.setObjectName(u"participationFormFrame")
+        self.participationFormFrame.setMinimumSize(QSize(0, 0))
+        self.participationFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.participationFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_133 = QVBoxLayout(self.participationFormFrame)
+        self.verticalLayout_133.setObjectName(u"verticalLayout_133")
+        self.participationFormLbl = QLabel(self.participationFormFrame)
+        self.participationFormLbl.setObjectName(u"participationFormLbl")
+        self.participationFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_133.addWidget(self.participationFormLbl)
+
+        self.participationFormError = QLabel(self.participationFormFrame)
+        self.participationFormError.setObjectName(u"participationFormError")
+
+        self.verticalLayout_133.addWidget(self.participationFormError)
+
+        self.participationFormOptionsFrame = QFrame(self.participationFormFrame)
+        self.participationFormOptionsFrame.setObjectName(u"participationFormOptionsFrame")
+        self.participationFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.participationFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_134 = QVBoxLayout(self.participationFormOptionsFrame)
+        self.verticalLayout_134.setObjectName(u"verticalLayout_134")
+
+        self.verticalLayout_133.addWidget(self.participationFormOptionsFrame)
+
+
+        self.gridLayout_6.addWidget(self.participationFormFrame, 10, 2, 1, 1)
+
+        self.documentStatusFrame = QFrame(self.scrollAreaWidgetContents)
+        self.documentStatusFrame.setObjectName(u"documentStatusFrame")
+        self.documentStatusFrame.setFrameShape(QFrame.StyledPanel)
+        self.documentStatusFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.documentStatusFrame)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.documentStatusLbl = QLabel(self.documentStatusFrame)
+        self.documentStatusLbl.setObjectName(u"documentStatusLbl")
+        self.documentStatusLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_21.addWidget(self.documentStatusLbl)
+
+        self.documentStatusError = QLabel(self.documentStatusFrame)
+        self.documentStatusError.setObjectName(u"documentStatusError")
+
+        self.verticalLayout_21.addWidget(self.documentStatusError)
+
+        self.documentStatusInpt = QComboBox(self.documentStatusFrame)
+        self.documentStatusInpt.setObjectName(u"documentStatusInpt")
+
+        self.verticalLayout_21.addWidget(self.documentStatusInpt)
+
+
+        self.gridLayout_6.addWidget(self.documentStatusFrame, 4, 2, 1, 1)
+
+        self.floorUnitCountFrame = QFrame(self.scrollAreaWidgetContents)
+        self.floorUnitCountFrame.setObjectName(u"floorUnitCountFrame")
+        self.floorUnitCountFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorUnitCountFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_73 = QVBoxLayout(self.floorUnitCountFrame)
+        self.verticalLayout_73.setObjectName(u"verticalLayout_73")
+        self.floorUnitCountLbl = QLabel(self.floorUnitCountFrame)
+        self.floorUnitCountLbl.setObjectName(u"floorUnitCountLbl")
+        self.floorUnitCountLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_73.addWidget(self.floorUnitCountLbl)
+
+        self.floorUnitCountError = QLabel(self.floorUnitCountFrame)
+        self.floorUnitCountError.setObjectName(u"floorUnitCountError")
+
+        self.verticalLayout_73.addWidget(self.floorUnitCountError)
+
+        self.floorUnitCountInpt = QSpinBox(self.floorUnitCountFrame)
+        self.floorUnitCountInpt.setObjectName(u"floorUnitCountInpt")
+
+        self.verticalLayout_73.addWidget(self.floorUnitCountInpt)
+
+
+        self.gridLayout_6.addWidget(self.floorUnitCountFrame, 6, 0, 1, 1)
+
+        self.lightDirectionFrame = QFrame(self.scrollAreaWidgetContents)
+        self.lightDirectionFrame.setObjectName(u"lightDirectionFrame")
+        self.lightDirectionFrame.setFrameShape(QFrame.StyledPanel)
+        self.lightDirectionFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_59 = QVBoxLayout(self.lightDirectionFrame)
+        self.verticalLayout_59.setObjectName(u"verticalLayout_59")
+        self.lightDirectionLbl = QLabel(self.lightDirectionFrame)
+        self.lightDirectionLbl.setObjectName(u"lightDirectionLbl")
+        self.lightDirectionLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_59.addWidget(self.lightDirectionLbl)
+
+        self.lightDirectionError = QLabel(self.lightDirectionFrame)
+        self.lightDirectionError.setObjectName(u"lightDirectionError")
+
+        self.verticalLayout_59.addWidget(self.lightDirectionError)
+
+        self.lightDirectionInpt = QComboBox(self.lightDirectionFrame)
+        self.lightDirectionInpt.setObjectName(u"lightDirectionInpt")
+
+        self.verticalLayout_59.addWidget(self.lightDirectionInpt)
+
+
+        self.gridLayout_6.addWidget(self.lightDirectionFrame, 4, 0, 1, 1)
+
+        self.constructionYearFrame = QFrame(self.scrollAreaWidgetContents)
+        self.constructionYearFrame.setObjectName(u"constructionYearFrame")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.constructionYearFrame.sizePolicy().hasHeightForWidth())
+        self.constructionYearFrame.setSizePolicy(sizePolicy)
+        self.constructionYearFrame.setFrameShape(QFrame.StyledPanel)
+        self.constructionYearFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_54 = QVBoxLayout(self.constructionYearFrame)
+        self.verticalLayout_54.setObjectName(u"verticalLayout_54")
+        self.constructionYearLbl = QLabel(self.constructionYearFrame)
+        self.constructionYearLbl.setObjectName(u"constructionYearLbl")
+        self.constructionYearLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_54.addWidget(self.constructionYearLbl)
+
+        self.constructionYearError = QLabel(self.constructionYearFrame)
+        self.constructionYearError.setObjectName(u"constructionYearError")
+
+        self.verticalLayout_54.addWidget(self.constructionYearError)
+
+        self.constructionYearInpt = QSpinBox(self.constructionYearFrame)
+        self.constructionYearInpt.setObjectName(u"constructionYearInpt")
+
+        self.verticalLayout_54.addWidget(self.constructionYearInpt)
+
+
+        self.gridLayout_6.addWidget(self.constructionYearFrame, 4, 1, 1, 1)
+
+        self.mortgagePriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.mortgagePriceFormFrame.setObjectName(u"mortgagePriceFormFrame")
+        self.mortgagePriceFormFrame.setMinimumSize(QSize(0, 0))
+        self.mortgagePriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.mortgagePriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_66 = QVBoxLayout(self.mortgagePriceFormFrame)
+        self.verticalLayout_66.setObjectName(u"verticalLayout_66")
+        self.mortgagePriceFormLbl = QLabel(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormLbl.setObjectName(u"mortgagePriceFormLbl")
+        self.mortgagePriceFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormLbl)
+
+        self.mortgagePriceFormError = QLabel(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormError.setObjectName(u"mortgagePriceFormError")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormError)
+
+        self.mortgagePriceFormInpt = QLineEdit(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormInpt.setObjectName(u"mortgagePriceFormInpt")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.mortgagePriceFormFrame, 3, 2, 1, 1)
+
+        self.totalBuildingUnitFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.totalBuildingUnitFormFrame.setObjectName(u"totalBuildingUnitFormFrame")
+        self.totalBuildingUnitFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.totalBuildingUnitFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_72 = QVBoxLayout(self.totalBuildingUnitFormFrame)
+        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
+        self.totalBuildingUnitFormLbl = QLabel(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormLbl.setObjectName(u"totalBuildingUnitFormLbl")
+        self.totalBuildingUnitFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormLbl)
+
+        self.totalBuildingUnitFormError = QLabel(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormError.setObjectName(u"totalBuildingUnitFormError")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormError)
+
+        self.totalBuildingUnitFormInpt = QSpinBox(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormInpt.setObjectName(u"totalBuildingUnitFormInpt")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.totalBuildingUnitFormFrame, 6, 1, 1, 1)
+
+        self.buildingMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.buildingMeterageFormFrame.setObjectName(u"buildingMeterageFormFrame")
+        self.verticalLayout_135 = QVBoxLayout(self.buildingMeterageFormFrame)
+        self.verticalLayout_135.setObjectName(u"verticalLayout_135")
+        self.buildingMeterageFormLbl = QLabel(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormLbl.setObjectName(u"buildingMeterageFormLbl")
+        self.buildingMeterageFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormLbl)
+
+        self.buildingMeterageFormError = QLabel(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormError.setObjectName(u"buildingMeterageFormError")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormError)
+
+        self.buildingMeterageFormInpt = QSpinBox(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormInpt.setObjectName(u"buildingMeterageFormInpt")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.buildingMeterageFormFrame, 0, 1, 1, 1)
+
+        self.rentPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.rentPriceFormFrame.setObjectName(u"rentPriceFormFrame")
+        self.rentPriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.rentPriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_71 = QVBoxLayout(self.rentPriceFormFrame)
+        self.verticalLayout_71.setObjectName(u"verticalLayout_71")
+        self.rentPriceFormLbl = QLabel(self.rentPriceFormFrame)
+        self.rentPriceFormLbl.setObjectName(u"rentPriceFormLbl")
+        self.rentPriceFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormLbl)
+
+        self.rentPriceFormError = QLabel(self.rentPriceFormFrame)
+        self.rentPriceFormError.setObjectName(u"rentPriceFormError")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormError)
+
+        self.rentPriceFormInpt = QLineEdit(self.rentPriceFormFrame)
+        self.rentPriceFormInpt.setObjectName(u"rentPriceFormInpt")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.rentPriceFormFrame, 3, 1, 1, 1)
+
+        self.compensationConditionFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.compensationConditionFormFrame.setObjectName(u"compensationConditionFormFrame")
+        self.compensationConditionFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationConditionFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_76 = QVBoxLayout(self.compensationConditionFormFrame)
+        self.verticalLayout_76.setObjectName(u"verticalLayout_76")
+        self.compensationConditionFormLbl = QLabel(self.compensationConditionFormFrame)
+        self.compensationConditionFormLbl.setObjectName(u"compensationConditionFormLbl")
+        self.compensationConditionFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormLbl)
+
+        self.compensationConditionFormError = QLabel(self.compensationConditionFormFrame)
+        self.compensationConditionFormError.setObjectName(u"compensationConditionFormError")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormError)
+
+        self.compensationConditionFormInpt = QTextEdit(self.compensationConditionFormFrame)
+        self.compensationConditionFormInpt.setObjectName(u"compensationConditionFormInpt")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.compensationConditionFormFrame, 9, 1, 1, 1)
+
+        self.rebuildingFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.rebuildingFormFrame.setObjectName(u"rebuildingFormFrame")
+        self.rebuildingFormFrame.setMinimumSize(QSize(0, 0))
+        self.rebuildingFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.rebuildingFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_74 = QVBoxLayout(self.rebuildingFormFrame)
+        self.verticalLayout_74.setObjectName(u"verticalLayout_74")
+        self.rebuildingFormLbl = QLabel(self.rebuildingFormFrame)
+        self.rebuildingFormLbl.setObjectName(u"rebuildingFormLbl")
+        self.rebuildingFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_74.addWidget(self.rebuildingFormLbl)
+
+        self.rebuildingFormError = QLabel(self.rebuildingFormFrame)
+        self.rebuildingFormError.setObjectName(u"rebuildingFormError")
+
+        self.verticalLayout_74.addWidget(self.rebuildingFormError)
+
+        self.rebuildingFormOptionsFrame = QFrame(self.rebuildingFormFrame)
+        self.rebuildingFormOptionsFrame.setObjectName(u"rebuildingFormOptionsFrame")
+        self.rebuildingFormOptionsFrame.setMinimumSize(QSize(0, 20))
+        self.verticalLayout_16 = QVBoxLayout(self.rebuildingFormOptionsFrame)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(0, 0, 20, -1)
-        self.radioButton_5 = QRadioButton(self.scrollAreaWidgetContents)
-        self.buttonGroup = QButtonGroup(MainWindow)
-        self.buttonGroup.setObjectName(u"buttonGroup")
-        self.buttonGroup.addButton(self.radioButton_5)
-        self.radioButton_5.setObjectName(u"radioButton_5")
-        self.radioButton_5.setLayoutDirection(Qt.RightToLeft)
+        self.verticalLayout_16.setContentsMargins(1, 1, 20, -1)
 
-        self.verticalLayout_16.addWidget(self.radioButton_5)
-
-        self.radioButton_4 = QRadioButton(self.scrollAreaWidgetContents)
-        self.buttonGroup.addButton(self.radioButton_4)
-        self.radioButton_4.setObjectName(u"radioButton_4")
-        self.radioButton_4.setLayoutDirection(Qt.RightToLeft)
-
-        self.verticalLayout_16.addWidget(self.radioButton_4)
-
-        self.radioButton_3 = QRadioButton(self.scrollAreaWidgetContents)
-        self.buttonGroup.addButton(self.radioButton_3)
-        self.radioButton_3.setObjectName(u"radioButton_3")
-        self.radioButton_3.setLayoutDirection(Qt.RightToLeft)
-
-        self.verticalLayout_16.addWidget(self.radioButton_3)
+        self.verticalLayout_74.addWidget(self.rebuildingFormOptionsFrame)
 
 
-        self.gridLayout_7.addLayout(self.verticalLayout_16, 10, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.rebuildingFormFrame, 7, 2, 1, 1)
 
-        self.spinBox_7 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_7.setObjectName(u"spinBox_7")
+        self.lengthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.lengthFormFrame.setObjectName(u"lengthFormFrame")
+        self.verticalLayout_137 = QVBoxLayout(self.lengthFormFrame)
+        self.verticalLayout_137.setObjectName(u"verticalLayout_137")
+        self.lengthFormLbl = QLabel(self.lengthFormFrame)
+        self.lengthFormLbl.setObjectName(u"lengthFormLbl")
+        self.lengthFormLbl.setStyleSheet(u"label")
 
-        self.gridLayout_7.addWidget(self.spinBox_7, 7, 0, 1, 1)
+        self.verticalLayout_137.addWidget(self.lengthFormLbl)
 
-        self.textEdit_4 = QTextEdit(self.scrollAreaWidgetContents)
-        self.textEdit_4.setObjectName(u"textEdit_4")
+        self.lengthFormError = QLabel(self.lengthFormFrame)
+        self.lengthFormError.setObjectName(u"lengthFormError")
 
-        self.gridLayout_7.addWidget(self.textEdit_4, 13, 1, 1, 1)
+        self.verticalLayout_137.addWidget(self.lengthFormError)
 
-        self.label_28 = QLabel(self.scrollAreaWidgetContents)
-        self.label_28.setObjectName(u"label_28")
-        self.label_28.setStyleSheet(u"label")
+        self.lengthFormInpt = QSpinBox(self.lengthFormFrame)
+        self.lengthFormInpt.setObjectName(u"lengthFormInpt")
 
-        self.gridLayout_7.addWidget(self.label_28, 0, 0, 1, 1, Qt.AlignRight)
+        self.verticalLayout_137.addWidget(self.lengthFormInpt)
 
-        self.label_31 = QLabel(self.scrollAreaWidgetContents)
-        self.label_31.setObjectName(u"label_31")
-        self.label_31.setStyleSheet(u"label")
 
-        self.gridLayout_7.addWidget(self.label_31, 6, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.lengthFormFrame, 1, 2, 1, 1)
 
-        self.label_32 = QLabel(self.scrollAreaWidgetContents)
-        self.label_32.setObjectName(u"label_32")
-        self.label_32.setStyleSheet(u"label")
+        self.widthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.widthFormFrame.setObjectName(u"widthFormFrame")
+        self.verticalLayout_138 = QVBoxLayout(self.widthFormFrame)
+        self.verticalLayout_138.setObjectName(u"verticalLayout_138")
+        self.widthFormLbl = QLabel(self.widthFormFrame)
+        self.widthFormLbl.setObjectName(u"widthFormLbl")
+        self.widthFormLbl.setStyleSheet(u"label")
 
-        self.gridLayout_7.addWidget(self.label_32, 6, 0, 1, 1)
+        self.verticalLayout_138.addWidget(self.widthFormLbl)
 
-        self.label_30 = QLabel(self.scrollAreaWidgetContents)
-        self.label_30.setObjectName(u"label_30")
-        self.label_30.setStyleSheet(u"label")
+        self.widthFormError = QLabel(self.widthFormFrame)
+        self.widthFormError.setObjectName(u"widthFormError")
 
-        self.gridLayout_7.addWidget(self.label_30, 6, 2, 1, 1)
+        self.verticalLayout_138.addWidget(self.widthFormError)
 
-        self.frame_42 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_42.setObjectName(u"frame_42")
-        self.frame_42.setMinimumSize(QSize(0, 50))
-        self.frame_42.setFrameShape(QFrame.StyledPanel)
-        self.frame_42.setFrameShadow(QFrame.Raised)
+        self.widthFormInpt = QSpinBox(self.widthFormFrame)
+        self.widthFormInpt.setObjectName(u"widthFormInpt")
 
-        self.gridLayout_7.addWidget(self.frame_42, 13, 2, 1, 1)
+        self.verticalLayout_138.addWidget(self.widthFormInpt)
 
-        self.spinBox_4 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_4.setObjectName(u"spinBox_4")
 
-        self.gridLayout_7.addWidget(self.spinBox_4, 4, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.widthFormFrame, 1, 1, 1, 1)
 
-        self.label_33 = QLabel(self.scrollAreaWidgetContents)
-        self.label_33.setObjectName(u"label_33")
-        self.label_33.setStyleSheet(u"label")
+        self.buildingLicenseFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.buildingLicenseFormFrame.setObjectName(u"buildingLicenseFormFrame")
+        self.buildingLicenseFormFrame.setMinimumSize(QSize(0, 0))
+        self.buildingLicenseFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.buildingLicenseFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_140 = QVBoxLayout(self.buildingLicenseFormFrame)
+        self.verticalLayout_140.setObjectName(u"verticalLayout_140")
+        self.buildingLicenseFormLbl = QLabel(self.buildingLicenseFormFrame)
+        self.buildingLicenseFormLbl.setObjectName(u"buildingLicenseFormLbl")
+        self.buildingLicenseFormLbl.setStyleSheet(u"label")
 
-        self.gridLayout_7.addWidget(self.label_33, 9, 2, 1, 1)
+        self.verticalLayout_140.addWidget(self.buildingLicenseFormLbl)
 
-        self.spinBox_5 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_5.setObjectName(u"spinBox_5")
+        self.buildingLicenseFormError = QLabel(self.buildingLicenseFormFrame)
+        self.buildingLicenseFormError.setObjectName(u"buildingLicenseFormError")
 
-        self.gridLayout_7.addWidget(self.spinBox_5, 7, 2, 1, 1)
+        self.verticalLayout_140.addWidget(self.buildingLicenseFormError)
 
-        self.label_27 = QLabel(self.scrollAreaWidgetContents)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setStyleSheet(u"label")
+        self.buildingLicenseFormOptionsFrame = QFrame(self.buildingLicenseFormFrame)
+        self.buildingLicenseFormOptionsFrame.setObjectName(u"buildingLicenseFormOptionsFrame")
+        self.buildingLicenseFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.buildingLicenseFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_141 = QVBoxLayout(self.buildingLicenseFormOptionsFrame)
+        self.verticalLayout_141.setObjectName(u"verticalLayout_141")
 
-        self.gridLayout_7.addWidget(self.label_27, 0, 1, 1, 1)
+        self.verticalLayout_140.addWidget(self.buildingLicenseFormOptionsFrame)
 
-        self.label_26 = QLabel(self.scrollAreaWidgetContents)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setStyleSheet(u"label")
 
-        self.gridLayout_7.addWidget(self.label_26, 0, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.buildingLicenseFormFrame, 8, 2, 1, 1)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.gridLayout_6.setColumnStretch(0, 1)
+        self.gridLayout_6.setColumnStretch(1, 1)
+        self.gridLayout_6.setColumnStretch(2, 1)
 
-        self.gridLayout_7.addItem(self.verticalSpacer_2, 5, 2, 1, 1)
-
-        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout_7.addItem(self.verticalSpacer_5, 8, 2, 1, 1)
-
-        self.comboBox_4 = QComboBox(self.scrollAreaWidgetContents)
-        self.comboBox_4.setObjectName(u"comboBox_4")
-
-        self.gridLayout_7.addWidget(self.comboBox_4, 1, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout_7.addItem(self.verticalSpacer, 2, 2, 1, 1)
-
-        self.spinBox_2 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_2.setObjectName(u"spinBox_2")
-
-        self.gridLayout_7.addWidget(self.spinBox_2, 1, 1, 1, 1)
-
-        self.spinBox_6 = QSpinBox(self.scrollAreaWidgetContents)
-        self.spinBox_6.setObjectName(u"spinBox_6")
-
-        self.gridLayout_7.addWidget(self.spinBox_6, 7, 1, 1, 1)
-
-        self.comboBox_3 = QComboBox(self.scrollAreaWidgetContents)
-        self.comboBox_3.setObjectName(u"comboBox_3")
-
-        self.gridLayout_7.addWidget(self.comboBox_3, 1, 2, 1, 1)
-
-        self.label_134 = QLabel(self.scrollAreaWidgetContents)
-        self.label_134.setObjectName(u"label_134")
-        self.label_134.setStyleSheet(u"label")
-
-        self.gridLayout_7.addWidget(self.label_134, 12, 2, 1, 1)
-
-        self.label_181 = QLabel(self.scrollAreaWidgetContents)
-        self.label_181.setObjectName(u"label_181")
-        self.label_181.setStyleSheet(u"label")
-
-        self.gridLayout_7.addWidget(self.label_181, 12, 1, 1, 1)
-
-        self.label_29 = QLabel(self.scrollAreaWidgetContents)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setStyleSheet(u"label")
-
-        self.gridLayout_7.addWidget(self.label_29, 3, 2, 1, 1)
-
-        self.verticalSpacer_25 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.gridLayout_7.addItem(self.verticalSpacer_25, 11, 2, 1, 1)
-
-        self.gridLayout_7.setColumnStretch(0, 1)
-        self.gridLayout_7.setColumnStretch(1, 1)
-        self.gridLayout_7.setColumnStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.gridLayout_7)
+        self.verticalLayout_14.addLayout(self.gridLayout_6)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -1528,7 +2003,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 636, 1393))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -693, 732, 1234))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -1538,198 +2013,379 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_18.addWidget(self.label_35, 0, Qt.AlignHCenter)
 
-        self.gridLayout_3 = QGridLayout()
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.gridLayout_3.setHorizontalSpacing(100)
-        self.gridLayout_3.setVerticalSpacing(20)
-        self.spinBox_9 = QSpinBox(self.scrollAreaWidgetContents_2)
-        self.spinBox_9.setObjectName(u"spinBox_9")
+        self.gridLayout_5 = QGridLayout()
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(-1, 20, -1, 20)
+        self.privateYardMeterageFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.privateYardMeterageFormFrame.setObjectName(u"privateYardMeterageFormFrame")
+        self.privateYardMeterageFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.privateYardMeterageFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_95 = QVBoxLayout(self.privateYardMeterageFormFrame)
+        self.verticalLayout_95.setObjectName(u"verticalLayout_95")
+        self.privateYardMeterageFormLbl = QLabel(self.privateYardMeterageFormFrame)
+        self.privateYardMeterageFormLbl.setObjectName(u"privateYardMeterageFormLbl")
 
-        self.gridLayout_3.addWidget(self.spinBox_9, 4, 1, 1, 1)
+        self.verticalLayout_95.addWidget(self.privateYardMeterageFormLbl)
 
-        self.verticalSpacer_8 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.privateYardMeterageFormError = QLabel(self.privateYardMeterageFormFrame)
+        self.privateYardMeterageFormError.setObjectName(u"privateYardMeterageFormError")
 
-        self.gridLayout_3.addItem(self.verticalSpacer_8, 11, 2, 1, 1)
+        self.verticalLayout_95.addWidget(self.privateYardMeterageFormError)
 
-        self.frame_6 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.privateYardMeterageFormInpt = QSpinBox(self.privateYardMeterageFormFrame)
+        self.privateYardMeterageFormInpt.setObjectName(u"privateYardMeterageFormInpt")
 
-        self.gridLayout_3.addWidget(self.frame_6, 13, 2, 1, 1)
+        self.verticalLayout_95.addWidget(self.privateYardMeterageFormInpt)
 
-        self.comboBox_5 = QComboBox(self.scrollAreaWidgetContents_2)
-        self.comboBox_5.setObjectName(u"comboBox_5")
 
-        self.gridLayout_3.addWidget(self.comboBox_5, 1, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.privateYardMeterageFormFrame, 4, 1, 1, 1)
 
-        self.label_37 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_37.setObjectName(u"label_37")
+        self.trassMeterageFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.trassMeterageFormFrame.setObjectName(u"trassMeterageFormFrame")
+        self.trassMeterageFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.trassMeterageFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_87 = QVBoxLayout(self.trassMeterageFormFrame)
+        self.verticalLayout_87.setObjectName(u"verticalLayout_87")
+        self.trassMeterageFormLbl = QLabel(self.trassMeterageFormFrame)
+        self.trassMeterageFormLbl.setObjectName(u"trassMeterageFormLbl")
 
-        self.gridLayout_3.addWidget(self.label_37, 0, 0, 1, 1)
+        self.verticalLayout_87.addWidget(self.trassMeterageFormLbl)
 
-        self.label_48 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_48.setObjectName(u"label_48")
+        self.trassMeterageFormError = QLabel(self.trassMeterageFormFrame)
+        self.trassMeterageFormError.setObjectName(u"trassMeterageFormError")
 
-        self.gridLayout_3.addWidget(self.label_48, 18, 2, 1, 1)
+        self.verticalLayout_87.addWidget(self.trassMeterageFormError)
 
-        self.label_43 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_43.setObjectName(u"label_43")
+        self.trassMeterageFormInpt = QSpinBox(self.trassMeterageFormFrame)
+        self.trassMeterageFormInpt.setObjectName(u"trassMeterageFormInpt")
 
-        self.gridLayout_3.addWidget(self.label_43, 9, 2, 1, 1)
+        self.verticalLayout_87.addWidget(self.trassMeterageFormInpt)
 
-        self.label_41 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_41.setObjectName(u"label_41")
 
-        self.gridLayout_3.addWidget(self.label_41, 6, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.trassMeterageFormFrame, 2, 1, 1, 1)
 
-        self.label_50 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_50.setObjectName(u"label_50")
+        self.parkingStatusFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.parkingStatusFormFrame.setObjectName(u"parkingStatusFormFrame")
+        self.parkingStatusFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.parkingStatusFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_82 = QVBoxLayout(self.parkingStatusFormFrame)
+        self.verticalLayout_82.setObjectName(u"verticalLayout_82")
+        self.parkingStatusFormLbl = QLabel(self.parkingStatusFormFrame)
+        self.parkingStatusFormLbl.setObjectName(u"parkingStatusFormLbl")
 
-        self.gridLayout_3.addWidget(self.label_50, 18, 1, 1, 1)
+        self.verticalLayout_82.addWidget(self.parkingStatusFormLbl)
 
-        self.frame_3 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.parkingStatusFormError = QLabel(self.parkingStatusFormFrame)
+        self.parkingStatusFormError.setObjectName(u"parkingStatusFormError")
 
-        self.gridLayout_3.addWidget(self.frame_3, 1, 2, 1, 1)
+        self.verticalLayout_82.addWidget(self.parkingStatusFormError)
 
-        self.verticalSpacer_13 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.parkingStatusFormInpt = QComboBox(self.parkingStatusFormFrame)
+        self.parkingStatusFormInpt.setObjectName(u"parkingStatusFormInpt")
 
-        self.gridLayout_3.addItem(self.verticalSpacer_13, 17, 2, 1, 1)
+        self.verticalLayout_82.addWidget(self.parkingStatusFormInpt)
 
-        self.verticalSpacer_9 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.gridLayout_3.addItem(self.verticalSpacer_9, 5, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.parkingStatusFormFrame, 0, 0, 1, 1)
 
-        self.spinBox_12 = QSpinBox(self.scrollAreaWidgetContents_2)
-        self.spinBox_12.setObjectName(u"spinBox_12")
+        self.privateYardFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.privateYardFormFrame.setObjectName(u"privateYardFormFrame")
+        self.privateYardFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.privateYardFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_93 = QVBoxLayout(self.privateYardFormFrame)
+        self.verticalLayout_93.setObjectName(u"verticalLayout_93")
+        self.privateYardFormLbl = QLabel(self.privateYardFormFrame)
+        self.privateYardFormLbl.setObjectName(u"privateYardFormLbl")
 
-        self.gridLayout_3.addWidget(self.spinBox_12, 13, 1, 1, 1)
+        self.verticalLayout_93.addWidget(self.privateYardFormLbl)
 
-        self.label_40 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_40.setObjectName(u"label_40")
+        self.privateYardFormError = QLabel(self.privateYardFormFrame)
+        self.privateYardFormError.setObjectName(u"privateYardFormError")
 
-        self.gridLayout_3.addWidget(self.label_40, 3, 2, 1, 1)
+        self.verticalLayout_93.addWidget(self.privateYardFormError)
 
-        self.spinBox_11 = QSpinBox(self.scrollAreaWidgetContents_2)
-        self.spinBox_11.setObjectName(u"spinBox_11")
+        self.privateYardFormOptionsFrame = QFrame(self.privateYardFormFrame)
+        self.privateYardFormOptionsFrame.setObjectName(u"privateYardFormOptionsFrame")
+        self.privateYardFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.privateYardFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_94 = QVBoxLayout(self.privateYardFormOptionsFrame)
+        self.verticalLayout_94.setObjectName(u"verticalLayout_94")
 
-        self.gridLayout_3.addWidget(self.spinBox_11, 10, 1, 1, 1)
+        self.verticalLayout_93.addWidget(self.privateYardFormOptionsFrame)
 
-        self.label_44 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_44.setObjectName(u"label_44")
 
-        self.gridLayout_3.addWidget(self.label_44, 9, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.privateYardFormFrame, 4, 2, 1, 1)
 
-        self.verticalSpacer_7 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.elevatorFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.elevatorFormFrame.setObjectName(u"elevatorFormFrame")
+        self.elevatorFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.elevatorFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_96 = QVBoxLayout(self.elevatorFormFrame)
+        self.verticalLayout_96.setObjectName(u"verticalLayout_96")
+        self.elevatorFormLbl = QLabel(self.elevatorFormFrame)
+        self.elevatorFormLbl.setObjectName(u"elevatorFormLbl")
 
-        self.gridLayout_3.addItem(self.verticalSpacer_7, 2, 2, 1, 1)
+        self.verticalLayout_96.addWidget(self.elevatorFormLbl)
 
-        self.verticalSpacer_10 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.elevatorFormError = QLabel(self.elevatorFormFrame)
+        self.elevatorFormError.setObjectName(u"elevatorFormError")
 
-        self.gridLayout_3.addItem(self.verticalSpacer_10, 8, 2, 1, 1)
+        self.verticalLayout_96.addWidget(self.elevatorFormError)
 
-        self.label_38 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_38.setObjectName(u"label_38")
+        self.elevatorFormOptionsFrame = QFrame(self.elevatorFormFrame)
+        self.elevatorFormOptionsFrame.setObjectName(u"elevatorFormOptionsFrame")
+        self.elevatorFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.elevatorFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_97 = QVBoxLayout(self.elevatorFormOptionsFrame)
+        self.verticalLayout_97.setObjectName(u"verticalLayout_97")
 
-        self.gridLayout_3.addWidget(self.label_38, 0, 2, 1, 1)
+        self.verticalLayout_96.addWidget(self.elevatorFormOptionsFrame)
 
-        self.label_36 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_36.setObjectName(u"label_36")
 
-        self.gridLayout_3.addWidget(self.label_36, 0, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.elevatorFormFrame, 5, 2, 1, 1)
 
-        self.label_47 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_47.setObjectName(u"label_47")
+        self.balconyFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.balconyFormFrame.setObjectName(u"balconyFormFrame")
+        self.balconyFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.balconyFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_81 = QVBoxLayout(self.balconyFormFrame)
+        self.verticalLayout_81.setObjectName(u"verticalLayout_81")
+        self.balconyFormLbl = QLabel(self.balconyFormFrame)
+        self.balconyFormLbl.setObjectName(u"balconyFormLbl")
 
-        self.gridLayout_3.addWidget(self.label_47, 15, 2, 1, 1)
+        self.verticalLayout_81.addWidget(self.balconyFormLbl)
 
-        self.label_45 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_45.setObjectName(u"label_45")
+        self.balconyFormError = QLabel(self.balconyFormFrame)
+        self.balconyFormError.setObjectName(u"balconyFormError")
 
-        self.gridLayout_3.addWidget(self.label_45, 12, 2, 1, 1)
+        self.verticalLayout_81.addWidget(self.balconyFormError)
 
-        self.label_39 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_39.setObjectName(u"label_39")
+        self.balconyFormOptionsFrame = QFrame(self.balconyFormFrame)
+        self.balconyFormOptionsFrame.setObjectName(u"balconyFormOptionsFrame")
+        self.balconyFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.balconyFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_83 = QVBoxLayout(self.balconyFormOptionsFrame)
+        self.verticalLayout_83.setObjectName(u"verticalLayout_83")
 
-        self.gridLayout_3.addWidget(self.label_39, 3, 1, 1, 1)
+        self.verticalLayout_81.addWidget(self.balconyFormOptionsFrame)
 
-        self.frame_8 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setMinimumSize(QSize(0, 40))
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_3.addWidget(self.frame_8, 19, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.balconyFormFrame, 1, 2, 1, 1)
 
-        self.frame_7 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setMinimumSize(QSize(0, 40))
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.warehouseFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.warehouseFormFrame.setObjectName(u"warehouseFormFrame")
+        self.warehouseFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.warehouseFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_88 = QVBoxLayout(self.warehouseFormFrame)
+        self.verticalLayout_88.setObjectName(u"verticalLayout_88")
+        self.warehouseFormLbl = QLabel(self.warehouseFormFrame)
+        self.warehouseFormLbl.setObjectName(u"warehouseFormLbl")
 
-        self.gridLayout_3.addWidget(self.frame_7, 16, 2, 1, 1)
+        self.verticalLayout_88.addWidget(self.warehouseFormLbl)
 
-        self.frame_4 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.warehouseFormError = QLabel(self.warehouseFormFrame)
+        self.warehouseFormError.setObjectName(u"warehouseFormError")
 
-        self.gridLayout_3.addWidget(self.frame_4, 7, 2, 1, 1)
+        self.verticalLayout_88.addWidget(self.warehouseFormError)
 
-        self.spinBox_10 = QSpinBox(self.scrollAreaWidgetContents_2)
-        self.spinBox_10.setObjectName(u"spinBox_10")
+        self.warehouseFormOptionsFrame = QFrame(self.warehouseFormFrame)
+        self.warehouseFormOptionsFrame.setObjectName(u"warehouseFormOptionsFrame")
+        self.warehouseFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.warehouseFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_89 = QVBoxLayout(self.warehouseFormOptionsFrame)
+        self.verticalLayout_89.setObjectName(u"verticalLayout_89")
 
-        self.gridLayout_3.addWidget(self.spinBox_10, 7, 1, 1, 1)
+        self.verticalLayout_88.addWidget(self.warehouseFormOptionsFrame)
 
-        self.frame_2 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_3.addWidget(self.frame_2, 4, 2, 1, 1)
+        self.gridLayout_5.addWidget(self.warehouseFormFrame, 3, 2, 1, 1)
 
-        self.label_42 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_42.setObjectName(u"label_42")
+        self.parkingCountFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.parkingCountFormFrame.setObjectName(u"parkingCountFormFrame")
+        self.parkingCountFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.parkingCountFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_80 = QVBoxLayout(self.parkingCountFormFrame)
+        self.verticalLayout_80.setObjectName(u"verticalLayout_80")
+        self.parkingCountFormLbl = QLabel(self.parkingCountFormFrame)
+        self.parkingCountFormLbl.setObjectName(u"parkingCountFormLbl")
 
-        self.gridLayout_3.addWidget(self.label_42, 6, 2, 1, 1)
+        self.verticalLayout_80.addWidget(self.parkingCountFormLbl)
 
-        self.verticalSpacer_12 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.parkingCountFormError = QLabel(self.parkingCountFormFrame)
+        self.parkingCountFormError.setObjectName(u"parkingCountFormError")
 
-        self.gridLayout_3.addItem(self.verticalSpacer_12, 14, 2, 1, 1)
+        self.verticalLayout_80.addWidget(self.parkingCountFormError)
 
-        self.frame_5 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.parkingCountFormInpt = QSpinBox(self.parkingCountFormFrame)
+        self.parkingCountFormInpt.setObjectName(u"parkingCountFormInpt")
 
-        self.gridLayout_3.addWidget(self.frame_5, 10, 2, 1, 1)
+        self.verticalLayout_80.addWidget(self.parkingCountFormInpt)
 
-        self.spinBox_8 = QSpinBox(self.scrollAreaWidgetContents_2)
-        self.spinBox_8.setObjectName(u"spinBox_8")
 
-        self.gridLayout_3.addWidget(self.spinBox_8, 1, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.parkingCountFormFrame, 0, 1, 1, 1)
 
-        self.label_46 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_46.setObjectName(u"label_46")
+        self.balconyMeterageFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.balconyMeterageFormFrame.setObjectName(u"balconyMeterageFormFrame")
+        self.balconyMeterageFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.balconyMeterageFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_84 = QVBoxLayout(self.balconyMeterageFormFrame)
+        self.verticalLayout_84.setObjectName(u"verticalLayout_84")
+        self.balconyMeterageFormLbl = QLabel(self.balconyMeterageFormFrame)
+        self.balconyMeterageFormLbl.setObjectName(u"balconyMeterageFormLbl")
 
-        self.gridLayout_3.addWidget(self.label_46, 12, 1, 1, 1)
+        self.verticalLayout_84.addWidget(self.balconyMeterageFormLbl)
 
-        self.frame_9 = QFrame(self.scrollAreaWidgetContents_2)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setMinimumSize(QSize(0, 40))
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.balconyMeterageFormError = QLabel(self.balconyMeterageFormFrame)
+        self.balconyMeterageFormError.setObjectName(u"balconyMeterageFormError")
 
-        self.gridLayout_3.addWidget(self.frame_9, 19, 1, 1, 1)
+        self.verticalLayout_84.addWidget(self.balconyMeterageFormError)
 
-        self.gridLayout_3.setColumnStretch(0, 1)
-        self.gridLayout_3.setColumnStretch(1, 1)
-        self.gridLayout_3.setColumnStretch(2, 1)
+        self.balconyMeterageFormInpt = QSpinBox(self.balconyMeterageFormFrame)
+        self.balconyMeterageFormInpt.setObjectName(u"balconyMeterageFormInpt")
 
-        self.verticalLayout_18.addLayout(self.gridLayout_3)
+        self.verticalLayout_84.addWidget(self.balconyMeterageFormInpt)
+
+
+        self.gridLayout_5.addWidget(self.balconyMeterageFormFrame, 1, 1, 1, 1)
+
+        self.trassFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.trassFormFrame.setObjectName(u"trassFormFrame")
+        self.trassFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.trassFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_85 = QVBoxLayout(self.trassFormFrame)
+        self.verticalLayout_85.setObjectName(u"verticalLayout_85")
+        self.trassFormLbl = QLabel(self.trassFormFrame)
+        self.trassFormLbl.setObjectName(u"trassFormLbl")
+
+        self.verticalLayout_85.addWidget(self.trassFormLbl)
+
+        self.trassFormError = QLabel(self.trassFormFrame)
+        self.trassFormError.setObjectName(u"trassFormError")
+
+        self.verticalLayout_85.addWidget(self.trassFormError)
+
+        self.trassFormOptionsFrame = QFrame(self.trassFormFrame)
+        self.trassFormOptionsFrame.setObjectName(u"trassFormOptionsFrame")
+        self.trassFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.trassFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_86 = QVBoxLayout(self.trassFormOptionsFrame)
+        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
+
+        self.verticalLayout_85.addWidget(self.trassFormOptionsFrame)
+
+
+        self.gridLayout_5.addWidget(self.trassFormFrame, 2, 2, 1, 1)
+
+        self.warehouseMeterageFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.warehouseMeterageFormFrame.setObjectName(u"warehouseMeterageFormFrame")
+        self.warehouseMeterageFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.warehouseMeterageFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_90 = QVBoxLayout(self.warehouseMeterageFormFrame)
+        self.verticalLayout_90.setObjectName(u"verticalLayout_90")
+        self.warehouseMeterageFormLbl = QLabel(self.warehouseMeterageFormFrame)
+        self.warehouseMeterageFormLbl.setObjectName(u"warehouseMeterageFormLbl")
+
+        self.verticalLayout_90.addWidget(self.warehouseMeterageFormLbl)
+
+        self.warehouseMeterageFormError = QLabel(self.warehouseMeterageFormFrame)
+        self.warehouseMeterageFormError.setObjectName(u"warehouseMeterageFormError")
+
+        self.verticalLayout_90.addWidget(self.warehouseMeterageFormError)
+
+        self.warehouseMeterageFormInpt = QSpinBox(self.warehouseMeterageFormFrame)
+        self.warehouseMeterageFormInpt.setObjectName(u"warehouseMeterageFormInpt")
+
+        self.verticalLayout_90.addWidget(self.warehouseMeterageFormInpt)
+
+
+        self.gridLayout_5.addWidget(self.warehouseMeterageFormFrame, 3, 1, 1, 1)
+
+        self.parkingFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.parkingFormFrame.setObjectName(u"parkingFormFrame")
+        self.parkingFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.parkingFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_78 = QVBoxLayout(self.parkingFormFrame)
+        self.verticalLayout_78.setObjectName(u"verticalLayout_78")
+        self.parkingFormLbl = QLabel(self.parkingFormFrame)
+        self.parkingFormLbl.setObjectName(u"parkingFormLbl")
+
+        self.verticalLayout_78.addWidget(self.parkingFormLbl)
+
+        self.parkingFormError = QLabel(self.parkingFormFrame)
+        self.parkingFormError.setObjectName(u"parkingFormError")
+
+        self.verticalLayout_78.addWidget(self.parkingFormError)
+
+        self.parkingFormOptionsFrame = QFrame(self.parkingFormFrame)
+        self.parkingFormOptionsFrame.setObjectName(u"parkingFormOptionsFrame")
+        self.parkingFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.parkingFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_79 = QVBoxLayout(self.parkingFormOptionsFrame)
+        self.verticalLayout_79.setObjectName(u"verticalLayout_79")
+
+        self.verticalLayout_78.addWidget(self.parkingFormOptionsFrame)
+
+
+        self.gridLayout_5.addWidget(self.parkingFormFrame, 0, 2, 1, 1)
+
+        self.branchFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.branchFormFrame.setObjectName(u"branchFormFrame")
+        self.branchFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.branchFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_98 = QVBoxLayout(self.branchFormFrame)
+        self.verticalLayout_98.setObjectName(u"verticalLayout_98")
+        self.branchFormLbl = QLabel(self.branchFormFrame)
+        self.branchFormLbl.setObjectName(u"branchFormLbl")
+
+        self.verticalLayout_98.addWidget(self.branchFormLbl)
+
+        self.branchFormError = QLabel(self.branchFormFrame)
+        self.branchFormError.setObjectName(u"branchFormError")
+
+        self.verticalLayout_98.addWidget(self.branchFormError)
+
+        self.branchFormOptionsFrame = QFrame(self.branchFormFrame)
+        self.branchFormOptionsFrame.setObjectName(u"branchFormOptionsFrame")
+        self.branchFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.branchFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_99 = QVBoxLayout(self.branchFormOptionsFrame)
+        self.verticalLayout_99.setObjectName(u"verticalLayout_99")
+
+        self.verticalLayout_98.addWidget(self.branchFormOptionsFrame)
+
+
+        self.gridLayout_5.addWidget(self.branchFormFrame, 6, 2, 1, 1)
+
+        self.otherFeaturesFormFrame = QFrame(self.scrollAreaWidgetContents_2)
+        self.otherFeaturesFormFrame.setObjectName(u"otherFeaturesFormFrame")
+        self.otherFeaturesFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherFeaturesFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_100 = QVBoxLayout(self.otherFeaturesFormFrame)
+        self.verticalLayout_100.setObjectName(u"verticalLayout_100")
+        self.otherFeaturesFormLbl = QLabel(self.otherFeaturesFormFrame)
+        self.otherFeaturesFormLbl.setObjectName(u"otherFeaturesFormLbl")
+
+        self.verticalLayout_100.addWidget(self.otherFeaturesFormLbl)
+
+        self.otherFeaturesFormError = QLabel(self.otherFeaturesFormFrame)
+        self.otherFeaturesFormError.setObjectName(u"otherFeaturesFormError")
+
+        self.verticalLayout_100.addWidget(self.otherFeaturesFormError)
+
+        self.otherFeaturesFormOptionsFrame = QFrame(self.otherFeaturesFormFrame)
+        self.otherFeaturesFormOptionsFrame.setObjectName(u"otherFeaturesFormOptionsFrame")
+        self.otherFeaturesFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherFeaturesFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_101 = QVBoxLayout(self.otherFeaturesFormOptionsFrame)
+        self.verticalLayout_101.setObjectName(u"verticalLayout_101")
+
+        self.verticalLayout_100.addWidget(self.otherFeaturesFormOptionsFrame)
+
+
+        self.gridLayout_5.addWidget(self.otherFeaturesFormFrame, 6, 1, 1, 1)
+
+
+        self.verticalLayout_18.addLayout(self.gridLayout_5)
 
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
 
@@ -1745,7 +2401,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 586, 1345))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 732, 1145))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -1753,245 +2409,379 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_23.addWidget(self.label_51)
 
-        self.gridLayout_12 = QGridLayout()
-        self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.gridLayout_12.setHorizontalSpacing(100)
-        self.gridLayout_12.setVerticalSpacing(20)
-        self.frame_17 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_17.setObjectName(u"frame_17")
-        self.frame_17.setMinimumSize(QSize(0, 50))
-        self.frame_17.setFrameShape(QFrame.StyledPanel)
-        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.gridLayout_3 = QGridLayout()
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout_3.setHorizontalSpacing(100)
+        self.gridLayout_3.setVerticalSpacing(20)
+        self.gridLayout_3.setContentsMargins(-1, 20, -1, 20)
+        self.floorMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.floorMaterialFormFrame.setObjectName(u"floorMaterialFormFrame")
+        self.floorMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_102 = QVBoxLayout(self.floorMaterialFormFrame)
+        self.verticalLayout_102.setObjectName(u"verticalLayout_102")
+        self.floorMaterialFormLbl = QLabel(self.floorMaterialFormFrame)
+        self.floorMaterialFormLbl.setObjectName(u"floorMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.frame_17, 5, 1, 1, 1)
+        self.verticalLayout_102.addWidget(self.floorMaterialFormLbl)
 
-        self.frame_12 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setMinimumSize(QSize(0, 50))
-        self.frame_12.setFrameShape(QFrame.StyledPanel)
-        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.floorMaterialFormError = QLabel(self.floorMaterialFormFrame)
+        self.floorMaterialFormError.setObjectName(u"floorMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.frame_12, 1, 0, 1, 1)
+        self.verticalLayout_102.addWidget(self.floorMaterialFormError)
 
-        self.label_71 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_71.setObjectName(u"label_71")
+        self.floorMaterialFormOptionsFrame = QFrame(self.floorMaterialFormFrame)
+        self.floorMaterialFormOptionsFrame.setObjectName(u"floorMaterialFormOptionsFrame")
+        self.floorMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_103 = QVBoxLayout(self.floorMaterialFormOptionsFrame)
+        self.verticalLayout_103.setObjectName(u"verticalLayout_103")
 
-        self.gridLayout_12.addWidget(self.label_71, 12, 1, 1, 1)
+        self.verticalLayout_102.addWidget(self.floorMaterialFormOptionsFrame)
 
-        self.lineEdit_22 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_22.setObjectName(u"lineEdit_22")
+        self.otherFloorMaterialFormInpt = QLineEdit(self.floorMaterialFormFrame)
+        self.otherFloorMaterialFormInpt.setObjectName(u"otherFloorMaterialFormInpt")
 
-        self.gridLayout_12.addWidget(self.lineEdit_22, 6, 0, 1, 1)
+        self.verticalLayout_102.addWidget(self.otherFloorMaterialFormInpt)
 
-        self.label_66 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_66.setObjectName(u"label_66")
 
-        self.gridLayout_12.addWidget(self.label_66, 8, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.floorMaterialFormFrame, 0, 2, 1, 1)
 
-        self.lineEdit_25 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_25.setObjectName(u"lineEdit_25")
+        self.windowMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.windowMaterialFormFrame.setObjectName(u"windowMaterialFormFrame")
+        self.windowMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.windowMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_118 = QVBoxLayout(self.windowMaterialFormFrame)
+        self.verticalLayout_118.setObjectName(u"verticalLayout_118")
+        self.windowMaterialFormLbl = QLabel(self.windowMaterialFormFrame)
+        self.windowMaterialFormLbl.setObjectName(u"windowMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.lineEdit_25, 15, 2, 1, 1)
+        self.verticalLayout_118.addWidget(self.windowMaterialFormLbl)
 
-        self.lineEdit_15 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_15.setObjectName(u"lineEdit_15")
+        self.windowMaterialFormError = QLabel(self.windowMaterialFormFrame)
+        self.windowMaterialFormError.setObjectName(u"windowMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.lineEdit_15, 2, 2, 1, 1)
+        self.verticalLayout_118.addWidget(self.windowMaterialFormError)
 
-        self.lineEdit_23 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_23.setObjectName(u"lineEdit_23")
+        self.windowMaterialFormOptionsFrame = QFrame(self.windowMaterialFormFrame)
+        self.windowMaterialFormOptionsFrame.setObjectName(u"windowMaterialFormOptionsFrame")
+        self.windowMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.windowMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_119 = QVBoxLayout(self.windowMaterialFormOptionsFrame)
+        self.verticalLayout_119.setObjectName(u"verticalLayout_119")
 
-        self.gridLayout_12.addWidget(self.lineEdit_23, 10, 2, 1, 1)
+        self.verticalLayout_118.addWidget(self.windowMaterialFormOptionsFrame)
 
-        self.label_64 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_64.setObjectName(u"label_64")
+        self.otherWindowMaterialFormInpt = QLineEdit(self.windowMaterialFormFrame)
+        self.otherWindowMaterialFormInpt.setObjectName(u"otherWindowMaterialFormInpt")
 
-        self.gridLayout_12.addWidget(self.label_64, 0, 1, 1, 1)
+        self.verticalLayout_118.addWidget(self.otherWindowMaterialFormInpt)
 
-        self.frame_22 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_22.setObjectName(u"frame_22")
-        self.frame_22.setMinimumSize(QSize(0, 50))
-        self.frame_22.setFrameShape(QFrame.StyledPanel)
-        self.frame_22.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_12.addWidget(self.frame_22, 13, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.windowMaterialFormFrame, 3, 1, 1, 1)
 
-        self.frame_19 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setMinimumSize(QSize(0, 50))
-        self.frame_19.setFrameShape(QFrame.StyledPanel)
-        self.frame_19.setFrameShadow(QFrame.Raised)
+        self.wallsMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.wallsMaterialFormFrame.setObjectName(u"wallsMaterialFormFrame")
+        self.wallsMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.wallsMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_104 = QVBoxLayout(self.wallsMaterialFormFrame)
+        self.verticalLayout_104.setObjectName(u"verticalLayout_104")
+        self.wallsMaterialFormLbl = QLabel(self.wallsMaterialFormFrame)
+        self.wallsMaterialFormLbl.setObjectName(u"wallsMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.frame_19, 9, 2, 1, 1)
+        self.verticalLayout_104.addWidget(self.wallsMaterialFormLbl)
 
-        self.frame_11 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setMinimumSize(QSize(0, 50))
-        self.frame_11.setFrameShape(QFrame.StyledPanel)
-        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.wallsMaterialFormError = QLabel(self.wallsMaterialFormFrame)
+        self.wallsMaterialFormError.setObjectName(u"wallsMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.frame_11, 1, 1, 1, 1)
+        self.verticalLayout_104.addWidget(self.wallsMaterialFormError)
 
-        self.lineEdit_28 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_28.setObjectName(u"lineEdit_28")
+        self.wallsMaterialFormOptionsFrame = QFrame(self.wallsMaterialFormFrame)
+        self.wallsMaterialFormOptionsFrame.setObjectName(u"wallsMaterialFormOptionsFrame")
+        self.wallsMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.wallsMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_105 = QVBoxLayout(self.wallsMaterialFormOptionsFrame)
+        self.verticalLayout_105.setObjectName(u"verticalLayout_105")
 
-        self.gridLayout_12.addWidget(self.lineEdit_28, 18, 1, 1, 1)
+        self.verticalLayout_104.addWidget(self.wallsMaterialFormOptionsFrame)
 
-        self.verticalSpacer_17 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.otherWallsMaterialFormInpt = QLineEdit(self.wallsMaterialFormFrame)
+        self.otherWallsMaterialFormInpt.setObjectName(u"otherWallsMaterialFormInpt")
 
-        self.gridLayout_12.addItem(self.verticalSpacer_17, 7, 2, 1, 1)
+        self.verticalLayout_104.addWidget(self.otherWallsMaterialFormInpt)
 
-        self.label_72 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_72.setObjectName(u"label_72")
 
-        self.gridLayout_12.addWidget(self.label_72, 12, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.wallsMaterialFormFrame, 0, 1, 1, 1)
 
-        self.lineEdit_27 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_27.setObjectName(u"lineEdit_27")
+        self.kitchenMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.kitchenMaterialFormFrame.setObjectName(u"kitchenMaterialFormFrame")
+        self.kitchenMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.kitchenMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_110 = QVBoxLayout(self.kitchenMaterialFormFrame)
+        self.verticalLayout_110.setObjectName(u"verticalLayout_110")
+        self.kitchenMaterialFormLbl = QLabel(self.kitchenMaterialFormFrame)
+        self.kitchenMaterialFormLbl.setObjectName(u"kitchenMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.lineEdit_27, 18, 2, 1, 1)
+        self.verticalLayout_110.addWidget(self.kitchenMaterialFormLbl)
 
-        self.frame_10 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setMinimumSize(QSize(0, 50))
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
+        self.kitchenMaterialFormError = QLabel(self.kitchenMaterialFormFrame)
+        self.kitchenMaterialFormError.setObjectName(u"kitchenMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.frame_10, 1, 2, 1, 1)
+        self.verticalLayout_110.addWidget(self.kitchenMaterialFormError)
 
-        self.lineEdit_26 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_26.setObjectName(u"lineEdit_26")
+        self.kitchenMaterialFormOptionsFrame = QFrame(self.kitchenMaterialFormFrame)
+        self.kitchenMaterialFormOptionsFrame.setObjectName(u"kitchenMaterialFormOptionsFrame")
+        self.kitchenMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.kitchenMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_111 = QVBoxLayout(self.kitchenMaterialFormOptionsFrame)
+        self.verticalLayout_111.setObjectName(u"verticalLayout_111")
 
-        self.gridLayout_12.addWidget(self.lineEdit_26, 15, 1, 1, 1)
+        self.verticalLayout_110.addWidget(self.kitchenMaterialFormOptionsFrame)
 
-        self.label_65 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_65.setObjectName(u"label_65")
+        self.otherKitchenMaterialFormInpt = QLineEdit(self.kitchenMaterialFormFrame)
+        self.otherKitchenMaterialFormInpt.setObjectName(u"otherKitchenMaterialFormInpt")
 
-        self.gridLayout_12.addWidget(self.label_65, 8, 1, 1, 1)
+        self.verticalLayout_110.addWidget(self.otherKitchenMaterialFormInpt)
 
-        self.label_74 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_74.setObjectName(u"label_74")
 
-        self.gridLayout_12.addWidget(self.label_74, 16, 2, 1, 1)
+        self.gridLayout_3.addWidget(self.kitchenMaterialFormFrame, 1, 1, 1, 1)
 
-        self.label_73 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_73.setObjectName(u"label_73")
+        self.cabinetsMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.cabinetsMaterialFormFrame.setObjectName(u"cabinetsMaterialFormFrame")
+        self.cabinetsMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.cabinetsMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_108 = QVBoxLayout(self.cabinetsMaterialFormFrame)
+        self.verticalLayout_108.setObjectName(u"verticalLayout_108")
+        self.cabinetsMaterialFormLbl = QLabel(self.cabinetsMaterialFormFrame)
+        self.cabinetsMaterialFormLbl.setObjectName(u"cabinetsMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.label_73, 16, 1, 1, 1)
+        self.verticalLayout_108.addWidget(self.cabinetsMaterialFormLbl)
 
-        self.label_62 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_62.setObjectName(u"label_62")
+        self.cabinetsMaterialFormError = QLabel(self.cabinetsMaterialFormFrame)
+        self.cabinetsMaterialFormError.setObjectName(u"cabinetsMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.label_62, 0, 2, 1, 1)
+        self.verticalLayout_108.addWidget(self.cabinetsMaterialFormError)
 
-        self.verticalSpacer_18 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.cabinetsMaterialFormOptionsFrame = QFrame(self.cabinetsMaterialFormFrame)
+        self.cabinetsMaterialFormOptionsFrame.setObjectName(u"cabinetsMaterialFormOptionsFrame")
+        self.cabinetsMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.cabinetsMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_109 = QVBoxLayout(self.cabinetsMaterialFormOptionsFrame)
+        self.verticalLayout_109.setObjectName(u"verticalLayout_109")
 
-        self.gridLayout_12.addItem(self.verticalSpacer_18, 11, 2, 1, 1)
+        self.verticalLayout_108.addWidget(self.cabinetsMaterialFormOptionsFrame)
 
-        self.frame_20 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_20.setObjectName(u"frame_20")
-        self.frame_20.setMinimumSize(QSize(0, 50))
-        self.frame_20.setFrameShape(QFrame.StyledPanel)
-        self.frame_20.setFrameShadow(QFrame.Raised)
+        self.otherCabinetsMaterialFormInpt = QLineEdit(self.cabinetsMaterialFormFrame)
+        self.otherCabinetsMaterialFormInpt.setObjectName(u"otherCabinetsMaterialFormInpt")
 
-        self.gridLayout_12.addWidget(self.frame_20, 9, 1, 1, 1)
+        self.verticalLayout_108.addWidget(self.otherCabinetsMaterialFormInpt)
 
-        self.frame_18 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_18.setObjectName(u"frame_18")
-        self.frame_18.setMinimumSize(QSize(0, 50))
-        self.frame_18.setFrameShape(QFrame.StyledPanel)
-        self.frame_18.setFrameShadow(QFrame.Raised)
 
-        self.gridLayout_12.addWidget(self.frame_18, 5, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.cabinetsMaterialFormFrame, 1, 2, 1, 1)
 
-        self.label_68 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_68.setObjectName(u"label_68")
+        self.ceilingMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.ceilingMaterialFormFrame.setObjectName(u"ceilingMaterialFormFrame")
+        self.ceilingMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.ceilingMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_106 = QVBoxLayout(self.ceilingMaterialFormFrame)
+        self.verticalLayout_106.setObjectName(u"verticalLayout_106")
+        self.ceilingMaterialFormLbl = QLabel(self.ceilingMaterialFormFrame)
+        self.ceilingMaterialFormLbl.setObjectName(u"ceilingMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.label_68, 4, 1, 1, 1)
+        self.verticalLayout_106.addWidget(self.ceilingMaterialFormLbl)
 
-        self.label_63 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_63.setObjectName(u"label_63")
+        self.ceilingMaterialFormError = QLabel(self.ceilingMaterialFormFrame)
+        self.ceilingMaterialFormError.setObjectName(u"ceilingMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.label_63, 0, 0, 1, 1)
+        self.verticalLayout_106.addWidget(self.ceilingMaterialFormError)
 
-        self.verticalSpacer_14 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.ceilingMaterialFormOptionsFrame = QFrame(self.ceilingMaterialFormFrame)
+        self.ceilingMaterialFormOptionsFrame.setObjectName(u"ceilingMaterialFormOptionsFrame")
+        self.ceilingMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.ceilingMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_107 = QVBoxLayout(self.ceilingMaterialFormOptionsFrame)
+        self.verticalLayout_107.setObjectName(u"verticalLayout_107")
 
-        self.gridLayout_12.addItem(self.verticalSpacer_14, 3, 2, 1, 1)
+        self.verticalLayout_106.addWidget(self.ceilingMaterialFormOptionsFrame)
 
-        self.frame_23 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setMinimumSize(QSize(0, 50))
-        self.frame_23.setFrameShape(QFrame.StyledPanel)
-        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.otherCeilingMaterialFormInpt = QLineEdit(self.ceilingMaterialFormFrame)
+        self.otherCeilingMaterialFormInpt.setObjectName(u"otherCeilingMaterialFormInpt")
 
-        self.gridLayout_12.addWidget(self.frame_23, 17, 2, 1, 1)
+        self.verticalLayout_106.addWidget(self.otherCeilingMaterialFormInpt)
 
-        self.lineEdit_24 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_24.setObjectName(u"lineEdit_24")
 
-        self.gridLayout_12.addWidget(self.lineEdit_24, 10, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.ceilingMaterialFormFrame, 0, 0, 1, 1)
 
-        self.frame_16 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_16.setObjectName(u"frame_16")
-        self.frame_16.setMinimumSize(QSize(0, 50))
-        self.frame_16.setFrameShape(QFrame.StyledPanel)
-        self.frame_16.setFrameShadow(QFrame.Raised)
+        self.warmingSystemFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.warmingSystemFormFrame.setObjectName(u"warmingSystemFormFrame")
+        self.warmingSystemFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.warmingSystemFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_114 = QVBoxLayout(self.warmingSystemFormFrame)
+        self.verticalLayout_114.setObjectName(u"verticalLayout_114")
+        self.warmingSystemFormLbl = QLabel(self.warmingSystemFormFrame)
+        self.warmingSystemFormLbl.setObjectName(u"warmingSystemFormLbl")
 
-        self.gridLayout_12.addWidget(self.frame_16, 5, 2, 1, 1)
+        self.verticalLayout_114.addWidget(self.warmingSystemFormLbl)
 
-        self.lineEdit_19 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_19.setObjectName(u"lineEdit_19")
+        self.warmingSystemFormError = QLabel(self.warmingSystemFormFrame)
+        self.warmingSystemFormError.setObjectName(u"warmingSystemFormError")
 
-        self.gridLayout_12.addWidget(self.lineEdit_19, 2, 0, 1, 1)
+        self.verticalLayout_114.addWidget(self.warmingSystemFormError)
 
-        self.lineEdit_20 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_20.setObjectName(u"lineEdit_20")
+        self.warmingSystemFormOptionsFrame = QFrame(self.warmingSystemFormFrame)
+        self.warmingSystemFormOptionsFrame.setObjectName(u"warmingSystemFormOptionsFrame")
+        self.warmingSystemFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.warmingSystemFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_115 = QVBoxLayout(self.warmingSystemFormOptionsFrame)
+        self.verticalLayout_115.setObjectName(u"verticalLayout_115")
 
-        self.gridLayout_12.addWidget(self.lineEdit_20, 6, 2, 1, 1)
+        self.verticalLayout_114.addWidget(self.warmingSystemFormOptionsFrame)
 
-        self.frame_24 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setMinimumSize(QSize(0, 50))
-        self.frame_24.setFrameShape(QFrame.StyledPanel)
-        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.otherWarmingSystemFormInpt = QLineEdit(self.warmingSystemFormFrame)
+        self.otherWarmingSystemFormInpt.setObjectName(u"otherWarmingSystemFormInpt")
 
-        self.gridLayout_12.addWidget(self.frame_24, 17, 1, 1, 1)
+        self.verticalLayout_114.addWidget(self.otherWarmingSystemFormInpt)
 
-        self.lineEdit_16 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_16.setObjectName(u"lineEdit_16")
 
-        self.gridLayout_12.addWidget(self.lineEdit_16, 2, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.warmingSystemFormFrame, 2, 1, 1, 1)
 
-        self.frame_21 = QFrame(self.scrollAreaWidgetContents_4)
-        self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setMinimumSize(QSize(0, 50))
-        self.frame_21.setFrameShape(QFrame.StyledPanel)
-        self.frame_21.setFrameShadow(QFrame.Raised)
+        self.doorMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.doorMaterialFormFrame.setObjectName(u"doorMaterialFormFrame")
+        self.doorMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.doorMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_116 = QVBoxLayout(self.doorMaterialFormFrame)
+        self.verticalLayout_116.setObjectName(u"verticalLayout_116")
+        self.doorMaterialFormLbl = QLabel(self.doorMaterialFormFrame)
+        self.doorMaterialFormLbl.setObjectName(u"doorMaterialFormLbl")
 
-        self.gridLayout_12.addWidget(self.frame_21, 13, 2, 1, 1)
+        self.verticalLayout_116.addWidget(self.doorMaterialFormLbl)
 
-        self.lineEdit_21 = QLineEdit(self.scrollAreaWidgetContents_4)
-        self.lineEdit_21.setObjectName(u"lineEdit_21")
+        self.doorMaterialFormError = QLabel(self.doorMaterialFormFrame)
+        self.doorMaterialFormError.setObjectName(u"doorMaterialFormError")
 
-        self.gridLayout_12.addWidget(self.lineEdit_21, 6, 1, 1, 1)
+        self.verticalLayout_116.addWidget(self.doorMaterialFormError)
 
-        self.label_69 = QLabel(self.scrollAreaWidgetContents_4)
-        self.label_69.setObjectName(u"label_69")
+        self.doorMaterialFormOptionsFrame = QFrame(self.doorMaterialFormFrame)
+        self.doorMaterialFormOptionsFrame.setObjectName(u"doorMaterialFormOptionsFrame")
+        self.doorMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.doorMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_117 = QVBoxLayout(self.doorMaterialFormOptionsFrame)
+        self.verticalLayout_117.setObjectName(u"verticalLayout_117")
 
-        self.gridLayout_12.addWidget(self.label_69, 4, 2, 1, 1)
+        self.verticalLayout_116.addWidget(self.doorMaterialFormOptionsFrame)
 
-        self.verticalSpacer_19 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.otherDoorMaterialFormInpt = QLineEdit(self.doorMaterialFormFrame)
+        self.otherDoorMaterialFormInpt.setObjectName(u"otherDoorMaterialFormInpt")
 
-        self.gridLayout_12.addItem(self.verticalSpacer_19, 14, 2, 1, 1)
+        self.verticalLayout_116.addWidget(self.otherDoorMaterialFormInpt)
 
-        self.gridLayout_12.setColumnStretch(0, 1)
-        self.gridLayout_12.setColumnStretch(1, 1)
-        self.gridLayout_12.setColumnStretch(2, 1)
-        self.gridLayout_12.setColumnMinimumWidth(0, 100)
-        self.gridLayout_12.setColumnMinimumWidth(1, 100)
-        self.gridLayout_12.setColumnMinimumWidth(2, 100)
 
-        self.verticalLayout_23.addLayout(self.gridLayout_12)
+        self.gridLayout_3.addWidget(self.doorMaterialFormFrame, 3, 2, 1, 1)
+
+        self.coolingSystemFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.coolingSystemFormFrame.setObjectName(u"coolingSystemFormFrame")
+        self.coolingSystemFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.coolingSystemFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_112 = QVBoxLayout(self.coolingSystemFormFrame)
+        self.verticalLayout_112.setObjectName(u"verticalLayout_112")
+        self.coolingSystemFormLbl = QLabel(self.coolingSystemFormFrame)
+        self.coolingSystemFormLbl.setObjectName(u"coolingSystemFormLbl")
+
+        self.verticalLayout_112.addWidget(self.coolingSystemFormLbl)
+
+        self.coolingSystemFormError = QLabel(self.coolingSystemFormFrame)
+        self.coolingSystemFormError.setObjectName(u"coolingSystemFormError")
+
+        self.verticalLayout_112.addWidget(self.coolingSystemFormError)
+
+        self.coolingSystemFormOptionsFrame = QFrame(self.coolingSystemFormFrame)
+        self.coolingSystemFormOptionsFrame.setObjectName(u"coolingSystemFormOptionsFrame")
+        self.coolingSystemFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.coolingSystemFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_113 = QVBoxLayout(self.coolingSystemFormOptionsFrame)
+        self.verticalLayout_113.setObjectName(u"verticalLayout_113")
+
+        self.verticalLayout_112.addWidget(self.coolingSystemFormOptionsFrame)
+
+        self.otherCoolingSystemFormInpt = QLineEdit(self.coolingSystemFormFrame)
+        self.otherCoolingSystemFormInpt.setObjectName(u"otherCoolingSystemFormInpt")
+
+        self.verticalLayout_112.addWidget(self.otherCoolingSystemFormInpt)
+
+
+        self.gridLayout_3.addWidget(self.coolingSystemFormFrame, 2, 2, 1, 1)
+
+        self.bathroomMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.bathroomMaterialFormFrame.setObjectName(u"bathroomMaterialFormFrame")
+        self.bathroomMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.bathroomMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_120 = QVBoxLayout(self.bathroomMaterialFormFrame)
+        self.verticalLayout_120.setObjectName(u"verticalLayout_120")
+        self.bathroomMaterialFormLbl = QLabel(self.bathroomMaterialFormFrame)
+        self.bathroomMaterialFormLbl.setObjectName(u"bathroomMaterialFormLbl")
+
+        self.verticalLayout_120.addWidget(self.bathroomMaterialFormLbl)
+
+        self.bathroomMaterialFormError = QLabel(self.bathroomMaterialFormFrame)
+        self.bathroomMaterialFormError.setObjectName(u"bathroomMaterialFormError")
+
+        self.verticalLayout_120.addWidget(self.bathroomMaterialFormError)
+
+        self.bathroomMaterialFormOptionsFrame = QFrame(self.bathroomMaterialFormFrame)
+        self.bathroomMaterialFormOptionsFrame.setObjectName(u"bathroomMaterialFormOptionsFrame")
+        self.bathroomMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.bathroomMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_121 = QVBoxLayout(self.bathroomMaterialFormOptionsFrame)
+        self.verticalLayout_121.setObjectName(u"verticalLayout_121")
+
+        self.verticalLayout_120.addWidget(self.bathroomMaterialFormOptionsFrame)
+
+        self.otherBathroomMaterialFormInpt = QLineEdit(self.bathroomMaterialFormFrame)
+        self.otherBathroomMaterialFormInpt.setObjectName(u"otherBathroomMaterialFormInpt")
+
+        self.verticalLayout_120.addWidget(self.otherBathroomMaterialFormInpt)
+
+
+        self.gridLayout_3.addWidget(self.bathroomMaterialFormFrame, 4, 2, 1, 1)
+
+        self.wcMaterialFormFrame = QFrame(self.scrollAreaWidgetContents_4)
+        self.wcMaterialFormFrame.setObjectName(u"wcMaterialFormFrame")
+        self.wcMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.wcMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_122 = QVBoxLayout(self.wcMaterialFormFrame)
+        self.verticalLayout_122.setObjectName(u"verticalLayout_122")
+        self.wcMaterialFormLbl = QLabel(self.wcMaterialFormFrame)
+        self.wcMaterialFormLbl.setObjectName(u"wcMaterialFormLbl")
+
+        self.verticalLayout_122.addWidget(self.wcMaterialFormLbl)
+
+        self.wcMaterialFormError = QLabel(self.wcMaterialFormFrame)
+        self.wcMaterialFormError.setObjectName(u"wcMaterialFormError")
+
+        self.verticalLayout_122.addWidget(self.wcMaterialFormError)
+
+        self.wcMaterialFormOptionsFrame = QFrame(self.wcMaterialFormFrame)
+        self.wcMaterialFormOptionsFrame.setObjectName(u"wcMaterialFormOptionsFrame")
+        self.wcMaterialFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.wcMaterialFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_123 = QVBoxLayout(self.wcMaterialFormOptionsFrame)
+        self.verticalLayout_123.setObjectName(u"verticalLayout_123")
+
+        self.verticalLayout_122.addWidget(self.wcMaterialFormOptionsFrame)
+
+        self.otherWcMaterialFormInpt = QLineEdit(self.wcMaterialFormFrame)
+        self.otherWcMaterialFormInpt.setObjectName(u"otherWcMaterialFormInpt")
+
+        self.verticalLayout_122.addWidget(self.otherWcMaterialFormInpt)
+
+
+        self.gridLayout_3.addWidget(self.wcMaterialFormFrame, 4, 1, 1, 1)
+
+        self.gridLayout_3.setColumnStretch(0, 1)
+        self.gridLayout_3.setColumnStretch(1, 1)
+        self.gridLayout_3.setColumnStretch(2, 1)
+
+        self.verticalLayout_23.addLayout(self.gridLayout_3)
 
         self.scrollArea_4.setWidget(self.scrollAreaWidgetContents_4)
 
@@ -2008,53 +2798,81 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_24.addWidget(self.label_67, 0, Qt.AlignHCenter)
 
-        self.gridLayout_14 = QGridLayout()
-        self.gridLayout_14.setObjectName(u"gridLayout_14")
-        self.gridLayout_14.setHorizontalSpacing(100)
-        self.gridLayout_14.setVerticalSpacing(20)
-        self.widget_3 = QWidget(self.form_step7)
-        self.widget_3.setObjectName(u"widget_3")
+        self.gridLayout_7 = QGridLayout()
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_7.setContentsMargins(-1, 20, -1, 20)
+        self.featuredImageFormFrame = QFrame(self.form_step7)
+        self.featuredImageFormFrame.setObjectName(u"featuredImageFormFrame")
+        self.featuredImageFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.featuredImageFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_124 = QVBoxLayout(self.featuredImageFormFrame)
+        self.verticalLayout_124.setObjectName(u"verticalLayout_124")
+        self.featuredImageFormLbl = QLabel(self.featuredImageFormFrame)
+        self.featuredImageFormLbl.setObjectName(u"featuredImageFormLbl")
 
-        self.gridLayout_14.addWidget(self.widget_3, 0, 0, 1, 1)
+        self.verticalLayout_124.addWidget(self.featuredImageFormLbl)
 
-        self.widget_4 = QWidget(self.form_step7)
-        self.widget_4.setObjectName(u"widget_4")
+        self.featuredImageFormError = QLabel(self.featuredImageFormFrame)
+        self.featuredImageFormError.setObjectName(u"featuredImageFormError")
 
-        self.gridLayout_14.addWidget(self.widget_4, 0, 1, 1, 1)
+        self.verticalLayout_124.addWidget(self.featuredImageFormError)
 
-        self.pushButton_4 = QPushButton(self.form_step7)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.featuredImageFormBtn = QPushButton(self.featuredImageFormFrame)
+        self.featuredImageFormBtn.setObjectName(u"featuredImageFormBtn")
 
-        self.gridLayout_14.addWidget(self.pushButton_4, 4, 2, 1, 1)
+        self.verticalLayout_124.addWidget(self.featuredImageFormBtn)
 
-        self.pushButton_3 = QPushButton(self.form_step7)
-        self.pushButton_3.setObjectName(u"pushButton_3")
 
-        self.gridLayout_14.addWidget(self.pushButton_3, 1, 2, 1, 1)
+        self.gridLayout_7.addWidget(self.featuredImageFormFrame, 0, 2, 1, 1)
 
-        self.label_88 = QLabel(self.form_step7)
-        self.label_88.setObjectName(u"label_88")
+        self.frame_3 = QFrame(self.form_step7)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_125 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_125.setObjectName(u"verticalLayout_125")
 
-        self.gridLayout_14.addWidget(self.label_88, 0, 2, 1, 1)
+        self.gridLayout_7.addWidget(self.frame_3, 0, 1, 1, 1)
 
-        self.verticalSpacer_20 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.frame_4 = QFrame(self.form_step7)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_126 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_126.setObjectName(u"verticalLayout_126")
 
-        self.gridLayout_14.addItem(self.verticalSpacer_20, 5, 2, 1, 1)
+        self.gridLayout_7.addWidget(self.frame_4, 0, 0, 1, 1)
 
-        self.label_89 = QLabel(self.form_step7)
-        self.label_89.setObjectName(u"label_89")
+        self.galleryFormFrame = QFrame(self.form_step7)
+        self.galleryFormFrame.setObjectName(u"galleryFormFrame")
+        self.galleryFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.galleryFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_129 = QVBoxLayout(self.galleryFormFrame)
+        self.verticalLayout_129.setObjectName(u"verticalLayout_129")
+        self.galleryFormLbl = QLabel(self.galleryFormFrame)
+        self.galleryFormLbl.setObjectName(u"galleryFormLbl")
 
-        self.gridLayout_14.addWidget(self.label_89, 3, 2, 1, 1)
+        self.verticalLayout_129.addWidget(self.galleryFormLbl)
 
-        self.verticalSpacer_21 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.galleryFormError = QLabel(self.galleryFormFrame)
+        self.galleryFormError.setObjectName(u"galleryFormError")
 
-        self.gridLayout_14.addItem(self.verticalSpacer_21, 2, 2, 1, 1)
+        self.verticalLayout_129.addWidget(self.galleryFormError)
 
-        self.gridLayout_14.setColumnStretch(0, 1)
-        self.gridLayout_14.setColumnStretch(1, 1)
-        self.gridLayout_14.setColumnStretch(2, 1)
+        self.galleryFormBtn = QPushButton(self.galleryFormFrame)
+        self.galleryFormBtn.setObjectName(u"galleryFormBtn")
 
-        self.verticalLayout_24.addLayout(self.gridLayout_14)
+        self.verticalLayout_129.addWidget(self.galleryFormBtn)
+
+
+        self.gridLayout_7.addWidget(self.galleryFormFrame, 1, 2, 1, 1)
+
+
+        self.verticalLayout_24.addLayout(self.gridLayout_7)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_24.addItem(self.verticalSpacer)
 
         self.form_stackwidget.addWidget(self.form_step7)
         self.form_step8 = QWidget()
@@ -2066,24 +2884,46 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_25.addWidget(self.label_70, 0, Qt.AlignHCenter)
 
-        self.label_90 = QLabel(self.form_step8)
-        self.label_90.setObjectName(u"label_90")
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(-1, 20, -1, -1)
+        self.descriptionFormFrame = QFrame(self.form_step8)
+        self.descriptionFormFrame.setObjectName(u"descriptionFormFrame")
+        self.descriptionFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.descriptionFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_130 = QVBoxLayout(self.descriptionFormFrame)
+        self.verticalLayout_130.setObjectName(u"verticalLayout_130")
+        self.descriptionFormLbl = QLabel(self.descriptionFormFrame)
+        self.descriptionFormLbl.setObjectName(u"descriptionFormLbl")
 
-        self.verticalLayout_25.addWidget(self.label_90)
+        self.verticalLayout_130.addWidget(self.descriptionFormLbl)
 
-        self.textEdit_3 = QTextEdit(self.form_step8)
-        self.textEdit_3.setObjectName(u"textEdit_3")
+        self.descriptionFormError = QLabel(self.descriptionFormFrame)
+        self.descriptionFormError.setObjectName(u"descriptionFormError")
 
-        self.verticalLayout_25.addWidget(self.textEdit_3)
+        self.verticalLayout_130.addWidget(self.descriptionFormError)
+
+        self.descriptionFormInpt = QTextEdit(self.descriptionFormFrame)
+        self.descriptionFormInpt.setObjectName(u"descriptionFormInpt")
+
+        self.verticalLayout_130.addWidget(self.descriptionFormInpt)
+
+
+        self.horizontalLayout_8.addWidget(self.descriptionFormFrame)
+
+
+        self.verticalLayout_25.addLayout(self.horizontalLayout_8)
 
         self.form_stackwidget.addWidget(self.form_step8)
 
         self.verticalLayout_5.addWidget(self.form_stackwidget)
 
-        self.horizontalLayout_2 = QHBoxLayout()
+        self.frame1 = QFrame(self.page_register_property)
+        self.frame1.setObjectName(u"frame1")
+        self.horizontalLayout_2 = QHBoxLayout(self.frame1)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(0, 16, -1, -1)
-        self.pushButton_2 = QPushButton(self.page_register_property)
+        self.horizontalLayout_2.setContentsMargins(1, 16, -1, -1)
+        self.pushButton_2 = QPushButton(self.frame1)
         self.pushButton_2.setObjectName(u"pushButton_2")
 
         self.horizontalLayout_2.addWidget(self.pushButton_2)
@@ -2096,14 +2936,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.verticalSpacer_6)
 
-        self.pushButton = QPushButton(self.page_register_property)
+        self.pushButton = QPushButton(self.frame1)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setStyleSheet(u"")
 
         self.horizontalLayout_2.addWidget(self.pushButton)
 
 
-        self.verticalLayout_5.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_5.addWidget(self.frame1)
 
         self.pages.addWidget(self.page_register_property)
         self.page_estate = QWidget()
@@ -2117,7 +2957,7 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollAreaWidgetContents_5 = QWidget()
         self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 818, 3178))
+        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 822, 3257))
         self.verticalLayout_27 = QVBoxLayout(self.scrollAreaWidgetContents_5)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.label_93 = QLabel(self.scrollAreaWidgetContents_5)
@@ -2164,67 +3004,67 @@ class Ui_MainWindow(object):
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.label_135 = QLabel(self.priceBoxFrame)
         self.label_135.setObjectName(u"label_135")
-        sizePolicy = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_135.sizePolicy().hasHeightForWidth())
-        self.label_135.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Maximum)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_135.sizePolicy().hasHeightForWidth())
+        self.label_135.setSizePolicy(sizePolicy1)
         self.label_135.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_135, 0, Qt.AlignHCenter)
 
         self.label_136 = QLabel(self.priceBoxFrame)
         self.label_136.setObjectName(u"label_136")
-        sizePolicy.setHeightForWidth(self.label_136.sizePolicy().hasHeightForWidth())
-        self.label_136.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_136.sizePolicy().hasHeightForWidth())
+        self.label_136.setSizePolicy(sizePolicy1)
         self.label_136.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_136, 0, Qt.AlignHCenter)
 
         self.label_137 = QLabel(self.priceBoxFrame)
         self.label_137.setObjectName(u"label_137")
-        sizePolicy.setHeightForWidth(self.label_137.sizePolicy().hasHeightForWidth())
-        self.label_137.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_137.sizePolicy().hasHeightForWidth())
+        self.label_137.setSizePolicy(sizePolicy1)
         self.label_137.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_137, 0, Qt.AlignHCenter)
 
         self.label_138 = QLabel(self.priceBoxFrame)
         self.label_138.setObjectName(u"label_138")
-        sizePolicy.setHeightForWidth(self.label_138.sizePolicy().hasHeightForWidth())
-        self.label_138.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_138.sizePolicy().hasHeightForWidth())
+        self.label_138.setSizePolicy(sizePolicy1)
         self.label_138.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_138, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         self.label_140 = QLabel(self.priceBoxFrame)
         self.label_140.setObjectName(u"label_140")
-        sizePolicy.setHeightForWidth(self.label_140.sizePolicy().hasHeightForWidth())
-        self.label_140.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_140.sizePolicy().hasHeightForWidth())
+        self.label_140.setSizePolicy(sizePolicy1)
         self.label_140.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_140, 0, Qt.AlignHCenter)
 
         self.label_139 = QLabel(self.priceBoxFrame)
         self.label_139.setObjectName(u"label_139")
-        sizePolicy.setHeightForWidth(self.label_139.sizePolicy().hasHeightForWidth())
-        self.label_139.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_139.sizePolicy().hasHeightForWidth())
+        self.label_139.setSizePolicy(sizePolicy1)
         self.label_139.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_139, 0, Qt.AlignHCenter)
 
         self.label_142 = QLabel(self.priceBoxFrame)
         self.label_142.setObjectName(u"label_142")
-        sizePolicy.setHeightForWidth(self.label_142.sizePolicy().hasHeightForWidth())
-        self.label_142.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_142.sizePolicy().hasHeightForWidth())
+        self.label_142.setSizePolicy(sizePolicy1)
         self.label_142.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_142, 0, Qt.AlignHCenter)
 
         self.label_141 = QLabel(self.priceBoxFrame)
         self.label_141.setObjectName(u"label_141")
-        sizePolicy.setHeightForWidth(self.label_141.sizePolicy().hasHeightForWidth())
-        self.label_141.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_141.sizePolicy().hasHeightForWidth())
+        self.label_141.setSizePolicy(sizePolicy1)
         self.label_141.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_141, 0, Qt.AlignHCenter)
@@ -2264,8 +3104,8 @@ class Ui_MainWindow(object):
 
         self.label_95 = QLabel(self.frame_40)
         self.label_95.setObjectName(u"label_95")
-        sizePolicy.setHeightForWidth(self.label_95.sizePolicy().hasHeightForWidth())
-        self.label_95.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_95.sizePolicy().hasHeightForWidth())
+        self.label_95.setSizePolicy(sizePolicy1)
         self.label_95.setStyleSheet(u"")
 
         self.horizontalLayout_7.addWidget(self.label_95)
@@ -2284,8 +3124,8 @@ class Ui_MainWindow(object):
 
         self.label_106 = QLabel(self.frame_40)
         self.label_106.setObjectName(u"label_106")
-        sizePolicy.setHeightForWidth(self.label_106.sizePolicy().hasHeightForWidth())
-        self.label_106.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_106.sizePolicy().hasHeightForWidth())
+        self.label_106.setSizePolicy(sizePolicy1)
         self.label_106.setStyleSheet(u"")
 
         self.horizontalLayout_13.addWidget(self.label_106)
@@ -2298,30 +3138,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14.setContentsMargins(-1, 0, 0, 0)
         self.label_133 = QLabel(self.frame_40)
         self.label_133.setObjectName(u"label_133")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.label_133.sizePolicy().hasHeightForWidth())
-        self.label_133.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.label_133.sizePolicy().hasHeightForWidth())
+        self.label_133.setSizePolicy(sizePolicy2)
         self.label_133.setStyleSheet(u"title")
 
         self.horizontalLayout_14.addWidget(self.label_133)
 
         self.label_107 = QLabel(self.frame_40)
         self.label_107.setObjectName(u"label_107")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.label_107.sizePolicy().hasHeightForWidth())
-        self.label_107.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_107.sizePolicy().hasHeightForWidth())
+        self.label_107.setSizePolicy(sizePolicy3)
         self.label_107.setStyleSheet(u"")
 
         self.horizontalLayout_14.addWidget(self.label_107)
 
         self.label_108 = QLabel(self.frame_40)
         self.label_108.setObjectName(u"label_108")
-        sizePolicy.setHeightForWidth(self.label_108.sizePolicy().hasHeightForWidth())
-        self.label_108.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_108.sizePolicy().hasHeightForWidth())
+        self.label_108.setSizePolicy(sizePolicy1)
         self.label_108.setStyleSheet(u"")
 
         self.horizontalLayout_14.addWidget(self.label_108)
@@ -2340,8 +3180,8 @@ class Ui_MainWindow(object):
 
         self.label_110 = QLabel(self.frame_40)
         self.label_110.setObjectName(u"label_110")
-        sizePolicy.setHeightForWidth(self.label_110.sizePolicy().hasHeightForWidth())
-        self.label_110.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_110.sizePolicy().hasHeightForWidth())
+        self.label_110.setSizePolicy(sizePolicy1)
         self.label_110.setStyleSheet(u"")
 
         self.horizontalLayout_15.addWidget(self.label_110)
@@ -2360,8 +3200,8 @@ class Ui_MainWindow(object):
 
         self.label_130 = QLabel(self.frame_40)
         self.label_130.setObjectName(u"label_130")
-        sizePolicy.setHeightForWidth(self.label_130.sizePolicy().hasHeightForWidth())
-        self.label_130.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_130.sizePolicy().hasHeightForWidth())
+        self.label_130.setSizePolicy(sizePolicy1)
         self.label_130.setStyleSheet(u"")
 
         self.horizontalLayout_24.addWidget(self.label_130)
@@ -2380,8 +3220,8 @@ class Ui_MainWindow(object):
 
         self.label_132 = QLabel(self.frame_40)
         self.label_132.setObjectName(u"label_132")
-        sizePolicy.setHeightForWidth(self.label_132.sizePolicy().hasHeightForWidth())
-        self.label_132.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_132.sizePolicy().hasHeightForWidth())
+        self.label_132.setSizePolicy(sizePolicy1)
         self.label_132.setStyleSheet(u"")
 
         self.horizontalLayout_25.addWidget(self.label_132)
@@ -2452,8 +3292,8 @@ class Ui_MainWindow(object):
 
         self.label_152 = QLabel(self.ownerInfoBodyFrame)
         self.label_152.setObjectName(u"label_152")
-        sizePolicy2.setHeightForWidth(self.label_152.sizePolicy().hasHeightForWidth())
-        self.label_152.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_152.sizePolicy().hasHeightForWidth())
+        self.label_152.setSizePolicy(sizePolicy3)
         self.label_152.setStyleSheet(u"")
 
         self.horizontalLayout_31.addWidget(self.label_152)
@@ -2471,8 +3311,8 @@ class Ui_MainWindow(object):
 
         self.label_145 = QLabel(self.ownerInfoBodyFrame)
         self.label_145.setObjectName(u"label_145")
-        sizePolicy2.setHeightForWidth(self.label_145.sizePolicy().hasHeightForWidth())
-        self.label_145.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_145.sizePolicy().hasHeightForWidth())
+        self.label_145.setSizePolicy(sizePolicy3)
         self.label_145.setStyleSheet(u"")
 
         self.horizontalLayout_27.addWidget(self.label_145)
@@ -2490,8 +3330,8 @@ class Ui_MainWindow(object):
 
         self.label_156 = QLabel(self.ownerInfoBodyFrame)
         self.label_156.setObjectName(u"label_156")
-        sizePolicy2.setHeightForWidth(self.label_156.sizePolicy().hasHeightForWidth())
-        self.label_156.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_156.sizePolicy().hasHeightForWidth())
+        self.label_156.setSizePolicy(sizePolicy3)
         self.label_156.setStyleSheet(u"")
 
         self.horizontalLayout_33.addWidget(self.label_156)
@@ -2509,8 +3349,8 @@ class Ui_MainWindow(object):
 
         self.label_160 = QLabel(self.ownerInfoBodyFrame)
         self.label_160.setObjectName(u"label_160")
-        sizePolicy2.setHeightForWidth(self.label_160.sizePolicy().hasHeightForWidth())
-        self.label_160.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_160.sizePolicy().hasHeightForWidth())
+        self.label_160.setSizePolicy(sizePolicy3)
         self.label_160.setStyleSheet(u"")
 
         self.horizontalLayout_35.addWidget(self.label_160)
@@ -2528,8 +3368,8 @@ class Ui_MainWindow(object):
 
         self.label_147 = QLabel(self.ownerInfoBodyFrame)
         self.label_147.setObjectName(u"label_147")
-        sizePolicy2.setHeightForWidth(self.label_147.sizePolicy().hasHeightForWidth())
-        self.label_147.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_147.sizePolicy().hasHeightForWidth())
+        self.label_147.setSizePolicy(sizePolicy3)
         self.label_147.setStyleSheet(u"")
 
         self.horizontalLayout_29.addWidget(self.label_147)
@@ -2547,8 +3387,8 @@ class Ui_MainWindow(object):
 
         self.label_154 = QLabel(self.ownerInfoBodyFrame)
         self.label_154.setObjectName(u"label_154")
-        sizePolicy2.setHeightForWidth(self.label_154.sizePolicy().hasHeightForWidth())
-        self.label_154.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_154.sizePolicy().hasHeightForWidth())
+        self.label_154.setSizePolicy(sizePolicy3)
         self.label_154.setStyleSheet(u"")
 
         self.horizontalLayout_32.addWidget(self.label_154)
@@ -2566,8 +3406,8 @@ class Ui_MainWindow(object):
 
         self.label_162 = QLabel(self.ownerInfoBodyFrame)
         self.label_162.setObjectName(u"label_162")
-        sizePolicy2.setHeightForWidth(self.label_162.sizePolicy().hasHeightForWidth())
-        self.label_162.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_162.sizePolicy().hasHeightForWidth())
+        self.label_162.setSizePolicy(sizePolicy3)
         self.label_162.setStyleSheet(u"")
 
         self.horizontalLayout_36.addWidget(self.label_162)
@@ -2585,8 +3425,8 @@ class Ui_MainWindow(object):
 
         self.label_158 = QLabel(self.ownerInfoBodyFrame)
         self.label_158.setObjectName(u"label_158")
-        sizePolicy2.setHeightForWidth(self.label_158.sizePolicy().hasHeightForWidth())
-        self.label_158.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_158.sizePolicy().hasHeightForWidth())
+        self.label_158.setSizePolicy(sizePolicy3)
         self.label_158.setStyleSheet(u"")
 
         self.horizontalLayout_34.addWidget(self.label_158)
@@ -2604,8 +3444,8 @@ class Ui_MainWindow(object):
 
         self.label_164 = QLabel(self.ownerInfoBodyFrame)
         self.label_164.setObjectName(u"label_164")
-        sizePolicy2.setHeightForWidth(self.label_164.sizePolicy().hasHeightForWidth())
-        self.label_164.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_164.sizePolicy().hasHeightForWidth())
+        self.label_164.setSizePolicy(sizePolicy3)
         self.label_164.setStyleSheet(u"")
 
         self.horizontalLayout_37.addWidget(self.label_164)
@@ -2672,8 +3512,8 @@ class Ui_MainWindow(object):
 
         self.label_166 = QLabel(self.FurtherInfoBodyFrame)
         self.label_166.setObjectName(u"label_166")
-        sizePolicy2.setHeightForWidth(self.label_166.sizePolicy().hasHeightForWidth())
-        self.label_166.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_166.sizePolicy().hasHeightForWidth())
+        self.label_166.setSizePolicy(sizePolicy3)
         self.label_166.setStyleSheet(u"")
 
         self.horizontalLayout_38.addWidget(self.label_166)
@@ -2691,8 +3531,8 @@ class Ui_MainWindow(object):
 
         self.label_168 = QLabel(self.FurtherInfoBodyFrame)
         self.label_168.setObjectName(u"label_168")
-        sizePolicy2.setHeightForWidth(self.label_168.sizePolicy().hasHeightForWidth())
-        self.label_168.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_168.sizePolicy().hasHeightForWidth())
+        self.label_168.setSizePolicy(sizePolicy3)
         self.label_168.setStyleSheet(u"")
 
         self.horizontalLayout_39.addWidget(self.label_168)
@@ -2710,8 +3550,8 @@ class Ui_MainWindow(object):
 
         self.label_170 = QLabel(self.FurtherInfoBodyFrame)
         self.label_170.setObjectName(u"label_170")
-        sizePolicy2.setHeightForWidth(self.label_170.sizePolicy().hasHeightForWidth())
-        self.label_170.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_170.sizePolicy().hasHeightForWidth())
+        self.label_170.setSizePolicy(sizePolicy3)
         self.label_170.setStyleSheet(u"")
 
         self.horizontalLayout_40.addWidget(self.label_170)
@@ -2729,8 +3569,8 @@ class Ui_MainWindow(object):
 
         self.label_172 = QLabel(self.FurtherInfoBodyFrame)
         self.label_172.setObjectName(u"label_172")
-        sizePolicy2.setHeightForWidth(self.label_172.sizePolicy().hasHeightForWidth())
-        self.label_172.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_172.sizePolicy().hasHeightForWidth())
+        self.label_172.setSizePolicy(sizePolicy3)
         self.label_172.setStyleSheet(u"")
 
         self.horizontalLayout_41.addWidget(self.label_172)
@@ -2748,8 +3588,8 @@ class Ui_MainWindow(object):
 
         self.label_174 = QLabel(self.FurtherInfoBodyFrame)
         self.label_174.setObjectName(u"label_174")
-        sizePolicy2.setHeightForWidth(self.label_174.sizePolicy().hasHeightForWidth())
-        self.label_174.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_174.sizePolicy().hasHeightForWidth())
+        self.label_174.setSizePolicy(sizePolicy3)
         self.label_174.setStyleSheet(u"")
 
         self.horizontalLayout_42.addWidget(self.label_174)
@@ -2767,8 +3607,8 @@ class Ui_MainWindow(object):
 
         self.label_176 = QLabel(self.FurtherInfoBodyFrame)
         self.label_176.setObjectName(u"label_176")
-        sizePolicy2.setHeightForWidth(self.label_176.sizePolicy().hasHeightForWidth())
-        self.label_176.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_176.sizePolicy().hasHeightForWidth())
+        self.label_176.setSizePolicy(sizePolicy3)
         self.label_176.setStyleSheet(u"")
 
         self.horizontalLayout_43.addWidget(self.label_176)
@@ -2862,8 +3702,8 @@ class Ui_MainWindow(object):
 
         self.label_209 = QLabel(self.facilitiesInfoBodyFrame)
         self.label_209.setObjectName(u"label_209")
-        sizePolicy2.setHeightForWidth(self.label_209.sizePolicy().hasHeightForWidth())
-        self.label_209.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_209.sizePolicy().hasHeightForWidth())
+        self.label_209.setSizePolicy(sizePolicy3)
         self.label_209.setStyleSheet(u"")
 
         self.horizontalLayout_58.addWidget(self.label_209)
@@ -2953,8 +3793,8 @@ class Ui_MainWindow(object):
 
         self.label_211 = QLabel(self.facilitiesInfoBodyFrame)
         self.label_211.setObjectName(u"label_211")
-        sizePolicy2.setHeightForWidth(self.label_211.sizePolicy().hasHeightForWidth())
-        self.label_211.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_211.sizePolicy().hasHeightForWidth())
+        self.label_211.setSizePolicy(sizePolicy3)
         self.label_211.setStyleSheet(u"")
 
         self.horizontalLayout_59.addWidget(self.label_211)
@@ -2974,8 +3814,8 @@ class Ui_MainWindow(object):
 
         self.label_217 = QLabel(self.facilitiesInfoBodyFrame)
         self.label_217.setObjectName(u"label_217")
-        sizePolicy2.setHeightForWidth(self.label_217.sizePolicy().hasHeightForWidth())
-        self.label_217.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_217.sizePolicy().hasHeightForWidth())
+        self.label_217.setSizePolicy(sizePolicy3)
         self.label_217.setStyleSheet(u"")
 
         self.horizontalLayout_68.addWidget(self.label_217)
@@ -3020,8 +3860,8 @@ class Ui_MainWindow(object):
 
         self.label_219 = QLabel(self.facilitiesInfoBodyFrame)
         self.label_219.setObjectName(u"label_219")
-        sizePolicy2.setHeightForWidth(self.label_219.sizePolicy().hasHeightForWidth())
-        self.label_219.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_219.sizePolicy().hasHeightForWidth())
+        self.label_219.setSizePolicy(sizePolicy3)
         self.label_219.setStyleSheet(u"")
 
         self.horizontalLayout_69.addWidget(self.label_219)
@@ -3039,8 +3879,8 @@ class Ui_MainWindow(object):
 
         self.label_221 = QLabel(self.facilitiesInfoBodyFrame)
         self.label_221.setObjectName(u"label_221")
-        sizePolicy2.setHeightForWidth(self.label_221.sizePolicy().hasHeightForWidth())
-        self.label_221.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_221.sizePolicy().hasHeightForWidth())
+        self.label_221.setSizePolicy(sizePolicy3)
         self.label_221.setStyleSheet(u"")
 
         self.horizontalLayout_70.addWidget(self.label_221)
@@ -3143,8 +3983,8 @@ class Ui_MainWindow(object):
 
         self.label_178 = QLabel(self.frame_52)
         self.label_178.setObjectName(u"label_178")
-        sizePolicy2.setHeightForWidth(self.label_178.sizePolicy().hasHeightForWidth())
-        self.label_178.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_178.sizePolicy().hasHeightForWidth())
+        self.label_178.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_6.addWidget(self.label_178)
 
@@ -3181,8 +4021,8 @@ class Ui_MainWindow(object):
 
         self.label_212 = QLabel(self.frame_52)
         self.label_212.setObjectName(u"label_212")
-        sizePolicy2.setHeightForWidth(self.label_212.sizePolicy().hasHeightForWidth())
-        self.label_212.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_212.sizePolicy().hasHeightForWidth())
+        self.label_212.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_44.addWidget(self.label_212)
 
@@ -3219,8 +4059,8 @@ class Ui_MainWindow(object):
 
         self.label_228 = QLabel(self.frame_52)
         self.label_228.setObjectName(u"label_228")
-        sizePolicy2.setHeightForWidth(self.label_228.sizePolicy().hasHeightForWidth())
-        self.label_228.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_228.sizePolicy().hasHeightForWidth())
+        self.label_228.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_71.addWidget(self.label_228)
 
@@ -3257,8 +4097,8 @@ class Ui_MainWindow(object):
 
         self.label_230 = QLabel(self.frame_52)
         self.label_230.setObjectName(u"label_230")
-        sizePolicy2.setHeightForWidth(self.label_230.sizePolicy().hasHeightForWidth())
-        self.label_230.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_230.sizePolicy().hasHeightForWidth())
+        self.label_230.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_72.addWidget(self.label_230)
 
@@ -3295,8 +4135,8 @@ class Ui_MainWindow(object):
 
         self.label_236 = QLabel(self.frame_52)
         self.label_236.setObjectName(u"label_236")
-        sizePolicy2.setHeightForWidth(self.label_236.sizePolicy().hasHeightForWidth())
-        self.label_236.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_236.sizePolicy().hasHeightForWidth())
+        self.label_236.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_75.addWidget(self.label_236)
 
@@ -3333,8 +4173,8 @@ class Ui_MainWindow(object):
 
         self.label_234 = QLabel(self.frame_52)
         self.label_234.setObjectName(u"label_234")
-        sizePolicy2.setHeightForWidth(self.label_234.sizePolicy().hasHeightForWidth())
-        self.label_234.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_234.sizePolicy().hasHeightForWidth())
+        self.label_234.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_74.addWidget(self.label_234)
 
@@ -3371,8 +4211,8 @@ class Ui_MainWindow(object):
 
         self.label_232 = QLabel(self.frame_52)
         self.label_232.setObjectName(u"label_232")
-        sizePolicy2.setHeightForWidth(self.label_232.sizePolicy().hasHeightForWidth())
-        self.label_232.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_232.sizePolicy().hasHeightForWidth())
+        self.label_232.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_73.addWidget(self.label_232)
 
@@ -3409,8 +4249,8 @@ class Ui_MainWindow(object):
 
         self.label_238 = QLabel(self.frame_52)
         self.label_238.setObjectName(u"label_238")
-        sizePolicy2.setHeightForWidth(self.label_238.sizePolicy().hasHeightForWidth())
-        self.label_238.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_238.sizePolicy().hasHeightForWidth())
+        self.label_238.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_76.addWidget(self.label_238)
 
@@ -3447,8 +4287,8 @@ class Ui_MainWindow(object):
 
         self.label_240 = QLabel(self.frame_52)
         self.label_240.setObjectName(u"label_240")
-        sizePolicy2.setHeightForWidth(self.label_240.sizePolicy().hasHeightForWidth())
-        self.label_240.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_240.sizePolicy().hasHeightForWidth())
+        self.label_240.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_77.addWidget(self.label_240)
 
@@ -3485,8 +4325,8 @@ class Ui_MainWindow(object):
 
         self.label_242 = QLabel(self.frame_52)
         self.label_242.setObjectName(u"label_242")
-        sizePolicy2.setHeightForWidth(self.label_242.sizePolicy().hasHeightForWidth())
-        self.label_242.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_242.sizePolicy().hasHeightForWidth())
+        self.label_242.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_78.addWidget(self.label_242)
 
@@ -3523,8 +4363,8 @@ class Ui_MainWindow(object):
 
         self.label_244 = QLabel(self.frame_52)
         self.label_244.setObjectName(u"label_244")
-        sizePolicy2.setHeightForWidth(self.label_244.sizePolicy().hasHeightForWidth())
-        self.label_244.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.label_244.sizePolicy().hasHeightForWidth())
+        self.label_244.setSizePolicy(sizePolicy3)
 
         self.horizontalLayout_79.addWidget(self.label_244)
 
@@ -4044,7 +4884,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 886, 25))
+        self.menubar.setGeometry(QRect(0, 0, 969, 30))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -4054,8 +4894,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pages.setCurrentIndex(0)
-        self.form_stackwidget.setCurrentIndex(3)
+        self.pages.setCurrentIndex(1)
+        self.form_stackwidget.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -4099,138 +4939,321 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"\u06f2", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u06f1", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0648\u0639", None))
-        self.melkCategoryLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0645\u0644\u06a9", None))
-        self.melkCategoryLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.melkCategoryFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0645\u0644\u06a9", None))
+        self.melkCategoryFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.melkCategoryFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.melkCategoryFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.melkCategoryFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"\u0622\u062f\u0631\u0633", None))
         self.regionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0646\u0637\u0642\u0647", None))
         self.regionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.regionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.regionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.regionFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.cityFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0647\u0631", None))
         self.cityFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.cityFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.cityFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.cityFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.streetFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062d\u0644\u0647", None))
         self.streetFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.streetFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.streetFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.streetFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.addressFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0622\u062f\u0631\u0633", None))
         self.addressFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.addressFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.addressFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.addressFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0627\u0644\u06a9", None))
         self.owner1PhoneNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u062b\u0627\u0628\u062a \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
         self.owner1PhoneNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.guardPhoneNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0646\u06af\u0647\u0628\u0627\u0646", None))
-        self.guardPhoneNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.ownerName1FormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
-        self.ownerName1FormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.guardNameFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0646\u06af\u0647\u0628\u0627\u0646", None))
-        self.guardNameFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.ownerName2FormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0645\u0627\u0644\u06a9 \u062f\u0648\u0645", None))
-        self.ownerName2FormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.owner1PhoneNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.owner1PhoneNumberFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.owner2MobileNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0627\u0644\u06a9 \u062f\u0648\u0645", None))
         self.owner2MobileNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.owner2MobileNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.owner2MobileNumberFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.ownerName2FormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0645\u0627\u0644\u06a9 \u062f\u0648\u0645", None))
+        self.ownerName2FormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.ownerName2FormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.ownerName2FormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.tenantNameFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0645\u0633\u062a\u0627\u062c\u0631", None))
         self.tenantNameFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.owner1MobileNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
-        self.owner1MobileNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.tenantNameFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.tenantNameFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.tenantPhoneNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0633\u062a\u0627\u062c\u0631", None))
         self.tenantPhoneNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.tenantPhoneNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.tenantPhoneNumberFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.guardNameFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0646\u06af\u0647\u0628\u0627\u0646", None))
+        self.guardNameFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.guardNameFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.guardNameFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.guardPhoneNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0646\u06af\u0647\u0628\u0627\u0646", None))
+        self.guardPhoneNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.guardPhoneNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.guardPhoneNumberFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.ownerName1FormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0627\u0645 \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
+        self.ownerName1FormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.ownerName1FormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.ownerName1FormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.owner1MobileNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
+        self.owner1MobileNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.owner1MobileNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.owner1MobileNumberFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.ownerDescriptionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a ", None))
         self.ownerDescriptionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.ownerDescriptionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.ownerDescriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0644\u06cc", None))
-        self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698", None))
-        self.label_21.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u062a\u0631 \u0645\u0631\u0628\u0639", None))
-        self.label_23.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.unitPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u062a\u0631 \u0645\u0631\u0628\u0639", None))
+        self.unitPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.unitPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.unitPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.unitPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.meterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698", None))
+        self.meterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.meterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.meterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.meterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.totalPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
+        self.totalPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.totalPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.totalPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.totalPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062d\u0627\u0633\u0628\u0647 \u0642\u06cc\u0645\u062a \u0628\u0631\u0627\u0633\u0627\u0633", None))
         self.label_20.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
-        self.label_22.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
+        self.radioButton_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u0631\u062a\u0631", None))
-        self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0631\u0647\u0646", None))
-        self.label_24.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647", None))
-        self.label_25.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.radioButton_5.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0634\u062f\u0647", None))
-        self.radioButton_4.setText(QCoreApplication.translate("MainWindow", u"\u0635\u0641\u0631", None))
-        self.radioButton_3.setText(QCoreApplication.translate("MainWindow", u"\u0647\u06cc\u0686\u06a9\u062f\u0627\u0645", None))
-        self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0647\u062a \u0646\u0648\u0631\u06af\u06cc\u0631\u06cc", None))
-        self.label_28.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0648\u0627\u062d\u062f\u0647\u0627", None))
-        self.label_31.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_32.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u0648\u0627\u062d\u062f \u062f\u0631 \u0637\u0628\u0642\u0647", None))
-        self.label_32.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_30.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0637\u0628\u0642\u0627\u062a", None))
-        self.label_30.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_33.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0628\u0627\u0632\u0633\u0627\u0632\u06cc", None))
-        self.label_33.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u0644 \u0633\u0627\u062e\u062a", None))
-        self.label_27.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0633\u0646\u062f", None))
-        self.label_26.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_134.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0639\u0627\u0648\u0636\u0647:", None))
-        self.label_134.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_181.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0627\u06cc\u0637 \u0645\u0639\u0627\u0648\u0636\u0647", None))
-        self.label_181.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0628\u0642\u0647", None))
-        self.label_29.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.radioButton.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.landMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0633\u0627\u062e\u062a", None))
+        self.landMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.landMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.landMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.landMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.openingWidthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0631\u0636 \u062f\u0647\u0627\u0646\u0647", None))
+        self.openingWidthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.openingWidthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.openingWidthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.openingWidthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.floorCounFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0637\u0628\u0642\u0627\u062a", None))
+        self.floorCounFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorCounFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorCounFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorCounFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.compensationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0639\u0627\u0648\u0636\u0647:", None))
+        self.compensationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.compensationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.compensationFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0628\u0642\u0647", None))
+        self.floorFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.participationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0631\u06a9\u062a", None))
+        self.participationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.participationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.participationFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.documentStatusLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0633\u0646\u062f", None))
+        self.documentStatusLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.documentStatusError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.documentStatusError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.documentStatusInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.floorUnitCountLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u0648\u0627\u062d\u062f \u062f\u0631 \u0637\u0628\u0642\u0647", None))
+        self.floorUnitCountLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorUnitCountError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorUnitCountError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorUnitCountInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.lightDirectionLbl.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0647\u062a \u0646\u0648\u0631\u06af\u06cc\u0631\u06cc", None))
+        self.lightDirectionLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.lightDirectionError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.lightDirectionError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.lightDirectionInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.constructionYearLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u0644 \u0633\u0627\u062e\u062a", None))
+        self.constructionYearLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.constructionYearError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.constructionYearError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.constructionYearInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.mortgagePriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0631\u0647\u0646", None))
+        self.mortgagePriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.mortgagePriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.mortgagePriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.mortgagePriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.totalBuildingUnitFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0648\u0627\u062d\u062f\u0647\u0627", None))
+        self.totalBuildingUnitFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.totalBuildingUnitFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.totalBuildingUnitFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.totalBuildingUnitFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.buildingMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0633\u0627\u062e\u062a", None))
+        self.buildingMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.buildingMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.buildingMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.buildingMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.rentPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647", None))
+        self.rentPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.rentPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.rentPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.rentPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.compensationConditionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0627\u06cc\u0637 \u0645\u0639\u0627\u0648\u0636\u0647", None))
+        self.compensationConditionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.compensationConditionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.compensationConditionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.compensationConditionFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.rebuildingFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0628\u0627\u0632\u0633\u0627\u0632\u06cc", None))
+        self.rebuildingFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.rebuildingFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.rebuildingFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.lengthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0648\u0644", None))
+        self.lengthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.lengthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.lengthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.lengthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.widthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0631\u0636", None))
+        self.widthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.widthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.widthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.widthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.buildingLicenseFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0627\u0646\u0647 \u0633\u0627\u062e\u062a", None))
+        self.buildingLicenseFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.buildingLicenseFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.buildingLicenseFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a", None))
-        self.label_37.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u067e\u0627\u0631\u06a9\u06cc\u0646\u06af", None))
-        self.label_37.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_48.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0646\u0634\u0639\u0627\u0628\u0627\u062a", None))
-        self.label_48.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_43.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0646\u0628\u0627\u0631\u06cc", None))
-        self.label_43.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_41.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0628\u0647\u0627\u0631\u062e\u0648\u0627\u0628", None))
-        self.label_41.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_50.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u06cc\u0631 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a", None))
-        self.label_50.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_40.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0644\u06a9\u0646", None))
-        self.label_40.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_44.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0627\u0646\u0628\u0627\u0631\u06cc", None))
-        self.label_44.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_38.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u0631\u06a9\u06cc\u0646\u06a9", None))
-        self.label_38.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_36.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u067e\u0627\u0631\u06a9\u06cc\u0646\u06a9", None))
-        self.label_36.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_47.setText(QCoreApplication.translate("MainWindow", u"\u0622\u0633\u0627\u0646\u0633\u0648\u0631", None))
-        self.label_47.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_45.setText(QCoreApplication.translate("MainWindow", u"\u062d\u06cc\u0627\u0637 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc", None))
-        self.label_45.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_39.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0628\u0627\u0644\u06a9\u0646", None))
-        self.label_39.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_42.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0647\u0627\u0631\u062e\u0648\u0627\u0628", None))
-        self.label_42.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_46.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u062d\u06cc\u0627\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc", None))
-        self.label_46.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.privateYardMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u062d\u06cc\u0627\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc", None))
+        self.privateYardMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.privateYardMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.privateYardMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.privateYardMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.trassMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0628\u0647\u0627\u0631\u062e\u0648\u0627\u0628", None))
+        self.trassMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.trassMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.trassMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.trassMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.parkingStatusFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u067e\u0627\u0631\u06a9\u06cc\u0646\u06af", None))
+        self.parkingStatusFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.parkingStatusFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.parkingStatusFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.parkingStatusFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.privateYardFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062d\u06cc\u0627\u0637 \u0627\u062e\u062a\u0635\u0627\u0635\u06cc", None))
+        self.privateYardFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.privateYardFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.privateYardFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.elevatorFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0622\u0633\u0627\u0646\u0633\u0648\u0631", None))
+        self.elevatorFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.elevatorFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.elevatorFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.balconyFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0644\u06a9\u0646", None))
+        self.balconyFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.balconyFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.balconyFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.warehouseFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0646\u0628\u0627\u0631\u06cc", None))
+        self.warehouseFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.warehouseFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.warehouseFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.parkingCountFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u067e\u0627\u0631\u06a9\u06cc\u0646\u06a9", None))
+        self.parkingCountFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.parkingCountFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.parkingCountFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.parkingCountFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.balconyMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0628\u0627\u0644\u06a9\u0646", None))
+        self.balconyMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.balconyMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.balconyMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.balconyMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.trassFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0647\u0627\u0631\u062e\u0648\u0627\u0628", None))
+        self.trassFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.trassFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.trassFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.warehouseMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0627\u0646\u0628\u0627\u0631\u06cc", None))
+        self.warehouseMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.warehouseMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.warehouseMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.warehouseMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.parkingFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u0631\u06a9\u06cc\u0646\u06a9", None))
+        self.parkingFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.parkingFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.parkingFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.branchFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0646\u0634\u0639\u0627\u0628\u0627\u062a", None))
+        self.branchFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.branchFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.branchFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherFeaturesFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u06cc\u0631 \u0627\u0645\u06a9\u0627\u0646\u0627\u062a", None))
+        self.otherFeaturesFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.otherFeaturesFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.otherFeaturesFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u062a\u0631\u06cc\u0627\u0644", None))
-        self.label_71.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0646\u062c\u0631\u0647", None))
-        self.label_71.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_66.setText(QCoreApplication.translate("MainWindow", u"\u0633\u06cc\u0633\u062a\u0645 \u0633\u0631\u0645\u0627\u06cc\u0634\u06cc", None))
-        self.label_66.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_64.setText(QCoreApplication.translate("MainWindow", u"\u062f\u06cc\u0648\u0627\u0631\u0647\u0627", None))
-        self.label_64.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_72.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0631\u0628", None))
-        self.label_72.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_65.setText(QCoreApplication.translate("MainWindow", u"\u0633\u06cc\u0633\u062a\u0645 \u06af\u0631\u0645\u0627\u06cc\u0634\u06cc", None))
-        self.label_65.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_74.setText(QCoreApplication.translate("MainWindow", u"\u062d\u0645\u0627\u0645", None))
-        self.label_74.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_73.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc", None))
-        self.label_73.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_62.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0641", None))
-        self.label_62.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_68.setText(QCoreApplication.translate("MainWindow", u"\u0622\u0634\u067e\u0632\u062e\u0627\u0646\u0647", None))
-        self.label_68.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_63.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0642\u0641", None))
-        self.label_63.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_69.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0627\u0628\u06cc\u0646\u062a\u200c\u200c\u0647\u0627", None))
-        self.label_69.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0641", None))
+        self.floorMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherFloorMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.windowMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0646\u062c\u0631\u0647", None))
+        self.windowMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.windowMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.windowMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherWindowMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.wallsMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062f\u06cc\u0648\u0627\u0631\u0647\u0627", None))
+        self.wallsMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.wallsMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.wallsMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherWallsMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.kitchenMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0622\u0634\u067e\u0632\u062e\u0627\u0646\u0647", None))
+        self.kitchenMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.kitchenMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.kitchenMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherKitchenMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.cabinetsMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0627\u0628\u06cc\u0646\u062a\u200c\u200c\u0647\u0627", None))
+        self.cabinetsMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.cabinetsMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.cabinetsMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherCabinetsMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.ceilingMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0642\u0641", None))
+        self.ceilingMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.ceilingMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.ceilingMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherCeilingMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.warmingSystemFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u06cc\u0633\u062a\u0645 \u06af\u0631\u0645\u0627\u06cc\u0634\u06cc", None))
+        self.warmingSystemFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.warmingSystemFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.warmingSystemFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherWarmingSystemFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.doorMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062f\u0631\u0628", None))
+        self.doorMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.doorMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.doorMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherDoorMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.coolingSystemFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u06cc\u0633\u062a\u0645 \u0633\u0631\u0645\u0627\u06cc\u0634\u06cc", None))
+        self.coolingSystemFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.coolingSystemFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.coolingSystemFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherCoolingSystemFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.bathroomMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062d\u0645\u0627\u0645", None))
+        self.bathroomMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.bathroomMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.bathroomMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherBathroomMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.wcMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0631\u0648\u06cc\u0633 \u0628\u0647\u062f\u0627\u0634\u062a\u06cc", None))
+        self.wcMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.wcMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.wcMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.otherWcMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_67.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0627\u0648\u06cc\u0631", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u06af\u0630\u0627\u0631\u06cc", None))
-        self.label_88.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0648\u06cc\u0631 \u0634\u0627\u062e\u0635", None))
-        self.label_88.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.label_89.setText(QCoreApplication.translate("MainWindow", u"\u06af\u0627\u0644\u0631\u06cc \u062a\u0635\u0627\u0648\u06cc\u0631", None))
-        self.label_89.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.featuredImageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0648\u06cc\u0631 \u0634\u0627\u062e\u0635", None))
+        self.featuredImageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.featuredImageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.featuredImageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.featuredImageFormBtn.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u06af\u0630\u0627\u0631\u06cc", None))
+        self.galleryFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u06af\u0627\u0644\u0631\u06cc \u062a\u0635\u0627\u0648\u06cc\u0631", None))
+        self.galleryFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.galleryFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.galleryFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.galleryFormBtn.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u06af\u0630\u0627\u0631\u06cc", None))
         self.label_70.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0627\u0646", None))
-        self.label_90.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a \u062a\u06a9\u0644\u0645\u06cc\u0644\u06cc", None))
-        self.label_90.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.descriptionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a \u062a\u06a9\u0644\u0645\u06cc\u0644\u06cc", None))
+        self.descriptionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.descriptionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.descriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0639\u062f\u06cc", None))
         self.pushButton_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0642\u0628\u0644\u06cc", None))

@@ -15,193 +15,314 @@ class Form:
                 'input': self.ui.melkCategoryFormInpt,
                 'label': self.ui.melkCategoryFormLbl,
                 'error': self.ui.melkCategoryFormError,
-
-                'type': 'select',
+                'frame': self.ui.melkCategoryFormFrame,
+                'type': 'combobox',
                 'options' : 'melk-category',
             },
 
         'city' : {
+                #شهر
                 'input':self.ui.cityFormInpt,
                 'label':self.ui.cityFormLbl,
-                'type': 'text',
+                'error':self.ui.cityFormError,
+                'frame':self.ui.cityFormFrame,
+                'type': 'combobox',
+                'options' : 'city',
             },
 
         'region' : {
+            #منطقه
             'input':self.ui.regionFormInpt,
             'label':self.ui.regionFormLbl,
-            'type': 'number',
+            'error':self.ui.regionFormError,
+            'frame':self.ui.regionFormFrame,
+            'type': 'spinbox',
+            'options' : 'city',
         },
 
         'street' : {
+            #خیابان اصلی
             'input':self.ui.streetFormInpt,
             'label':self.ui.streetFormLbl,
-            'type': 'text',
+            'error':self.ui.streetFormError,
+            'frame':self.ui.streetFormFrame,
+            'type': 'input',
         },
 
         'address' : {
+            #آدرس
             'input':self.ui.addressFormInpt,
             'label':self.ui.addressFormLbl,
-            'type': 'textarea',
+            'error':self.ui.addressFormError,
+            'frame':self.ui.addressFormFrame,
+            'type': 'input',
         },
 
         'owner-name1' : {
+            #نام مالک اول
             'input':self.ui.ownerName1FormInpt,
             'label':self.ui.ownerName1FormLbl,
-            'type': 'text',
+            'error':self.ui.ownerName1FormError,
+            'frame':self.ui.ownerName1FormFrame,
+            'type': 'input',
         },
 
         'owner-name2' : {
+            #نام مالک دوم
             'input':self.ui.ownerName2FormInpt,
             'label':self.ui.ownerName2FormLbl,
-            'type': 'text',
+            'error':self.ui.ownerName2FormError,
+            'frame':self.ui.ownerName2FormFrame,
+            'type': 'input',
         },
 
         'owner1-mobile-number' : {
+            # شماره مالک اول
             'input':self.ui.owner1MobileNumberFormInpt,
             'label':self.ui.owner1MobileNumberFormLbl,
-            'type': 'text',
+            'error':self.ui.owner1MobileNumberFormError,
+            'frame':self.ui.owner1MobileNumberFormFrame,
+            'type': 'input',
         },
 
         'owner2-mobile-number' : {
+            # شماره مالک دوم
             'input':self.ui.owner2MobileNumberFormInpt,
             'label':self.ui.owner2MobileNumberFormLbl,
-            'type': 'text',
+            'error':self.ui.owner2MobileNumberFormError,
+            'frame':self.ui.owner2MobileNumberFormFrame,
+            'type': 'input',
         },
         
         'owner1-phone-number' : {
+            # شماره ثابت مالک دوم
             'input':self.ui.owner1PhoneNumberFormInpt,
             'label':self.ui.owner1PhoneNumberFormLbl,
-            'type': 'text',
+            'error':self.ui.owner1PhoneNumberFormError,
+            'frame':self.ui.owner1PhoneNumberFormFrame,
+            'type': 'input',
         },
 
         'tenant_name' : {
+            # نام مستاجر
             'input':self.ui.tenantNameFormInpt,
             'label':self.ui.tenantNameFormLbl,
-            'type': 'text',
+            'error':self.ui.tenantNameFormError,
+            'frame':self.ui.tenantNameFormFrame,
+            'type': 'input',
         },
 
         'tenant-phone-number' : {
+            # شماره مستاجر
             'input':self.ui.tenantPhoneNumberFormInpt,
             'label':self.ui.tenantPhoneNumberFormLbl,
-            'type': 'text',
+            'error':self.ui.tenantPhoneNumberFormError,
+            'frame':self.ui.tenantPhoneNumberFormFrame,
+            'type': 'input',
         },
 
         'guard-name' : {
+            # نام نگهبان
             'input':self.ui.guardNameFormInpt,
             'label':self.ui.guardNameFormLbl,
-            'type': 'text',
+            'error':self.ui.guardNameFormError,
+            'frame':self.ui.guardNameFormFrame,
+            'type': 'input',
         },
         
         'guard-phone-number' : {
+            # شماره نگهبان
             'input':self.ui.guardPhoneNumberFormInpt,
             'label':self.ui.guardPhoneNumberFormLbl,
-            'type': 'text',
+            'error':self.ui.guardPhoneNumberFormError,
+            'frame':self.ui.guardPhoneNumberFormFrame,
+            'type': 'input',
         },
 
         'owner-description':{
+            # توضیحات مالک
             'input':self.ui.ownerDescriptionFormInpt,
             'label':self.ui.ownerDescriptionFormLbl,
-            'type': 'text',
+            'error':self.ui.ownerDescriptionFormError,
+            'frame':self.ui.ownerDescriptionFormFrame,
+            'type': 'input',
         },
 
 
         'compensation' : {
-            'title':'معاوضه',
+            #معاوضه'
+            'input':None,
+            'label':self.ui.compensationFormLbl,
+            'error':self.ui.compensationFormLbl,
+            'frame':self.ui.compensationFormFrame,
+            'options-container': self.ui.compensationFormOptionsFrame,
             'type': 'radio',
-            'options' : 'yes',  
+            'options-id' : 'yes',  
         },
 
         'compensation-condition' : {
-            'title':'شرایط معاوضه',
-            'type': 'radio',
-            'options' : 'yes',  
+            #شرایط معاوضه
+            'input':self.ui.compensationConditionFormInpt,
+            'label':self.ui.compensationConditionFormLbl,
+            'error':self.ui.compensationConditionFormError,
+            'frame':self.ui.compensationConditionFormFrame,
+            'type': 'input',
         },
 
         'participation' : {
-            'title':'مشارکت',
+            # مشارکت
+            'input':None,
+            'label':self.ui.participationFormLbl,
+            'error':self.ui.participationFormError,
+            'frame':self.ui.participationFormFrame,
+            'options-container': self.ui.participationFormOptionsFrame,
             'type': 'radio',
-            'options' : 'yes',
+            'options-id' : 'yes', 
         },
 
         'document-status' : {
-            'title':'وضعیت سند',
-            'type': 'select',
+            # وضعیت سند
+            'input':self.ui.documentStatusInpt,
+            'label':self.ui.documentStatusLbl,
+            'error':self.ui.documentStatusError,
+            'frame':self.ui.documentStatusFrame,
+            'type': 'combobox',
             'options' : 'document-status',
             },
 
         'meterage' : {
-            'title':'متراژ',
-            'type': 'number',
+            # متراژ
+            'input':self.ui.meterageFormInpt,
+            'label':self.ui.meterageFormLbl,
+            'error':self.ui.meterageFormError,
+            'frame':self.ui.meterageFormFrame,
+            'type': 'spinbox',
         },
 
         'building-meterage' : {
-            'title':'متراژ ساخت',
-            'type': 'number',
+            # متراژ ساخت
+            'input':self.ui.buildingMeterageFormInpt,
+            'label':self.ui.buildingMeterageFormLbl,
+            'error':self.ui.buildingMeterageFormError,
+            'frame':self.ui.buildingMeterageFormFrame,
+            'type': 'spinbox',
         },
 
         'land-meterage' : {
-            'title':'متراژ زمین',
-            'type': 'number',
+            # متراژ زمین
+            'input':self.ui.landMeterageFormInpt,
+            'label':self.ui.landMeterageFormLbl,
+            'error':self.ui.landMeterageFormError,
+            'frame':self.ui.landMeterageFormFrame,
+            'type': 'spinbox',
         },
 
         'length' : {
-            'title':'طول',
-            'type': 'number',
+            # طول
+            'input':self.ui.lengthFormInpt,
+            'label':self.ui.lengthFormLbl,
+            'error':self.ui.lengthFormError,
+            'frame':self.ui.lengthFormFrame,
+            'type': 'spinbox',
         },
 
         'width' : {
-            'title':'َعرض',
-            'type': 'number',
+            # عرض
+            'input':self.ui.widthFormInpt,
+            'label':self.ui.widthFormLbl,
+            'error':self.ui.widthFormError,
+            'frame':self.ui.widthFormFrame,
+            'type': 'spinbox',
         },
 
         'opening-width'  : {
-            'title':'عرض دهانه',
-            'type': 'number',
+            # عرض دهانه
+            'input':self.ui.openingWidthFormInpt,
+            'label':self.ui.openingWidthFormLbl,
+            'error':self.ui.openingWidthFormError,
+            'frame':self.ui.openingWidthFormFrame,
+            'type': 'spinbox',
         },
         
         'total-price'  : {
-            'title':'قیمت کل',
-            'type': 'number',
+            # قیمت کل
+            'input':self.ui.totalPriceFormInpt,
+            'label':self.ui.totalPriceFormLbl,
+            'error':self.ui.totalPriceFormError,
+            'frame':self.ui.totalPriceFormFrame,
+            'type': 'input',
         },
 
         'unit-price'  : {
-            'title':'قیمت هر متر مربع',
-            'type': 'number',
+            # قیمت هر متر مربع
+            'input':self.ui.unitPriceFormInpt,
+            'label':self.ui.unitPriceFormLbl,
+            'error':self.ui.unitPriceFormError,
+            'frame':self.ui.unitPriceFormFrame,
+            'type': 'input',
         },
 
         'mortgage-price' : {
-            'title':'قیمت رهن',
-            'type': 'number',
+            # قیمت رهن
+            'input':self.ui.mortgagePriceFormInpt,
+            'label':self.ui.mortgagePriceFormLbl,
+            'error':self.ui.mortgagePriceFormError,
+            'frame':self.ui.mortgagePriceFormFrame,
+            'type': 'input',
         },
 
         'rent-price' : {
-            'title':'قیمت اجاره',
-            'type': 'number',
+            #قیمت اجاره
+            'input':self.ui.rentPriceFormInpt,
+            'label':self.ui.rentPriceFormLbl,
+            'error':self.ui.rentPriceFormError,
+            'frame':self.ui.rentPriceFormFrame,
+            'type': 'input',
         },
 
         'construction-year' : {
-            'title':'سال ساخت',
-            'type': 'number',
+            # سال ساخت
+            'input':self.ui.constructionYearInpt,
+            'label':self.ui.constructionYearLbl,
+            'error':self.ui.constructionYearError,
+            'frame':self.ui.constructionYearFrame,
+            'type': 'input',
         },
 
         'floor' : {
-            'title':'طبقه',
-            'type': 'number',
+            # طبقه
+            'input':self.ui.floorFormInpt,
+            'label':self.ui.floorFormLbl,
+            'error':self.ui.floorFormError,
+            'frame':self.ui.floorFormFrame,
+            'type': 'input',
         },
 
         'floor-count' : {
-            'title':'تعداد طبقات',
-            'type': 'number',
+            # تعداد طبقات
+            'input':self.ui.floorCounFormInpt,
+            'label':self.ui.floorCounFormLbl,
+            'error':self.ui.floorCounFormError,
+            'frame':self.ui.floorCounFormFrame,
+            'type': 'spinbox',
         },
 
         'total-building-unit' : {
-            'title':'تعداد کل واحدها',
-            'type': 'number',
+            # تعداد کل واحدها
+            'input':self.ui.totalBuildingUnitFormInpt,
+            'label':self.ui.totalBuildingUnitFormLbl,
+            'error':self.ui.totalBuildingUnitFormError,
+            'frame':self.ui.totalBuildingUnitFormFrame,
+            'type': 'spinbox',
         },
         
         'floor-unit-count' : {
-            'title':'تعداد واحد در طبقه',
-            'type': 'number',
+            # تعداد واحد در طبقه
+            'input':self.ui.floorUnitCountInpt,
+            'label':self.ui.floorUnitCountLbl,
+            'error':self.ui.floorUnitCountError,
+            'frame':self.ui.floorUnitCountFrame,
+            'type': 'spinbox',
         },
 
         'floors-overal-info' : {
@@ -222,107 +343,184 @@ class Form:
 
 
         'light-direction' : {
-            'title':'جهت نورگیری',
-            'type': 'select',
-            'options' : 'light-direction',
-
-            
+            # جهت نورگیری,
+            'input':self.ui.lightDirectionInpt,
+            'label':self.ui.lightDirectionLbl,
+            'error':self.ui.lightDirectionError,
+            'frame':self.ui.lightDirectionFrame,
+            'type': 'combocox',
+            'options-id' : 'light-direction',      
         },
 
         'rebuilding' : {
-            'title':'وضعیت بازسازی',
+            # وضعیت بازسازی'
+            'input':None,
+            'label':self.ui.rebuildingFormLbl,
+            'error':self.ui.rebuildingFormError,
+            'frame':self.ui.rebuildingFormFrame,
+            'options-container': self.ui.rebuildingFormOptionsFrame,
             'type': 'radio',
             'options' : 'rebuilding',
 
         },
+
+        'building-license' : {
+            # پروانه ساخت
+            'input':None,
+            'label':self.ui.buildingLicenseFormLbl,
+            'error':self.ui.buildingLicenseFormError,
+            'frame':self.ui.buildingLicenseFormFrame,
+            'options-container': self.ui.buildingLicenseFormOptionsFrame,
+            'type': 'radio',
+            'options' : 'have',
+        },
         
         'parking' : {
-            'title':'پارکینگ',
+            # پارکینگ 
+            'input':None,
+            'label':self.ui.parkingFormLbl,
+            'error':self.ui.parkingFormError,
+            'frame':self.ui.parkingFormFrame,
+            'options-container': self.ui.parkingFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
 
         'parking-status' : {
-            'title':'پارکینگ',
-            'type': 'radio',
-            'options' : 'have',
+            # وضعیت پارکینگ 
+            'input':self.ui.parkingStatusFormInpt,
+            'label':self.ui.parkingStatusFormLbl,
+            'error':self.ui.parkingStatusFormError,
+            'frame':self.ui.parkingStatusFormFrame,
+            'type': 'combobox',
+            'options' : 'parking-status',
         },
 
         'parking-count' : {
-            'title':'پارکینگ',
-            'type': 'radio',
-            'options' : 'have',
-        },
-        
-        'warehouse' : {
-            'title':'انباری',
-            'type': 'radio',
-            'options' : 'have',
-        },
-
-        'warehouse-meterage' : {
-            'title':'متراژ انباری',
-            'type': 'radio',
-            'options' : 'have',
-        },
-
-        'private-yard' : {
-            'title':'حیاط اختصاصی',
-            'type': 'radio',
-            'options' : 'have',
-        },
-
-        'private-yard-meterage' : {
-            'title':'متراژ حیاط اختصاصی',
-            'type': 'radio',
-            'options' : 'have',
-        },
-
-        'elevator' : {
-            'title':'آسانسور',
+            # تعداد پارکینگ
+            'input':self.ui.parkingCountFormInpt,
+            'label':self.ui.parkingCountFormLbl,
+            'error':self.ui.parkingCountFormError,
+            'frame':self.ui.parkingCountFormFrame,
+            'options-container': self.ui.rebuildingFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
 
         'balcony' : {
-            'title':'بالکن',
+            # بالکن
+            'input':None,
+            'label':self.ui.balconyFormLbl,
+            'error':self.ui.balconyFormError,
+            'frame':self.ui.balconyFormFrame,
+            'options-container': self.ui.balconyFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
 
         'balcony-meterage' : {
-            'title':'متراژ بالکن',
-            'type': 'radio',
-            'options' : 'have',
+            # متراژ بالکن
+            'input':self.ui.balconyMeterageFormInpt,
+            'label':self.ui.balconyMeterageFormLbl,
+            'error':self.ui.balconyMeterageFormError,
+            'frame':self.ui.balconyMeterageFormFrame,
+            'type': 'spinbox',
         },
 
         'trass' : {
-            'title':'بهار خواب',
+            # بهار خواب
+            'input':None,
+            'label':self.ui.trassFormLbl,
+            'error':self.ui.trassFormError,
+            'frame':self.ui.trassFormFrame,
+            'options-container': self.ui.trassFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
 
         'trass-meterage' : {
-            'title':'متراژ بهار خواب',
+            # متراژ بهار خواب
+            'input':self.ui.trassMeterageFormInpt,
+            'label':self.ui.trassMeterageFormLbl,
+            'error':self.ui.trassMeterageFormError,
+            'frame':self.ui.trassMeterageFormFrame,
+            'type': 'spinbox',
+        },
+
+        
+        'warehouse' : {
+            #انباری
+            'input':None,
+            'label':self.ui.warehouseFormLbl,
+            'error':self.ui.warehouseFormError,
+            'frame':self.ui.warehouseFormFrame,
+            'options-container': self.ui.warehouseFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
 
-        'production-license' : {
-            'title':'پروانه ساخت',
+        'warehouse-meterage' : {
+            # متراژ انباری
+            'input':self.ui.warehouseMeterageFormInpt,
+            'label':self.ui.warehouseMeterageFormLbl,
+            'error':self.ui.warehouseMeterageFormError,
+            'frame':self.ui.warehouseMeterageFormFrame,
+            'type': 'spinbox',
+        },
+
+        'private-yard' : {
+            # حیاط اختصاصی
+            'input':None,
+            'label':self.ui.privateYardFormLbl,
+            'error':self.ui.privateYardFormError,
+            'frame':self.ui.privateYardFormFrame,
+            'options-container': self.ui.privateYardFormOptionsFrame,
             'type': 'radio',
             'options' : 'have',
         },
+
+        'private-yard-meterage' : {
+            # متراژ حیاط اختصاصی
+            'input':self.ui.privateYardMeterageFormInpt,
+            'label':self.ui.privateYardMeterageFormLbl,
+            'error':self.ui.privateYardMeterageFormError,
+            'frame':self.ui.privateYardMeterageFormFrame,
+            'type': 'spinbox',
+        },
+
+        'elevator' : {
+            # آسانسور
+            'input':None,
+            'label':self.ui.elevatorFormLbl,
+            'error':self.ui.elevatorFormError,
+            'frame':self.ui.elevatorFormFrame,
+            'options-container': self.ui.elevatorFormOptionsFrame,
+            'type': 'radio',
+            'options' : 'have',
+        },
+
+        
+        
 
         'other-features' : {
-            'title':'سایر امکانات',
+            # سایر امکانات
+            'input':None,
+            'label':self.ui.otherFeaturesFormLbl,
+            'error':self.ui.otherFeaturesFormError,
+            'frame':self.ui.otherFeaturesFormFrame,
+            'options-container': self.ui.otherFeaturesFormOptionsFrame,
             'type': 'checkbox',
             'options' : 'other-features',
         },
 
         'branch' : {
-            'title':'انشعابات',
-            'type': 'branch',
+            # انشعابات
+            'input':None,
+            'label':self.ui.branchFormLbl,
+            'error':self.ui.branchFormError,
+            'frame':self.ui.branchFormFrame,
+            'options-container': self.ui.branchFormOptionsFrame,
+            'type': 'checkbox',
             'options' : 'branch',
         },
         
@@ -339,219 +537,261 @@ class Form:
         },
 
         'floor-material' : {
-            'title':'جنس کف',
-            'type': 'group',
-            'fields' : {
+            # جنس کف
+            'input':None,
+            'label':self.ui.floorMaterialFormLbl,
+            'error':self.ui.floorMaterialFormError,
+            'frame':self.ui.floorMaterialFormFrame,
+            'options-container': self.ui.floorMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'floor-material'
             
         },
 
         'other-floor-material' : {
-                'title':'',
-                'type': 'text',
+                #‌ سایر جنس کف‍
+                'input':self.ui.otherFloorMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
-        'ceiling' : {
-            'title':'جنس سقف',
-            'type': 'group',
-            'fields' : {
-
-            'ceiling' : {
-                'title':'جنس سقف',
-                'type': 'checkbox',
-                'options' : 'ceiling',
-
-            },
+        'ceiling-material' : {
+            # جنس سقف
+            'input':None,
+            'label':self.ui.ceilingMaterialFormLbl,
+            'error':self.ui.ceilingMaterialFormError,
+            'frame':self.ui.ceilingMaterialFormFrame,
+            'options-container': self.ui.ceilingMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'ceiling-material'
             
-            'other-ceiling' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-
-            }
         },
 
+        'other-ceiling-material' : {
+                #‌ سایر جنس سقف
+                'input':self.ui.otherCeilingMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
+        },
 
-        'walls' : {
-            'title':'جنس دیوار',
-            'type': 'group',
-            'fields' : {
-
-            'walls' : {
-                'title':'جنس دیوار',
-                'type': 'checkbox',
-                'options' : 'walls',
-
-            },
+        'walls-material' : {
+            # جنس دیوار
+            'input':None,
+            'label':self.ui.wallsMaterialFormLbl,
+            'error':self.ui.wallsMaterialFormError,
+            'frame':self.ui.wallsMaterialFormFrame,
+            'options-container': self.ui.wallsMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'walls-material'
             
-            'other-walls' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        },
+
+        'other-walls-material' : {
+                #‌ سایر جنس دیوار
+                'input':self.ui.otherWallsMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
 
         'cabinets-material' : {
-            'title':'جنس کابینت',
-            'type': 'group',
-            'fields' : {
-
-            'cabinets-material' : {
-                'title':'جنس کابینت',
-                'type': 'checkbox',
-                'options' : 'cabinets-material',
-
-            },
+            # جنس کابینت
+            'input':None,
+            'label':self.ui.cabinetsMaterialFormLbl,
+            'error':self.ui.cabinetsMaterialFormError,
+            'frame':self.ui.cabinetsMaterialFormFrame,
+            'options-container': self.ui.cabinetsMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'cabinets-material'
             
-            'other-cabinets-material' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        },
+
+        'other-cabinets-material' : {
+                #‌ سایر جنس کابینت
+                'input':self.ui.otherCabinetsMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
 
         'warming-system' : {
-            'title':'سیستم گرمایشی',
-            'type': 'group',
-            'fields' : {
-
-            'warming-system' : {
-                'title':'سیستم گرمایشی',
-                'type': 'checkbox',
-                'options' : 'warming-system',
-
-            },
+            # سیستم گرمایشی
+            'input':None,
+            'label':self.ui.warmingSystemFormLbl,
+            'error':self.ui.warmingSystemFormError,
+            'frame':self.ui.warmingSystemFormFrame,
+            'options-container': self.ui.warmingSystemFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'warming-system'
             
-            'other-warming-system' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        },
+
+        'other-warming-system' : {
+                #‌ سایر سیستم گرمایشی
+                'input':self.ui.otherWarmingSystemFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
 
         'cooling-system' : {
-            'title':'سیستم سرمایشی',
-            'type': 'group',
-            'fields' : {
-
-            'cooling-system' : {
-                'title':'سیستم سرمایشی',
-                'type': 'checkbox',
-                'options' : 'cooling-system',
-            },
+            # سیستم سرمایشی
+            'input':None,
+            'label':self.ui.coolingSystemFormLbl,
+            'error':self.ui.coolingSystemFormError,
+            'frame':self.ui.coolingSystemFormFrame,
+            'options-container': self.ui.coolingSystemFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'cooling-system'
             
-            'other-cooling-system' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
         },
 
-        'kitchen' : {
-            'title':'آشپزخانه',
-            'type': 'group',
-            'fields' : {
+        'other-cooling-system' : {
+                #‌ سایر سیستم سرمایشی
+                'input':self.ui.otherCoolingSystemFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
+        },
 
-            'kitchen' : {
-                'title':'آشپزخانه',
-                'type': 'checkbox',
-                'options' : 'kitchen',
-            },
+
+        'kitchen-material' : {
+            # جنس آشپزخانه
+            'input':None,
+            'label':self.ui.kitchenMaterialFormLbl,
+            'error':self.ui.kitchenMaterialFormError,
+            'frame':self.ui.kitchenMaterialFormFrame,
+            'options-container': self.ui.kitchenMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'kitchen-material'
             
-            'other-kitchen-stuff' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        },
+
+        'other-kitchen-material' : {
+                #‌ سایر جنس آشپزخانه
+                'input':self.ui.otherKitchenMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
 
-        'bathroom' : {
-            'title':'حمام',
-            'type': 'group',
-            'fields' : {
-
-            'bathroom' : {
-                'title':'حمام',
-                'type': 'checkbox',
-                'options' : 'bathroom',
-            },
+        'bathroom-material' : {
+            # جنس حمام
+            'input':None,
+            'label':self.ui.bathroomMaterialFormLbl,
+            'error':self.ui.bathroomMaterialFormError,
+            'frame':self.ui.bathroomMaterialFormFrame,
+            'options-container': self.ui.bathroomMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'bathroom-material'
             
-            'other-bathroom' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
         },
 
-        'wc' : {
-            'title':'سرویس بهداشتی',
-            'type': 'group',
-            'fields' : {
+        'other-bathroom-material' : {
+                #‌ سایر جنس حمام
+                'input':self.ui.otherBathroomMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
+        },
 
-            'wc' : {
-                'title':'سرویس بهداشتی',
-                'type': 'checkbox',
-                'options' : 'wc',
-            },
+        'wc-material' : {
+            # جنس سرویس بهداشتی
+            'input':None,
+            'label':self.ui.wcMaterialFormLbl,
+            'error':self.ui.wcMaterialFormError,
+            'frame':self.ui.wcMaterialFormFrame,
+            'options-container': self.ui.wcMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'wc-material'
             
-            'other-wc' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
         },
 
-        'door' : {
-            'title':'درب',
-            'type': 'group',
-            'fields' : {
-
-            'door' : {
-                'title':'درب',
-                'type': 'checkbox',
-                'options' : 'door',
-            },
-            
-            'other-door' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        'other-wc-material' : {
+                #‌ سایر جنس سرویس بهداشتی
+                'input':self.ui.otherWcMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
 
-        'window' : {
-            'title':'پنجره',
-            'type': 'group',
-            'fields' : {
 
-            'window' : {
-                'title':'پنجره',
-                'type': 'checkbox',
-                'options' : 'window',
-                
-            },
-            
-            'other-window' : {
-                'title':'توضیحات',
-                'type': 'text',
-            },
-            },
+        'door-material' : {
+            # جنس درب
+            'input':None,
+            'label':self.ui.doorMaterialFormLbl,
+            'error':self.ui.doorMaterialFormError,
+            'frame':self.ui.doorMaterialFormFrame,
+            'options-container': self.ui.doorMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'door-material'
         },
 
-        
-
-        'supplementary_description' : {
-            'title':'توضیحات تکمیلی',
-            'type': 'textarea',
+        'other-door-material' : {
+                #‌ سایر جنس درب
+                'input':self.ui.otherDoorMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
         },
+
+
+        'window-material' : {
+            # جنس پنجره
+            'input':None,
+            'label':self.ui.windowMaterialFormLbl,
+            'error':self.ui.windowMaterialFormError,
+            'frame':self.ui.windowMaterialFormFrame,
+            'options-container': self.ui.windowMaterialFormOptionsFrame,
+            'type': 'checkbox',
+            'options-id': 'window-material'
+        },
+
+        'other-window-material' : {
+                #‌ سایر جنس پنجره
+                'input':self.ui.otherWindowMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':None,
+                'type': 'input',
+        },
+
+        'description' : {
+                #‌ توضیحات تکمیلی
+                'input':self.ui.descriptionFormInpt,
+                'label':self.ui.descriptionFormLbl,
+                'error':self.ui.descriptionFormError,
+                'frame':self.ui.descriptionFormError,
+                'type': 'input',
+        },
+
 
         'gallery' : {
             'title':'گالری',
             'type': 'textarea',
         },
 
-        }
+        'featured-image' : {
+            'title':'تصویر شاخص',
+            'type': 'textarea',
+        },
+
+        
+    }
 
