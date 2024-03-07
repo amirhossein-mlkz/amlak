@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>751</height>
+    <width>1011</width>
+    <height>758</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -127,7 +127,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 /**************************QCheckBox***************************/
 
 QCheckBox {
-    spacing: 0px;
+    spacing: 5px;
 }
 
 QCheckBox::indicator {
@@ -151,6 +151,39 @@ QCheckBox::indicator:hover {
 }
 
 QCheckBox::indicator:disabled {
+    border: 2px solid #E0E4EC;
+    background-color: #F6F6F6;
+}
+
+/**************************QRadioButton***************************/
+
+QRadioButton {
+    spacing: 5px;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QRadioButton::indicator:unchecked {
+    border: 2px solid #E0E4EC;
+    background-color: white;
+	border-radius:10px;
+}
+
+QRadioButton::indicator:checked {
+    border: 2px solid #7892DF;
+    background-color: #7892DF;
+    image: url(:/icons/icons/tick.png) ;
+	border-radius:10px;
+}
+
+QRadioButton::indicator:hover {
+    border: 2px solid rgba(194, 197, 204, 255);
+}
+
+QRadioButton::indicator:disabled {
     border: 2px solid #E0E4EC;
     background-color: #F6F6F6;
 }
@@ -604,8 +637,17 @@ background-color:rgba(0, 0, 0,20);
 QLabel[styleClass=&quot;form-label&quot;]{
  font: auto &quot;IRANSansWebFaNum Light&quot;;
  font-size:18px;
- padding-top:40px;
+ padding-top:100px;
+ padding-bottom:15px;
 }
+
+QLabel[styleClass=&quot;form-step-title&quot;]{
+font: auto &quot;IRANSansWebFaNum Medium&quot;;
+ font-size:32px;
+color:rgb(66, 120, 206);
+}
+
+
 
 QLabel[styleClass=&quot;form-field-error&quot;]{
 
@@ -638,7 +680,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
     <item>
      <widget class="QStackedWidget" name="pages">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="page_dashboard">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1104,7 +1146,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>0</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1115,6 +1157,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <widget class="QLabel" name="label_6">
               <property name="text">
                <string>شروع</string>
+              </property>
+              <property name="styleClass" stdset="0">
+               <string>form-step-title</string>
               </property>
              </widget>
             </item>
@@ -1211,6 +1256,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <widget class="QLabel" name="label_34">
               <property name="text">
                <string>آدرس</string>
+              </property>
+              <property name="styleClass" stdset="0">
+               <string>form-step-title</string>
               </property>
              </widget>
             </item>
@@ -1392,8 +1440,8 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>732</width>
-                 <height>1086</height>
+                 <width>774</width>
+                 <height>1480</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -1407,6 +1455,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                   </property>
                   <property name="text">
                    <string>اطلاعات مالک</string>
+                  </property>
+                  <property name="styleClass" stdset="0">
+                   <string>form-step-title</string>
                   </property>
                  </widget>
                 </item>
@@ -1745,9 +1796,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
-                 <width>742</width>
-                 <height>2040</height>
+                 <y>-1988</y>
+                 <width>774</width>
+                 <height>2886</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -1755,6 +1806,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                  <widget class="QLabel" name="label_19">
                   <property name="text">
                    <string>اطلاعات کلی</string>
+                  </property>
+                  <property name="styleClass" stdset="0">
+                   <string>form-step-title</string>
                   </property>
                  </widget>
                 </item>
@@ -2396,7 +2450,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                  <item row="3" column="2">
+                  <item row="3" column="2" alignment="Qt::AlignTop">
                    <widget class="QFrame" name="mortgagePriceFormFrame">
                     <property name="minimumSize">
                      <size>
@@ -2411,7 +2465,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_66">
-                     <item>
+                     <item alignment="Qt::AlignTop">
                       <widget class="QLabel" name="mortgagePriceFormLbl">
                        <property name="styleSheet">
                         <string notr="true">label</string>
@@ -2649,7 +2703,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
-                         <height>20</height>
+                         <height>0</height>
                         </size>
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_16">
@@ -2811,9 +2865,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-790</y>
-                 <width>732</width>
-                 <height>1234</height>
+                 <y>0</y>
+                 <width>774</width>
+                 <height>1873</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -2834,6 +2888,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                   <property name="text">
                    <string>امکانات</string>
                   </property>
+                  <property name="styleClass" stdset="0">
+                   <string>form-step-title</string>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -2842,6 +2899,12 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                    <number>20</number>
                   </property>
                   <property name="bottomMargin">
+                   <number>20</number>
+                  </property>
+                  <property name="horizontalSpacing">
+                   <number>100</number>
+                  </property>
+                  <property name="verticalSpacing">
                    <number>20</number>
                   </property>
                   <item row="4" column="1">
@@ -3345,7 +3408,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_98">
-                     <item>
+                     <item alignment="Qt::AlignTop">
                       <widget class="QLabel" name="branchFormLbl">
                        <property name="text">
                         <string>انشعابات</string>
@@ -3355,7 +3418,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item alignment="Qt::AlignTop">
                       <widget class="QLabel" name="branchFormError">
                        <property name="text">
                         <string>خطا رخ داده</string>
@@ -3365,7 +3428,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item alignment="Qt::AlignTop">
                       <widget class="QFrame" name="branchFormOptionsFrame">
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
@@ -3375,6 +3438,19 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                        </property>
                        <layout class="QVBoxLayout" name="verticalLayout_99"/>
                       </widget>
+                     </item>
+                     <item>
+                      <spacer name="verticalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>40</height>
+                        </size>
+                       </property>
+                      </spacer>
                      </item>
                     </layout>
                    </widget>
@@ -3410,6 +3486,12 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QFrame" name="otherFeaturesFormOptionsFrame">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
                        </property>
@@ -3442,15 +3524,18 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>732</width>
-                 <height>1145</height>
+                 <width>774</width>
+                 <height>1549</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_23">
-                <item>
+                <item alignment="Qt::AlignHCenter">
                  <widget class="QLabel" name="label_51">
                   <property name="text">
                    <string>اطلاعات متریال</string>
+                  </property>
+                  <property name="styleClass" stdset="0">
+                   <string>form-step-title</string>
                   </property>
                  </widget>
                 </item>
@@ -4039,6 +4124,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
               <property name="text">
                <string>تصاویر</string>
               </property>
+              <property name="styleClass" stdset="0">
+               <string>form-step-title</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -4173,6 +4261,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
               <property name="text">
                <string>پایان</string>
               </property>
+              <property name="styleClass" stdset="0">
+               <string>form-step-title</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -4222,7 +4313,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
          </widget>
         </item>
         <item>
-         <widget class="QFrame" name="">
+         <widget class="QFrame" name="frame">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <property name="leftMargin">
             <number>1</number>
@@ -4231,7 +4322,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             <number>16</number>
            </property>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="form_next_btn">
              <property name="text">
               <string>بعدی</string>
              </property>
@@ -4270,7 +4361,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="form_prev_btn">
              <property name="styleSheet">
               <string notr="true"/>
              </property>
@@ -7798,7 +7889,7 @@ QLabel[buildingState=&quot;2&quot;]{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>969</width>
+     <width>1011</width>
      <height>30</height>
     </rect>
    </property>
@@ -7811,6 +7902,5 @@ QLabel[buildingState=&quot;2&quot;]{
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup_2"/>
-  <buttongroup name="buttonGroup"/>
  </buttongroups>
 </ui>

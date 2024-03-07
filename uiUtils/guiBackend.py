@@ -223,6 +223,25 @@ class GUIBackend:
             pass
 
     @staticmethod
+    def set_layout_alignment(layout:QtWidgets.QVBoxLayout, alignment:str):
+        data = {
+            'r':QtCore.Qt.AlignRight,
+            'c':QtCore.Qt.AlignCenter,
+            'l':QtCore.Qt.AlignLeft,
+        }
+        layout.setAlignment(data[alignment.lower()])
+
+    @staticmethod
+
+    def set_layout_direction(wgt:QtWidgets.QWidget, direction:str):
+        data = {
+            'ltr':QtCore.Qt.LayoutDirection.LeftToRight,
+            'rtl':QtCore.Qt.LayoutDirection.RightToLeft,
+
+        }
+        wgt.setLayoutDirection(data[direction.lower()])
+
+    @staticmethod
     def set_style( btn: QtWidgets.QPushButton, style:str):
         """set style to an object
 

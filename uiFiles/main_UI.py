@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(969, 751)
+        MainWindow.resize(1011, 758)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -139,7 +139,7 @@ class Ui_MainWindow(object):
 "/**************************QCheckBox***************************/\n"
 "\n"
 "QCheckBox {\n"
-"    spacing: 0px;\n"
+"    spacing: 5px;\n"
 "}\n"
 "\n"
 "QCheckBox::indicator {\n"
@@ -168,7 +168,40 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "/*******"
-                        "*******************QGraphicsView***************************/\n"
+                        "*******************QRadioButton***************************/\n"
+"\n"
+"QRadioButton {\n"
+"    spacing: 5px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator {\n"
+"    width: 16px;\n"
+"    height: 16px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:unchecked {\n"
+"    border: 2px solid #E0E4EC;\n"
+"    background-color: white;\n"
+"	border-radius:10px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:checked {\n"
+"    border: 2px solid #7892DF;\n"
+"    background-color: #7892DF;\n"
+"    image: url(:/icons/icons/tick.png) ;\n"
+"	border-radius:10px;\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:hover {\n"
+"    border: 2px solid rgba(194, 197, 204, 255);\n"
+"}\n"
+"\n"
+"QRadioButton::indicator:disabled {\n"
+"    border: 2px solid #E0E4EC;\n"
+"    background-color: #F6F6F6;\n"
+"}\n"
+"\n"
+"/**************************QGraphicsView***************************/\n"
 "\n"
 "QGraphicsView{\n"
 "	border: None;\n"
@@ -178,7 +211,8 @@ class Ui_MainWindow(object):
 "/**************************QLineEdit***************************/\n"
 "\n"
 "QLineEdit {\n"
-"  	border:1px solid #E0E4EC;\n"
+"  	border:1px s"
+                        "olid #E0E4EC;\n"
 "	background-color: #F7F8FA;\n"
 "	border-radius: 10px;\n"
 "	padding-left: 15px;\n"
@@ -210,8 +244,7 @@ class Ui_MainWindow(object):
 "QDateEdit:disabled\n"
 "{\n"
 "	border-bottom: 2px solid #F0F0F2;\n"
-"	color: rgb(120, 120, 1"
-                        "20);\n"
+"	color: rgb(120, 120, 120);\n"
 "}\n"
 "\n"
 "QSpinBox::up-arrow, \n"
@@ -224,7 +257,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QSpinBox::down-arrow,  \n"
-"QDoubleSpinBox::down-arrow,\n"
+"QDoubleSpinBox::down-arr"
+                        "ow,\n"
 "QDateEdit::down-arrow\n"
 "{   \n"
 "	image: url(:/icons/icons/minus_icon_black.png);\n"
@@ -257,8 +291,7 @@ class Ui_MainWindow(object):
 "	border:none;\n"
 "    min-width:30px;\n"
 "    min-height: 29px;\n"
-"    subcontrol-origin: margin"
-                        ";\n"
+"    subcontrol-origin: margin;\n"
 "    subcontrol-position: right;\n"
 "    top: 0px;\n"
 "    right: 0px;\n"
@@ -270,7 +303,8 @@ class Ui_MainWindow(object):
 "{\n"
 "    min-width:30px;\n"
 "    min-height: 29px;\n"
-"    subcontrol-origin: margin;\n"
+"    subcontrol-origin: mar"
+                        "gin;\n"
 "    subcontrol-position: left;\n"
 "    top: 0px;\n"
 "    right: 0px;\n"
@@ -300,8 +334,7 @@ class Ui_MainWindow(object):
 "	border-bottom: 2px solid #7892DF;\n"
 "}\n"
 "\n"
-"/**************************QTabWidget*************************"
-                        "**/\n"
+"/**************************QTabWidget***************************/\n"
 "\n"
 "QTabWidget {\n"
 "    background-color: #F7F8FA;\n"
@@ -313,7 +346,8 @@ class Ui_MainWindow(object):
 "	min-width: 100px;\n"
 "    padding: 8px 16px;\n"
 "    border-top-left-radius: 4px;\n"
-"    border-top-right-radius: 4px;\n"
+"    border-"
+                        "top-right-radius: 4px;\n"
 "}\n"
 "\n"
 "QTabBar::tab:hover {\n"
@@ -346,8 +380,7 @@ class Ui_MainWindow(object):
 "    background-color: #F7F8FA;\n"
 "    padding: 5px;\n"
 "	border-top-left-radius: 0px;\n"
-"	"
-                        "border-bottom: 2px solid #BDBDBF;\n"
+"	border-bottom: 2px solid #BDBDBF;\n"
 "	border-right: 1px solid #D7D7D9;\n"
 "	font-weight: bold;\n"
 "	color: rgb(20, 20, 20);\n"
@@ -358,7 +391,8 @@ class Ui_MainWindow(object):
 "	border-left: None;\n"
 "}\n"
 "\n"
-"QHeaderView::section:last {\n"
+"QHeaderView::sec"
+                        "tion:last {\n"
 "   border-top-right-radius: 4px;\n"
 "	border-right: None;\n"
 "}\n"
@@ -396,8 +430,7 @@ class Ui_MainWindow(object):
 "\n"
 "QComboBox:disabled\n"
 "{\n"
-"	border: 2px so"
-                        "lid #F0F0F2;\n"
+"	border: 2px solid #F0F0F2;\n"
 "	color: rgb(120, 120, 120);\n"
 "}\n"
 "\n"
@@ -410,7 +443,8 @@ class Ui_MainWindow(object):
 "\n"
 "QComboBox::down-arrow\n"
 "{   \n"
-"	image: url(:/icons/icons/down_icon_black.png);\n"
+"	image: url(:/icons"
+                        "/icons/down_icon_black.png);\n"
 "	width: 12px;\n"
 "    height: 12px;\n"
 "}\n"
@@ -625,8 +659,17 @@ class Ui_MainWindow(object):
 "QLabel[styleClass=\"form-label\"]{\n"
 " font: auto \"IRANSansWebFaNum Light\";\n"
 " font-size:18px;\n"
-" padding-top:40px;\n"
+" padding-top:100px;\n"
+" padding-bottom:15px;\n"
 "}\n"
+"\n"
+"QLabel[styleClass=\"form-step-title\"]{\n"
+"font: auto \"IRANSansWebFaNum Medium\";\n"
+" font-size:32px;\n"
+"color:rgb(66, 120, 206);\n"
+"}\n"
+"\n"
+"\n"
 "\n"
 "QLabel[styleClass=\"form-field-error\"]{\n"
 "\n"
@@ -642,13 +685,13 @@ class Ui_MainWindow(object):
 "	max-width: 120;\n"
 "	min-height: 50;\n"
 "	max-height: 50;\n"
-"	font-size: 14px;\n"
+"	f"
+                        "ont-size: 14px;\n"
 "	font-weight: bold;\n"
 "}\n"
 "\n"
 "QPushButton[styleClass=\"form-btn\"]:disable{\n"
-"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, sto"
-                        "p:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
 "	color: rgba(120, 120, 120, 255);\n"
 "}\n"
 "\n"
@@ -1115,7 +1158,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 732, 1086))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 774, 1480))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1369,7 +1412,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 742, 2040))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1988, 774, 2886))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -1764,7 +1807,7 @@ class Ui_MainWindow(object):
         self.mortgagePriceFormLbl.setObjectName(u"mortgagePriceFormLbl")
         self.mortgagePriceFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_66.addWidget(self.mortgagePriceFormLbl)
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormLbl, 0, Qt.AlignTop)
 
         self.mortgagePriceFormError = QLabel(self.mortgagePriceFormFrame)
         self.mortgagePriceFormError.setObjectName(u"mortgagePriceFormError")
@@ -1777,7 +1820,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_66.addWidget(self.mortgagePriceFormInpt)
 
 
-        self.gridLayout_6.addWidget(self.mortgagePriceFormFrame, 3, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.mortgagePriceFormFrame, 3, 2, 1, 1, Qt.AlignTop)
 
         self.totalBuildingUnitFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.totalBuildingUnitFormFrame.setObjectName(u"totalBuildingUnitFormFrame")
@@ -1897,7 +1940,7 @@ class Ui_MainWindow(object):
 
         self.rebuildingFormOptionsFrame = QFrame(self.rebuildingFormFrame)
         self.rebuildingFormOptionsFrame.setObjectName(u"rebuildingFormOptionsFrame")
-        self.rebuildingFormOptionsFrame.setMinimumSize(QSize(0, 20))
+        self.rebuildingFormOptionsFrame.setMinimumSize(QSize(0, 0))
         self.verticalLayout_16 = QVBoxLayout(self.rebuildingFormOptionsFrame)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.verticalLayout_16.setContentsMargins(1, 1, 20, -1)
@@ -2003,7 +2046,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -790, 732, 1234))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 774, 1873))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -2015,6 +2058,8 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5 = QGridLayout()
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setHorizontalSpacing(100)
+        self.gridLayout_5.setVerticalSpacing(20)
         self.gridLayout_5.setContentsMargins(-1, 20, -1, 20)
         self.privateYardMeterageFormFrame = QFrame(self.scrollAreaWidgetContents_2)
         self.privateYardMeterageFormFrame.setObjectName(u"privateYardMeterageFormFrame")
@@ -2337,12 +2382,12 @@ class Ui_MainWindow(object):
         self.branchFormLbl = QLabel(self.branchFormFrame)
         self.branchFormLbl.setObjectName(u"branchFormLbl")
 
-        self.verticalLayout_98.addWidget(self.branchFormLbl)
+        self.verticalLayout_98.addWidget(self.branchFormLbl, 0, Qt.AlignTop)
 
         self.branchFormError = QLabel(self.branchFormFrame)
         self.branchFormError.setObjectName(u"branchFormError")
 
-        self.verticalLayout_98.addWidget(self.branchFormError)
+        self.verticalLayout_98.addWidget(self.branchFormError, 0, Qt.AlignTop)
 
         self.branchFormOptionsFrame = QFrame(self.branchFormFrame)
         self.branchFormOptionsFrame.setObjectName(u"branchFormOptionsFrame")
@@ -2351,7 +2396,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_99 = QVBoxLayout(self.branchFormOptionsFrame)
         self.verticalLayout_99.setObjectName(u"verticalLayout_99")
 
-        self.verticalLayout_98.addWidget(self.branchFormOptionsFrame)
+        self.verticalLayout_98.addWidget(self.branchFormOptionsFrame, 0, Qt.AlignTop)
+
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_98.addItem(self.verticalSpacer_2)
 
 
         self.gridLayout_5.addWidget(self.branchFormFrame, 6, 2, 1, 1)
@@ -2374,6 +2423,7 @@ class Ui_MainWindow(object):
 
         self.otherFeaturesFormOptionsFrame = QFrame(self.otherFeaturesFormFrame)
         self.otherFeaturesFormOptionsFrame.setObjectName(u"otherFeaturesFormOptionsFrame")
+        self.otherFeaturesFormOptionsFrame.setMinimumSize(QSize(0, 0))
         self.otherFeaturesFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
         self.otherFeaturesFormOptionsFrame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_101 = QVBoxLayout(self.otherFeaturesFormOptionsFrame)
@@ -2401,13 +2451,13 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 732, 1145))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 774, 1549))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
         self.label_51.setObjectName(u"label_51")
 
-        self.verticalLayout_23.addWidget(self.label_51)
+        self.verticalLayout_23.addWidget(self.label_51, 0, Qt.AlignHCenter)
 
         self.gridLayout_3 = QGridLayout()
         self.gridLayout_3.setObjectName(u"gridLayout_3")
@@ -2923,10 +2973,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QHBoxLayout(self.frame1)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(1, 16, -1, -1)
-        self.pushButton_2 = QPushButton(self.frame1)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.form_next_btn = QPushButton(self.frame1)
+        self.form_next_btn.setObjectName(u"form_next_btn")
 
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
+        self.horizontalLayout_2.addWidget(self.form_next_btn)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -2936,11 +2986,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.verticalSpacer_6)
 
-        self.pushButton = QPushButton(self.frame1)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setStyleSheet(u"")
+        self.form_prev_btn = QPushButton(self.frame1)
+        self.form_prev_btn.setObjectName(u"form_prev_btn")
+        self.form_prev_btn.setStyleSheet(u"")
 
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.horizontalLayout_2.addWidget(self.form_prev_btn)
 
 
         self.verticalLayout_5.addWidget(self.frame1)
@@ -4884,7 +4934,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 969, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1011, 30))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -4894,8 +4944,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pages.setCurrentIndex(0)
-        self.form_stackwidget.setCurrentIndex(0)
+        self.pages.setCurrentIndex(1)
+        self.form_stackwidget.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -4939,12 +4989,14 @@ class Ui_MainWindow(object):
         self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"\u06f2", None))
         self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u06f1", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0648\u0639", None))
+        self.label_6.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.melkCategoryFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0645\u0644\u06a9", None))
         self.melkCategoryFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.melkCategoryFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.melkCategoryFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.melkCategoryFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"\u0622\u062f\u0631\u0633", None))
+        self.label_34.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.regionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0646\u0637\u0642\u0647", None))
         self.regionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.regionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -4966,6 +5018,7 @@ class Ui_MainWindow(object):
         self.addressFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.addressFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0627\u0644\u06a9", None))
+        self.label_49.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.owner1PhoneNumberFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0645\u0627\u0631\u0647 \u062b\u0627\u0628\u062a \u0645\u0627\u0644\u06a9 \u0627\u0648\u0644", None))
         self.owner1PhoneNumberFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.owner1PhoneNumberFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5007,6 +5060,7 @@ class Ui_MainWindow(object):
         self.ownerDescriptionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.ownerDescriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0644\u06cc", None))
+        self.label_19.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.unitPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u062a\u0631 \u0645\u0631\u0628\u0639", None))
         self.unitPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.unitPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5120,6 +5174,7 @@ class Ui_MainWindow(object):
         self.buildingLicenseFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.buildingLicenseFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_35.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a", None))
+        self.label_35.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.privateYardMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u062d\u06cc\u0627\u062a \u0627\u062e\u062a\u0635\u0627\u0635\u06cc", None))
         self.privateYardMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.privateYardMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5183,6 +5238,7 @@ class Ui_MainWindow(object):
         self.otherFeaturesFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.otherFeaturesFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u062a\u0631\u06cc\u0627\u0644", None))
+        self.label_51.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.floorMaterialFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0641", None))
         self.floorMaterialFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.floorMaterialFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5239,6 +5295,7 @@ class Ui_MainWindow(object):
         self.wcMaterialFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.otherWcMaterialFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_67.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0627\u0648\u06cc\u0631", None))
+        self.label_67.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.featuredImageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0648\u06cc\u0631 \u0634\u0627\u062e\u0635", None))
         self.featuredImageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.featuredImageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5250,14 +5307,15 @@ class Ui_MainWindow(object):
         self.galleryFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.galleryFormBtn.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0627\u06af\u0630\u0627\u0631\u06cc", None))
         self.label_70.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0627\u0646", None))
+        self.label_70.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.descriptionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0648\u0636\u06cc\u062d\u0627\u062a \u062a\u06a9\u0644\u0645\u06cc\u0644\u06cc", None))
         self.descriptionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.descriptionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.descriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0639\u062f\u06cc", None))
-        self.pushButton_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u0642\u0628\u0644\u06cc", None))
-        self.pushButton.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
+        self.form_next_btn.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0639\u062f\u06cc", None))
+        self.form_next_btn.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
+        self.form_prev_btn.setText(QCoreApplication.translate("MainWindow", u"\u0642\u0628\u0644\u06cc", None))
+        self.form_prev_btn.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
         self.label_93.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0644\u06a9 \u06f5\u06f3\u06f8", None))
         self.label_93.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"header", None))
         self.label_92.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0639\u0627\u0644", None))

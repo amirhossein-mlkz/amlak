@@ -10,6 +10,7 @@ from uiFiles.main_UI import Ui_MainWindow
 from uiUtils.guiBackend import GUIBackend
 from uiUtils.uiStyler import Styler
 from pagesUI.dashboardUI import dashboardPageUI
+from pagesUI.formUI import formUI
 
 
 # ui_file = QFile("mainwindow.ui")
@@ -42,7 +43,8 @@ class mainUI(QMainWindow):
             'dashboard':{'btn':self.ui.sidebar_dashboard_btn, 'page':self.ui.page_dashboard},
         }
 
-        self.dashboardPageUI = dashboardPageUI(self.ui)        
+        self.dashboardPageUI = dashboardPageUI(self.ui) 
+        self.formUI = formUI(self.ui)  
         
         self._center()
         self.__sidebar_buttons_connector()

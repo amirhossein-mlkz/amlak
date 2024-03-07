@@ -6,10 +6,10 @@ class Form:
         self.ui = ui
         
         self.melk_post_type = {
-            'melk-status': {
-                'type': 'select',
-                'options' : 'melk-status',
-            },
+            # 'melk-status': {
+            #     'type': 'select',
+            #     'options-id' : 'melk-status',
+            # },
 
         'melk-category' : {
                 'input': self.ui.melkCategoryFormInpt,
@@ -17,7 +17,7 @@ class Form:
                 'error': self.ui.melkCategoryFormError,
                 'frame': self.ui.melkCategoryFormFrame,
                 'type': 'combobox',
-                'options' : 'melk-category',
+                'options-id' : 'melk-category',
             },
 
         'city' : {
@@ -27,7 +27,7 @@ class Form:
                 'error':self.ui.cityFormError,
                 'frame':self.ui.cityFormFrame,
                 'type': 'combobox',
-                'options' : 'city',
+                'options-id' : 'city',
             },
 
         'region' : {
@@ -37,7 +37,7 @@ class Form:
             'error':self.ui.regionFormError,
             'frame':self.ui.regionFormFrame,
             'type': 'spinbox',
-            'options' : 'city',
+            'options-id' : 'city',
         },
 
         'street' : {
@@ -153,7 +153,7 @@ class Form:
             #معاوضه'
             'input':None,
             'label':self.ui.compensationFormLbl,
-            'error':self.ui.compensationFormLbl,
+            'error':self.ui.compensationFormError,
             'frame':self.ui.compensationFormFrame,
             'options-container': self.ui.compensationFormOptionsFrame,
             'type': 'radio',
@@ -167,6 +167,9 @@ class Form:
             'error':self.ui.compensationConditionFormError,
             'frame':self.ui.compensationConditionFormFrame,
             'type': 'input',
+            'condition':[
+                {'cond':'=', 'key':'compensation','value':'yes'},
+            ]
         },
 
         'participation' : {
@@ -187,7 +190,7 @@ class Form:
             'error':self.ui.documentStatusError,
             'frame':self.ui.documentStatusFrame,
             'type': 'combobox',
-            'options' : 'document-status',
+            'options-id' : 'document-status',
             },
 
         'meterage' : {
@@ -360,7 +363,7 @@ class Form:
             'frame':self.ui.rebuildingFormFrame,
             'options-container': self.ui.rebuildingFormOptionsFrame,
             'type': 'radio',
-            'options' : 'rebuilding',
+            'options-id' : 'rebuilding',
 
         },
 
@@ -372,7 +375,7 @@ class Form:
             'frame':self.ui.buildingLicenseFormFrame,
             'options-container': self.ui.buildingLicenseFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
         
         'parking' : {
@@ -383,7 +386,7 @@ class Form:
             'frame':self.ui.parkingFormFrame,
             'options-container': self.ui.parkingFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         'parking-status' : {
@@ -393,7 +396,7 @@ class Form:
             'error':self.ui.parkingStatusFormError,
             'frame':self.ui.parkingStatusFormFrame,
             'type': 'combobox',
-            'options' : 'parking-status',
+            'options-id' : 'parking-status',
         },
 
         'parking-count' : {
@@ -402,9 +405,8 @@ class Form:
             'label':self.ui.parkingCountFormLbl,
             'error':self.ui.parkingCountFormError,
             'frame':self.ui.parkingCountFormFrame,
-            'options-container': self.ui.rebuildingFormOptionsFrame,
-            'type': 'radio',
-            'options' : 'have',
+            'type': 'spinbox',
+            'options-id' : 'have',
         },
 
         'balcony' : {
@@ -415,7 +417,7 @@ class Form:
             'frame':self.ui.balconyFormFrame,
             'options-container': self.ui.balconyFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         'balcony-meterage' : {
@@ -435,7 +437,7 @@ class Form:
             'frame':self.ui.trassFormFrame,
             'options-container': self.ui.trassFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         'trass-meterage' : {
@@ -456,7 +458,7 @@ class Form:
             'frame':self.ui.warehouseFormFrame,
             'options-container': self.ui.warehouseFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         'warehouse-meterage' : {
@@ -476,7 +478,7 @@ class Form:
             'frame':self.ui.privateYardFormFrame,
             'options-container': self.ui.privateYardFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         'private-yard-meterage' : {
@@ -496,7 +498,7 @@ class Form:
             'frame':self.ui.elevatorFormFrame,
             'options-container': self.ui.elevatorFormOptionsFrame,
             'type': 'radio',
-            'options' : 'have',
+            'options-id' : 'have',
         },
 
         
@@ -510,7 +512,7 @@ class Form:
             'frame':self.ui.otherFeaturesFormFrame,
             'options-container': self.ui.otherFeaturesFormOptionsFrame,
             'type': 'checkbox',
-            'options' : 'other-features',
+            'options-id' : 'other-features',
         },
 
         'branch' : {
@@ -521,7 +523,7 @@ class Form:
             'frame':self.ui.branchFormFrame,
             'options-container': self.ui.branchFormOptionsFrame,
             'type': 'checkbox',
-            'options' : 'branch',
+            'options-id' : 'branch',
         },
         
         'other-features-repeater' : {
