@@ -5,7 +5,7 @@ import time
 from uiFiles.main_UI import Ui_MainWindow
 from uiUtils.guiBackend import GUIBackend
 from meta import Form
-from glassoryies import melk
+from glassoryies import melk_glassories
 from PySide6 import QtWidgets
 
 # ui_file = QFile("mainwindow.ui")
@@ -21,8 +21,9 @@ class formUI:
     def __init__(self, ui:Ui_MainWindow):
         self.ui = ui
         form_meta = Form(self.ui)
-        self.render_options(form_meta.melk_post_type)
+        self.render_options(form_meta.melk_post_type, melk_glassories)
         self.hide_all_errors(form_meta.melk_post_type)
+        self.fields_change_connector(form_meta.melk_post_type)
 
         GUIBackend.button_connector(self.ui.form_next_btn, self.next_step)
         GUIBackend.button_connector(self.ui.form_prev_btn, self.prev_step)
@@ -46,50 +47,66 @@ class formUI:
             if lbl is not None:
                 GUIBackend.set_wgt_visible(lbl, False)
 
-    def render_options(self, form_meta:dict[str,dict]):
-        glossarie = melk
+    def render_options(self, form_meta:dict[str,dict], glossarie:dict[str,dict]):
 
         for field_name, field_meta in form_meta.items():
             options_id = field_meta.get('options-id')
             options_type = field_meta.get('type')
 
-            if 'reb' in field_name:
-                x=0
-    
-            
             #check if field need options
-            if options_id is not None:
+            if options_id is None:
+                continue
                 
-                #get options glossarie
-                options_glossarie = glossarie.get(options_id)
+            #get options glossarie
+            options_glossarie = glossarie.get(options_id)
 
-                if options_glossarie is None:
-                    print('Error for', options_id)
-                    continue
+            if options_glossarie is None:
+                print('Error for', options_id)
+                continue
 
-                if options_type=='combobox':
-                    field = field_meta.get('input')
-                    items = list(glossarie.get(options_id).values())
-                    GUIBackend.set_combobox_items(field, items)
+            if options_type=='combobox':
+                field = field_meta.get('input')
+                items = list(glossarie.get(options_id).values())
+                GUIBackend.set_combobox_items(field, items)
 
-                elif options_type in ['radio','checkbox']:
+            elif options_type in ['radio','checkbox']:
+                options_container:QtWidgets.QFrame = field_meta.get('options-container')
+                layout = options_container.layout()
+                GUIBackend.set_layout_alignment(layout,'r')
 
-                    options_container:QtWidgets.QFrame = field_meta.get('options-container')
-                    layout = options_container.layout()
-                    GUIBackend.set_layout_alignment(layout,'r')
+                options_input_field = []
+                for option_text in options_glossarie.values():
+                    if options_type=='radio':
+                        opt = QtWidgets.QRadioButton(option_text)
 
-                    options_input_field = []
-                    for option_text in options_glossarie.values():
-                        if options_type=='radio':
-                            opt = QtWidgets.QRadioButton(option_text)
-
-                        elif options_type =='checkbox':
-                            opt = QtWidgets.QCheckBox(option_text)
-                        
-                        GUIBackend.set_layout_direction(opt,'rtl')
-                        GUIBackend.add_widget(layout, opt)
-
-                        options_input_field.append(opt)
-
-                    form_meta[field_name]['input'] = options_input_field
+                    elif options_type =='checkbox':
+                        opt = QtWidgets.QCheckBox(option_text)
                     
+                    GUIBackend.set_layout_direction(opt,'rtl')
+                    GUIBackend.add_widget(layout, opt)
+
+                    options_input_field.append(opt)
+
+                form_meta[field_name]['input'] = options_input_field
+
+
+
+    def fields_change_connector(self, form_meta:dict[str,dict],):
+        for field_name, field_meta in form_meta.items():
+            field_input = field_meta.get('input')
+
+            if field_input is None:
+                print(f'{field_name} field input is empty')
+                continue
+
+            if isinstance(field_input, list):
+                for single_field in field_input:
+
+                    GUIBackend.connector(single_field, self.change_evnet, args=(field_name,))
+
+            
+            else:
+                GUIBackend.connector(field_input, self.change_evnet, args=(field_name,))
+    
+    def change_evnet(self, value, field_name:str):
+        print(value, field_name)

@@ -271,9 +271,15 @@ class GUIBackend:
         
         elif isinstance(wgt, QtWidgets.QLineEdit):
             return GUIBackend.get_input_text(wgt)
+        
+        elif isinstance(wgt, QtWidgets.QTextEdit):
+            return GUIBackend.get_input_text_area(wgt)
 
-        elif isinstance(wgt, QtWidgets.QCheckBox):
+        elif isinstance(wgt, QtWidgets.QCheckBox) :
             return GUIBackend.get_checkbox_value(wgt)
+        
+        elif isinstance(wgt, QtWidgets.QRadioButton):
+            return GUIBackend.get_radio_value(wgt)
         
         elif isinstance(wgt, QtWidgets.QDateEdit):
             return GUIBackend.get_date_input(wgt)
@@ -299,9 +305,15 @@ class GUIBackend:
         
         elif isinstance(wgt, QtWidgets.QLineEdit):
             GUIBackend.set_input_text(wgt, value, block_signal)
+
+        elif isinstance(wgt, QtWidgets.QTextEdit):
+            return GUIBackend.set_input_text_area(wgt, value, block_signal)
         
         elif isinstance(wgt, QtWidgets.QCheckBox):
             GUIBackend.set_checkbox_value(wgt, value, block_signal)
+
+        elif isinstance(wgt, QtWidgets.QRadioButton):
+            GUIBackend.set_radio_value(wgt, value, block_signal)
 
         elif isinstance(wgt, QtWidgets.QDateEdit):
             GUIBackend.set_date_input(wgt, value, block_signal)
@@ -315,22 +327,51 @@ class GUIBackend:
         """
         """
         if isinstance(wgt, QtWidgets.QComboBox):
-            return GUIBackend.combobox_changeg_connector(wgt, func)
+            if args is None:
+                return GUIBackend.combobox_changeg_connector(wgt, func)
+            else:
+                return GUIBackend.combobox_changeg_connector_argument_pass(wgt, func, args)
         
         elif isinstance(wgt, QtWidgets.QSpinBox) or isinstance(wgt, QtWidgets.QDoubleSpinBox):
-            return GUIBackend.spinbox_connector(wgt, func)
+            if args is None:
+                return GUIBackend.spinbox_connector(wgt, func)
+            else:
+                return GUIBackend.spinbox_connector_argumant_pass(wgt, func, args)
+
         
         elif isinstance(wgt, QtWidgets.QLineEdit):
-            return GUIBackend.input_text_connector(wgt, func)
+            if args is None:
+                return GUIBackend.input_text_connector(wgt, func)
+            else:
+                GUIBackend.input_text_connector_argumant_pass(wgt, func, args)
+
+        elif isinstance(wgt, QtWidgets.QTextEdit):
+            if args is None:
+                return GUIBackend.input_text_connector(wgt, func)
+            else:
+                GUIBackend.input_text_connector_argumant_pass(wgt, func, args)
+
 
         elif isinstance(wgt, QtWidgets.QCheckBox):
             if args is None:
                 return GUIBackend.checkbox_connector(wgt, lambda x: func())
             else:
-                pass
+                return GUIBackend.checkbox_connector_argument_pass(wgt, func, args)
+            
+        
+        elif isinstance(wgt, QtWidgets.QRadioButton):
+            if args is None:
+                return GUIBackend.radio_connector(wgt, lambda x: func())
+            else:
+                return GUIBackend.radio_connector_argument_pass(wgt, func, args)
         
         elif isinstance(wgt, QtWidgets.QDateEdit):
-            return GUIBackend.date_input_connector(wgt, func)
+            if args is None:
+                return GUIBackend.date_input_connector(wgt, func)
+            else:
+                return GUIBackend.date_input_connector_argumant_pass(wgt, func, args)
+
+                
         
         else:
             assert False, f"connector method doesn't support {wgt} object"
@@ -352,9 +393,22 @@ class GUIBackend:
 
     #--------------------------------- GLOBAL BUTTON FUNCTIONs ---------------------------------
     @staticmethod
-    def event_argumant_passer(func, args):
+    def event_argumant_passer(func, args, field=None):
+        """generate an event function that pass args into func
+
+        Args:
+            func (_type_): event function
+            args (_type_): arguments
+            field (_type_, optional): if a Qt field pass into this function, the event
+            func got tha value of field as firts argument
+        """
         def event_func():
-            func(*args)
+            if field is None:
+                func(*args)
+            else:
+                value = GUIBackend.get_input(field)
+                func(value, *args)
+
         return event_func
     
     @staticmethod
@@ -500,6 +554,17 @@ class GUIBackend:
             func : python function
         """
         combo.currentTextChanged.connect(func)
+
+    @staticmethod
+    def combobox_changeg_connector_argument_pass( combo: QtWidgets.QComboBox, func, args):
+        """connect combobox change selected item selected event
+
+        Args:
+            combo (QtWidgets.QComboBox): Qt comboBox object
+            func : python function
+        """
+        efunc = GUIBackend.event_argumant_passer(func, args=args, field=combo)
+        combo.currentTextChanged.connect(efunc)
 
     #--------------------------------- GLOBAL CheckBox FUNCTIONs ---------------------------------
     @staticmethod
@@ -666,6 +731,7 @@ class GUIBackend:
         """
         return inpt.value()
     
+    @staticmethod
     def set_spinbox_value(inpt: QtWidgets.QSpinBox, value, block_signal=False):
         """set a value into spinbox
 
@@ -681,6 +747,7 @@ class GUIBackend:
         if block_signal:
             GUIBackend.set_signal_connection(inpt, True)
 
+    @staticmethod
     def spinbox_connector(inpt: QtWidgets.QSpinBox, func):
         """connect a function to change value event
 
@@ -690,6 +757,20 @@ class GUIBackend:
         """
         inpt.valueChanged.connect(func)
 
+    @staticmethod
+    def spinbox_connector_argumant_pass(inpt: QtWidgets.QSpinBox, func, args):
+        """connect a function to change value event
+
+        Args:
+            inpt (QtWidgets.QSpinBox): Qt spinbox object
+            func (): 
+        """
+        efunc = GUIBackend.event_argumant_passer(func, args=args, field=inpt)
+        inpt.valueChanged.connect(efunc)
+
+    
+
+    @staticmethod
     def set_spinbox_range(inpt:QtWidgets.QSpinBox, value_range: tuple[int, int]):
         """set range of spinbox
 
@@ -704,15 +785,17 @@ class GUIBackend:
             inpt.setMaximum(high)
 
 
-
+    @staticmethod
     def get_textarea_text(inpt:QtWidgets.QTextEdit) -> str:
         return inpt.toPlainText()
     
+    @staticmethod
     def set_textarea_text(inpt:QtWidgets.QTextEdit, txt) -> str:
         return inpt.setPlainText(txt)
 
 
-    #--------------------------------- GLOBAL QLine edit FUNCTIONs ---------------------------------    
+    #--------------------------------- GLOBAL QLine edit FUNCTIONs ---------------------------------
+    @staticmethod    
     def get_input_text(inpt:QtWidgets.QLineEdit)-> str:
         """returns text of an input box
 
@@ -724,6 +807,7 @@ class GUIBackend:
         """
         return inpt.text()
 
+    @staticmethod
     def set_input_text(inpt:QtWidgets.QLineEdit, txt:str, block_signal=False):
         """returns text of an input box
 
@@ -740,6 +824,7 @@ class GUIBackend:
         if block_signal:
             GUIBackend.set_signal_connection(inpt, True)
 
+    @staticmethod
     def set_input_password(inpt:QtWidgets.QLineEdit):
         """make a input, password format that show charater by *
 
@@ -748,6 +833,7 @@ class GUIBackend:
         """
         inpt.setEchoMode(QtWidgets.QLineEdit.Password)
 
+    @staticmethod
     def set_input_normal(inpt:QtWidgets.QLineEdit):
         """make a input, normal format that show charaters normally
 
@@ -756,11 +842,63 @@ class GUIBackend:
         """
         inpt.setEchoMode(QtWidgets.QLineEdit.Normal)
 
-
+    @staticmethod
     def input_text_connector(inpt:QtWidgets.QLineEdit, func):
         inpt.textChanged.connect(func)
-    
 
+
+    @staticmethod
+    def input_text_connector_argumant_pass(inpt:QtWidgets.QLineEdit, func, args):
+
+        efunc = GUIBackend.event_argumant_passer(func, args=args, field=inpt)
+        inpt.textChanged.connect(efunc)
+
+        
+    
+    
+    #--------------------------------- GLOBAL Text edit FUNCTIONs ---------------------------------
+    @staticmethod    
+    def get_input_text_area(inpt:QtWidgets.QTextEdit)-> str:
+        """returns text of an input box
+
+        Args:
+            inpt (QtWidgets.QTextEdit): Qt Line edit object
+
+        Returns:
+            str: text of input
+        """
+        return inpt.toPlainText()
+
+    @staticmethod
+    def set_input_text_area(inpt:QtWidgets.QTextEdit, txt:str, block_signal=False):
+        """returns text of an input box
+
+        Args:
+            inpt (QtWidgets.QTextEdit): Qt Line edit object
+            txt (str): 
+
+        """
+        if block_signal:
+            GUIBackend.set_signal_connection(inpt, False)
+
+        inpt.setText(txt)
+
+        if block_signal:
+            GUIBackend.set_signal_connection(inpt, True)
+
+
+
+
+    @staticmethod
+    def input_text_area_connector(inpt:QtWidgets.QTextEdit, func):
+        inpt.textChanged.connect(func)
+
+
+    @staticmethod
+    def input_text_area_connector_argumant_pass(inpt:QtWidgets.QTextEdit, func, args):
+
+        efunc = GUIBackend.event_argumant_passer(func, args=args, field=inpt)
+        inpt.textChanged.connect(efunc)
     #--------------------------------- GLOBAL table FUNCTIONs ---------------------------------
     @staticmethod
     def set_table_dim(table: QtWidgets.QTableWidget, row:int , col:int):
@@ -1005,11 +1143,69 @@ class GUIBackend:
         return gp.setChecked(state)
 
 
-    
+    @staticmethod
     def set_groupbox_title(gp: QtWidgets.QGroupBox, title):
-
         gp.setTitle(title)
 
+
+    #--------------------------------- GLOBAL RadioButton FUNCTIONs ---------------------------
+    @staticmethod
+    def get_radio_value(radio: QtWidgets.QRadioButton) -> bool:
+        """returns state of Qt checkbox
+
+        Args:
+            radio (QtWidgets.QRadioButton): Qt CheckBox object
+
+        Returns:
+            bool: return True if checked. else return False
+        """
+        return radio.isChecked()
+    
+    @staticmethod
+    def set_radio_value(radio: QtWidgets.QRadioButton, value: bool, block_signal=False):
+        """set state of Qt radio
+
+        Args:
+            radio (QtWidgets.QRadioButton): Qt CheckBox object
+            value (bool): checked if True
+
+        
+        """
+        if block_signal:
+            GUIBackend.set_signal_connection(radio, False)
+
+        radio.setChecked(value)
+    
+        if block_signal:
+            GUIBackend.set_signal_connection(radio, True)
+    
+    
+    @staticmethod
+    def radio_connector(radio: QtWidgets.QRadioButton, func):
+        """connects a function to event of Qt radio change state
+
+        Args:
+            radio (QtWidgets.QRadioButton): Qt radio object
+            func (_type_): name of funtion
+        """
+        radio.toggled.connect(partial( func ))
+
+    def radio_connector_argument_pass(radio: QtWidgets.QRadioButton, func, args):
+        """connects a function to event of Qt checkbox change state and pass args
+        into that function
+        Warning:In addition of args, state of checkbox pass to event function as first argument
+
+        Args:
+            radio (QtWidgets.QRadioButton): _description_
+            func (_type_): _description_
+            args (_type_): _description_
+        """
+        def event_func(x):
+            func(bool(x),*args)
+        radio.toggled.connect(partial(event_func))
+
+
+    
     #--------------------------------- GLOBAL Frame FUNCTIONs ---------------------------------
     @staticmethod
     def set_frame_max_size( frame: QtWidgets.QFrame, w:int, h:int):
@@ -1041,6 +1237,7 @@ class GUIBackend:
 
     
     #--------------------------------- GLOBAL DateEdit FUNCTIONs ---------------------------------
+    @staticmethod
     def get_date_input( obj: QtWidgets.QDateEdit) -> datetime:
         """returns date of QDateEdit
 
@@ -1053,7 +1250,7 @@ class GUIBackend:
         return obj.date().toPython()
         #return datetime.combine( obj.date().toPython(), datetime.min.time() )
 
-    
+    @staticmethod
     def set_date_input( obj: QtWidgets.QDateEdit, date:date, block_signal=False) -> datetime:
         """returns date of QDateEdit
         """
@@ -1066,13 +1263,21 @@ class GUIBackend:
         if block_signal:
             GUIBackend.set_signal_connection(date, True)
     
+    @staticmethod
+    def date_input_connector( inpt: QtWidgets.QDateEdit, func):
+        inpt.dateChanged.connect(func)
 
-    def date_input_connector( obj: QtWidgets.QDateEdit, func):
-        obj.dateChanged.connect(lambda: func())
+    @staticmethod
+    def date_input_connector_argumant_pass( inpt: QtWidgets.QDateEdit, func, args):
+        efunc = GUIBackend.event_argumant_passer(func, args=args, field=inpt)
+        inpt.dateChanged.connect(efunc)
+
     
+    @staticmethod
     def get_date_input_range(obj: QtWidgets.QDateEdit)-> tuple[datetime]:
         return obj.minimumDate().toPython(), obj.maximumDate().toPython()
     
+    @staticmethod
     def set_date_input_range(obj: QtWidgets.QDateEdit,
                              date_range:tuple[datetime,datetime]):
         

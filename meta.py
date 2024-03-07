@@ -328,21 +328,21 @@ class Form:
             'type': 'spinbox',
         },
 
-        'floors-overal-info' : {
-            'title':'جزئیات هر طبقه',
-            'type': 'repeater',
-            'fields' : {
-            'floor-meterage' : {
-                'title':'متراژ طبقه',
-                'type': 'number',
-            },
+        # 'floors-overal-info' : {
+        #     'title':'جزئیات هر طبقه',
+        #     'type': 'repeater',
+        #     'fields' : {
+        #     'floor-meterage' : {
+        #         'title':'متراژ طبقه',
+        #         'type': 'number',
+        #     },
 
-            'floor-rooms' : {
-                'title':'تعداد اتاق طبقه',
-                'type': 'number',
-            },
-            }
-        },
+        #     'floor-rooms' : {
+        #         'title':'تعداد اتاق طبقه',
+        #         'type': 'number',
+        #     },
+        #     }
+        # },
 
 
         'light-direction' : {
@@ -526,17 +526,17 @@ class Form:
             'options-id' : 'branch',
         },
         
-        'other-features-repeater' : {
-            'title':'سایر امکانات',
-            'type': 'repeater',
-            'fields' : {
-            'other-feature-name' : {
-                'title':'نام',
-                'type': 'text',
-            }
-            },
+        # 'other-features-repeater' : {
+        #     'title':'سایر امکانات',
+        #     'type': 'repeater',
+        #     'fields' : {
+        #     'other-feature-name' : {
+        #         'title':'نام',
+        #         'type': 'text',
+        #     }
+        #     },
             
-        },
+        # },
 
         'floor-material' : {
             # جنس کف
@@ -784,15 +784,15 @@ class Form:
         },
 
 
-        'gallery' : {
-            'title':'گالری',
-            'type': 'textarea',
-        },
+        # 'gallery' : {
+        #     'title':'گالری',
+        #     'type': 'textarea',
+        # },
 
-        'featured-image' : {
-            'title':'تصویر شاخص',
-            'type': 'textarea',
-        },
+        # 'featured-image' : {
+        #     'title':'تصویر شاخص',
+        #     'type': 'textarea',
+        # },
 
         
     }
