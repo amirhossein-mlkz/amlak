@@ -10,7 +10,7 @@ from uiFiles.main_UI import Ui_MainWindow
 from uiUtils.guiBackend import GUIBackend
 from uiUtils.uiStyler import Styler
 from pagesUI.dashboardUI import dashboardPageUI
-from pagesUI.formUI import formUI
+from estateForm.estateFormHandler import formUI
 
 
 # ui_file = QFile("mainwindow.ui")

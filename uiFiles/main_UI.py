@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1011, 758)
+        MainWindow.resize(1011, 893)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -627,7 +627,6 @@ class Ui_MainWindow(object):
 " min-height:24px;\n"
 " max-height:24px;\n"
 " background:url(:/icons/icons/cross-red-24.png)  no-repeat center center;\n"
-" background-size: cover;\n"
 "}\n"
 "\n"
 "\n"
@@ -637,14 +636,13 @@ class Ui_MainWindow(object):
 " min-height:24px;\n"
 " max-height:24px;\n"
 " background:url(:/icons/icons/check-green-24.png) no-repeat center center;\n"
-" background-size: cover;\n"
 "}\n"
 "\n"
 "*[styleClass=\"buildingInfo\"] QFrame[styleClass=\"section\"] QFrame[styleClass=\"seperator\"]{\n"
-" min-heigh"
-                        "t:1px;\n"
+" min-height:1px;\n"
 " max-height:1px;\n"
-"background-color:rgba(0, 0, 0,20);\n"
+"background-color:rgba(0, 0"
+                        ", 0,20);\n"
 "}\n"
 "\n"
 "*[styleClass=\"buildingPageTopSection\"]{\n"
@@ -685,12 +683,12 @@ class Ui_MainWindow(object):
 "	max-width: 120;\n"
 "	min-height: 50;\n"
 "	max-height: 50;\n"
-"	f"
-                        "ont-size: 14px;\n"
+"	font-size: 14px;\n"
 "	font-weight: bold;\n"
 "}\n"
 "\n"
-"QPushButton[styleClass=\"form-btn\"]:disable{\n"
+"QPu"
+                        "shButton[styleClass=\"form-btn\"]:disable{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
 "	color: rgba(120, 120, 120, 255);\n"
 "}\n"
@@ -1158,7 +1156,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 774, 1480))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, -808, 774, 1480))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1412,7 +1410,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1988, 774, 2886))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 774, 2886))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -4945,7 +4943,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(3)
+        self.form_stackwidget.setCurrentIndex(2)
         self.tabWidget.setCurrentIndex(2)
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1011</width>
-    <height>758</height>
+    <height>893</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -606,7 +606,6 @@ QFrame[styleClass=&quot;buildingInfo&quot;]{
  min-height:24px;
  max-height:24px;
  background:url(:/icons/icons/cross-red-24.png)  no-repeat center center;
- background-size: cover;
 }
 
 
@@ -616,7 +615,6 @@ QFrame[styleClass=&quot;buildingInfo&quot;]{
  min-height:24px;
  max-height:24px;
  background:url(:/icons/icons/check-green-24.png) no-repeat center center;
- background-size: cover;
 }
 
 *[styleClass=&quot;buildingInfo&quot;] QFrame[styleClass=&quot;section&quot;] QFrame[styleClass=&quot;seperator&quot;]{
@@ -1146,7 +1144,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>3</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1439,7 +1437,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
+                 <y>-808</y>
                  <width>774</width>
                  <height>1480</height>
                 </rect>
@@ -1796,7 +1794,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-1988</y>
+                 <y>0</y>
                  <width>774</width>
                  <height>2886</height>
                 </rect>
