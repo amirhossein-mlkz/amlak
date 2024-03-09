@@ -1,5 +1,6 @@
 from __future__ import annotations
 import copy
+import re
 
 from PySide6 import QtWidgets
 
@@ -153,7 +154,7 @@ class Field:
         return self.dict_info.get('options-container')
     
     def get_visibility_conditions(self,)-> dict:
-        return copy.deepcopy(self.dict_info.get('conditions'))
+        return copy.deepcopy(self.dict_info.get('visible-conditions'))
     
     def get_container(self,) -> QtWidgets.QFrame:
         return self.dict_info.get('frame')
@@ -260,6 +261,12 @@ class Field:
                         text =  'این فیلد ضروری است'
                         validation = False
                         break
+
+                if cond_info['cond'] == 'regex':
+                    pattern = cond_info['pattern']
+                    if not re.match(pattern, value):
+                        text =  'به درستی وارد نمایید'
+                        validation = False
         
         self.show_error(text)
         return validation

@@ -2432,6 +2432,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.otherFeaturesFormFrame, 6, 1, 1, 1)
 
+        self.spacer_frame = QFrame(self.scrollAreaWidgetContents_2)
+        self.spacer_frame.setObjectName(u"spacer_frame")
+        self.spacer_frame.setFrameShape(QFrame.StyledPanel)
+        self.spacer_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_91 = QVBoxLayout(self.spacer_frame)
+        self.verticalLayout_91.setObjectName(u"verticalLayout_91")
+
+        self.gridLayout_5.addWidget(self.spacer_frame, 1, 0, 1, 1)
+
 
         self.verticalLayout_18.addLayout(self.gridLayout_5)
 
@@ -2449,7 +2458,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 774, 1549))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 774, 1609))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -2487,10 +2496,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_102.addWidget(self.floorMaterialFormOptionsFrame)
 
-        self.otherFloorMaterialFormInpt = QLineEdit(self.floorMaterialFormFrame)
+        self.otherFloorMaterialFormFrame = QFrame(self.floorMaterialFormFrame)
+        self.otherFloorMaterialFormFrame.setObjectName(u"otherFloorMaterialFormFrame")
+        self.otherFloorMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherFloorMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_92 = QVBoxLayout(self.otherFloorMaterialFormFrame)
+        self.verticalLayout_92.setObjectName(u"verticalLayout_92")
+        self.verticalLayout_92.setContentsMargins(5, 5, 5, 5)
+        self.otherFloorMaterialFormInpt = QLineEdit(self.otherFloorMaterialFormFrame)
         self.otherFloorMaterialFormInpt.setObjectName(u"otherFloorMaterialFormInpt")
 
-        self.verticalLayout_102.addWidget(self.otherFloorMaterialFormInpt)
+        self.verticalLayout_92.addWidget(self.otherFloorMaterialFormInpt)
+
+
+        self.verticalLayout_102.addWidget(self.otherFloorMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.floorMaterialFormFrame, 0, 2, 1, 1)
@@ -2520,10 +2539,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_118.addWidget(self.windowMaterialFormOptionsFrame)
 
-        self.otherWindowMaterialFormInpt = QLineEdit(self.windowMaterialFormFrame)
+        self.otherWindowMaterialFormFrame = QFrame(self.windowMaterialFormFrame)
+        self.otherWindowMaterialFormFrame.setObjectName(u"otherWindowMaterialFormFrame")
+        self.otherWindowMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherWindowMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_147 = QVBoxLayout(self.otherWindowMaterialFormFrame)
+        self.verticalLayout_147.setObjectName(u"verticalLayout_147")
+        self.verticalLayout_147.setContentsMargins(5, 5, 5, 5)
+        self.otherWindowMaterialFormInpt = QLineEdit(self.otherWindowMaterialFormFrame)
         self.otherWindowMaterialFormInpt.setObjectName(u"otherWindowMaterialFormInpt")
 
-        self.verticalLayout_118.addWidget(self.otherWindowMaterialFormInpt)
+        self.verticalLayout_147.addWidget(self.otherWindowMaterialFormInpt)
+
+
+        self.verticalLayout_118.addWidget(self.otherWindowMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.windowMaterialFormFrame, 3, 1, 1, 1)
@@ -2553,10 +2582,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_104.addWidget(self.wallsMaterialFormOptionsFrame)
 
-        self.otherWallsMaterialFormInpt = QLineEdit(self.wallsMaterialFormFrame)
+        self.otherWallsMaterialFormFrame = QFrame(self.wallsMaterialFormFrame)
+        self.otherWallsMaterialFormFrame.setObjectName(u"otherWallsMaterialFormFrame")
+        self.otherWallsMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherWallsMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_127 = QVBoxLayout(self.otherWallsMaterialFormFrame)
+        self.verticalLayout_127.setObjectName(u"verticalLayout_127")
+        self.verticalLayout_127.setContentsMargins(5, 5, 5, 5)
+        self.otherWallsMaterialFormInpt = QLineEdit(self.otherWallsMaterialFormFrame)
         self.otherWallsMaterialFormInpt.setObjectName(u"otherWallsMaterialFormInpt")
 
-        self.verticalLayout_104.addWidget(self.otherWallsMaterialFormInpt)
+        self.verticalLayout_127.addWidget(self.otherWallsMaterialFormInpt)
+
+
+        self.verticalLayout_104.addWidget(self.otherWallsMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.wallsMaterialFormFrame, 0, 1, 1, 1)
@@ -2586,10 +2625,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_110.addWidget(self.kitchenMaterialFormOptionsFrame)
 
-        self.otherKitchenMaterialFormInpt = QLineEdit(self.kitchenMaterialFormFrame)
+        self.otherKitchenMaterialFormFrame = QFrame(self.kitchenMaterialFormFrame)
+        self.otherKitchenMaterialFormFrame.setObjectName(u"otherKitchenMaterialFormFrame")
+        self.otherKitchenMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherKitchenMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_142 = QVBoxLayout(self.otherKitchenMaterialFormFrame)
+        self.verticalLayout_142.setObjectName(u"verticalLayout_142")
+        self.verticalLayout_142.setContentsMargins(5, 5, 5, 5)
+        self.otherKitchenMaterialFormInpt = QLineEdit(self.otherKitchenMaterialFormFrame)
         self.otherKitchenMaterialFormInpt.setObjectName(u"otherKitchenMaterialFormInpt")
 
-        self.verticalLayout_110.addWidget(self.otherKitchenMaterialFormInpt)
+        self.verticalLayout_142.addWidget(self.otherKitchenMaterialFormInpt)
+
+
+        self.verticalLayout_110.addWidget(self.otherKitchenMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.kitchenMaterialFormFrame, 1, 1, 1, 1)
@@ -2619,10 +2668,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_108.addWidget(self.cabinetsMaterialFormOptionsFrame)
 
-        self.otherCabinetsMaterialFormInpt = QLineEdit(self.cabinetsMaterialFormFrame)
+        self.otherCabinetsMaterialFormFrame = QFrame(self.cabinetsMaterialFormFrame)
+        self.otherCabinetsMaterialFormFrame.setObjectName(u"otherCabinetsMaterialFormFrame")
+        self.otherCabinetsMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherCabinetsMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_143 = QVBoxLayout(self.otherCabinetsMaterialFormFrame)
+        self.verticalLayout_143.setObjectName(u"verticalLayout_143")
+        self.verticalLayout_143.setContentsMargins(5, 5, 5, 5)
+        self.otherCabinetsMaterialFormInpt = QLineEdit(self.otherCabinetsMaterialFormFrame)
         self.otherCabinetsMaterialFormInpt.setObjectName(u"otherCabinetsMaterialFormInpt")
 
-        self.verticalLayout_108.addWidget(self.otherCabinetsMaterialFormInpt)
+        self.verticalLayout_143.addWidget(self.otherCabinetsMaterialFormInpt)
+
+
+        self.verticalLayout_108.addWidget(self.otherCabinetsMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.cabinetsMaterialFormFrame, 1, 2, 1, 1)
@@ -2652,10 +2711,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_106.addWidget(self.ceilingMaterialFormOptionsFrame)
 
-        self.otherCeilingMaterialFormInpt = QLineEdit(self.ceilingMaterialFormFrame)
+        self.otherCeilingMaterialFormFrame = QFrame(self.ceilingMaterialFormFrame)
+        self.otherCeilingMaterialFormFrame.setObjectName(u"otherCeilingMaterialFormFrame")
+        self.otherCeilingMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherCeilingMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_128 = QVBoxLayout(self.otherCeilingMaterialFormFrame)
+        self.verticalLayout_128.setObjectName(u"verticalLayout_128")
+        self.verticalLayout_128.setContentsMargins(5, 5, 5, 5)
+        self.otherCeilingMaterialFormInpt = QLineEdit(self.otherCeilingMaterialFormFrame)
         self.otherCeilingMaterialFormInpt.setObjectName(u"otherCeilingMaterialFormInpt")
 
-        self.verticalLayout_106.addWidget(self.otherCeilingMaterialFormInpt)
+        self.verticalLayout_128.addWidget(self.otherCeilingMaterialFormInpt)
+
+
+        self.verticalLayout_106.addWidget(self.otherCeilingMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.ceilingMaterialFormFrame, 0, 0, 1, 1)
@@ -2685,10 +2754,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_114.addWidget(self.warmingSystemFormOptionsFrame)
 
-        self.otherWarmingSystemFormInpt = QLineEdit(self.warmingSystemFormFrame)
+        self.otherWarmingSystemFormFrame = QFrame(self.warmingSystemFormFrame)
+        self.otherWarmingSystemFormFrame.setObjectName(u"otherWarmingSystemFormFrame")
+        self.otherWarmingSystemFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherWarmingSystemFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_145 = QVBoxLayout(self.otherWarmingSystemFormFrame)
+        self.verticalLayout_145.setObjectName(u"verticalLayout_145")
+        self.verticalLayout_145.setContentsMargins(5, 5, 5, 5)
+        self.otherWarmingSystemFormInpt = QLineEdit(self.otherWarmingSystemFormFrame)
         self.otherWarmingSystemFormInpt.setObjectName(u"otherWarmingSystemFormInpt")
 
-        self.verticalLayout_114.addWidget(self.otherWarmingSystemFormInpt)
+        self.verticalLayout_145.addWidget(self.otherWarmingSystemFormInpt)
+
+
+        self.verticalLayout_114.addWidget(self.otherWarmingSystemFormFrame)
 
 
         self.gridLayout_3.addWidget(self.warmingSystemFormFrame, 2, 1, 1, 1)
@@ -2718,10 +2797,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_116.addWidget(self.doorMaterialFormOptionsFrame)
 
-        self.otherDoorMaterialFormInpt = QLineEdit(self.doorMaterialFormFrame)
+        self.otherDoorMaterialFormFrame = QFrame(self.doorMaterialFormFrame)
+        self.otherDoorMaterialFormFrame.setObjectName(u"otherDoorMaterialFormFrame")
+        self.otherDoorMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherDoorMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_146 = QVBoxLayout(self.otherDoorMaterialFormFrame)
+        self.verticalLayout_146.setObjectName(u"verticalLayout_146")
+        self.verticalLayout_146.setContentsMargins(5, 5, 5, 5)
+        self.otherDoorMaterialFormInpt = QLineEdit(self.otherDoorMaterialFormFrame)
         self.otherDoorMaterialFormInpt.setObjectName(u"otherDoorMaterialFormInpt")
 
-        self.verticalLayout_116.addWidget(self.otherDoorMaterialFormInpt)
+        self.verticalLayout_146.addWidget(self.otherDoorMaterialFormInpt)
+
+
+        self.verticalLayout_116.addWidget(self.otherDoorMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.doorMaterialFormFrame, 3, 2, 1, 1)
@@ -2751,10 +2840,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_112.addWidget(self.coolingSystemFormOptionsFrame)
 
-        self.otherCoolingSystemFormInpt = QLineEdit(self.coolingSystemFormFrame)
+        self.otherCoolingSystemFormFrame = QFrame(self.coolingSystemFormFrame)
+        self.otherCoolingSystemFormFrame.setObjectName(u"otherCoolingSystemFormFrame")
+        self.otherCoolingSystemFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherCoolingSystemFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_144 = QVBoxLayout(self.otherCoolingSystemFormFrame)
+        self.verticalLayout_144.setObjectName(u"verticalLayout_144")
+        self.verticalLayout_144.setContentsMargins(5, 5, 5, 5)
+        self.otherCoolingSystemFormInpt = QLineEdit(self.otherCoolingSystemFormFrame)
         self.otherCoolingSystemFormInpt.setObjectName(u"otherCoolingSystemFormInpt")
 
-        self.verticalLayout_112.addWidget(self.otherCoolingSystemFormInpt)
+        self.verticalLayout_144.addWidget(self.otherCoolingSystemFormInpt)
+
+
+        self.verticalLayout_112.addWidget(self.otherCoolingSystemFormFrame)
 
 
         self.gridLayout_3.addWidget(self.coolingSystemFormFrame, 2, 2, 1, 1)
@@ -2784,10 +2883,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_120.addWidget(self.bathroomMaterialFormOptionsFrame)
 
-        self.otherBathroomMaterialFormInpt = QLineEdit(self.bathroomMaterialFormFrame)
+        self.otherBathroomMaterialFormFrame = QFrame(self.bathroomMaterialFormFrame)
+        self.otherBathroomMaterialFormFrame.setObjectName(u"otherBathroomMaterialFormFrame")
+        self.otherBathroomMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherBathroomMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_148 = QVBoxLayout(self.otherBathroomMaterialFormFrame)
+        self.verticalLayout_148.setObjectName(u"verticalLayout_148")
+        self.verticalLayout_148.setContentsMargins(5, 5, 5, 5)
+        self.otherBathroomMaterialFormInpt = QLineEdit(self.otherBathroomMaterialFormFrame)
         self.otherBathroomMaterialFormInpt.setObjectName(u"otherBathroomMaterialFormInpt")
 
-        self.verticalLayout_120.addWidget(self.otherBathroomMaterialFormInpt)
+        self.verticalLayout_148.addWidget(self.otherBathroomMaterialFormInpt)
+
+
+        self.verticalLayout_120.addWidget(self.otherBathroomMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.bathroomMaterialFormFrame, 4, 2, 1, 1)
@@ -2817,10 +2926,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_122.addWidget(self.wcMaterialFormOptionsFrame)
 
-        self.otherWcMaterialFormInpt = QLineEdit(self.wcMaterialFormFrame)
+        self.otherWcMaterialFormFrame = QFrame(self.wcMaterialFormFrame)
+        self.otherWcMaterialFormFrame.setObjectName(u"otherWcMaterialFormFrame")
+        self.otherWcMaterialFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.otherWcMaterialFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_149 = QVBoxLayout(self.otherWcMaterialFormFrame)
+        self.verticalLayout_149.setObjectName(u"verticalLayout_149")
+        self.verticalLayout_149.setContentsMargins(5, 5, 5, 5)
+        self.otherWcMaterialFormInpt = QLineEdit(self.otherWcMaterialFormFrame)
         self.otherWcMaterialFormInpt.setObjectName(u"otherWcMaterialFormInpt")
 
-        self.verticalLayout_122.addWidget(self.otherWcMaterialFormInpt)
+        self.verticalLayout_149.addWidget(self.otherWcMaterialFormInpt)
+
+
+        self.verticalLayout_122.addWidget(self.otherWcMaterialFormFrame)
 
 
         self.gridLayout_3.addWidget(self.wcMaterialFormFrame, 4, 1, 1, 1)
@@ -4943,7 +5062,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(2)
+        self.form_stackwidget.setCurrentIndex(5)
         self.tabWidget.setCurrentIndex(2)
 
 

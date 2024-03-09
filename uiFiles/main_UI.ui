@@ -1144,7 +1144,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>2</number>
+           <number>5</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -3502,6 +3502,17 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
+                  <item row="1" column="0">
+                   <widget class="QFrame" name="spacer_frame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_91"/>
+                   </widget>
+                  </item>
                  </layout>
                 </item>
                </layout>
@@ -3523,7 +3534,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                  <x>0</x>
                  <y>0</y>
                  <width>774</width>
-                 <height>1549</height>
+                 <height>1609</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -3592,10 +3603,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherFloorMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherFloorMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_92">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherFloorMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3642,10 +3677,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherWindowMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherWindowMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_147">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherWindowMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3692,10 +3751,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherWallsMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherWallsMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_127">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherWallsMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3742,10 +3825,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherKitchenMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherKitchenMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_142">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherKitchenMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3792,10 +3899,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherCabinetsMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherCabinetsMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_143">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherCabinetsMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3842,10 +3973,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherCeilingMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherCeilingMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_128">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherCeilingMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3892,10 +4047,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherWarmingSystemFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherWarmingSystemFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_145">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherWarmingSystemFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3942,10 +4121,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherDoorMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherDoorMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_146">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherDoorMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -3992,10 +4195,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherCoolingSystemFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherCoolingSystemFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_144">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherCoolingSystemFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -4042,10 +4269,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherBathroomMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherBathroomMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_148">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherBathroomMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -4092,10 +4343,34 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="otherWcMaterialFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
+                      <widget class="QFrame" name="otherWcMaterialFormFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_149">
+                        <property name="leftMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>5</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>5</number>
+                        </property>
+                        <item>
+                         <widget class="QLineEdit" name="otherWcMaterialFormInpt">
+                          <property name="styleClass" stdset="0">
+                           <string>form-field</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>

@@ -34,8 +34,8 @@ class conditionsChecker:
                 if key > value:
                     return False    
             
-            if operator == 'in':
-                if key not in value:
+            if operator == 'contain':
+                if value not in key:
                     return False
             
         return True
