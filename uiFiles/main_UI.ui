@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1011</width>
-    <height>893</height>
+    <height>901</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1144,7 +1144,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>5</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1437,8 +1437,8 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-808</y>
-                 <width>774</width>
+                 <y>0</y>
+                 <width>677</width>
                  <height>1480</height>
                 </rect>
                </property>
@@ -1795,7 +1795,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>774</width>
+                 <width>742</width>
                  <height>2886</height>
                 </rect>
                </property>
@@ -2864,7 +2864,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>774</width>
+                 <width>710</width>
                  <height>1873</height>
                 </rect>
                </property>
@@ -3533,7 +3533,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>774</width>
+                 <width>661</width>
                  <height>1609</height>
                 </rect>
                </property>
@@ -4618,17 +4618,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </spacer>
            </item>
            <item>
-            <spacer name="verticalSpacer_6">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
+            <widget class="QLabel" name="estateStepErrorLabel">
+             <property name="styleSheet">
+              <string notr="true">font-size:20px;</string>
              </property>
-             <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
+             <property name="text">
+              <string>لطفا ورودی‌ها را به درستی وارد نمایید</string>
+             </property>
+             <property name="styleClass" stdset="0">
+              <string>form-field-error</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>20</width>
-               <height>40</height>
+               <width>40</width>
+               <height>20</height>
               </size>
              </property>
             </spacer>
@@ -8171,6 +8181,7 @@ QLabel[buildingState=&quot;2&quot;]{
  </widget>
  <resources>
   <include location="assets/assets.qrc"/>
+  <include location="../../../.designer/backup/assets/assets.qrc"/>
  </resources>
  <connections/>
  <buttongroups>

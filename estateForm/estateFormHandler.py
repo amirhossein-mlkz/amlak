@@ -25,27 +25,21 @@ class formUI:
         self.ui = ui
         self.estate_form = FormHandler(
             form_fields_info= build_estate_form_info(self.ui),
-            gloassaries= build_estate_gellosaries()
+            gloassaries= build_estate_gellosaries(),
+            form_ui = {
+                'next_btn': self.ui.form_next_btn,
+                'prev_btn': self.ui.form_prev_btn,
+                'pages': self.ui.form_stackwidget,
+                'error_label': self.ui.estateStepErrorLabel
+            }
         )
         
 
         #self.render_options(self.estate_form_meta, self.estate_form_glossaries)
 
-        GUIBackend.button_connector(self.ui.form_next_btn, self.next_step)
-        GUIBackend.button_connector(self.ui.form_prev_btn, self.prev_step)
-        
-    def next_step(self,):
-        step = GUIBackend.get_stack_widget_idx(self.ui.form_stackwidget)
-        step_count = GUIBackend.get_stack_widget_count(self.ui.form_stackwidget)
-        step+=1
-        step = min(step, step_count-1)
-        GUIBackend.set_stack_widget_idx(self.ui.form_stackwidget, step)
+    
 
-    def prev_step(self,):
-        step = GUIBackend.get_stack_widget_idx(self.ui.form_stackwidget)
-        step-=1
-        step = max(step, 0)
-        GUIBackend.set_stack_widget_idx(self.ui.form_stackwidget, step)
+    
 
     
 

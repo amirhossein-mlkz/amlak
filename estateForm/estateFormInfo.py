@@ -14,6 +14,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'label': ui.melkCategoryFormLbl,
                     'error': ui.melkCategoryFormError,
                     'frame': ui.melkCategoryFormFrame,
+                    'step': 1,
                     'type': 'combobox',
                     'options-id' : 'melk-category',
                     'validation': [
@@ -27,6 +28,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'label':ui.cityFormLbl,
                     'error':ui.cityFormError,
                     'frame':ui.cityFormFrame,
+                    'step': 2,
                     'type': 'combobox',
                     'options-id' : 'city',
                 },
@@ -37,6 +39,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.regionFormLbl,
                 'error':ui.regionFormError,
                 'frame':ui.regionFormFrame,
+                'step': 2,
                 'type': 'spinbox',
                 'options-id' : 'city',
             },
@@ -47,6 +50,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.streetFormLbl,
                 'error':ui.streetFormError,
                 'frame':ui.streetFormFrame,
+                'step': 2,
                 'type': 'input',
             },
 
@@ -56,7 +60,11 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.addressFormLbl,
                 'error':ui.addressFormError,
                 'frame':ui.addressFormFrame,
+                'step': 2,
                 'type': 'input',
+                'validation': [
+                        {'cond':'require'}
+                    ]
             },
 
             'owner-name1' : {
@@ -65,6 +73,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.ownerName1FormLbl,
                 'error':ui.ownerName1FormError,
                 'frame':ui.ownerName1FormFrame,
+                'step': 3,
                 'type': 'input',
                 'validation': [
                         {'cond':'require'}
@@ -77,6 +86,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.ownerName2FormLbl,
                 'error':ui.ownerName2FormError,
                 'frame':ui.ownerName2FormFrame,
+                'step': 3,
                 'type': 'input',
             },
 
@@ -86,6 +96,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.owner1MobileNumberFormLbl,
                 'error':ui.owner1MobileNumberFormError,
                 'frame':ui.owner1MobileNumberFormFrame,
+                'step': 3,
                 'type': 'input',
                 'validation': [
                         {'cond':'require'},
@@ -99,6 +110,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.owner2MobileNumberFormLbl,
                 'error':ui.owner2MobileNumberFormError,
                 'frame':ui.owner2MobileNumberFormFrame,
+                'step': 3,
                 'type': 'input',
             },
             
@@ -108,6 +120,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.owner1PhoneNumberFormLbl,
                 'error':ui.owner1PhoneNumberFormError,
                 'frame':ui.owner1PhoneNumberFormFrame,
+                'step': 3,
                 'type': 'input',
             },
 
@@ -117,6 +130,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.tenantNameFormLbl,
                 'error':ui.tenantNameFormError,
                 'frame':ui.tenantNameFormFrame,
+                'step': 3,
                 'type': 'input',
             },
 
@@ -126,6 +140,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.tenantPhoneNumberFormLbl,
                 'error':ui.tenantPhoneNumberFormError,
                 'frame':ui.tenantPhoneNumberFormFrame,
+                'step': 3,
                 'type': 'input',
             },
 
@@ -135,6 +150,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.guardNameFormLbl,
                 'error':ui.guardNameFormError,
                 'frame':ui.guardNameFormFrame,
+                'step': 3,
                 'type': 'input',
             },
             
@@ -144,6 +160,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.guardPhoneNumberFormLbl,
                 'error':ui.guardPhoneNumberFormError,
                 'frame':ui.guardPhoneNumberFormFrame,
+                'step': 3,
                 'type': 'input',
             },
 
@@ -153,6 +170,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.ownerDescriptionFormLbl,
                 'error':ui.ownerDescriptionFormError,
                 'frame':ui.ownerDescriptionFormFrame,
+                'step': 3,
                 'type': 'input',
             },
 

@@ -17,14 +17,31 @@ from Backend.Utils.conditionsChecker import conditionsChecker
 #
 #
 #_______________________________________________________________________________________________
-
+#form_ui_keys = 'next_btn', 'prev_btn', 'pages', 'submit'
 
 class FormHandler:
+    VALID_FORM_UI_KEYS = ['next_btn', 'prev_btn', 'pages', 'error_label']
 
-    def __init__(self, form_fields_info:dict[str,dict], gloassaries:GlossaryHandler) -> None:
+    def __init__(self, 
+                 form_fields_info:dict[str,dict], 
+                 gloassaries:GlossaryHandler,
+                 form_ui: dict[str, QtWidgets.QWidget] = {},
+                 ) -> None:
+        """_summary_
+
+        Args:
+            form_fields_info (dict[str,dict]): _description_
+            gloassaries (GlossaryHandler): _description_
+            form_ui (dict[str, QtWidgets.QWidget], optional): descibe form ui widgets
+                the keys could be ['next_btn', 'prev_btn', 'pages', 'error_label'
+        """
+        
         self.gloassaries = gloassaries
         self.form_fields_dict = form_fields_info
+        self.form_ui = form_ui
+        self.curent_step = 1
         
+        self.handle_form_ui()
         self.render_options()
         
         self.conditions_field = self.generate_map_conditions()
@@ -32,6 +49,25 @@ class FormHandler:
 
         self.fields_event_connector()
         self.hide_all_errors()
+    
+    def handle_form_ui(self, ):
+        for key,wgt in self.form_ui.items():
+
+            if key == 'next_btn':
+                GUIBackend.button_connector(wgt, self.next_step)
+                assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui is neccesury in multi step_form"
+                
+            elif key == 'prev_btn':
+                GUIBackend.button_connector(wgt, self.prev_step)
+                assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui is neccesury in multi step_form"
+            
+            elif key in ['pages', 'error_label']:
+                pass
+
+            else:
+                raise f"{key} is not a valid form. only {self.VALID_FORM_UI_KEYS} could be used"
+
+
 
     def render_options(self,):
 
@@ -119,6 +155,62 @@ class FormHandler:
         for corespond_field_name in corespond_fields_names:
             corespond_field = self.get_field(corespond_field_name)
             corespond_field.refresh_field_visibility(self.form_values)
+    
+    def check_step_validation(self, step):
+        validation = True
+        for field_name in self.get_fields_list():
+            field = self.get_field(field_name)
+            if field.is_for_this_step(step):
+                field_validation = field.check_validation()
+                if not field_validation:
+                    validation = False
+        
+        return validation
+    
+
+    def next_step(self,):
+        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
+        pages_wgt= self.form_ui['pages']
+
+        step = GUIBackend.get_stack_widget_idx(pages_wgt)
+        if self.check_step_validation(step+1):
+            step_count = GUIBackend.get_stack_widget_count(pages_wgt)
+            step+=1
+            step = min(step, step_count-1)
+            GUIBackend.set_stack_widget_idx(pages_wgt, step)
+            self.write_form_error(None)
+        else:
+            self.write_form_error('لطفا مقادیر را به درستی وارد نمایید')
+
+
+    def prev_step(self,):
+        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
+        pages_wgt= self.form_ui['pages']
+
+        step = GUIBackend.get_stack_widget_idx(pages_wgt)
+        step-=1
+        step = max(step, 0)
+        GUIBackend.set_stack_widget_idx(pages_wgt, step)
+        self.write_form_error(None)
+    
+    def write_form_error(self, txt):
+        wgt = self.form_ui.get('error_label')
+        if wgt is None:
+            return
+        
+        if txt is None:
+            GUIBackend.set_wgt_visible(wgt, False)
+        else:
+            GUIBackend.set_wgt_visible(wgt, True)
+            GUIBackend.set_label_text(wgt, str(txt))
+
+
+
+
+    
+    
+            
+            
 
 
 
@@ -138,11 +230,15 @@ class Field:
     def is_option_field(self,) -> bool:
         return bool(self.dict_info.get('options-id'))
     
+    def is_for_this_step(self, step):
+        return step == self.dict_info.get('step', -1)
+    
     def get_error_label(self,) -> QtWidgets.QLabel:
         return self.dict_info.get('error')
     
     def get_options_id(self,) -> str:
         return self.dict_info.get('options-id')
+    
     
     def get_type(self,) -> str:
         return self.dict_info.get('type')

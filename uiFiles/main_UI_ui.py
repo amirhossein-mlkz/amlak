@@ -23,12 +23,13 @@ from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QButtonGroup, 
     QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
     QTextEdit, QVBoxLayout, QWidget)
 import assets_rc
+import assets_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1011, 893)
+        MainWindow.resize(1011, 901)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -1156,7 +1157,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, -808, 774, 1480))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 677, 1480))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1410,7 +1411,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 774, 2886))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 742, 2886))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -2044,7 +2045,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 774, 1873))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 710, 1873))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -2458,7 +2459,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 774, 1609))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 661, 1609))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -3099,9 +3100,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
 
-        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.estateStepErrorLabel = QLabel(self.frame1)
+        self.estateStepErrorLabel.setObjectName(u"estateStepErrorLabel")
+        self.estateStepErrorLabel.setStyleSheet(u"font-size:20px;")
 
-        self.horizontalLayout_2.addItem(self.verticalSpacer_6)
+        self.horizontalLayout_2.addWidget(self.estateStepErrorLabel)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_6)
 
         self.form_prev_btn = QPushButton(self.frame1)
         self.form_prev_btn.setObjectName(u"form_prev_btn")
@@ -5062,7 +5069,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(5)
+        self.form_stackwidget.setCurrentIndex(6)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -5431,6 +5438,8 @@ class Ui_MainWindow(object):
         self.descriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.form_next_btn.setText(QCoreApplication.translate("MainWindow", u"\u0628\u0639\u062f\u06cc", None))
         self.form_next_btn.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
+        self.estateStepErrorLabel.setText(QCoreApplication.translate("MainWindow", u"\u0644\u0637\u0641\u0627 \u0648\u0631\u0648\u062f\u06cc\u200c\u0647\u0627 \u0631\u0627 \u0628\u0647 \u062f\u0631\u0633\u062a\u06cc \u0648\u0627\u0631\u062f \u0646\u0645\u0627\u06cc\u06cc\u062f", None))
+        self.estateStepErrorLabel.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.form_prev_btn.setText(QCoreApplication.translate("MainWindow", u"\u0642\u0628\u0644\u06cc", None))
         self.form_prev_btn.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
         self.label_93.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0644\u06a9 \u06f5\u06f3\u06f8", None))
