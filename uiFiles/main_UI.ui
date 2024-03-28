@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>913</width>
+    <width>1252</width>
     <height>901</height>
    </rect>
   </property>
@@ -467,6 +467,7 @@ QComboBox:focus{
 	border: 2px solid #7E84A2;
 	min-height: 0px;
 	max-height: 0px;
+	margin-top:36px;
 }
 
 *[styleSheet=&quot;LshowStepsFrameStyle&quot;]  .QPushButton
@@ -481,6 +482,28 @@ QComboBox:focus{
 	font-size: 24px;
 	color: rgb(20, 20, 20);
 	font-weight: bold;
+}
+
+*[styleSheet=&quot;LshowStepsFrameStyle&quot;]  .QPushButton[stateStyle=&quot;0&quot;]
+{
+	border:5px solid #7E84A2;
+	border-radius: 32px;
+	font-size: 24px;
+}
+
+
+*[styleSheet=&quot;LshowStepsFrameStyle&quot;]  .QPushButton[stateStyle=&quot;1&quot;]
+{
+	border:8px solid rgb(41, 147, 108);
+	border-radius: 34px;
+	font-size: 30px;
+}
+
+*[styleSheet=&quot;LshowStepsFrameStyle&quot;]  .QPushButton[stateStyle=&quot;2&quot;]
+{
+	border:8px solid rgb(16, 109, 185);
+	border-radius: 34px;
+	font-size: 30px;
 }
 
 *[styleSheet=&quot;LshowStepsFrameStyle&quot;]  .QPushButton:hover
@@ -1007,18 +1030,32 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
           <property name="styleSheet">
            <string notr="true">LshowStepsFrameStyle</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1">
            <property name="topMargin">
             <number>1</number>
            </property>
            <item>
-            <widget class="QPushButton" name="pushButton_19">
-             <property name="text">
-              <string>۸</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_160">
+             <item>
+              <widget class="QPushButton" name="estateFormStep8Btn">
+               <property name="text">
+                <string>۸</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_28">
+               <property name="text">
+                <string>پایان</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_31">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1029,13 +1066,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_6">
-             <property name="text">
-              <string>۷</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_159">
+             <item>
+              <widget class="QPushButton" name="estateFormStep7Btn">
+               <property name="text">
+                <string>۷</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_27">
+               <property name="text">
+                <string>تصاویر</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_30">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1046,13 +1097,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_11">
-             <property name="text">
-              <string>۶</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_158">
+             <item>
+              <widget class="QPushButton" name="estateFormStep6Btn">
+               <property name="text">
+                <string>۶</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_26">
+               <property name="text">
+                <string>متریال </string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_29">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1063,13 +1128,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_8">
-             <property name="text">
-              <string>۵</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_157">
+             <item>
+              <widget class="QPushButton" name="estateFormStep5Btn">
+               <property name="text">
+                <string>۵</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>امکانات</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_28">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1080,13 +1159,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_10">
-             <property name="text">
-              <string>۴</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_156">
+             <item>
+              <widget class="QPushButton" name="estateFormStep4Btn">
+               <property name="text">
+                <string>۴</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>اطلاعات کلی</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_27">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1097,13 +1190,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_9">
-             <property name="text">
-              <string>۳</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_155">
+             <item>
+              <widget class="QPushButton" name="estateFormStep3Btn">
+               <property name="text">
+                <string>۳</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>اطلاعات مالک</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="frame_26">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1114,13 +1221,27 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_7">
-             <property name="text">
-              <string>۲</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_154">
+             <item>
+              <widget class="QPushButton" name="estateFormStep2Btn">
+               <property name="text">
+                <string>۲</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>آدرس</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
-           <item>
+           <item alignment="Qt::AlignTop">
             <widget class="QFrame" name="step1Line">
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1131,11 +1252,25 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_5">
-             <property name="text">
-              <string>۱</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_153">
+             <item>
+              <widget class="QPushButton" name="estateFormStep1Btn">
+               <property name="text">
+                <string>۱</string>
+               </property>
+               <property name="stateStyle" stdset="0">
+                <number>2</number>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignHCenter">
+              <widget class="QLabel" name="label_21">
+               <property name="text">
+                <string>نوع ملک</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
@@ -1143,7 +1278,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1249,176 +1384,195 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
           </widget>
           <widget class="QWidget" name="form_step2">
            <layout class="QVBoxLayout" name="verticalLayout_11">
-            <item alignment="Qt::AlignHCenter">
-             <widget class="QLabel" name="label_34">
-              <property name="text">
-               <string>آدرس</string>
+            <item>
+             <widget class="QScrollArea" name="scrollArea_6">
+              <property name="widgetResizable">
+               <bool>true</bool>
               </property>
-              <property name="styleClass" stdset="0">
-               <string>form-step-title</string>
-              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_6">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>1015</width>
+                 <height>602</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_162">
+                <item alignment="Qt::AlignHCenter">
+                 <widget class="QLabel" name="label_34">
+                  <property name="text">
+                   <string>آدرس</string>
+                  </property>
+                  <property name="styleClass" stdset="0">
+                   <string>form-step-title</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout_1_1" columnstretch="1,1,1" columnminimumwidth="0,0,0">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>24</number>
+                  </property>
+                  <property name="horizontalSpacing">
+                   <number>100</number>
+                  </property>
+                  <property name="verticalSpacing">
+                   <number>20</number>
+                  </property>
+                  <item row="0" column="1">
+                   <widget class="QFrame" name="regionFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_57">
+                     <item>
+                      <widget class="QLabel" name="regionFormLbl">
+                       <property name="text">
+                        <string>منطقه</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="regionFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="regionFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QFrame" name="cityFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_56">
+                     <item>
+                      <widget class="QLabel" name="cityFormLbl">
+                       <property name="text">
+                        <string>شهر</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="cityFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="cityFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QFrame" name="streetFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_58">
+                     <item>
+                      <widget class="QLabel" name="streetFormLbl">
+                       <property name="text">
+                        <string>محله</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="streetFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="streetFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout_1_2">
+                  <property name="topMargin">
+                   <number>13</number>
+                  </property>
+                  <item row="0" column="0">
+                   <widget class="QFrame" name="addressFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_60">
+                     <property name="spacing">
+                      <number>6</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>1</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="addressFormLbl">
+                       <property name="text">
+                        <string>آدرس</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="addressFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="addressFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
              </widget>
-            </item>
-            <item>
-             <layout class="QGridLayout" name="gridLayout_1_1" columnstretch="1,1,1" columnminimumwidth="0,0,0">
-              <property name="leftMargin">
-               <number>0</number>
-              </property>
-              <property name="topMargin">
-               <number>24</number>
-              </property>
-              <property name="horizontalSpacing">
-               <number>100</number>
-              </property>
-              <property name="verticalSpacing">
-               <number>20</number>
-              </property>
-              <item row="0" column="1">
-               <widget class="QFrame" name="regionFormFrame">
-                <layout class="QVBoxLayout" name="verticalLayout_57">
-                 <item>
-                  <widget class="QLabel" name="regionFormLbl">
-                   <property name="text">
-                    <string>منطقه</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-label</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="regionFormError">
-                   <property name="text">
-                    <string>خطا رخ داده</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-field-error</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QSpinBox" name="regionFormInpt">
-                   <property name="styleClass" stdset="0">
-                    <string>form-field</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="2">
-               <widget class="QFrame" name="cityFormFrame">
-                <layout class="QVBoxLayout" name="verticalLayout_56">
-                 <item>
-                  <widget class="QLabel" name="cityFormLbl">
-                   <property name="text">
-                    <string>شهر</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-label</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="cityFormError">
-                   <property name="text">
-                    <string>خطا رخ داده</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-field-error</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="cityFormInpt">
-                   <property name="styleClass" stdset="0">
-                    <string>form-field</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item row="0" column="0">
-               <widget class="QFrame" name="streetFormFrame">
-                <layout class="QVBoxLayout" name="verticalLayout_58">
-                 <item>
-                  <widget class="QLabel" name="streetFormLbl">
-                   <property name="text">
-                    <string>محله</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-label</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="streetFormError">
-                   <property name="text">
-                    <string>خطا رخ داده</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-field-error</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="streetFormInpt">
-                   <property name="styleClass" stdset="0">
-                    <string>form-field</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item>
-             <layout class="QGridLayout" name="gridLayout_1_2">
-              <property name="topMargin">
-               <number>13</number>
-              </property>
-              <item row="0" column="0">
-               <widget class="QFrame" name="addressFormFrame">
-                <layout class="QVBoxLayout" name="verticalLayout_60">
-                 <property name="spacing">
-                  <number>6</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>1</number>
-                 </property>
-                 <item>
-                  <widget class="QLabel" name="addressFormLbl">
-                   <property name="text">
-                    <string>آدرس</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-label</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="addressFormError">
-                   <property name="text">
-                    <string>خطا رخ داده</string>
-                   </property>
-                   <property name="styleClass" stdset="0">
-                    <string>form-field-error</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QTextEdit" name="addressFormInpt">
-                   <property name="styleClass" stdset="0">
-                    <string>form-field</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
             </item>
            </layout>
           </widget>
@@ -1436,9 +1590,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
-                 <width>679</width>
-                 <height>1484</height>
+                 <y>-1090</y>
+                 <width>1015</width>
+                 <height>1632</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -1791,7 +1945,14 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QTextEdit" name="ownerDescriptionFormInpt"/>
+                    <widget class="QTextEdit" name="ownerDescriptionFormInpt">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>200</height>
+                      </size>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -1819,9 +1980,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
-                 <width>676</width>
-                 <height>2943</height>
+                 <y>-29</y>
+                 <width>1015</width>
+                 <height>2890</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -1836,244 +1997,20 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                  </widget>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1,1">
+                 <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,1,1">
                   <property name="topMargin">
-                   <number>16</number>
+                   <number>24</number>
                   </property>
-                  <item>
-                   <widget class="QFrame" name="landMeterageFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_136" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="landMeterageFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>متراژ زمین</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="landMeterageFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="landMeterageFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="buildingMeterageFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_135" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="buildingMeterageFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>متراژ ساخت</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="buildingMeterageFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="buildingMeterageFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item alignment="Qt::AlignRight">
-                   <widget class="QFrame" name="meterageFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_70" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="meterageFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>متراژ</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="meterageFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="meterageFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="1,1,1">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
+                  <property name="bottomMargin">
                    <number>20</number>
                   </property>
-                  <item>
-                   <widget class="QFrame" name="openingWidthFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_139" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="openingWidthFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>عرض دهانه</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="openingWidthFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="openingWidthFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="widthFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_138" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="widthFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>عرض</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="widthFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="widthFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item alignment="Qt::AlignRight">
-                   <widget class="QFrame" name="lengthFormFrame">
-                    <layout class="QVBoxLayout" name="verticalLayout_137" stretch="0,0,0">
-                     <item>
-                      <widget class="QLabel" name="lengthFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>طول</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="lengthFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="lengthFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,1,1">
-                  <property name="topMargin">
+                  <property name="horizontalSpacing">
+                   <number>100</number>
+                  </property>
+                  <property name="verticalSpacing">
                    <number>20</number>
                   </property>
-                  <item>
+                  <item row="2" column="0">
                    <widget class="QFrame" name="unitPriceFormFrame">
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -2115,22 +2052,22 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QFrame" name="totalPriceFormFrame">
+                  <item row="6" column="0">
+                   <widget class="QFrame" name="floorUnitCountFrame">
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_62">
+                    <layout class="QVBoxLayout" name="verticalLayout_73">
                      <item>
-                      <widget class="QLabel" name="totalPriceFormLbl">
+                      <widget class="QLabel" name="floorUnitCountLbl">
                        <property name="styleSheet">
                         <string notr="true">label</string>
                        </property>
                        <property name="text">
-                        <string>قیمت کل</string>
+                        <string>تعداد واحد در طبقه</string>
                        </property>
                        <property name="styleClass" stdset="0">
                         <string>form-label</string>
@@ -2138,7 +2075,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="totalPriceFormError">
+                      <widget class="QLabel" name="floorUnitCountError">
                        <property name="text">
                         <string>خطا رخ داده</string>
                        </property>
@@ -2148,7 +2085,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="totalPriceFormInpt">
+                      <widget class="QSpinBox" name="floorUnitCountInpt">
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2157,7 +2094,461 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                  <item>
+                  <item row="1" column="2">
+                   <widget class="QFrame" name="lengthFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_137" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="lengthFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>طول</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="lengthFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="lengthFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="2">
+                   <widget class="QFrame" name="meterageFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_70" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="meterageFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>متراژ</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="meterageFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="meterageFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="6" column="2">
+                   <widget class="QFrame" name="floorCounFormFrame">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_13">
+                     <item>
+                      <widget class="QLabel" name="floorCounFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>تعداد کل طبقات</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="floorCounFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="floorCounFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QFrame" name="landMeterageFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_136" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="landMeterageFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>متراژ زمین</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="landMeterageFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="landMeterageFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QFrame" name="buildingMeterageFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_135" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="buildingMeterageFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>متراژ ساخت</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="buildingMeterageFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="buildingMeterageFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="9" column="2">
+                   <widget class="QFrame" name="compensationFormFrame">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_75">
+                     <item>
+                      <widget class="QLabel" name="compensationFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>معاوضه:</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="compensationFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="compensationFormOptionsFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_77"/>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="3" column="2">
+                   <widget class="QFrame" name="mortgagePriceFormFrame">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_66">
+                     <item alignment="Qt::AlignTop">
+                      <widget class="QLabel" name="mortgagePriceFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>قیمت رهن</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="mortgagePriceFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="mortgagePriceFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QFrame" name="widthFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_138" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="widthFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>عرض</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="widthFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="widthFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="6" column="1">
+                   <widget class="QFrame" name="totalBuildingUnitFormFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_72">
+                     <item>
+                      <widget class="QLabel" name="totalBuildingUnitFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>تعداد کل واحدها</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="totalBuildingUnitFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="totalBuildingUnitFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="4" column="2">
+                   <widget class="QFrame" name="documentStatusFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_21">
+                     <item>
+                      <widget class="QLabel" name="documentStatusLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>وضعیت سند</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="documentStatusError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QComboBox" name="documentStatusInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="3" column="1">
+                   <widget class="QFrame" name="rentPriceFormFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_71">
+                     <item>
+                      <widget class="QLabel" name="rentPriceFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>قیمت اجاره</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="rentPriceFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="rentPriceFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="2" column="2">
                    <widget class="QFrame" name="frame_36">
                     <property name="minimumSize">
                      <size>
@@ -2227,122 +2618,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,1,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_2">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_153"/>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="rentPriceFormFrame">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_71">
-                     <item>
-                      <widget class="QLabel" name="rentPriceFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>قیمت اجاره</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="rentPriceFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="rentPriceFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="mortgagePriceFormFrame">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_66">
-                     <item alignment="Qt::AlignTop">
-                      <widget class="QLabel" name="mortgagePriceFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>قیمت رهن</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="mortgagePriceFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLineEdit" name="mortgagePriceFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_16" stretch="1,1,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
+                  <item row="4" column="0">
                    <widget class="QFrame" name="lightDirectionFrame">
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -2384,124 +2660,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QFrame" name="constructionYearFrame">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_54">
-                     <item>
-                      <widget class="QLabel" name="constructionYearLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>سال ساخت</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="constructionYearError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="constructionYearInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="documentStatusFrame">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_21">
-                     <item>
-                      <widget class="QLabel" name="documentStatusLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>وضعیت سند</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="documentStatusError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QComboBox" name="documentStatusInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,1,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_6">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="frame_5">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
+                  <item row="5" column="2">
                    <widget class="QFrame" name="floorFormFrame">
                     <layout class="QVBoxLayout" name="verticalLayout_69">
                      <item>
@@ -2537,29 +2696,22 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,1,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="floorUnitCountFrame">
+                  <item row="2" column="1">
+                   <widget class="QFrame" name="totalPriceFormFrame">
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_73">
+                    <layout class="QVBoxLayout" name="verticalLayout_62">
                      <item>
-                      <widget class="QLabel" name="floorUnitCountLbl">
+                      <widget class="QLabel" name="totalPriceFormLbl">
                        <property name="styleSheet">
                         <string notr="true">label</string>
                        </property>
                        <property name="text">
-                        <string>تعداد واحد در طبقه</string>
+                        <string>قیمت کل</string>
                        </property>
                        <property name="styleClass" stdset="0">
                         <string>form-label</string>
@@ -2567,7 +2719,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="floorUnitCountError">
+                      <widget class="QLabel" name="totalPriceFormError">
                        <property name="text">
                         <string>خطا رخ داده</string>
                        </property>
@@ -2577,7 +2729,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QSpinBox" name="floorUnitCountInpt">
+                      <widget class="QLineEdit" name="totalPriceFormInpt">
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2586,114 +2738,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QFrame" name="totalBuildingUnitFormFrame">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_72">
-                     <item>
-                      <widget class="QLabel" name="totalBuildingUnitFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>تعداد کل واحدها</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="totalBuildingUnitFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="totalBuildingUnitFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="floorCounFormFrame">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_13">
-                     <item>
-                      <widget class="QLabel" name="floorCounFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>تعداد کل طبقات</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="floorCounFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QSpinBox" name="floorCounFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="2,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_8">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
+                  <item row="7" column="2">
                    <widget class="QFrame" name="rebuildingFormFrame">
                     <property name="minimumSize">
                      <size>
@@ -2755,24 +2800,133 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="2,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_9">
+                  <item row="1" column="0">
+                   <widget class="QFrame" name="openingWidthFormFrame">
+                    <layout class="QVBoxLayout" name="verticalLayout_139" stretch="0,0,0">
+                     <item>
+                      <widget class="QLabel" name="openingWidthFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>عرض دهانه</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="openingWidthFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="openingWidthFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="4" column="1">
+                   <widget class="QFrame" name="constructionYearFrame">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_54">
+                     <item>
+                      <widget class="QLabel" name="constructionYearLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>سال ساخت</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="constructionYearError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="constructionYearInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
-                  <item>
+                  <item row="9" column="1">
+                   <widget class="QFrame" name="compensationConditionFormFrame">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_76">
+                     <item>
+                      <widget class="QLabel" name="compensationConditionFormLbl">
+                       <property name="styleSheet">
+                        <string notr="true">label</string>
+                       </property>
+                       <property name="text">
+                        <string>شرایط معاوضه</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-label</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="compensationConditionFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
+                       </property>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QTextEdit" name="compensationConditionFormInpt">
+                       <property name="styleClass" stdset="0">
+                        <string>form-field</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item row="8" column="2">
                    <widget class="QFrame" name="buildingLicenseFormFrame">
                     <property name="minimumSize">
                      <size>
@@ -2824,135 +2978,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </layout>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,1,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_7">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="compensationConditionFormFrame">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_76">
-                     <item>
-                      <widget class="QLabel" name="compensationConditionFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>شرایط معاوضه</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="compensationConditionFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QTextEdit" name="compensationConditionFormInpt">
-                       <property name="styleClass" stdset="0">
-                        <string>form-field</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="compensationFormFrame">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_75">
-                     <item>
-                      <widget class="QLabel" name="compensationFormLbl">
-                       <property name="styleSheet">
-                        <string notr="true">label</string>
-                       </property>
-                       <property name="text">
-                        <string>معاوضه:</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-label</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="compensationFormError">
-                       <property name="text">
-                        <string>خطا رخ داده</string>
-                       </property>
-                       <property name="styleClass" stdset="0">
-                        <string>form-field-error</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QFrame" name="compensationFormOptionsFrame">
-                       <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
-                       </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_77"/>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="2,1">
-                  <property name="topMargin">
-                   <number>20</number>
-                  </property>
-                  <item>
-                   <widget class="QFrame" name="frame_10">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
+                  <item row="10" column="2">
                    <widget class="QFrame" name="participationFormFrame">
                     <property name="minimumSize">
                      <size>
@@ -3024,7 +3050,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>710</width>
+                 <width>1015</width>
                  <height>1873</height>
                 </rect>
                </property>
@@ -3693,7 +3719,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>676</width>
+                 <width>1015</width>
                  <height>1609</height>
                 </rect>
                </property>
@@ -4839,7 +4865,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>822</width>
+             <width>1037</width>
              <height>3257</height>
             </rect>
            </property>
@@ -8332,7 +8358,7 @@ QLabel[buildingState=&quot;2&quot;]{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>913</width>
+     <width>1252</width>
      <height>30</height>
     </rect>
    </property>

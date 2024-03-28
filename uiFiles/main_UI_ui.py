@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(913, 901)
+        MainWindow.resize(1252, 901)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -486,6 +486,7 @@ class Ui_MainWindow(object):
 "	border: 2px solid #7E84A2;\n"
 "	min-height: 0px;\n"
 "	max-height: 0px;\n"
+"	margin-top:36px;\n"
 "}\n"
 "\n"
 "*[styleSheet=\"LshowStepsFrameStyle\"]  .QPushButton\n"
@@ -500,6 +501,29 @@ class Ui_MainWindow(object):
 "	font-size: 24px;\n"
 "	color: rgb(20, 20, 20);\n"
 "	font-weight: bold;\n"
+"}\n"
+"\n"
+"*[styleSheet=\"LshowStepsFrameStyle\"]  .QPushButton[stateStyle=\"0\"]\n"
+"{\n"
+"	border:5px solid #7E84A2;\n"
+"	border-radius: 32px;\n"
+"	font-size: 24px;\n"
+"}\n"
+"\n"
+"\n"
+"*[styleSheet=\"LshowStepsFrameStyle\"]  .QPushButton[stateStyle=\"1\"]\n"
+"{\n"
+"	border:8px solid rgb(41, 147, 108);\n"
+"	border-radius: 34px;\n"
+"	font-size: 30px;\n"
+"}\n"
+"\n"
+"*[styleSheet=\""
+                        "LshowStepsFrameStyle\"]  .QPushButton[stateStyle=\"2\"]\n"
+"{\n"
+"	border:8px solid rgb(16, 109, 185);\n"
+"	border-radius: 34px;\n"
+"	font-size: 30px;\n"
 "}\n"
 "\n"
 "*[styleSheet=\"LshowStepsFrameStyle\"]  .QPushButton:hover\n"
@@ -519,8 +543,7 @@ class Ui_MainWindow(object):
 "	border: 0px;\n"
 "	color: white;\n"
 "	font-weight: bold;\n"
-"	min-he"
-                        "ight:40px;\n"
+"	min-height:40px;\n"
 "	font-size:16px;\n"
 "}\n"
 "\n"
@@ -539,7 +562,8 @@ class Ui_MainWindow(object):
 "\n"
 "*[styleClass=\"dashboardMenu\"] *[styleClass=\"dashboardMenuItem\"] {\n"
 "	background-color:#ffffff;\n"
-"	padding:10px;\n"
+""
+                        "	padding:10px;\n"
 "	border-radius: 10px;\n"
 "\n"
 "}\n"
@@ -563,8 +587,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"*[styleClass=\"buildingTopInfo\"]  .QLabel[styleClas"
-                        "s=\"buildingType\"]{\n"
+"*[styleClass=\"buildingTopInfo\"]  .QLabel[styleClass=\"buildingType\"]{\n"
 "	font-size:20px;\n"
 "	color:rgb(12, 80, 139);\n"
 "}\n"
@@ -582,7 +605,8 @@ class Ui_MainWindow(object):
 "	border-radius: 20px;\n"
 "}\n"
 "\n"
-"*[styleClass=\"buildingPriceInfo\"]  .QLabel[styleClass=\"value\"]{\n"
+"*[styleClass=\"buildingPriceInfo\"] "
+                        " .QLabel[styleClass=\"value\"]{\n"
 "	font-size:18px;\n"
 "	padding-bottom:20px;\n"
 "}\n"
@@ -604,8 +628,7 @@ class Ui_MainWindow(object):
 "*[styleClass=\"buildingInfo\"]  .QLabel[styleClass=\"value\"]{\n"
 "	font-size:18px;\n"
 "	padding-left:5px;\n"
-""
-                        "}\n"
+"}\n"
 "\n"
 "\n"
 "*[styleClass=\"buildingInfo\"]  .QLabel[styleClass=\"label\"]{\n"
@@ -624,7 +647,8 @@ class Ui_MainWindow(object):
 "\n"
 "*[styleClass=\"buildingInfo\"] QFrame[crossCheckIcon=\"false\"]{\n"
 " min-width:24px;\n"
-" max-width:24px;\n"
+" max-wid"
+                        "th:24px;\n"
 " min-height:24px;\n"
 " max-height:24px;\n"
 " background:url(:/icons/icons/cross-red-24.png)  no-repeat center center;\n"
@@ -642,8 +666,7 @@ class Ui_MainWindow(object):
 "*[styleClass=\"buildingInfo\"] QFrame[styleClass=\"section\"] QFrame[styleClass=\"seperator\"]{\n"
 " min-height:1px;\n"
 " max-height:1px;\n"
-"background-color:rgba(0, 0"
-                        ", 0,20);\n"
+"background-color:rgba(0, 0, 0,20);\n"
 "}\n"
 "\n"
 "*[styleClass=\"buildingPageTopSection\"]{\n"
@@ -664,7 +687,8 @@ class Ui_MainWindow(object):
 "\n"
 "QLabel[styleClass=\"form-step-title\"]{\n"
 "font: auto \"IRANSansWebFaNum Medium\";\n"
-" font-size:32px;\n"
+""
+                        " font-size:32px;\n"
 "color:rgb(66, 120, 206);\n"
 "}\n"
 "\n"
@@ -687,8 +711,7 @@ class Ui_MainWindow(object):
 "	font-weight: bold;\n"
 "}\n"
 "\n"
-"QPushBut"
-                        "ton[styleClass=\"form-btn\"]:disable{\n"
+"QPushButton[styleClass=\"form-btn\"]:disable{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(189, 189, 191, 255), stop:1 rgba(189, 189, 191, 255));\n"
 "	color: rgba(120, 120, 120, 255);\n"
 "}\n"
@@ -876,95 +899,198 @@ class Ui_MainWindow(object):
         self.horizontalLayout = QHBoxLayout(self.frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(-1, 1, -1, -1)
-        self.pushButton_19 = QPushButton(self.frame)
-        self.pushButton_19.setObjectName(u"pushButton_19")
+        self.verticalLayout_160 = QVBoxLayout()
+        self.verticalLayout_160.setObjectName(u"verticalLayout_160")
+        self.estateFormStep8Btn = QPushButton(self.frame)
+        self.estateFormStep8Btn.setObjectName(u"estateFormStep8Btn")
+        self.estateFormStep8Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_19)
+        self.verticalLayout_160.addWidget(self.estateFormStep8Btn)
+
+        self.label_28 = QLabel(self.frame)
+        self.label_28.setObjectName(u"label_28")
+
+        self.verticalLayout_160.addWidget(self.label_28, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_160)
 
         self.frame_31 = QFrame(self.frame)
         self.frame_31.setObjectName(u"frame_31")
         self.frame_31.setFrameShape(QFrame.StyledPanel)
         self.frame_31.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_31)
+        self.horizontalLayout.addWidget(self.frame_31, 0, Qt.AlignTop)
 
-        self.pushButton_6 = QPushButton(self.frame)
-        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.verticalLayout_159 = QVBoxLayout()
+        self.verticalLayout_159.setObjectName(u"verticalLayout_159")
+        self.estateFormStep7Btn = QPushButton(self.frame)
+        self.estateFormStep7Btn.setObjectName(u"estateFormStep7Btn")
+        self.estateFormStep7Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_6)
+        self.verticalLayout_159.addWidget(self.estateFormStep7Btn)
+
+        self.label_27 = QLabel(self.frame)
+        self.label_27.setObjectName(u"label_27")
+
+        self.verticalLayout_159.addWidget(self.label_27, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_159)
 
         self.frame_30 = QFrame(self.frame)
         self.frame_30.setObjectName(u"frame_30")
         self.frame_30.setFrameShape(QFrame.StyledPanel)
         self.frame_30.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_30)
+        self.horizontalLayout.addWidget(self.frame_30, 0, Qt.AlignTop)
 
-        self.pushButton_11 = QPushButton(self.frame)
-        self.pushButton_11.setObjectName(u"pushButton_11")
+        self.verticalLayout_158 = QVBoxLayout()
+        self.verticalLayout_158.setObjectName(u"verticalLayout_158")
+        self.estateFormStep6Btn = QPushButton(self.frame)
+        self.estateFormStep6Btn.setObjectName(u"estateFormStep6Btn")
+        self.estateFormStep6Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_11)
+        self.verticalLayout_158.addWidget(self.estateFormStep6Btn)
+
+        self.label_26 = QLabel(self.frame)
+        self.label_26.setObjectName(u"label_26")
+
+        self.verticalLayout_158.addWidget(self.label_26, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_158)
 
         self.frame_29 = QFrame(self.frame)
         self.frame_29.setObjectName(u"frame_29")
         self.frame_29.setFrameShape(QFrame.StyledPanel)
         self.frame_29.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_29)
+        self.horizontalLayout.addWidget(self.frame_29, 0, Qt.AlignTop)
 
-        self.pushButton_8 = QPushButton(self.frame)
-        self.pushButton_8.setObjectName(u"pushButton_8")
+        self.verticalLayout_157 = QVBoxLayout()
+        self.verticalLayout_157.setObjectName(u"verticalLayout_157")
+        self.estateFormStep5Btn = QPushButton(self.frame)
+        self.estateFormStep5Btn.setObjectName(u"estateFormStep5Btn")
+        self.estateFormStep5Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_8)
+        self.verticalLayout_157.addWidget(self.estateFormStep5Btn)
+
+        self.label_25 = QLabel(self.frame)
+        self.label_25.setObjectName(u"label_25")
+
+        self.verticalLayout_157.addWidget(self.label_25, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_157)
 
         self.frame_28 = QFrame(self.frame)
         self.frame_28.setObjectName(u"frame_28")
         self.frame_28.setFrameShape(QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_28)
+        self.horizontalLayout.addWidget(self.frame_28, 0, Qt.AlignTop)
 
-        self.pushButton_10 = QPushButton(self.frame)
-        self.pushButton_10.setObjectName(u"pushButton_10")
+        self.verticalLayout_156 = QVBoxLayout()
+        self.verticalLayout_156.setObjectName(u"verticalLayout_156")
+        self.estateFormStep4Btn = QPushButton(self.frame)
+        self.estateFormStep4Btn.setObjectName(u"estateFormStep4Btn")
+        self.estateFormStep4Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_10)
+        self.verticalLayout_156.addWidget(self.estateFormStep4Btn)
+
+        self.label_24 = QLabel(self.frame)
+        self.label_24.setObjectName(u"label_24")
+
+        self.verticalLayout_156.addWidget(self.label_24, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_156)
 
         self.frame_27 = QFrame(self.frame)
         self.frame_27.setObjectName(u"frame_27")
         self.frame_27.setFrameShape(QFrame.StyledPanel)
         self.frame_27.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_27)
+        self.horizontalLayout.addWidget(self.frame_27, 0, Qt.AlignTop)
 
-        self.pushButton_9 = QPushButton(self.frame)
-        self.pushButton_9.setObjectName(u"pushButton_9")
+        self.verticalLayout_155 = QVBoxLayout()
+        self.verticalLayout_155.setObjectName(u"verticalLayout_155")
+        self.estateFormStep3Btn = QPushButton(self.frame)
+        self.estateFormStep3Btn.setObjectName(u"estateFormStep3Btn")
+        self.estateFormStep3Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_9)
+        self.verticalLayout_155.addWidget(self.estateFormStep3Btn)
+
+        self.label_23 = QLabel(self.frame)
+        self.label_23.setObjectName(u"label_23")
+
+        self.verticalLayout_155.addWidget(self.label_23, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_155)
 
         self.frame_26 = QFrame(self.frame)
         self.frame_26.setObjectName(u"frame_26")
         self.frame_26.setFrameShape(QFrame.StyledPanel)
         self.frame_26.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.frame_26)
+        self.horizontalLayout.addWidget(self.frame_26, 0, Qt.AlignTop)
 
-        self.pushButton_7 = QPushButton(self.frame)
-        self.pushButton_7.setObjectName(u"pushButton_7")
+        self.verticalLayout_154 = QVBoxLayout()
+        self.verticalLayout_154.setObjectName(u"verticalLayout_154")
+        self.estateFormStep2Btn = QPushButton(self.frame)
+        self.estateFormStep2Btn.setObjectName(u"estateFormStep2Btn")
+        self.estateFormStep2Btn.setProperty("stateStyle", 0)
 
-        self.horizontalLayout.addWidget(self.pushButton_7)
+        self.verticalLayout_154.addWidget(self.estateFormStep2Btn)
+
+        self.label_22 = QLabel(self.frame)
+        self.label_22.setObjectName(u"label_22")
+
+        self.verticalLayout_154.addWidget(self.label_22, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_154)
 
         self.step1Line = QFrame(self.frame)
         self.step1Line.setObjectName(u"step1Line")
         self.step1Line.setFrameShape(QFrame.StyledPanel)
         self.step1Line.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout.addWidget(self.step1Line)
+        self.horizontalLayout.addWidget(self.step1Line, 0, Qt.AlignTop)
 
-        self.pushButton_5 = QPushButton(self.frame)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.verticalLayout_153 = QVBoxLayout()
+        self.verticalLayout_153.setObjectName(u"verticalLayout_153")
+        self.estateFormStep1Btn = QPushButton(self.frame)
+        self.estateFormStep1Btn.setObjectName(u"estateFormStep1Btn")
+        self.estateFormStep1Btn.setProperty("stateStyle", 2)
 
-        self.horizontalLayout.addWidget(self.pushButton_5)
+        self.verticalLayout_153.addWidget(self.estateFormStep1Btn)
 
+        self.label_21 = QLabel(self.frame)
+        self.label_21.setObjectName(u"label_21")
+
+        self.verticalLayout_153.addWidget(self.label_21, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout.addLayout(self.verticalLayout_153)
+
+        self.horizontalLayout.setStretch(0, 1)
+        self.horizontalLayout.setStretch(1, 1)
+        self.horizontalLayout.setStretch(2, 1)
+        self.horizontalLayout.setStretch(3, 1)
+        self.horizontalLayout.setStretch(4, 1)
+        self.horizontalLayout.setStretch(5, 1)
+        self.horizontalLayout.setStretch(6, 1)
+        self.horizontalLayout.setStretch(7, 1)
+        self.horizontalLayout.setStretch(8, 1)
+        self.horizontalLayout.setStretch(9, 1)
+        self.horizontalLayout.setStretch(10, 1)
+        self.horizontalLayout.setStretch(11, 1)
+        self.horizontalLayout.setStretch(12, 1)
+        self.horizontalLayout.setStretch(13, 1)
+        self.horizontalLayout.setStretch(14, 1)
 
         self.verticalLayout_5.addWidget(self.frame)
 
@@ -1033,17 +1159,25 @@ class Ui_MainWindow(object):
         self.form_step2.setObjectName(u"form_step2")
         self.verticalLayout_11 = QVBoxLayout(self.form_step2)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.label_34 = QLabel(self.form_step2)
+        self.scrollArea_6 = QScrollArea(self.form_step2)
+        self.scrollArea_6.setObjectName(u"scrollArea_6")
+        self.scrollArea_6.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_6 = QWidget()
+        self.scrollAreaWidgetContents_6.setObjectName(u"scrollAreaWidgetContents_6")
+        self.scrollAreaWidgetContents_6.setGeometry(QRect(0, 0, 1015, 602))
+        self.verticalLayout_162 = QVBoxLayout(self.scrollAreaWidgetContents_6)
+        self.verticalLayout_162.setObjectName(u"verticalLayout_162")
+        self.label_34 = QLabel(self.scrollAreaWidgetContents_6)
         self.label_34.setObjectName(u"label_34")
 
-        self.verticalLayout_11.addWidget(self.label_34, 0, Qt.AlignHCenter)
+        self.verticalLayout_162.addWidget(self.label_34, 0, Qt.AlignHCenter)
 
         self.gridLayout_1_1 = QGridLayout()
         self.gridLayout_1_1.setObjectName(u"gridLayout_1_1")
         self.gridLayout_1_1.setHorizontalSpacing(100)
         self.gridLayout_1_1.setVerticalSpacing(20)
         self.gridLayout_1_1.setContentsMargins(0, 24, -1, -1)
-        self.regionFormFrame = QFrame(self.form_step2)
+        self.regionFormFrame = QFrame(self.scrollAreaWidgetContents_6)
         self.regionFormFrame.setObjectName(u"regionFormFrame")
         self.verticalLayout_57 = QVBoxLayout(self.regionFormFrame)
         self.verticalLayout_57.setObjectName(u"verticalLayout_57")
@@ -1065,7 +1199,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_1_1.addWidget(self.regionFormFrame, 0, 1, 1, 1)
 
-        self.cityFormFrame = QFrame(self.form_step2)
+        self.cityFormFrame = QFrame(self.scrollAreaWidgetContents_6)
         self.cityFormFrame.setObjectName(u"cityFormFrame")
         self.verticalLayout_56 = QVBoxLayout(self.cityFormFrame)
         self.verticalLayout_56.setObjectName(u"verticalLayout_56")
@@ -1087,7 +1221,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_1_1.addWidget(self.cityFormFrame, 0, 2, 1, 1)
 
-        self.streetFormFrame = QFrame(self.form_step2)
+        self.streetFormFrame = QFrame(self.scrollAreaWidgetContents_6)
         self.streetFormFrame.setObjectName(u"streetFormFrame")
         self.verticalLayout_58 = QVBoxLayout(self.streetFormFrame)
         self.verticalLayout_58.setObjectName(u"verticalLayout_58")
@@ -1113,12 +1247,12 @@ class Ui_MainWindow(object):
         self.gridLayout_1_1.setColumnStretch(1, 1)
         self.gridLayout_1_1.setColumnStretch(2, 1)
 
-        self.verticalLayout_11.addLayout(self.gridLayout_1_1)
+        self.verticalLayout_162.addLayout(self.gridLayout_1_1)
 
         self.gridLayout_1_2 = QGridLayout()
         self.gridLayout_1_2.setObjectName(u"gridLayout_1_2")
         self.gridLayout_1_2.setContentsMargins(-1, 13, -1, -1)
-        self.addressFormFrame = QFrame(self.form_step2)
+        self.addressFormFrame = QFrame(self.scrollAreaWidgetContents_6)
         self.addressFormFrame.setObjectName(u"addressFormFrame")
         self.verticalLayout_60 = QVBoxLayout(self.addressFormFrame)
         self.verticalLayout_60.setSpacing(6)
@@ -1143,7 +1277,11 @@ class Ui_MainWindow(object):
         self.gridLayout_1_2.addWidget(self.addressFormFrame, 0, 0, 1, 1)
 
 
-        self.verticalLayout_11.addLayout(self.gridLayout_1_2)
+        self.verticalLayout_162.addLayout(self.gridLayout_1_2)
+
+        self.scrollArea_6.setWidget(self.scrollAreaWidgetContents_6)
+
+        self.verticalLayout_11.addWidget(self.scrollArea_6)
 
         self.form_stackwidget.addWidget(self.form_step2)
         self.form_step3 = QWidget()
@@ -1156,7 +1294,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 679, 1484))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, -1090, 1015, 1632))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1394,6 +1532,7 @@ class Ui_MainWindow(object):
 
         self.ownerDescriptionFormInpt = QTextEdit(self.ownerDescriptionFormFrame)
         self.ownerDescriptionFormInpt.setObjectName(u"ownerDescriptionFormInpt")
+        self.ownerDescriptionFormInpt.setMinimumSize(QSize(0, 200))
 
         self.cc.addWidget(self.ownerDescriptionFormInpt)
 
@@ -1416,7 +1555,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 676, 2943))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -29, 1015, 2890))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -1424,165 +1563,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.label_19, 0, Qt.AlignHCenter)
 
-        self.horizontalLayout_9 = QHBoxLayout()
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(-1, 16, -1, -1)
-        self.landMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.landMeterageFormFrame.setObjectName(u"landMeterageFormFrame")
-        self.verticalLayout_136 = QVBoxLayout(self.landMeterageFormFrame)
-        self.verticalLayout_136.setObjectName(u"verticalLayout_136")
-        self.landMeterageFormLbl = QLabel(self.landMeterageFormFrame)
-        self.landMeterageFormLbl.setObjectName(u"landMeterageFormLbl")
-        self.landMeterageFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_136.addWidget(self.landMeterageFormLbl)
-
-        self.landMeterageFormError = QLabel(self.landMeterageFormFrame)
-        self.landMeterageFormError.setObjectName(u"landMeterageFormError")
-
-        self.verticalLayout_136.addWidget(self.landMeterageFormError)
-
-        self.landMeterageFormInpt = QSpinBox(self.landMeterageFormFrame)
-        self.landMeterageFormInpt.setObjectName(u"landMeterageFormInpt")
-
-        self.verticalLayout_136.addWidget(self.landMeterageFormInpt)
-
-
-        self.horizontalLayout_9.addWidget(self.landMeterageFormFrame)
-
-        self.buildingMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.buildingMeterageFormFrame.setObjectName(u"buildingMeterageFormFrame")
-        self.verticalLayout_135 = QVBoxLayout(self.buildingMeterageFormFrame)
-        self.verticalLayout_135.setObjectName(u"verticalLayout_135")
-        self.buildingMeterageFormLbl = QLabel(self.buildingMeterageFormFrame)
-        self.buildingMeterageFormLbl.setObjectName(u"buildingMeterageFormLbl")
-        self.buildingMeterageFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_135.addWidget(self.buildingMeterageFormLbl)
-
-        self.buildingMeterageFormError = QLabel(self.buildingMeterageFormFrame)
-        self.buildingMeterageFormError.setObjectName(u"buildingMeterageFormError")
-
-        self.verticalLayout_135.addWidget(self.buildingMeterageFormError)
-
-        self.buildingMeterageFormInpt = QSpinBox(self.buildingMeterageFormFrame)
-        self.buildingMeterageFormInpt.setObjectName(u"buildingMeterageFormInpt")
-
-        self.verticalLayout_135.addWidget(self.buildingMeterageFormInpt)
-
-
-        self.horizontalLayout_9.addWidget(self.buildingMeterageFormFrame)
-
-        self.meterageFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.meterageFormFrame.setObjectName(u"meterageFormFrame")
-        self.verticalLayout_70 = QVBoxLayout(self.meterageFormFrame)
-        self.verticalLayout_70.setObjectName(u"verticalLayout_70")
-        self.meterageFormLbl = QLabel(self.meterageFormFrame)
-        self.meterageFormLbl.setObjectName(u"meterageFormLbl")
-        self.meterageFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_70.addWidget(self.meterageFormLbl)
-
-        self.meterageFormError = QLabel(self.meterageFormFrame)
-        self.meterageFormError.setObjectName(u"meterageFormError")
-
-        self.verticalLayout_70.addWidget(self.meterageFormError)
-
-        self.meterageFormInpt = QSpinBox(self.meterageFormFrame)
-        self.meterageFormInpt.setObjectName(u"meterageFormInpt")
-
-        self.verticalLayout_70.addWidget(self.meterageFormInpt)
-
-
-        self.horizontalLayout_9.addWidget(self.meterageFormFrame, 0, Qt.AlignRight)
-
-        self.horizontalLayout_9.setStretch(0, 1)
-        self.horizontalLayout_9.setStretch(1, 1)
-        self.horizontalLayout_9.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_9)
-
-        self.horizontalLayout_10 = QHBoxLayout()
-        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(0, 20, -1, -1)
-        self.openingWidthFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.openingWidthFormFrame.setObjectName(u"openingWidthFormFrame")
-        self.verticalLayout_139 = QVBoxLayout(self.openingWidthFormFrame)
-        self.verticalLayout_139.setObjectName(u"verticalLayout_139")
-        self.openingWidthFormLbl = QLabel(self.openingWidthFormFrame)
-        self.openingWidthFormLbl.setObjectName(u"openingWidthFormLbl")
-        self.openingWidthFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_139.addWidget(self.openingWidthFormLbl)
-
-        self.openingWidthFormError = QLabel(self.openingWidthFormFrame)
-        self.openingWidthFormError.setObjectName(u"openingWidthFormError")
-
-        self.verticalLayout_139.addWidget(self.openingWidthFormError)
-
-        self.openingWidthFormInpt = QSpinBox(self.openingWidthFormFrame)
-        self.openingWidthFormInpt.setObjectName(u"openingWidthFormInpt")
-
-        self.verticalLayout_139.addWidget(self.openingWidthFormInpt)
-
-
-        self.horizontalLayout_10.addWidget(self.openingWidthFormFrame)
-
-        self.widthFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.widthFormFrame.setObjectName(u"widthFormFrame")
-        self.verticalLayout_138 = QVBoxLayout(self.widthFormFrame)
-        self.verticalLayout_138.setObjectName(u"verticalLayout_138")
-        self.widthFormLbl = QLabel(self.widthFormFrame)
-        self.widthFormLbl.setObjectName(u"widthFormLbl")
-        self.widthFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_138.addWidget(self.widthFormLbl)
-
-        self.widthFormError = QLabel(self.widthFormFrame)
-        self.widthFormError.setObjectName(u"widthFormError")
-
-        self.verticalLayout_138.addWidget(self.widthFormError)
-
-        self.widthFormInpt = QSpinBox(self.widthFormFrame)
-        self.widthFormInpt.setObjectName(u"widthFormInpt")
-
-        self.verticalLayout_138.addWidget(self.widthFormInpt)
-
-
-        self.horizontalLayout_10.addWidget(self.widthFormFrame)
-
-        self.lengthFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.lengthFormFrame.setObjectName(u"lengthFormFrame")
-        self.verticalLayout_137 = QVBoxLayout(self.lengthFormFrame)
-        self.verticalLayout_137.setObjectName(u"verticalLayout_137")
-        self.lengthFormLbl = QLabel(self.lengthFormFrame)
-        self.lengthFormLbl.setObjectName(u"lengthFormLbl")
-        self.lengthFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_137.addWidget(self.lengthFormLbl)
-
-        self.lengthFormError = QLabel(self.lengthFormFrame)
-        self.lengthFormError.setObjectName(u"lengthFormError")
-
-        self.verticalLayout_137.addWidget(self.lengthFormError)
-
-        self.lengthFormInpt = QSpinBox(self.lengthFormFrame)
-        self.lengthFormInpt.setObjectName(u"lengthFormInpt")
-
-        self.verticalLayout_137.addWidget(self.lengthFormInpt)
-
-
-        self.horizontalLayout_10.addWidget(self.lengthFormFrame, 0, Qt.AlignRight)
-
-        self.horizontalLayout_10.setStretch(0, 1)
-        self.horizontalLayout_10.setStretch(1, 1)
-        self.horizontalLayout_10.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_10)
-
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(-1, 20, -1, -1)
+        self.gridLayout_6 = QGridLayout()
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.gridLayout_6.setHorizontalSpacing(100)
+        self.gridLayout_6.setVerticalSpacing(20)
+        self.gridLayout_6.setContentsMargins(-1, 24, -1, 20)
         self.unitPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.unitPriceFormFrame.setObjectName(u"unitPriceFormFrame")
         self.unitPriceFormFrame.setFrameShape(QFrame.StyledPanel)
@@ -1606,32 +1591,304 @@ class Ui_MainWindow(object):
         self.verticalLayout_65.addWidget(self.unitPriceFormInpt)
 
 
-        self.horizontalLayout_11.addWidget(self.unitPriceFormFrame)
+        self.gridLayout_6.addWidget(self.unitPriceFormFrame, 2, 0, 1, 1)
 
-        self.totalPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.totalPriceFormFrame.setObjectName(u"totalPriceFormFrame")
-        self.totalPriceFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.totalPriceFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_62 = QVBoxLayout(self.totalPriceFormFrame)
-        self.verticalLayout_62.setObjectName(u"verticalLayout_62")
-        self.totalPriceFormLbl = QLabel(self.totalPriceFormFrame)
-        self.totalPriceFormLbl.setObjectName(u"totalPriceFormLbl")
-        self.totalPriceFormLbl.setStyleSheet(u"label")
+        self.floorUnitCountFrame = QFrame(self.scrollAreaWidgetContents)
+        self.floorUnitCountFrame.setObjectName(u"floorUnitCountFrame")
+        self.floorUnitCountFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorUnitCountFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_73 = QVBoxLayout(self.floorUnitCountFrame)
+        self.verticalLayout_73.setObjectName(u"verticalLayout_73")
+        self.floorUnitCountLbl = QLabel(self.floorUnitCountFrame)
+        self.floorUnitCountLbl.setObjectName(u"floorUnitCountLbl")
+        self.floorUnitCountLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_62.addWidget(self.totalPriceFormLbl)
+        self.verticalLayout_73.addWidget(self.floorUnitCountLbl)
 
-        self.totalPriceFormError = QLabel(self.totalPriceFormFrame)
-        self.totalPriceFormError.setObjectName(u"totalPriceFormError")
+        self.floorUnitCountError = QLabel(self.floorUnitCountFrame)
+        self.floorUnitCountError.setObjectName(u"floorUnitCountError")
 
-        self.verticalLayout_62.addWidget(self.totalPriceFormError)
+        self.verticalLayout_73.addWidget(self.floorUnitCountError)
 
-        self.totalPriceFormInpt = QLineEdit(self.totalPriceFormFrame)
-        self.totalPriceFormInpt.setObjectName(u"totalPriceFormInpt")
+        self.floorUnitCountInpt = QSpinBox(self.floorUnitCountFrame)
+        self.floorUnitCountInpt.setObjectName(u"floorUnitCountInpt")
 
-        self.verticalLayout_62.addWidget(self.totalPriceFormInpt)
+        self.verticalLayout_73.addWidget(self.floorUnitCountInpt)
 
 
-        self.horizontalLayout_11.addWidget(self.totalPriceFormFrame)
+        self.gridLayout_6.addWidget(self.floorUnitCountFrame, 6, 0, 1, 1)
+
+        self.lengthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.lengthFormFrame.setObjectName(u"lengthFormFrame")
+        self.verticalLayout_137 = QVBoxLayout(self.lengthFormFrame)
+        self.verticalLayout_137.setObjectName(u"verticalLayout_137")
+        self.lengthFormLbl = QLabel(self.lengthFormFrame)
+        self.lengthFormLbl.setObjectName(u"lengthFormLbl")
+        self.lengthFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_137.addWidget(self.lengthFormLbl)
+
+        self.lengthFormError = QLabel(self.lengthFormFrame)
+        self.lengthFormError.setObjectName(u"lengthFormError")
+
+        self.verticalLayout_137.addWidget(self.lengthFormError)
+
+        self.lengthFormInpt = QSpinBox(self.lengthFormFrame)
+        self.lengthFormInpt.setObjectName(u"lengthFormInpt")
+
+        self.verticalLayout_137.addWidget(self.lengthFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.lengthFormFrame, 1, 2, 1, 1)
+
+        self.meterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.meterageFormFrame.setObjectName(u"meterageFormFrame")
+        self.verticalLayout_70 = QVBoxLayout(self.meterageFormFrame)
+        self.verticalLayout_70.setObjectName(u"verticalLayout_70")
+        self.meterageFormLbl = QLabel(self.meterageFormFrame)
+        self.meterageFormLbl.setObjectName(u"meterageFormLbl")
+        self.meterageFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_70.addWidget(self.meterageFormLbl)
+
+        self.meterageFormError = QLabel(self.meterageFormFrame)
+        self.meterageFormError.setObjectName(u"meterageFormError")
+
+        self.verticalLayout_70.addWidget(self.meterageFormError)
+
+        self.meterageFormInpt = QSpinBox(self.meterageFormFrame)
+        self.meterageFormInpt.setObjectName(u"meterageFormInpt")
+
+        self.verticalLayout_70.addWidget(self.meterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.meterageFormFrame, 0, 2, 1, 1)
+
+        self.floorCounFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.floorCounFormFrame.setObjectName(u"floorCounFormFrame")
+        self.floorCounFormFrame.setMinimumSize(QSize(0, 0))
+        self.floorCounFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.floorCounFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.floorCounFormFrame)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.floorCounFormLbl = QLabel(self.floorCounFormFrame)
+        self.floorCounFormLbl.setObjectName(u"floorCounFormLbl")
+        self.floorCounFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormLbl)
+
+        self.floorCounFormError = QLabel(self.floorCounFormFrame)
+        self.floorCounFormError.setObjectName(u"floorCounFormError")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormError)
+
+        self.floorCounFormInpt = QSpinBox(self.floorCounFormFrame)
+        self.floorCounFormInpt.setObjectName(u"floorCounFormInpt")
+
+        self.verticalLayout_13.addWidget(self.floorCounFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.floorCounFormFrame, 6, 2, 1, 1)
+
+        self.landMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.landMeterageFormFrame.setObjectName(u"landMeterageFormFrame")
+        self.verticalLayout_136 = QVBoxLayout(self.landMeterageFormFrame)
+        self.verticalLayout_136.setObjectName(u"verticalLayout_136")
+        self.landMeterageFormLbl = QLabel(self.landMeterageFormFrame)
+        self.landMeterageFormLbl.setObjectName(u"landMeterageFormLbl")
+        self.landMeterageFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_136.addWidget(self.landMeterageFormLbl)
+
+        self.landMeterageFormError = QLabel(self.landMeterageFormFrame)
+        self.landMeterageFormError.setObjectName(u"landMeterageFormError")
+
+        self.verticalLayout_136.addWidget(self.landMeterageFormError)
+
+        self.landMeterageFormInpt = QSpinBox(self.landMeterageFormFrame)
+        self.landMeterageFormInpt.setObjectName(u"landMeterageFormInpt")
+
+        self.verticalLayout_136.addWidget(self.landMeterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.landMeterageFormFrame, 0, 0, 1, 1)
+
+        self.buildingMeterageFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.buildingMeterageFormFrame.setObjectName(u"buildingMeterageFormFrame")
+        self.verticalLayout_135 = QVBoxLayout(self.buildingMeterageFormFrame)
+        self.verticalLayout_135.setObjectName(u"verticalLayout_135")
+        self.buildingMeterageFormLbl = QLabel(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormLbl.setObjectName(u"buildingMeterageFormLbl")
+        self.buildingMeterageFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormLbl)
+
+        self.buildingMeterageFormError = QLabel(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormError.setObjectName(u"buildingMeterageFormError")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormError)
+
+        self.buildingMeterageFormInpt = QSpinBox(self.buildingMeterageFormFrame)
+        self.buildingMeterageFormInpt.setObjectName(u"buildingMeterageFormInpt")
+
+        self.verticalLayout_135.addWidget(self.buildingMeterageFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.buildingMeterageFormFrame, 0, 1, 1, 1)
+
+        self.compensationFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.compensationFormFrame.setObjectName(u"compensationFormFrame")
+        self.compensationFormFrame.setMinimumSize(QSize(0, 0))
+        self.compensationFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_75 = QVBoxLayout(self.compensationFormFrame)
+        self.verticalLayout_75.setObjectName(u"verticalLayout_75")
+        self.compensationFormLbl = QLabel(self.compensationFormFrame)
+        self.compensationFormLbl.setObjectName(u"compensationFormLbl")
+        self.compensationFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_75.addWidget(self.compensationFormLbl)
+
+        self.compensationFormError = QLabel(self.compensationFormFrame)
+        self.compensationFormError.setObjectName(u"compensationFormError")
+
+        self.verticalLayout_75.addWidget(self.compensationFormError)
+
+        self.compensationFormOptionsFrame = QFrame(self.compensationFormFrame)
+        self.compensationFormOptionsFrame.setObjectName(u"compensationFormOptionsFrame")
+        self.compensationFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_77 = QVBoxLayout(self.compensationFormOptionsFrame)
+        self.verticalLayout_77.setObjectName(u"verticalLayout_77")
+
+        self.verticalLayout_75.addWidget(self.compensationFormOptionsFrame)
+
+
+        self.gridLayout_6.addWidget(self.compensationFormFrame, 9, 2, 1, 1)
+
+        self.mortgagePriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.mortgagePriceFormFrame.setObjectName(u"mortgagePriceFormFrame")
+        self.mortgagePriceFormFrame.setMinimumSize(QSize(0, 0))
+        self.mortgagePriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.mortgagePriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_66 = QVBoxLayout(self.mortgagePriceFormFrame)
+        self.verticalLayout_66.setObjectName(u"verticalLayout_66")
+        self.mortgagePriceFormLbl = QLabel(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormLbl.setObjectName(u"mortgagePriceFormLbl")
+        self.mortgagePriceFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormLbl, 0, Qt.AlignTop)
+
+        self.mortgagePriceFormError = QLabel(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormError.setObjectName(u"mortgagePriceFormError")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormError)
+
+        self.mortgagePriceFormInpt = QLineEdit(self.mortgagePriceFormFrame)
+        self.mortgagePriceFormInpt.setObjectName(u"mortgagePriceFormInpt")
+
+        self.verticalLayout_66.addWidget(self.mortgagePriceFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.mortgagePriceFormFrame, 3, 2, 1, 1)
+
+        self.widthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.widthFormFrame.setObjectName(u"widthFormFrame")
+        self.verticalLayout_138 = QVBoxLayout(self.widthFormFrame)
+        self.verticalLayout_138.setObjectName(u"verticalLayout_138")
+        self.widthFormLbl = QLabel(self.widthFormFrame)
+        self.widthFormLbl.setObjectName(u"widthFormLbl")
+        self.widthFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_138.addWidget(self.widthFormLbl)
+
+        self.widthFormError = QLabel(self.widthFormFrame)
+        self.widthFormError.setObjectName(u"widthFormError")
+
+        self.verticalLayout_138.addWidget(self.widthFormError)
+
+        self.widthFormInpt = QSpinBox(self.widthFormFrame)
+        self.widthFormInpt.setObjectName(u"widthFormInpt")
+
+        self.verticalLayout_138.addWidget(self.widthFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.widthFormFrame, 1, 1, 1, 1)
+
+        self.totalBuildingUnitFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.totalBuildingUnitFormFrame.setObjectName(u"totalBuildingUnitFormFrame")
+        self.totalBuildingUnitFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.totalBuildingUnitFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_72 = QVBoxLayout(self.totalBuildingUnitFormFrame)
+        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
+        self.totalBuildingUnitFormLbl = QLabel(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormLbl.setObjectName(u"totalBuildingUnitFormLbl")
+        self.totalBuildingUnitFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormLbl)
+
+        self.totalBuildingUnitFormError = QLabel(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormError.setObjectName(u"totalBuildingUnitFormError")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormError)
+
+        self.totalBuildingUnitFormInpt = QSpinBox(self.totalBuildingUnitFormFrame)
+        self.totalBuildingUnitFormInpt.setObjectName(u"totalBuildingUnitFormInpt")
+
+        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.totalBuildingUnitFormFrame, 6, 1, 1, 1)
+
+        self.documentStatusFrame = QFrame(self.scrollAreaWidgetContents)
+        self.documentStatusFrame.setObjectName(u"documentStatusFrame")
+        self.documentStatusFrame.setFrameShape(QFrame.StyledPanel)
+        self.documentStatusFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.documentStatusFrame)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.documentStatusLbl = QLabel(self.documentStatusFrame)
+        self.documentStatusLbl.setObjectName(u"documentStatusLbl")
+        self.documentStatusLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_21.addWidget(self.documentStatusLbl)
+
+        self.documentStatusError = QLabel(self.documentStatusFrame)
+        self.documentStatusError.setObjectName(u"documentStatusError")
+
+        self.verticalLayout_21.addWidget(self.documentStatusError)
+
+        self.documentStatusInpt = QComboBox(self.documentStatusFrame)
+        self.documentStatusInpt.setObjectName(u"documentStatusInpt")
+
+        self.verticalLayout_21.addWidget(self.documentStatusInpt)
+
+
+        self.gridLayout_6.addWidget(self.documentStatusFrame, 4, 2, 1, 1)
+
+        self.rentPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.rentPriceFormFrame.setObjectName(u"rentPriceFormFrame")
+        self.rentPriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.rentPriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_71 = QVBoxLayout(self.rentPriceFormFrame)
+        self.verticalLayout_71.setObjectName(u"verticalLayout_71")
+        self.rentPriceFormLbl = QLabel(self.rentPriceFormFrame)
+        self.rentPriceFormLbl.setObjectName(u"rentPriceFormLbl")
+        self.rentPriceFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormLbl)
+
+        self.rentPriceFormError = QLabel(self.rentPriceFormFrame)
+        self.rentPriceFormError.setObjectName(u"rentPriceFormError")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormError)
+
+        self.rentPriceFormInpt = QLineEdit(self.rentPriceFormFrame)
+        self.rentPriceFormInpt.setObjectName(u"rentPriceFormInpt")
+
+        self.verticalLayout_71.addWidget(self.rentPriceFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.rentPriceFormFrame, 3, 1, 1, 1)
 
         self.frame_36 = QFrame(self.scrollAreaWidgetContents)
         self.frame_36.setObjectName(u"frame_36")
@@ -1669,86 +1926,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_61.addLayout(self.verticalLayout_15)
 
 
-        self.horizontalLayout_11.addWidget(self.frame_36)
+        self.gridLayout_6.addWidget(self.frame_36, 2, 2, 1, 1)
 
-        self.horizontalLayout_11.setStretch(0, 1)
-        self.horizontalLayout_11.setStretch(1, 1)
-        self.horizontalLayout_11.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_11)
-
-        self.horizontalLayout_12 = QHBoxLayout()
-        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(-1, 20, -1, -1)
-        self.frame_2 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_153 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_153.setObjectName(u"verticalLayout_153")
-
-        self.horizontalLayout_12.addWidget(self.frame_2)
-
-        self.rentPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.rentPriceFormFrame.setObjectName(u"rentPriceFormFrame")
-        self.rentPriceFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.rentPriceFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_71 = QVBoxLayout(self.rentPriceFormFrame)
-        self.verticalLayout_71.setObjectName(u"verticalLayout_71")
-        self.rentPriceFormLbl = QLabel(self.rentPriceFormFrame)
-        self.rentPriceFormLbl.setObjectName(u"rentPriceFormLbl")
-        self.rentPriceFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_71.addWidget(self.rentPriceFormLbl)
-
-        self.rentPriceFormError = QLabel(self.rentPriceFormFrame)
-        self.rentPriceFormError.setObjectName(u"rentPriceFormError")
-
-        self.verticalLayout_71.addWidget(self.rentPriceFormError)
-
-        self.rentPriceFormInpt = QLineEdit(self.rentPriceFormFrame)
-        self.rentPriceFormInpt.setObjectName(u"rentPriceFormInpt")
-
-        self.verticalLayout_71.addWidget(self.rentPriceFormInpt)
-
-
-        self.horizontalLayout_12.addWidget(self.rentPriceFormFrame)
-
-        self.mortgagePriceFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.mortgagePriceFormFrame.setObjectName(u"mortgagePriceFormFrame")
-        self.mortgagePriceFormFrame.setMinimumSize(QSize(0, 0))
-        self.mortgagePriceFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.mortgagePriceFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_66 = QVBoxLayout(self.mortgagePriceFormFrame)
-        self.verticalLayout_66.setObjectName(u"verticalLayout_66")
-        self.mortgagePriceFormLbl = QLabel(self.mortgagePriceFormFrame)
-        self.mortgagePriceFormLbl.setObjectName(u"mortgagePriceFormLbl")
-        self.mortgagePriceFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_66.addWidget(self.mortgagePriceFormLbl, 0, Qt.AlignTop)
-
-        self.mortgagePriceFormError = QLabel(self.mortgagePriceFormFrame)
-        self.mortgagePriceFormError.setObjectName(u"mortgagePriceFormError")
-
-        self.verticalLayout_66.addWidget(self.mortgagePriceFormError)
-
-        self.mortgagePriceFormInpt = QLineEdit(self.mortgagePriceFormFrame)
-        self.mortgagePriceFormInpt.setObjectName(u"mortgagePriceFormInpt")
-
-        self.verticalLayout_66.addWidget(self.mortgagePriceFormInpt)
-
-
-        self.horizontalLayout_12.addWidget(self.mortgagePriceFormFrame)
-
-        self.horizontalLayout_12.setStretch(0, 1)
-        self.horizontalLayout_12.setStretch(1, 1)
-        self.horizontalLayout_12.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_12)
-
-        self.horizontalLayout_16 = QHBoxLayout()
-        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(-1, 20, -1, -1)
         self.lightDirectionFrame = QFrame(self.scrollAreaWidgetContents)
         self.lightDirectionFrame.setObjectName(u"lightDirectionFrame")
         self.lightDirectionFrame.setFrameShape(QFrame.StyledPanel)
@@ -1772,85 +1951,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_59.addWidget(self.lightDirectionInpt)
 
 
-        self.horizontalLayout_16.addWidget(self.lightDirectionFrame)
-
-        self.constructionYearFrame = QFrame(self.scrollAreaWidgetContents)
-        self.constructionYearFrame.setObjectName(u"constructionYearFrame")
-        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.constructionYearFrame.sizePolicy().hasHeightForWidth())
-        self.constructionYearFrame.setSizePolicy(sizePolicy)
-        self.constructionYearFrame.setFrameShape(QFrame.StyledPanel)
-        self.constructionYearFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_54 = QVBoxLayout(self.constructionYearFrame)
-        self.verticalLayout_54.setObjectName(u"verticalLayout_54")
-        self.constructionYearLbl = QLabel(self.constructionYearFrame)
-        self.constructionYearLbl.setObjectName(u"constructionYearLbl")
-        self.constructionYearLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_54.addWidget(self.constructionYearLbl)
-
-        self.constructionYearError = QLabel(self.constructionYearFrame)
-        self.constructionYearError.setObjectName(u"constructionYearError")
-
-        self.verticalLayout_54.addWidget(self.constructionYearError)
-
-        self.constructionYearInpt = QSpinBox(self.constructionYearFrame)
-        self.constructionYearInpt.setObjectName(u"constructionYearInpt")
-
-        self.verticalLayout_54.addWidget(self.constructionYearInpt)
-
-
-        self.horizontalLayout_16.addWidget(self.constructionYearFrame)
-
-        self.documentStatusFrame = QFrame(self.scrollAreaWidgetContents)
-        self.documentStatusFrame.setObjectName(u"documentStatusFrame")
-        self.documentStatusFrame.setFrameShape(QFrame.StyledPanel)
-        self.documentStatusFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_21 = QVBoxLayout(self.documentStatusFrame)
-        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.documentStatusLbl = QLabel(self.documentStatusFrame)
-        self.documentStatusLbl.setObjectName(u"documentStatusLbl")
-        self.documentStatusLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_21.addWidget(self.documentStatusLbl)
-
-        self.documentStatusError = QLabel(self.documentStatusFrame)
-        self.documentStatusError.setObjectName(u"documentStatusError")
-
-        self.verticalLayout_21.addWidget(self.documentStatusError)
-
-        self.documentStatusInpt = QComboBox(self.documentStatusFrame)
-        self.documentStatusInpt.setObjectName(u"documentStatusInpt")
-
-        self.verticalLayout_21.addWidget(self.documentStatusInpt)
-
-
-        self.horizontalLayout_16.addWidget(self.documentStatusFrame)
-
-        self.horizontalLayout_16.setStretch(0, 1)
-        self.horizontalLayout_16.setStretch(1, 1)
-        self.horizontalLayout_16.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_16)
-
-        self.horizontalLayout_17 = QHBoxLayout()
-        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
-        self.horizontalLayout_17.setContentsMargins(-1, 20, -1, -1)
-        self.frame_6 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_17.addWidget(self.frame_6)
-
-        self.frame_5 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_17.addWidget(self.frame_5)
+        self.gridLayout_6.addWidget(self.lightDirectionFrame, 4, 0, 1, 1)
 
         self.floorFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.floorFormFrame.setObjectName(u"floorFormFrame")
@@ -1873,108 +1974,32 @@ class Ui_MainWindow(object):
         self.verticalLayout_69.addWidget(self.floorFormInpt)
 
 
-        self.horizontalLayout_17.addWidget(self.floorFormFrame)
+        self.gridLayout_6.addWidget(self.floorFormFrame, 5, 2, 1, 1)
 
-        self.horizontalLayout_17.setStretch(0, 1)
-        self.horizontalLayout_17.setStretch(1, 1)
-        self.horizontalLayout_17.setStretch(2, 1)
+        self.totalPriceFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.totalPriceFormFrame.setObjectName(u"totalPriceFormFrame")
+        self.totalPriceFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.totalPriceFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_62 = QVBoxLayout(self.totalPriceFormFrame)
+        self.verticalLayout_62.setObjectName(u"verticalLayout_62")
+        self.totalPriceFormLbl = QLabel(self.totalPriceFormFrame)
+        self.totalPriceFormLbl.setObjectName(u"totalPriceFormLbl")
+        self.totalPriceFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_14.addLayout(self.horizontalLayout_17)
+        self.verticalLayout_62.addWidget(self.totalPriceFormLbl)
 
-        self.horizontalLayout_18 = QHBoxLayout()
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.horizontalLayout_18.setContentsMargins(-1, 20, -1, -1)
-        self.floorUnitCountFrame = QFrame(self.scrollAreaWidgetContents)
-        self.floorUnitCountFrame.setObjectName(u"floorUnitCountFrame")
-        self.floorUnitCountFrame.setFrameShape(QFrame.StyledPanel)
-        self.floorUnitCountFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_73 = QVBoxLayout(self.floorUnitCountFrame)
-        self.verticalLayout_73.setObjectName(u"verticalLayout_73")
-        self.floorUnitCountLbl = QLabel(self.floorUnitCountFrame)
-        self.floorUnitCountLbl.setObjectName(u"floorUnitCountLbl")
-        self.floorUnitCountLbl.setStyleSheet(u"label")
+        self.totalPriceFormError = QLabel(self.totalPriceFormFrame)
+        self.totalPriceFormError.setObjectName(u"totalPriceFormError")
 
-        self.verticalLayout_73.addWidget(self.floorUnitCountLbl)
+        self.verticalLayout_62.addWidget(self.totalPriceFormError)
 
-        self.floorUnitCountError = QLabel(self.floorUnitCountFrame)
-        self.floorUnitCountError.setObjectName(u"floorUnitCountError")
+        self.totalPriceFormInpt = QLineEdit(self.totalPriceFormFrame)
+        self.totalPriceFormInpt.setObjectName(u"totalPriceFormInpt")
 
-        self.verticalLayout_73.addWidget(self.floorUnitCountError)
-
-        self.floorUnitCountInpt = QSpinBox(self.floorUnitCountFrame)
-        self.floorUnitCountInpt.setObjectName(u"floorUnitCountInpt")
-
-        self.verticalLayout_73.addWidget(self.floorUnitCountInpt)
+        self.verticalLayout_62.addWidget(self.totalPriceFormInpt)
 
 
-        self.horizontalLayout_18.addWidget(self.floorUnitCountFrame)
-
-        self.totalBuildingUnitFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.totalBuildingUnitFormFrame.setObjectName(u"totalBuildingUnitFormFrame")
-        self.totalBuildingUnitFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.totalBuildingUnitFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_72 = QVBoxLayout(self.totalBuildingUnitFormFrame)
-        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
-        self.totalBuildingUnitFormLbl = QLabel(self.totalBuildingUnitFormFrame)
-        self.totalBuildingUnitFormLbl.setObjectName(u"totalBuildingUnitFormLbl")
-        self.totalBuildingUnitFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormLbl)
-
-        self.totalBuildingUnitFormError = QLabel(self.totalBuildingUnitFormFrame)
-        self.totalBuildingUnitFormError.setObjectName(u"totalBuildingUnitFormError")
-
-        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormError)
-
-        self.totalBuildingUnitFormInpt = QSpinBox(self.totalBuildingUnitFormFrame)
-        self.totalBuildingUnitFormInpt.setObjectName(u"totalBuildingUnitFormInpt")
-
-        self.verticalLayout_72.addWidget(self.totalBuildingUnitFormInpt)
-
-
-        self.horizontalLayout_18.addWidget(self.totalBuildingUnitFormFrame)
-
-        self.floorCounFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.floorCounFormFrame.setObjectName(u"floorCounFormFrame")
-        self.floorCounFormFrame.setMinimumSize(QSize(0, 0))
-        self.floorCounFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.floorCounFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_13 = QVBoxLayout(self.floorCounFormFrame)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.floorCounFormLbl = QLabel(self.floorCounFormFrame)
-        self.floorCounFormLbl.setObjectName(u"floorCounFormLbl")
-        self.floorCounFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_13.addWidget(self.floorCounFormLbl)
-
-        self.floorCounFormError = QLabel(self.floorCounFormFrame)
-        self.floorCounFormError.setObjectName(u"floorCounFormError")
-
-        self.verticalLayout_13.addWidget(self.floorCounFormError)
-
-        self.floorCounFormInpt = QSpinBox(self.floorCounFormFrame)
-        self.floorCounFormInpt.setObjectName(u"floorCounFormInpt")
-
-        self.verticalLayout_13.addWidget(self.floorCounFormInpt)
-
-
-        self.horizontalLayout_18.addWidget(self.floorCounFormFrame)
-
-        self.horizontalLayout_18.setStretch(0, 1)
-        self.horizontalLayout_18.setStretch(1, 1)
-        self.horizontalLayout_18.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_18)
-
-        self.horizontalLayout_19 = QHBoxLayout()
-        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(-1, 20, -1, -1)
-        self.frame_8 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_19.addWidget(self.frame_8)
+        self.gridLayout_6.addWidget(self.totalPriceFormFrame, 2, 1, 1, 1)
 
         self.rebuildingFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.rebuildingFormFrame.setObjectName(u"rebuildingFormFrame")
@@ -2004,22 +2029,85 @@ class Ui_MainWindow(object):
         self.verticalLayout_74.addWidget(self.rebuildingFormOptionsFrame)
 
 
-        self.horizontalLayout_19.addWidget(self.rebuildingFormFrame)
+        self.gridLayout_6.addWidget(self.rebuildingFormFrame, 7, 2, 1, 1)
 
-        self.horizontalLayout_19.setStretch(0, 2)
-        self.horizontalLayout_19.setStretch(1, 1)
+        self.openingWidthFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.openingWidthFormFrame.setObjectName(u"openingWidthFormFrame")
+        self.verticalLayout_139 = QVBoxLayout(self.openingWidthFormFrame)
+        self.verticalLayout_139.setObjectName(u"verticalLayout_139")
+        self.openingWidthFormLbl = QLabel(self.openingWidthFormFrame)
+        self.openingWidthFormLbl.setObjectName(u"openingWidthFormLbl")
+        self.openingWidthFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_14.addLayout(self.horizontalLayout_19)
+        self.verticalLayout_139.addWidget(self.openingWidthFormLbl)
 
-        self.horizontalLayout_20 = QHBoxLayout()
-        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
-        self.horizontalLayout_20.setContentsMargins(-1, 20, -1, -1)
-        self.frame_9 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.openingWidthFormError = QLabel(self.openingWidthFormFrame)
+        self.openingWidthFormError.setObjectName(u"openingWidthFormError")
 
-        self.horizontalLayout_20.addWidget(self.frame_9)
+        self.verticalLayout_139.addWidget(self.openingWidthFormError)
+
+        self.openingWidthFormInpt = QSpinBox(self.openingWidthFormFrame)
+        self.openingWidthFormInpt.setObjectName(u"openingWidthFormInpt")
+
+        self.verticalLayout_139.addWidget(self.openingWidthFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.openingWidthFormFrame, 1, 0, 1, 1)
+
+        self.constructionYearFrame = QFrame(self.scrollAreaWidgetContents)
+        self.constructionYearFrame.setObjectName(u"constructionYearFrame")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.constructionYearFrame.sizePolicy().hasHeightForWidth())
+        self.constructionYearFrame.setSizePolicy(sizePolicy)
+        self.constructionYearFrame.setFrameShape(QFrame.StyledPanel)
+        self.constructionYearFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_54 = QVBoxLayout(self.constructionYearFrame)
+        self.verticalLayout_54.setObjectName(u"verticalLayout_54")
+        self.constructionYearLbl = QLabel(self.constructionYearFrame)
+        self.constructionYearLbl.setObjectName(u"constructionYearLbl")
+        self.constructionYearLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_54.addWidget(self.constructionYearLbl)
+
+        self.constructionYearError = QLabel(self.constructionYearFrame)
+        self.constructionYearError.setObjectName(u"constructionYearError")
+
+        self.verticalLayout_54.addWidget(self.constructionYearError)
+
+        self.constructionYearInpt = QSpinBox(self.constructionYearFrame)
+        self.constructionYearInpt.setObjectName(u"constructionYearInpt")
+
+        self.verticalLayout_54.addWidget(self.constructionYearInpt)
+
+
+        self.gridLayout_6.addWidget(self.constructionYearFrame, 4, 1, 1, 1)
+
+        self.compensationConditionFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.compensationConditionFormFrame.setObjectName(u"compensationConditionFormFrame")
+        self.compensationConditionFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.compensationConditionFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_76 = QVBoxLayout(self.compensationConditionFormFrame)
+        self.verticalLayout_76.setObjectName(u"verticalLayout_76")
+        self.compensationConditionFormLbl = QLabel(self.compensationConditionFormFrame)
+        self.compensationConditionFormLbl.setObjectName(u"compensationConditionFormLbl")
+        self.compensationConditionFormLbl.setStyleSheet(u"label")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormLbl)
+
+        self.compensationConditionFormError = QLabel(self.compensationConditionFormFrame)
+        self.compensationConditionFormError.setObjectName(u"compensationConditionFormError")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormError)
+
+        self.compensationConditionFormInpt = QTextEdit(self.compensationConditionFormFrame)
+        self.compensationConditionFormInpt.setObjectName(u"compensationConditionFormInpt")
+
+        self.verticalLayout_76.addWidget(self.compensationConditionFormInpt)
+
+
+        self.gridLayout_6.addWidget(self.compensationConditionFormFrame, 9, 1, 1, 1)
 
         self.buildingLicenseFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.buildingLicenseFormFrame.setObjectName(u"buildingLicenseFormFrame")
@@ -2049,93 +2137,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_140.addWidget(self.buildingLicenseFormOptionsFrame)
 
 
-        self.horizontalLayout_20.addWidget(self.buildingLicenseFormFrame)
-
-        self.horizontalLayout_20.setStretch(0, 2)
-        self.horizontalLayout_20.setStretch(1, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_20)
-
-        self.horizontalLayout_21 = QHBoxLayout()
-        self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_21.setContentsMargins(-1, 20, -1, -1)
-        self.frame_7 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_21.addWidget(self.frame_7)
-
-        self.compensationConditionFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.compensationConditionFormFrame.setObjectName(u"compensationConditionFormFrame")
-        self.compensationConditionFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.compensationConditionFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_76 = QVBoxLayout(self.compensationConditionFormFrame)
-        self.verticalLayout_76.setObjectName(u"verticalLayout_76")
-        self.compensationConditionFormLbl = QLabel(self.compensationConditionFormFrame)
-        self.compensationConditionFormLbl.setObjectName(u"compensationConditionFormLbl")
-        self.compensationConditionFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_76.addWidget(self.compensationConditionFormLbl)
-
-        self.compensationConditionFormError = QLabel(self.compensationConditionFormFrame)
-        self.compensationConditionFormError.setObjectName(u"compensationConditionFormError")
-
-        self.verticalLayout_76.addWidget(self.compensationConditionFormError)
-
-        self.compensationConditionFormInpt = QTextEdit(self.compensationConditionFormFrame)
-        self.compensationConditionFormInpt.setObjectName(u"compensationConditionFormInpt")
-
-        self.verticalLayout_76.addWidget(self.compensationConditionFormInpt)
-
-
-        self.horizontalLayout_21.addWidget(self.compensationConditionFormFrame)
-
-        self.compensationFormFrame = QFrame(self.scrollAreaWidgetContents)
-        self.compensationFormFrame.setObjectName(u"compensationFormFrame")
-        self.compensationFormFrame.setMinimumSize(QSize(0, 0))
-        self.compensationFormFrame.setFrameShape(QFrame.StyledPanel)
-        self.compensationFormFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_75 = QVBoxLayout(self.compensationFormFrame)
-        self.verticalLayout_75.setObjectName(u"verticalLayout_75")
-        self.compensationFormLbl = QLabel(self.compensationFormFrame)
-        self.compensationFormLbl.setObjectName(u"compensationFormLbl")
-        self.compensationFormLbl.setStyleSheet(u"label")
-
-        self.verticalLayout_75.addWidget(self.compensationFormLbl)
-
-        self.compensationFormError = QLabel(self.compensationFormFrame)
-        self.compensationFormError.setObjectName(u"compensationFormError")
-
-        self.verticalLayout_75.addWidget(self.compensationFormError)
-
-        self.compensationFormOptionsFrame = QFrame(self.compensationFormFrame)
-        self.compensationFormOptionsFrame.setObjectName(u"compensationFormOptionsFrame")
-        self.compensationFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
-        self.compensationFormOptionsFrame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_77 = QVBoxLayout(self.compensationFormOptionsFrame)
-        self.verticalLayout_77.setObjectName(u"verticalLayout_77")
-
-        self.verticalLayout_75.addWidget(self.compensationFormOptionsFrame)
-
-
-        self.horizontalLayout_21.addWidget(self.compensationFormFrame)
-
-        self.horizontalLayout_21.setStretch(0, 1)
-        self.horizontalLayout_21.setStretch(1, 1)
-        self.horizontalLayout_21.setStretch(2, 1)
-
-        self.verticalLayout_14.addLayout(self.horizontalLayout_21)
-
-        self.horizontalLayout_22 = QHBoxLayout()
-        self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(-1, 20, -1, -1)
-        self.frame_10 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QFrame.StyledPanel)
-        self.frame_10.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_22.addWidget(self.frame_10)
+        self.gridLayout_6.addWidget(self.buildingLicenseFormFrame, 8, 2, 1, 1)
 
         self.participationFormFrame = QFrame(self.scrollAreaWidgetContents)
         self.participationFormFrame.setObjectName(u"participationFormFrame")
@@ -2165,12 +2167,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_133.addWidget(self.participationFormOptionsFrame)
 
 
-        self.horizontalLayout_22.addWidget(self.participationFormFrame)
+        self.gridLayout_6.addWidget(self.participationFormFrame, 10, 2, 1, 1)
 
-        self.horizontalLayout_22.setStretch(0, 2)
-        self.horizontalLayout_22.setStretch(1, 1)
+        self.gridLayout_6.setColumnStretch(0, 1)
+        self.gridLayout_6.setColumnStretch(1, 1)
+        self.gridLayout_6.setColumnStretch(2, 1)
 
-        self.verticalLayout_14.addLayout(self.horizontalLayout_22)
+        self.verticalLayout_14.addLayout(self.gridLayout_6)
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
@@ -2186,7 +2189,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 710, 1873))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1015, 1873))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -2600,7 +2603,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 676, 1609))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 1015, 1609))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -3272,7 +3275,7 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollAreaWidgetContents_5 = QWidget()
         self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 822, 3257))
+        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 1037, 3257))
         self.verticalLayout_27 = QVBoxLayout(self.scrollAreaWidgetContents_5)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.label_93 = QLabel(self.scrollAreaWidgetContents_5)
@@ -5199,7 +5202,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 913, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1252, 30))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -5210,7 +5213,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(2)
+        self.form_stackwidget.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -5245,14 +5248,22 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0641\u0627\u06cc\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc", None))
         self.label_3.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0645\u0644\u06a9", None))
-        self.pushButton_19.setText(QCoreApplication.translate("MainWindow", u"\u06f8", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"\u06f7", None))
-        self.pushButton_11.setText(QCoreApplication.translate("MainWindow", u"\u06f6", None))
-        self.pushButton_8.setText(QCoreApplication.translate("MainWindow", u"\u06f5", None))
-        self.pushButton_10.setText(QCoreApplication.translate("MainWindow", u"\u06f4", None))
-        self.pushButton_9.setText(QCoreApplication.translate("MainWindow", u"\u06f3", None))
-        self.pushButton_7.setText(QCoreApplication.translate("MainWindow", u"\u06f2", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"\u06f1", None))
+        self.estateFormStep8Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f8", None))
+        self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0627\u0646", None))
+        self.estateFormStep7Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f7", None))
+        self.label_27.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0635\u0627\u0648\u06cc\u0631", None))
+        self.estateFormStep6Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f6", None))
+        self.label_26.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u06cc\u0627\u0644 ", None))
+        self.estateFormStep5Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f5", None))
+        self.label_25.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0645\u06a9\u0627\u0646\u0627\u062a", None))
+        self.estateFormStep4Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f4", None))
+        self.label_24.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0644\u06cc", None))
+        self.estateFormStep3Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f3", None))
+        self.label_23.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0627\u0644\u06a9", None))
+        self.estateFormStep2Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f2", None))
+        self.label_22.setText(QCoreApplication.translate("MainWindow", u"\u0622\u062f\u0631\u0633", None))
+        self.estateFormStep1Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f1", None))
+        self.label_21.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0645\u0644\u06a9", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0648\u0639", None))
         self.label_6.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.melkCategoryFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0645\u0644\u06a9", None))
@@ -5328,6 +5339,31 @@ class Ui_MainWindow(object):
         self.ownerDescriptionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.label_19.setText(QCoreApplication.translate("MainWindow", u"\u0627\u0637\u0644\u0627\u0639\u0627\u062a \u06a9\u0644\u06cc", None))
         self.label_19.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
+        self.unitPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u062a\u0631 \u0645\u0631\u0628\u0639", None))
+        self.unitPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.unitPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.unitPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.unitPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.floorUnitCountLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u0648\u0627\u062d\u062f \u062f\u0631 \u0637\u0628\u0642\u0647", None))
+        self.floorUnitCountLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorUnitCountError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorUnitCountError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorUnitCountInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.lengthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0648\u0644", None))
+        self.lengthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.lengthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.lengthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.lengthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.meterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698", None))
+        self.meterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.meterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.meterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.meterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.floorCounFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0637\u0628\u0642\u0627\u062a", None))
+        self.floorCounFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.floorCounFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.floorCounFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.floorCounFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.landMeterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698 \u0632\u0645\u06cc\u0646", None))
         self.landMeterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.landMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
@@ -5338,104 +5374,79 @@ class Ui_MainWindow(object):
         self.buildingMeterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.buildingMeterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.buildingMeterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.meterageFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062a\u0631\u0627\u0698", None))
-        self.meterageFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.meterageFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.meterageFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.meterageFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.openingWidthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0631\u0636 \u062f\u0647\u0627\u0646\u0647", None))
-        self.openingWidthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.openingWidthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.openingWidthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.openingWidthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.compensationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0639\u0627\u0648\u0636\u0647:", None))
+        self.compensationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.compensationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.compensationFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.mortgagePriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0631\u0647\u0646", None))
+        self.mortgagePriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.mortgagePriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.mortgagePriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.mortgagePriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.widthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0631\u0636", None))
         self.widthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.widthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.widthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.widthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.lengthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0648\u0644", None))
-        self.lengthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.lengthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.lengthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.lengthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.unitPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u062a\u0631 \u0645\u0631\u0628\u0639", None))
-        self.unitPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.unitPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.unitPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.unitPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.totalPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
-        self.totalPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.totalPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.totalPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.totalPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.totalBuildingUnitFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0648\u0627\u062d\u062f\u0647\u0627", None))
+        self.totalBuildingUnitFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.totalBuildingUnitFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.totalBuildingUnitFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.totalBuildingUnitFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.documentStatusLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0633\u0646\u062f", None))
+        self.documentStatusLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.documentStatusError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.documentStatusError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.documentStatusInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.rentPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647", None))
+        self.rentPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.rentPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.rentPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.rentPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062d\u0627\u0633\u0628\u0647 \u0642\u06cc\u0645\u062a \u0628\u0631\u0627\u0633\u0627\u0633", None))
         self.label_20.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
         self.radioButton_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.radioButton.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u0631\u062a\u0631", None))
         self.radioButton.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.rentPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0627\u062c\u0627\u0631\u0647", None))
-        self.rentPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.rentPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.rentPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.rentPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.mortgagePriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0631\u0647\u0646", None))
-        self.mortgagePriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.mortgagePriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.mortgagePriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.mortgagePriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.lightDirectionLbl.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0647\u062a \u0646\u0648\u0631\u06af\u06cc\u0631\u06cc", None))
         self.lightDirectionLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.lightDirectionError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.lightDirectionError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.lightDirectionInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.constructionYearLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u0644 \u0633\u0627\u062e\u062a", None))
-        self.constructionYearLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.constructionYearError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.constructionYearError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.constructionYearInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.documentStatusLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0633\u0646\u062f", None))
-        self.documentStatusLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.documentStatusError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.documentStatusError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.documentStatusInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.floorFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0637\u0628\u0642\u0647", None))
         self.floorFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.floorFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.floorFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.floorFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.floorUnitCountLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u0648\u0627\u062d\u062f \u062f\u0631 \u0637\u0628\u0642\u0647", None))
-        self.floorUnitCountLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.floorUnitCountError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.floorUnitCountError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.floorUnitCountInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.totalBuildingUnitFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0648\u0627\u062d\u062f\u0647\u0627", None))
-        self.totalBuildingUnitFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.totalBuildingUnitFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.totalBuildingUnitFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.totalBuildingUnitFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.floorCounFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u062a\u0639\u062f\u0627\u062f \u06a9\u0644 \u0637\u0628\u0642\u0627\u062a", None))
-        self.floorCounFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.floorCounFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.floorCounFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.floorCounFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.totalPriceFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
+        self.totalPriceFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.totalPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.totalPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.totalPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.rebuildingFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0648\u0636\u0639\u06cc\u062a \u0628\u0627\u0632\u0633\u0627\u0632\u06cc", None))
         self.rebuildingFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.rebuildingFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.rebuildingFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
-        self.buildingLicenseFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0627\u0646\u0647 \u0633\u0627\u062e\u062a", None))
-        self.buildingLicenseFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.buildingLicenseFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.buildingLicenseFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.openingWidthFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0639\u0631\u0636 \u062f\u0647\u0627\u0646\u0647", None))
+        self.openingWidthFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.openingWidthFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.openingWidthFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.openingWidthFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.constructionYearLbl.setText(QCoreApplication.translate("MainWindow", u"\u0633\u0627\u0644 \u0633\u0627\u062e\u062a", None))
+        self.constructionYearLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.constructionYearError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.constructionYearError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.constructionYearInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.compensationConditionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0634\u0631\u0627\u06cc\u0637 \u0645\u0639\u0627\u0648\u0636\u0647", None))
         self.compensationConditionFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.compensationConditionFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.compensationConditionFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.compensationConditionFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.compensationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0639\u0627\u0648\u0636\u0647:", None))
-        self.compensationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.compensationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
-        self.compensationFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.buildingLicenseFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0627\u0646\u0647 \u0633\u0627\u062e\u062a", None))
+        self.buildingLicenseFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.buildingLicenseFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.buildingLicenseFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.participationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0631\u06a9\u062a", None))
         self.participationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.participationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))

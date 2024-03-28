@@ -23,10 +23,41 @@ class GUIBackend:
             #window = uic.loadUi(path)
         return window
 
+
     @staticmethod
     def set_signal_connection(wgt:QtWidgets.QWidget, connection:bool):
         wgt.blockSignals(not(connection))
 
+    @staticmethod
+    def set_dynalic_property(wgt:QtWidgets.QWidget, name:str, value, repolish_style=False):
+        """set the value of a dynamic property
+
+        Args:
+            wgt (QtWidgets.QWidget): _description_
+            name (str): name of dynamic property you define in Qt Designer
+            value (_type_): value of property
+            repolish_style (bool, optional): if be true, the style of wgt regenerate,
+                if you style wgt base on dynamic property, you should set this argumnet True
+        """
+        
+        wgt.setProperty(name, value)
+        if repolish_style:
+            GUIBackend.repoblish_style(wgt)
+
+    @staticmethod
+    def repoblish_style( wgt:QtWidgets.QWidget):
+        """rebuild style of a widget, it is use when
+           style should be change after changing dynamic property
+
+        Args:
+            wgt (QtWidgets.QWidget): _description_
+        """
+        wgt.style().unpolish(wgt)
+        wgt.style().polish(wgt)
+
+    @staticmethod
+    def get_dynalic_property(wgt:QtWidgets.QWidget, name:str):
+        return wgt.property(name)
 
     @staticmethod
     def set_max_size(wgt:QtWidgets.QWidget, h=None, w=None):

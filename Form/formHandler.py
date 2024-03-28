@@ -39,7 +39,11 @@ class FormHandler:
         self.gloassaries = gloassaries
         self.form_fields_dict = form_fields_info
         self.form_ui = form_ui
-        self.curent_step = 1
+        self.curent_step = 0
+        self.last_complete_step = self.curent_step
+
+        self.next_callback = None
+        self.prev_callback = None
         
         self.handle_form_ui()
         self.render_options()
@@ -50,6 +54,13 @@ class FormHandler:
         self.fields_event_connector()
         self.hide_all_errors()
         self.refresh_visibility()
+        self.go_to_step(0)
+
+    def set_next_callback(self, func):
+        self.next_callback = func
+
+    def set_prev_callback(self, func):
+        self.prev_callback = func
     
     def handle_form_ui(self, ):
         for key,wgt in self.form_ui.items():
@@ -158,6 +169,7 @@ class FormHandler:
             relative_field.refresh_field_visibility(self.form_values)
     
     def check_step_validation(self, step):
+        step +=1 #beacuse in code step is from 0
         validation = True
         for field_name in self.get_fields_list():
             field = self.get_field(field_name)
@@ -178,26 +190,42 @@ class FormHandler:
         assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
         pages_wgt= self.form_ui['pages']
 
-        step = GUIBackend.get_stack_widget_idx(pages_wgt)
-        if self.check_step_validation(step+1):
+        self.curent_step = GUIBackend.get_stack_widget_idx(pages_wgt)
+        if self.check_step_validation(self.curent_step):
             step_count = GUIBackend.get_stack_widget_count(pages_wgt)
-            step+=1
-            step = min(step, step_count-1)
-            GUIBackend.set_stack_widget_idx(pages_wgt, step)
+            self.curent_step+=1
+            self.curent_step = min(self.curent_step, step_count-1)
+            GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
             self.write_form_error(None)
+            self.last_complete_step = max(self.last_complete_step, self.curent_step)
         else:
             self.write_form_error('لطفا مقادیر را به درستی وارد نمایید')
+        
+        if self.next_callback is not None:
+            self.next_callback()
 
 
     def prev_step(self,):
         assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
         pages_wgt= self.form_ui['pages']
 
-        step = GUIBackend.get_stack_widget_idx(pages_wgt)
-        step-=1
-        step = max(step, 0)
-        GUIBackend.set_stack_widget_idx(pages_wgt, step)
+        #self.curent_step = GUIBackend.get_stack_widget_idx(pages_wgt)
+        self.curent_step-=1
+        self.curent_step = max(self.curent_step, 0)
+        GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
+        
         self.write_form_error(None)
+
+        if self.prev_callback is not None:
+            self.prev_callback()
+
+    def go_to_step(self, step):
+        pages_wgt= self.form_ui['pages']
+        if step <= self.last_complete_step:
+            self.curent_step = step
+            GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
+            return True
+        return False
     
     def write_form_error(self, txt):
         wgt = self.form_ui.get('error_label')
