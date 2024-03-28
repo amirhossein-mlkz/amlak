@@ -30,9 +30,14 @@ class conditionsChecker:
             if operator == '>=':
                 if key < value:
                     return False
+                
             if operator == '<=':
                 if key > value:
-                    return False    
+                    return False   
+
+            if operator == 'in':
+                if key not in value:
+                    return False  
             
             if operator == 'contain':
                 if value not in key:

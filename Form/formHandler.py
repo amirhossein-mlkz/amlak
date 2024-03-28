@@ -49,6 +49,7 @@ class FormHandler:
 
         self.fields_event_connector()
         self.hide_all_errors()
+        self.refresh_visibility()
     
     def handle_form_ui(self, ):
         for key,wgt in self.form_ui.items():
@@ -151,10 +152,10 @@ class FormHandler:
         field.check_validation()
 
         #check visibility of other fields base on this field
-        corespond_fields_names = self.get_child_field_visibility(field_name)
-        for corespond_field_name in corespond_fields_names:
-            corespond_field = self.get_field(corespond_field_name)
-            corespond_field.refresh_field_visibility(self.form_values)
+        relative_fields_names = self.get_child_field_visibility(field_name)
+        for field_name in relative_fields_names:
+            relative_field = self.get_field(field_name)
+            relative_field.refresh_field_visibility(self.form_values)
     
     def check_step_validation(self, step):
         validation = True
@@ -166,6 +167,11 @@ class FormHandler:
                     validation = False
         
         return validation
+    
+    def refresh_visibility(self,):
+        for field_name in self.get_fields_list():
+            field = self.get_field(field_name)
+            field.refresh_field_visibility(self.form_values)
     
 
     def next_step(self,):
@@ -250,7 +256,7 @@ class Field:
         return self.dict_info.get('options-container')
     
     def get_visibility_conditions(self,)-> dict:
-        return copy.deepcopy(self.dict_info.get('visible-conditions'))
+        return copy.deepcopy(self.dict_info.get('visible-conditions',[]))
     
     def get_container(self,) -> QtWidgets.QFrame:
         return self.dict_info.get('frame')
@@ -342,10 +348,13 @@ class Field:
                 options_input_field[key] =opt
 
             self.dict_info['input'] = options_input_field
+        
+        else:
+            raise Exception(f"{self.name} field type is incorect")
     
     def check_validation(self,) -> tuple[bool,str]:
         value = self.get_value()
-        validation_info = self.dict_info.get('validation')
+        validation_info:list[dict] = self.dict_info.get('validation')
 
         validation = True
         text = None
@@ -355,14 +364,19 @@ class Field:
                 if cond_info['cond'] == 'require':
                     if not value:
                         text =  'این فیلد ضروری است'
+                        text = cond_info.get('error', text)
                         validation = False
                         break
 
-                if cond_info['cond'] == 'regex':
+                elif cond_info['cond'] == 'regex':
                     pattern = cond_info['pattern']
                     if not re.match(pattern, value):
                         text =  'به درستی وارد نمایید'
+                        text = cond_info.get('error', text)
                         validation = False
+                
+                else:
+                    raise Exception(f"{self.name} field {cond_info['cond']} condition is not valid")
         
         self.show_error(text)
         return validation
