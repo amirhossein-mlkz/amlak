@@ -178,6 +178,11 @@ class FormHandler:
                 if not field_validation:
                     validation = False
         
+        if validation:
+            self.write_form_error(None)
+        else:
+            self.write_form_error('لطفا مقادیر را به درستی وارد نمایید')
+        
         return validation
     
     def refresh_visibility(self,):
@@ -196,10 +201,7 @@ class FormHandler:
             self.curent_step+=1
             self.curent_step = min(self.curent_step, step_count-1)
             GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
-            self.write_form_error(None)
             self.last_complete_step = max(self.last_complete_step, self.curent_step)
-        else:
-            self.write_form_error('لطفا مقادیر را به درستی وارد نمایید')
         
         if self.next_callback is not None:
             self.next_callback()
@@ -220,6 +222,10 @@ class FormHandler:
             self.prev_callback()
 
     def go_to_step(self, step):
+        #check if we back in prev step
+        if self.curent_step< self.last_complete_step:
+            if not self.check_step_validation(self.curent_step):
+                return False
         pages_wgt= self.form_ui['pages']
         if step <= self.last_complete_step:
             self.curent_step = step
