@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1252, 901)
+        MainWindow.resize(1084, 932)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -226,6 +226,10 @@ class Ui_MainWindow(object):
 "	border-bottom: 2px solid #7892DF;\n"
 "}\n"
 "\n"
+"QLineEdit:disabled {\n"
+"	background-color: rgb(230, 230, 230);\n"
+"}\n"
+"\n"
 "/***********QSpinBox, QDoubleSpinBox, QDateEdit*************/\n"
 "\n"
 "QSpinBox, QDoubleSpinBox, QDateEdit\n"
@@ -254,12 +258,12 @@ class Ui_MainWindow(object):
 "{   \n"
 "	image: url(:/icons/icons/plus_icon_black.png);\n"
 "	width: 16px;\n"
-"	height: 16px;\n"
+"	he"
+                        "ight: 16px;\n"
 "}\n"
 "\n"
 "QSpinBox::down-arrow,  \n"
-"QDoubleSpinBox::down-arr"
-                        "ow,\n"
+"QDoubleSpinBox::down-arrow,\n"
 "QDateEdit::down-arrow\n"
 "{   \n"
 "	image: url(:/icons/icons/minus_icon_black.png);\n"
@@ -302,10 +306,10 @@ class Ui_MainWindow(object):
 "QDoubleSpinBox::down-button,\n"
 "QDateEdit::down-button\n"
 "{\n"
-"    min-width:30px;\n"
+""
+                        "    min-width:30px;\n"
 "    min-height: 29px;\n"
-"    subcontrol-origin: mar"
-                        "gin;\n"
+"    subcontrol-origin: margin;\n"
 "    subcontrol-position: left;\n"
 "    top: 0px;\n"
 "    right: 0px;\n"
@@ -345,10 +349,10 @@ class Ui_MainWindow(object):
 "    background-color: #BDBDBF;\n"
 "    color: rgb(20, 20, 20);\n"
 "	min-width: 100px;\n"
-"    padding: 8px 16px;\n"
+""
+                        "    padding: 8px 16px;\n"
 "    border-top-left-radius: 4px;\n"
-"    border-"
-                        "top-right-radius: 4px;\n"
+"    border-top-right-radius: 4px;\n"
 "}\n"
 "\n"
 "QTabBar::tab:hover {\n"
@@ -388,12 +392,12 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QHeaderView::section:first {\n"
-"   border-top-left-radius: 4px;\n"
+"   border-to"
+                        "p-left-radius: 4px;\n"
 "	border-left: None;\n"
 "}\n"
 "\n"
-"QHeaderView::sec"
-                        "tion:last {\n"
+"QHeaderView::section:last {\n"
 "   border-top-right-radius: 4px;\n"
 "	border-right: None;\n"
 "}\n"
@@ -439,13 +443,13 @@ class Ui_MainWindow(object):
 "{   \n"
 "	image: url(:/icons/icons/down_icon_gray.png);\n"
 "	width: 12px;\n"
-"    height: 12px;\n"
+"    height: "
+                        "12px;\n"
 "}\n"
 "\n"
 "QComboBox::down-arrow\n"
 "{   \n"
-"	image: url(:/icons"
-                        "/icons/down_icon_black.png);\n"
+"	image: url(:/icons/icons/down_icon_black.png);\n"
 "	width: 12px;\n"
 "    height: 12px;\n"
 "}\n"
@@ -554,16 +558,20 @@ class Ui_MainWindow(object):
 "\n"
 "/*********************DashboardMenu**********************/\n"
 "\n"
-"*[styleSheet=\"dashboardMenuItem\"]{\n"
+"QFrame[styleSheet=\"dashboardMenuItem\"]{\n"
 "		background-color:#ffffff;\n"
 "	padding:10px;\n"
 "	border-radius: 10px;\n"
 "}\n"
 "\n"
+"QFrame[styleSheet=\"dashboardMenuItem\"]:hover{\n"
+"		background-color:rgb(198, 230, 255);\n"
+"}\n"
+""
+                        "\n"
 "*[styleClass=\"dashboardMenu\"] *[styleClass=\"dashboardMenuItem\"] {\n"
 "	background-color:#ffffff;\n"
-""
-                        "	padding:10px;\n"
+"	padding:10px;\n"
 "	border-radius: 10px;\n"
 "\n"
 "}\n"
@@ -601,12 +609,12 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "*[styleClass=\"buildingPriceInfo\"] {\n"
-"	border: 2px solid rgb(148, 148, 148);\n"
+"	borde"
+                        "r: 2px solid rgb(148, 148, 148);\n"
 "	border-radius: 20px;\n"
 "}\n"
 "\n"
-"*[styleClass=\"buildingPriceInfo\"] "
-                        " .QLabel[styleClass=\"value\"]{\n"
+"*[styleClass=\"buildingPriceInfo\"]  .QLabel[styleClass=\"value\"]{\n"
 "	font-size:18px;\n"
 "	padding-bottom:20px;\n"
 "}\n"
@@ -643,12 +651,12 @@ class Ui_MainWindow(object):
 "\n"
 "*[styleClass=\"buildingInfo\"]  QFrame[styleClass=\"section\"]{\n"
 "	padding-bottom:80px;\n"
-"}\n"
+""
+                        "}\n"
 "\n"
 "*[styleClass=\"buildingInfo\"] QFrame[crossCheckIcon=\"false\"]{\n"
 " min-width:24px;\n"
-" max-wid"
-                        "th:24px;\n"
+" max-width:24px;\n"
 " min-height:24px;\n"
 " max-height:24px;\n"
 " background:url(:/icons/icons/cross-red-24.png)  no-repeat center center;\n"
@@ -682,13 +690,13 @@ class Ui_MainWindow(object):
 " font: auto \"IRANSansWebFaNum Light\";\n"
 " font-size:18px;\n"
 " padding-top:100px;\n"
-" padding-bottom:15px;\n"
+" padding-botto"
+                        "m:15px;\n"
 "}\n"
 "\n"
 "QLabel[styleClass=\"form-step-title\"]{\n"
 "font: auto \"IRANSansWebFaNum Medium\";\n"
-""
-                        " font-size:32px;\n"
+" font-size:32px;\n"
 "color:rgb(66, 120, 206);\n"
 "}\n"
 "\n"
@@ -717,7 +725,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "QPushButton[styleClass=\"form-btn\"]:hover{\n"
-"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2:0.44, y2:0, stop:0 rgba(77, 98, 153, 255), stop:1 rgba(114, 152, 252, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.635, y1:1, x2"
+                        ":0.44, y2:0, stop:0 rgba(77, 98, 153, 255), stop:1 rgba(114, 152, 252, 255));\n"
 "}")
         self.horizontalLayout_5 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
@@ -760,33 +769,35 @@ class Ui_MainWindow(object):
 
         self.all_rent_building = QFrame(self.dashboardFrame)
         self.all_rent_building.setObjectName(u"all_rent_building")
+        self.all_rent_building.setStyleSheet(u"dashboardMenuItem")
         self.all_rent_building.setFrameShape(QFrame.StyledPanel)
         self.all_rent_building.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_6 = QVBoxLayout(self.all_rent_building)
-        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.label_10 = QLabel(self.all_rent_building)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(100, 100))
-        self.label_10.setPixmap(QPixmap(u":/icons/icons/all-rents.png"))
-        self.label_10.setScaledContents(True)
-        self.label_10.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.verticalLayout_166 = QVBoxLayout(self.all_rent_building)
+        self.verticalLayout_166.setObjectName(u"verticalLayout_166")
+        self.label_20 = QLabel(self.all_rent_building)
+        self.label_20.setObjectName(u"label_20")
+        self.label_20.setMaximumSize(QSize(100, 100))
+        self.label_20.setPixmap(QPixmap(u":/icons/icons/all-rents.png"))
+        self.label_20.setScaledContents(True)
+        self.label_20.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_6.addWidget(self.label_10, 0, Qt.AlignHCenter)
+        self.verticalLayout_166.addWidget(self.label_20, 0, Qt.AlignHCenter)
 
-        self.label_7 = QLabel(self.all_rent_building)
-        self.label_7.setObjectName(u"label_7")
+        self.label_29 = QLabel(self.all_rent_building)
+        self.label_29.setObjectName(u"label_29")
 
-        self.verticalLayout_6.addWidget(self.label_7, 0, Qt.AlignHCenter)
+        self.verticalLayout_166.addWidget(self.label_29, 0, Qt.AlignHCenter)
 
 
         self.gridLayout.addWidget(self.all_rent_building, 1, 1, 1, 1)
 
         self.users = QFrame(self.dashboardFrame)
         self.users.setObjectName(u"users")
+        self.users.setStyleSheet(u"dashboardMenuItem")
         self.users.setFrameShape(QFrame.StyledPanel)
         self.users.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.users)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_164 = QVBoxLayout(self.users)
+        self.verticalLayout_164.setObjectName(u"verticalLayout_164")
         self.label_16 = QLabel(self.users)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setMaximumSize(QSize(100, 100))
@@ -794,88 +805,86 @@ class Ui_MainWindow(object):
         self.label_16.setScaledContents(True)
         self.label_16.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_10.addWidget(self.label_16, 0, Qt.AlignHCenter)
+        self.verticalLayout_164.addWidget(self.label_16, 0, Qt.AlignHCenter)
 
         self.label_15 = QLabel(self.users)
         self.label_15.setObjectName(u"label_15")
 
-        self.verticalLayout_10.addWidget(self.label_15, 0, Qt.AlignHCenter)
+        self.verticalLayout_164.addWidget(self.label_15, 0, Qt.AlignHCenter)
 
 
         self.gridLayout.addWidget(self.users, 1, 0, 1, 1)
 
-        self.register_sale_building = QFrame(self.dashboardFrame)
-        self.register_sale_building.setObjectName(u"register_sale_building")
-        self.register_sale_building.setStyleSheet(u"")
-        self.register_sale_building.setFrameShape(QFrame.StyledPanel)
-        self.register_sale_building.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.register_sale_building)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label = QLabel(self.register_sale_building)
-        self.label.setObjectName(u"label")
-        self.label.setMaximumSize(QSize(100, 100))
-        self.label.setPixmap(QPixmap(u":/icons/icons/add_home.png"))
-        self.label.setScaledContents(True)
-
-        self.verticalLayout_3.addWidget(self.label, 0, Qt.AlignHCenter)
-
-        self.label_2 = QLabel(self.register_sale_building)
-        self.label_2.setObjectName(u"label_2")
-
-        self.verticalLayout_3.addWidget(self.label_2, 0, Qt.AlignHCenter)
-
-
-        self.gridLayout.addWidget(self.register_sale_building, 0, 1, 1, 1)
-
-        self.all_sale_building = QFrame(self.dashboardFrame)
-        self.all_sale_building.setObjectName(u"all_sale_building")
-        self.all_sale_building.setFrameShape(QFrame.StyledPanel)
-        self.all_sale_building.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.all_sale_building)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.label_8 = QLabel(self.all_sale_building)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setMaximumSize(QSize(100, 100))
-        self.label_8.setPixmap(QPixmap(u":/icons/icons/all-sell.png"))
-        self.label_8.setScaledContents(True)
-
-        self.verticalLayout_7.addWidget(self.label_8, 0, Qt.AlignHCenter)
-
-        self.label_9 = QLabel(self.all_sale_building)
-        self.label_9.setObjectName(u"label_9")
-
-        self.verticalLayout_7.addWidget(self.label_9, 0, Qt.AlignHCenter)
-
-
-        self.gridLayout.addWidget(self.all_sale_building, 1, 2, 1, 1)
-
         self.profile = QFrame(self.dashboardFrame)
         self.profile.setObjectName(u"profile")
+        self.profile.setStyleSheet(u"dashboardMenuItem")
         self.profile.setFrameShape(QFrame.StyledPanel)
         self.profile.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_4 = QVBoxLayout(self.profile)
-        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_163 = QVBoxLayout(self.profile)
+        self.verticalLayout_163.setObjectName(u"verticalLayout_163")
         self.label_224 = QLabel(self.profile)
         self.label_224.setObjectName(u"label_224")
         self.label_224.setMaximumSize(QSize(100, 100))
         self.label_224.setPixmap(QPixmap(u":/icons/icons/user-profiles.png"))
         self.label_224.setScaledContents(True)
 
-        self.verticalLayout_4.addWidget(self.label_224, 0, Qt.AlignHCenter)
+        self.verticalLayout_163.addWidget(self.label_224, 0, Qt.AlignHCenter)
 
         self.label_3 = QLabel(self.profile)
         self.label_3.setObjectName(u"label_3")
 
-        self.verticalLayout_4.addWidget(self.label_3, 0, Qt.AlignHCenter)
+        self.verticalLayout_163.addWidget(self.label_3, 0, Qt.AlignHCenter)
 
 
         self.gridLayout.addWidget(self.profile, 0, 2, 1, 1)
 
+        self.register_sale_building = QFrame(self.dashboardFrame)
+        self.register_sale_building.setObjectName(u"register_sale_building")
+        self.register_sale_building.setStyleSheet(u"dashboardMenuItem")
+        self.register_sale_building.setFrameShape(QFrame.StyledPanel)
+        self.register_sale_building.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.register_sale_building)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.label = QLabel(self.register_sale_building)
+        self.label.setObjectName(u"label")
+        self.label.setMaximumSize(QSize(100, 100))
+        self.label.setPixmap(QPixmap(u":/icons/icons/add_home.png"))
+        self.label.setScaledContents(True)
+
+        self.verticalLayout_15.addWidget(self.label, 0, Qt.AlignHCenter)
+
+        self.label_2 = QLabel(self.register_sale_building)
+        self.label_2.setObjectName(u"label_2")
+
+        self.verticalLayout_15.addWidget(self.label_2, 0, Qt.AlignHCenter)
+
+
+        self.gridLayout.addWidget(self.register_sale_building, 0, 1, 1, 1)
+
+        self.all_sale_building = QFrame(self.dashboardFrame)
+        self.all_sale_building.setObjectName(u"all_sale_building")
+        self.all_sale_building.setStyleSheet(u"dashboardMenuItem")
+        self.all_sale_building.setFrameShape(QFrame.StyledPanel)
+        self.all_sale_building.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_169 = QVBoxLayout(self.all_sale_building)
+        self.verticalLayout_169.setObjectName(u"verticalLayout_169")
+        self.label_10 = QLabel(self.all_sale_building)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(100, 100))
+        self.label_10.setPixmap(QPixmap(u":/icons/icons/all-sell.png"))
+        self.label_10.setScaledContents(True)
+
+        self.verticalLayout_169.addWidget(self.label_10, 0, Qt.AlignHCenter)
+
+        self.label_36 = QLabel(self.all_sale_building)
+        self.label_36.setObjectName(u"label_36")
+
+        self.verticalLayout_169.addWidget(self.label_36, 0, Qt.AlignHCenter)
+
+
+        self.gridLayout.addWidget(self.all_sale_building, 1, 2, 1, 1)
+
         self.gridLayout.setRowStretch(0, 1)
-        self.gridLayout.setRowStretch(1, 1)
-        self.gridLayout.setColumnMinimumWidth(0, 1)
-        self.gridLayout.setColumnMinimumWidth(1, 1)
-        self.gridLayout.setColumnMinimumWidth(2, 1)
 
         self.verticalLayout_2.addWidget(self.dashboardFrame)
 
@@ -1164,7 +1173,7 @@ class Ui_MainWindow(object):
         self.scrollArea_6.setWidgetResizable(True)
         self.scrollAreaWidgetContents_6 = QWidget()
         self.scrollAreaWidgetContents_6.setObjectName(u"scrollAreaWidgetContents_6")
-        self.scrollAreaWidgetContents_6.setGeometry(QRect(0, 0, 1015, 602))
+        self.scrollAreaWidgetContents_6.setGeometry(QRect(0, 0, 847, 602))
         self.verticalLayout_162 = QVBoxLayout(self.scrollAreaWidgetContents_6)
         self.verticalLayout_162.setObjectName(u"verticalLayout_162")
         self.label_34 = QLabel(self.scrollAreaWidgetContents_6)
@@ -1294,7 +1303,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, -1090, 1015, 1632))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 847, 1632))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1458,6 +1467,7 @@ class Ui_MainWindow(object):
 
         self.owner1PhoneNumberFormInpt = QLineEdit(self.owner1PhoneNumberFormFrame)
         self.owner1PhoneNumberFormInpt.setObjectName(u"owner1PhoneNumberFormInpt")
+        self.owner1PhoneNumberFormInpt.setEnabled(False)
 
         self.verticalLayout_151.addWidget(self.owner1PhoneNumberFormInpt)
 
@@ -1555,7 +1565,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -29, 1015, 2890))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1048, 847, 2890))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -1612,6 +1622,7 @@ class Ui_MainWindow(object):
 
         self.floorUnitCountInpt = QSpinBox(self.floorUnitCountFrame)
         self.floorUnitCountInpt.setObjectName(u"floorUnitCountInpt")
+        self.floorUnitCountInpt.setMaximum(1000)
 
         self.verticalLayout_73.addWidget(self.floorUnitCountInpt)
 
@@ -1635,6 +1646,7 @@ class Ui_MainWindow(object):
 
         self.lengthFormInpt = QSpinBox(self.lengthFormFrame)
         self.lengthFormInpt.setObjectName(u"lengthFormInpt")
+        self.lengthFormInpt.setMaximum(100000)
 
         self.verticalLayout_137.addWidget(self.lengthFormInpt)
 
@@ -1658,6 +1670,7 @@ class Ui_MainWindow(object):
 
         self.meterageFormInpt = QSpinBox(self.meterageFormFrame)
         self.meterageFormInpt.setObjectName(u"meterageFormInpt")
+        self.meterageFormInpt.setMaximum(100000)
 
         self.verticalLayout_70.addWidget(self.meterageFormInpt)
 
@@ -1684,6 +1697,7 @@ class Ui_MainWindow(object):
 
         self.floorCounFormInpt = QSpinBox(self.floorCounFormFrame)
         self.floorCounFormInpt.setObjectName(u"floorCounFormInpt")
+        self.floorCounFormInpt.setMaximum(1000)
 
         self.verticalLayout_13.addWidget(self.floorCounFormInpt)
 
@@ -1707,6 +1721,7 @@ class Ui_MainWindow(object):
 
         self.landMeterageFormInpt = QSpinBox(self.landMeterageFormFrame)
         self.landMeterageFormInpt.setObjectName(u"landMeterageFormInpt")
+        self.landMeterageFormInpt.setMaximum(100000)
 
         self.verticalLayout_136.addWidget(self.landMeterageFormInpt)
 
@@ -1730,6 +1745,7 @@ class Ui_MainWindow(object):
 
         self.buildingMeterageFormInpt = QSpinBox(self.buildingMeterageFormFrame)
         self.buildingMeterageFormInpt.setObjectName(u"buildingMeterageFormInpt")
+        self.buildingMeterageFormInpt.setMaximum(100000)
 
         self.verticalLayout_135.addWidget(self.buildingMeterageFormInpt)
 
@@ -1809,6 +1825,7 @@ class Ui_MainWindow(object):
 
         self.widthFormInpt = QSpinBox(self.widthFormFrame)
         self.widthFormInpt.setObjectName(u"widthFormInpt")
+        self.widthFormInpt.setMaximum(100000)
 
         self.verticalLayout_138.addWidget(self.widthFormInpt)
 
@@ -1834,6 +1851,7 @@ class Ui_MainWindow(object):
 
         self.totalBuildingUnitFormInpt = QSpinBox(self.totalBuildingUnitFormFrame)
         self.totalBuildingUnitFormInpt.setObjectName(u"totalBuildingUnitFormInpt")
+        self.totalBuildingUnitFormInpt.setMaximum(10000)
 
         self.verticalLayout_72.addWidget(self.totalBuildingUnitFormInpt)
 
@@ -1890,43 +1908,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.rentPriceFormFrame, 3, 1, 1, 1)
 
-        self.frame_36 = QFrame(self.scrollAreaWidgetContents)
-        self.frame_36.setObjectName(u"frame_36")
-        self.frame_36.setMinimumSize(QSize(0, 0))
-        self.frame_36.setFrameShape(QFrame.StyledPanel)
-        self.frame_36.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_61 = QVBoxLayout(self.frame_36)
+        self.PriceCalculationFormFrame = QFrame(self.scrollAreaWidgetContents)
+        self.PriceCalculationFormFrame.setObjectName(u"PriceCalculationFormFrame")
+        self.PriceCalculationFormFrame.setMinimumSize(QSize(0, 0))
+        self.PriceCalculationFormFrame.setFrameShape(QFrame.StyledPanel)
+        self.PriceCalculationFormFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_61 = QVBoxLayout(self.PriceCalculationFormFrame)
         self.verticalLayout_61.setObjectName(u"verticalLayout_61")
-        self.label_20 = QLabel(self.frame_36)
-        self.label_20.setObjectName(u"label_20")
-        self.label_20.setStyleSheet(u"label")
+        self.PriceCalculationFormLbl = QLabel(self.PriceCalculationFormFrame)
+        self.PriceCalculationFormLbl.setObjectName(u"PriceCalculationFormLbl")
+        self.PriceCalculationFormLbl.setStyleSheet(u"label")
 
-        self.verticalLayout_61.addWidget(self.label_20)
+        self.verticalLayout_61.addWidget(self.PriceCalculationFormLbl)
 
-        self.verticalLayout_15 = QVBoxLayout()
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(-1, -1, 20, -1)
-        self.radioButton_2 = QRadioButton(self.frame_36)
-        self.buttonGroup_2 = QButtonGroup(MainWindow)
-        self.buttonGroup_2.setObjectName(u"buttonGroup_2")
-        self.buttonGroup_2.addButton(self.radioButton_2)
-        self.radioButton_2.setObjectName(u"radioButton_2")
-        self.radioButton_2.setLayoutDirection(Qt.RightToLeft)
+        self.PriceCalculationFormError = QLabel(self.PriceCalculationFormFrame)
+        self.PriceCalculationFormError.setObjectName(u"PriceCalculationFormError")
 
-        self.verticalLayout_15.addWidget(self.radioButton_2, 0, Qt.AlignLeft)
+        self.verticalLayout_61.addWidget(self.PriceCalculationFormError)
 
-        self.radioButton = QRadioButton(self.frame_36)
-        self.buttonGroup_2.addButton(self.radioButton)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setLayoutDirection(Qt.RightToLeft)
+        self.PriceCalculationFormOptionsFrame = QFrame(self.PriceCalculationFormFrame)
+        self.PriceCalculationFormOptionsFrame.setObjectName(u"PriceCalculationFormOptionsFrame")
+        self.PriceCalculationFormOptionsFrame.setFrameShape(QFrame.StyledPanel)
+        self.PriceCalculationFormOptionsFrame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_161 = QVBoxLayout(self.PriceCalculationFormOptionsFrame)
+        self.verticalLayout_161.setObjectName(u"verticalLayout_161")
 
-        self.verticalLayout_15.addWidget(self.radioButton, 0, Qt.AlignLeft)
+        self.verticalLayout_61.addWidget(self.PriceCalculationFormOptionsFrame)
 
 
-        self.verticalLayout_61.addLayout(self.verticalLayout_15)
-
-
-        self.gridLayout_6.addWidget(self.frame_36, 2, 2, 1, 1)
+        self.gridLayout_6.addWidget(self.PriceCalculationFormFrame, 2, 2, 1, 1)
 
         self.lightDirectionFrame = QFrame(self.scrollAreaWidgetContents)
         self.lightDirectionFrame.setObjectName(u"lightDirectionFrame")
@@ -1970,6 +1980,7 @@ class Ui_MainWindow(object):
 
         self.floorFormInpt = QSpinBox(self.floorFormFrame)
         self.floorFormInpt.setObjectName(u"floorFormInpt")
+        self.floorFormInpt.setMaximum(1000)
 
         self.verticalLayout_69.addWidget(self.floorFormInpt)
 
@@ -2048,6 +2059,7 @@ class Ui_MainWindow(object):
 
         self.openingWidthFormInpt = QSpinBox(self.openingWidthFormFrame)
         self.openingWidthFormInpt.setObjectName(u"openingWidthFormInpt")
+        self.openingWidthFormInpt.setMaximum(10000)
 
         self.verticalLayout_139.addWidget(self.openingWidthFormInpt)
 
@@ -2078,6 +2090,8 @@ class Ui_MainWindow(object):
 
         self.constructionYearInpt = QSpinBox(self.constructionYearFrame)
         self.constructionYearInpt.setObjectName(u"constructionYearInpt")
+        self.constructionYearInpt.setMinimum(1300)
+        self.constructionYearInpt.setMaximum(1500)
 
         self.verticalLayout_54.addWidget(self.constructionYearInpt)
 
@@ -2189,7 +2203,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 1015, 1873))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -1300, 847, 1873))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -2222,6 +2236,7 @@ class Ui_MainWindow(object):
 
         self.privateYardMeterageFormInpt = QSpinBox(self.privateYardMeterageFormFrame)
         self.privateYardMeterageFormInpt.setObjectName(u"privateYardMeterageFormInpt")
+        self.privateYardMeterageFormInpt.setMaximum(10000)
 
         self.verticalLayout_95.addWidget(self.privateYardMeterageFormInpt)
 
@@ -2246,6 +2261,7 @@ class Ui_MainWindow(object):
 
         self.trassMeterageFormInpt = QSpinBox(self.trassMeterageFormFrame)
         self.trassMeterageFormInpt.setObjectName(u"trassMeterageFormInpt")
+        self.trassMeterageFormInpt.setMaximum(10000)
 
         self.verticalLayout_87.addWidget(self.trassMeterageFormInpt)
 
@@ -2430,6 +2446,7 @@ class Ui_MainWindow(object):
 
         self.balconyMeterageFormInpt = QSpinBox(self.balconyMeterageFormFrame)
         self.balconyMeterageFormInpt.setObjectName(u"balconyMeterageFormInpt")
+        self.balconyMeterageFormInpt.setMaximum(10000)
 
         self.verticalLayout_84.addWidget(self.balconyMeterageFormInpt)
 
@@ -2482,6 +2499,7 @@ class Ui_MainWindow(object):
 
         self.warehouseMeterageFormInpt = QSpinBox(self.warehouseMeterageFormFrame)
         self.warehouseMeterageFormInpt.setObjectName(u"warehouseMeterageFormInpt")
+        self.warehouseMeterageFormInpt.setMaximum(10000)
 
         self.verticalLayout_90.addWidget(self.warehouseMeterageFormInpt)
 
@@ -2603,7 +2621,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 1015, 1609))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 847, 1609))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -3275,7 +3293,7 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollAreaWidgetContents_5 = QWidget()
         self.scrollAreaWidgetContents_5.setObjectName(u"scrollAreaWidgetContents_5")
-        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 1037, 3257))
+        self.scrollAreaWidgetContents_5.setGeometry(QRect(0, 0, 869, 3257))
         self.verticalLayout_27 = QVBoxLayout(self.scrollAreaWidgetContents_5)
         self.verticalLayout_27.setObjectName(u"verticalLayout_27")
         self.label_93 = QLabel(self.scrollAreaWidgetContents_5)
@@ -5202,7 +5220,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1252, 30))
+        self.menubar.setGeometry(QRect(0, 0, 1084, 30))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -5212,8 +5230,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pages.setCurrentIndex(1)
-        self.form_stackwidget.setCurrentIndex(1)
+        self.pages.setCurrentIndex(0)
+        self.form_stackwidget.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -5228,25 +5246,25 @@ class Ui_MainWindow(object):
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0645\u0644\u06a9 \u0627\u062c\u0627\u0631\u0647", None))
         self.label_13.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.all_rent_building.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
-        self.label_10.setText("")
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0647\u062f\u0647 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647", None))
-        self.label_7.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
+        self.label_20.setText("")
+        self.label_29.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0647\u062f\u0647 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0627\u062c\u0627\u0631\u0647", None))
+        self.label_29.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.users.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
         self.label_16.setText("")
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"\u06a9\u0627\u0631\u0628\u0631\u0627\u0646", None))
         self.label_15.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
+        self.profile.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
+        self.label_224.setText("")
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0641\u0627\u06cc\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc", None))
+        self.label_3.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.register_sale_building.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
         self.label.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0645\u0644\u06a9 \u0641\u0631\u0648\u0634", None))
         self.label_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.all_sale_building.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
-        self.label_8.setText("")
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0647\u062f\u0647 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634", None))
-        self.label_9.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
-        self.profile.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardMenuItem", None))
-        self.label_224.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0631\u0648\u0641\u0627\u06cc\u0644 \u06a9\u0627\u0631\u0628\u0631\u06cc", None))
-        self.label_3.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
+        self.label_10.setText("")
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0634\u0627\u0647\u062f\u0647 \u0641\u0627\u06cc\u0644\u200c\u0647\u0627\u06cc \u0641\u0631\u0648\u0634", None))
+        self.label_36.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"dashboardItemTitle", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a \u0645\u0644\u06a9", None))
         self.estateFormStep8Btn.setText(QCoreApplication.translate("MainWindow", u"\u06f8", None))
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"\u067e\u0627\u06cc\u0627\u0646", None))
@@ -5403,12 +5421,10 @@ class Ui_MainWindow(object):
         self.rentPriceFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.rentPriceFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.rentPriceFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.label_20.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062d\u0627\u0633\u0628\u0647 \u0642\u06cc\u0645\u062a \u0628\u0631\u0627\u0633\u0627\u0633", None))
-        self.label_20.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
-        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u06a9\u0644", None))
-        self.radioButton_2.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"\u0642\u06cc\u0645\u062a \u0647\u0631 \u0645\u0631\u062a\u0631", None))
-        self.radioButton.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.PriceCalculationFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u062d\u0627\u0633\u0628\u0647 \u0642\u06cc\u0645\u062a \u0628\u0631\u0627\u0633\u0627\u0633", None))
+        self.PriceCalculationFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.PriceCalculationFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.PriceCalculationFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.lightDirectionLbl.setText(QCoreApplication.translate("MainWindow", u"\u062c\u0647\u062a \u0646\u0648\u0631\u06af\u06cc\u0631\u06cc", None))
         self.lightDirectionLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
         self.lightDirectionError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1252</width>
-    <height>901</height>
+    <width>1084</width>
+    <height>932</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -209,6 +209,10 @@ QLineEdit {
 
 QLineEdit:focus {
 	border-bottom: 2px solid #7892DF;
+}
+
+QLineEdit:disabled {
+	background-color: rgb(230, 230, 230);
 }
 
 /***********QSpinBox, QDoubleSpinBox, QDateEdit*************/
@@ -534,10 +538,14 @@ QComboBox:focus{
 
 /*********************DashboardMenu**********************/
 
-*[styleSheet=&quot;dashboardMenuItem&quot;]{
+QFrame[styleSheet=&quot;dashboardMenuItem&quot;]{
 		background-color:#ffffff;
 	padding:10px;
 	border-radius: 10px;
+}
+
+QFrame[styleSheet=&quot;dashboardMenuItem&quot;]:hover{
+		background-color:rgb(198, 230, 255);
 }
 
 *[styleClass=&quot;dashboardMenu&quot;] *[styleClass=&quot;dashboardMenuItem&quot;] {
@@ -700,7 +708,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
     <item>
      <widget class="QStackedWidget" name="pages">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_dashboard">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -718,7 +726,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
           <property name="styleClass" stdset="0">
            <string>dashboardMenu</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout" rowstretch="1,1" columnminimumwidth="1,1,1">
+          <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,0">
            <property name="spacing">
             <number>20</number>
            </property>
@@ -771,6 +779,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
            </item>
            <item row="1" column="1">
             <widget class="QFrame" name="all_rent_building">
+             <property name="styleSheet">
+              <string notr="true">dashboardMenuItem</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -780,9 +791,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <property name="styleClass" stdset="0">
               <string>dashboardMenuItem</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
+             <layout class="QVBoxLayout" name="verticalLayout_166">
               <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_10">
+               <widget class="QLabel" name="label_20">
                 <property name="maximumSize">
                  <size>
                   <width>100</width>
@@ -804,7 +815,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                </widget>
               </item>
               <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_7">
+               <widget class="QLabel" name="label_29">
                 <property name="text">
                  <string>مشاهده فایل‌های اجاره</string>
                 </property>
@@ -818,6 +829,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
            </item>
            <item row="1" column="0">
             <widget class="QFrame" name="users">
+             <property name="styleSheet">
+              <string notr="true">dashboardMenuItem</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -827,7 +841,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <property name="styleClass" stdset="0">
               <string>dashboardMenuItem</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_10">
+             <layout class="QVBoxLayout" name="verticalLayout_164">
               <item alignment="Qt::AlignHCenter">
                <widget class="QLabel" name="label_16">
                 <property name="maximumSize">
@@ -863,10 +877,10 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              </layout>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QFrame" name="register_sale_building">
+           <item row="0" column="2">
+            <widget class="QFrame" name="profile">
              <property name="styleSheet">
-              <string notr="true"/>
+              <string notr="true">dashboardMenuItem</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -877,7 +891,54 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <property name="styleClass" stdset="0">
               <string>dashboardMenuItem</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <layout class="QVBoxLayout" name="verticalLayout_163">
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_224">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>100</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap resource="assets/assets.qrc">:/icons/icons/user-profiles.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignHCenter">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>پروفایل کاربری</string>
+                </property>
+                <property name="styleClass" stdset="0">
+                 <string>dashboardItemTitle</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QFrame" name="register_sale_building">
+             <property name="styleSheet">
+              <string notr="true">dashboardMenuItem</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="styleClass" stdset="0">
+              <string>dashboardMenuItem</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_15">
               <item alignment="Qt::AlignHCenter">
                <widget class="QLabel" name="label">
                 <property name="maximumSize">
@@ -912,6 +973,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
            </item>
            <item row="1" column="2">
             <widget class="QFrame" name="all_sale_building">
+             <property name="styleSheet">
+              <string notr="true">dashboardMenuItem</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -921,9 +985,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
              <property name="styleClass" stdset="0">
               <string>dashboardMenuItem</string>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_7">
+             <layout class="QVBoxLayout" name="verticalLayout_169">
               <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_8">
+               <widget class="QLabel" name="label_10">
                 <property name="maximumSize">
                  <size>
                   <width>100</width>
@@ -942,53 +1006,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                </widget>
               </item>
               <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_9">
+               <widget class="QLabel" name="label_36">
                 <property name="text">
                  <string>مشاهده فایل‌های فروش</string>
-                </property>
-                <property name="styleClass" stdset="0">
-                 <string>dashboardItemTitle</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </widget>
-           </item>
-           <item row="0" column="2">
-            <widget class="QFrame" name="profile">
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <property name="styleClass" stdset="0">
-              <string>dashboardMenuItem</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_224">
-                <property name="maximumSize">
-                 <size>
-                  <width>100</width>
-                  <height>100</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="pixmap">
-                 <pixmap resource="assets/assets.qrc">:/icons/icons/user-profiles.png</pixmap>
-                </property>
-                <property name="scaledContents">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item alignment="Qt::AlignHCenter">
-               <widget class="QLabel" name="label_3">
-                <property name="text">
-                 <string>پروفایل کاربری</string>
                 </property>
                 <property name="styleClass" stdset="0">
                  <string>dashboardItemTitle</string>
@@ -1278,7 +1298,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
         <item>
          <widget class="QStackedWidget" name="form_stackwidget">
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="form_step1">
            <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1394,7 +1414,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1015</width>
+                 <width>847</width>
                  <height>602</height>
                 </rect>
                </property>
@@ -1590,8 +1610,8 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-1090</y>
-                 <width>1015</width>
+                 <y>0</y>
+                 <width>847</width>
                  <height>1632</height>
                 </rect>
                </property>
@@ -1838,7 +1858,11 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="owner1PhoneNumberFormInpt"/>
+                      <widget class="QLineEdit" name="owner1PhoneNumberFormInpt">
+                       <property name="enabled">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
                      </item>
                     </layout>
                    </widget>
@@ -1980,8 +2004,8 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>-29</y>
-                 <width>1015</width>
+                 <y>-1048</y>
+                 <width>847</width>
                  <height>2890</height>
                 </rect>
                </property>
@@ -2086,6 +2110,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="floorUnitCountInpt">
+                       <property name="maximum">
+                        <number>1000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2122,6 +2149,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="lengthFormInpt">
+                       <property name="maximum">
+                        <number>100000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2158,6 +2188,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="meterageFormInpt">
+                       <property name="maximum">
+                        <number>100000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2206,6 +2239,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="floorCounFormInpt">
+                       <property name="maximum">
+                        <number>1000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2242,6 +2278,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="landMeterageFormInpt">
+                       <property name="maximum">
+                        <number>100000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2278,6 +2317,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="buildingMeterageFormInpt">
+                       <property name="maximum">
+                        <number>100000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2414,6 +2456,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="widthFormInpt">
+                       <property name="maximum">
+                        <number>100000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2456,6 +2501,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="totalBuildingUnitFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2549,7 +2597,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                    </widget>
                   </item>
                   <item row="2" column="2">
-                   <widget class="QFrame" name="frame_36">
+                   <widget class="QFrame" name="PriceCalculationFormFrame">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -2564,7 +2612,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_61">
                      <item>
-                      <widget class="QLabel" name="label_20">
+                      <widget class="QLabel" name="PriceCalculationFormLbl">
                        <property name="styleSheet">
                         <string notr="true">label</string>
                        </property>
@@ -2577,43 +2625,25 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                       </widget>
                      </item>
                      <item>
-                      <layout class="QVBoxLayout" name="verticalLayout_15">
-                       <property name="rightMargin">
-                        <number>20</number>
+                      <widget class="QLabel" name="PriceCalculationFormError">
+                       <property name="text">
+                        <string>خطا رخ داده</string>
                        </property>
-                       <item alignment="Qt::AlignLeft">
-                        <widget class="QRadioButton" name="radioButton_2">
-                         <property name="layoutDirection">
-                          <enum>Qt::RightToLeft</enum>
-                         </property>
-                         <property name="text">
-                          <string>قیمت کل</string>
-                         </property>
-                         <property name="styleClass" stdset="0">
-                          <string>form-field</string>
-                         </property>
-                         <attribute name="buttonGroup">
-                          <string notr="true">buttonGroup_2</string>
-                         </attribute>
-                        </widget>
-                       </item>
-                       <item alignment="Qt::AlignLeft">
-                        <widget class="QRadioButton" name="radioButton">
-                         <property name="layoutDirection">
-                          <enum>Qt::RightToLeft</enum>
-                         </property>
-                         <property name="text">
-                          <string>قیمت هر مرتر</string>
-                         </property>
-                         <property name="styleClass" stdset="0">
-                          <string>form-field</string>
-                         </property>
-                         <attribute name="buttonGroup">
-                          <string notr="true">buttonGroup_2</string>
-                         </attribute>
-                        </widget>
-                       </item>
-                      </layout>
+                       <property name="styleClass" stdset="0">
+                        <string>form-field-error</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="PriceCalculationFormOptionsFrame">
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_161"/>
+                      </widget>
                      </item>
                     </layout>
                    </widget>
@@ -2688,6 +2718,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="floorFormInpt">
+                       <property name="maximum">
+                        <number>1000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2828,6 +2861,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="openingWidthFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -2876,6 +2912,12 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="constructionYearInpt">
+                       <property name="minimum">
+                        <number>1300</number>
+                       </property>
+                       <property name="maximum">
+                        <number>1500</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -3049,8 +3091,8 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>0</y>
-                 <width>1015</width>
+                 <y>-1300</y>
+                 <width>847</width>
                  <height>1873</height>
                 </rect>
                </property>
@@ -3122,6 +3164,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="privateYardMeterageFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -3161,6 +3206,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="trassMeterageFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -3450,6 +3498,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="balconyMeterageFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -3532,6 +3583,9 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                      </item>
                      <item>
                       <widget class="QSpinBox" name="warehouseMeterageFormInpt">
+                       <property name="maximum">
+                        <number>10000</number>
+                       </property>
                        <property name="styleClass" stdset="0">
                         <string>form-field</string>
                        </property>
@@ -3719,7 +3773,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>1015</width>
+                 <width>847</width>
                  <height>1609</height>
                 </rect>
                </property>
@@ -4865,7 +4919,7 @@ QPushButton[styleClass=&quot;form-btn&quot;]:hover{
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1037</width>
+             <width>869</width>
              <height>3257</height>
             </rect>
            </property>
@@ -8358,7 +8412,7 @@ QLabel[buildingState=&quot;2&quot;]{
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1252</width>
+     <width>1084</width>
      <height>30</height>
     </rect>
    </property>

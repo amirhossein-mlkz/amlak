@@ -1,4 +1,5 @@
 import numbers
+import re
 
 {'condition':[
                 {'operator':'=', 'key':'compensation','value':'yes'},
@@ -13,34 +14,42 @@ class conditionsChecker:
 
     def check(self,):
         for condition in self.conditions:
-            operator = condition['operator']
-            key = condition['key']
-            value = condition['value']
+            operator = condition['cond']
+            key = condition.get('key')
+            value = condition.get('compare-value')
 
             if operator == '=':
                 if key != value:
-                    return False
+                    return False, condition
             if operator == '>':
                 if key <= value:
-                    return False
+                    return False, condition
             if operator == '<':
                 if key >= value:
-                    return False
+                    return False, condition
                 
             if operator == '>=':
                 if key < value:
-                    return False
+                    return False, condition
                 
             if operator == '<=':
                 if key > value:
-                    return False   
+                    return False, condition 
 
             if operator == 'in':
                 if key not in value:
-                    return False  
+                    return False, condition
             
             if operator == 'contain':
                 if value not in key:
-                    return False
+                    return False, condition
+                
+            elif operator == 'regex':
+                if not re.match(value, key):
+                    return False, condition
+                
+            if operator == 'require':
+                if not key:
+                    return False, condition
             
-        return True
+        return True, None

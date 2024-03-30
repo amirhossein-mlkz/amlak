@@ -44,6 +44,7 @@ class FormHandler:
 
         self.next_callback = None
         self.prev_callback = None
+        self.field_change_callback = None
         
         self.handle_form_ui()
         self.render_options()
@@ -61,6 +62,9 @@ class FormHandler:
 
     def set_prev_callback(self, func):
         self.prev_callback = func
+    
+    def set_field_change_callback(self, func):
+        self.field_change_callback = func
     
     def handle_form_ui(self, ):
         for key,wgt in self.form_ui.items():
@@ -160,13 +164,15 @@ class FormHandler:
         self.update_form_value(field_name, field_value)
 
         #check field validation and show error if not valid
-        field.check_validation()
+        field.check_validation(self.form_values)
 
         #check visibility of other fields base on this field
         relative_fields_names = self.get_child_field_visibility(field_name)
         for field_name in relative_fields_names:
             relative_field = self.get_field(field_name)
             relative_field.refresh_field_visibility(self.form_values)
+        
+        self.field_change_callback(field)
     
     def check_step_validation(self, step):
         step +=1 #beacuse in code step is from 0
@@ -174,7 +180,7 @@ class FormHandler:
         for field_name in self.get_fields_list():
             field = self.get_field(field_name)
             if field.is_for_this_step(step):
-                field_validation = field.check_validation()
+                field_validation = field.check_validation(self.form_values)
                 if not field_validation:
                     validation = False
         
@@ -273,6 +279,14 @@ class Field:
     def is_for_this_step(self, step):
         return step == self.dict_info.get('step', -1)
     
+    def set_enablity(self, state):
+        inpt = self.get_input()
+        GUIBackend.set_disable_enable(inpt, state)
+
+    def set_value(self, value):
+        inpt = self.get_input()
+        GUIBackend.set_input(inpt, value, block_signal=True)
+    
     def get_error_label(self,) -> QtWidgets.QLabel:
         return self.dict_info.get('error')
     
@@ -291,6 +305,9 @@ class Field:
     
     def get_visibility_conditions(self,)-> dict:
         return copy.deepcopy(self.dict_info.get('visible-conditions',[]))
+    
+    def get_validation_conditions(self,)-> dict:
+        return copy.deepcopy(self.dict_info.get('validation-conditions',[]))
     
     def get_container(self,) -> QtWidgets.QFrame:
         return self.dict_info.get('frame')
@@ -325,6 +342,14 @@ class Field:
             value = GUIBackend.get_combobox_selected(combo=finput)
             key = self.glassory.value2key(value)
             return key
+        
+        elif ftype == 'input-number':
+            value = GUIBackend.get_input(finput)
+            if value:
+                return int(value)
+            return 0
+                
+            
         
         return GUIBackend.get_input(finput)
     
@@ -386,34 +411,41 @@ class Field:
         else:
             raise Exception(f"{self.name} field type is incorect")
     
-    def check_validation(self,) -> tuple[bool,str]:
+    def check_validation(self,forms_value) -> tuple[bool,str]:
         value = self.get_value()
-        validation_info:list[dict] = self.dict_info.get('validation')
+        conds = self.get_validation_conditions()
 
-        validation = True
+        for cond in conds:
+            oprand_fname = cond.get('key')
+            if oprand_fname is not None:
+                oprand_value = forms_value[oprand_fname]
+                cond['key'] = oprand_value
+            else:
+                cond['key'] = self.get_value()
+
         text = None
 
-        if validation_info:
-            for cond_info in validation_info:
-                if cond_info['cond'] == 'require':
-                    if not value:
-                        text =  'این فیلد ضروری است'
-                        text = cond_info.get('error', text)
-                        validation = False
-                        break
+        checker = conditionsChecker(conds)
+        result, reject_cond_info = checker.check()
 
-                elif cond_info['cond'] == 'regex':
-                    pattern = cond_info['pattern']
-                    if not re.match(pattern, value):
-                        text =  'به درستی وارد نمایید'
-                        text = cond_info.get('error', text)
-                        validation = False
-                
-                else:
-                    raise Exception(f"{self.name} field {cond_info['cond']} condition is not valid")
-        
+        if not result:
+            cond = reject_cond_info['cond']
+            text = reject_cond_info.get('error')
+            if not text:
+                if cond == 'require':
+                    text =  'این فیلد ضروری است'
+
+                elif cond == 'regex':
+                    text =  'به درستی وارد نمایید'
+
         self.show_error(text)
-        return validation
+
+                
+                # else:
+                #     raise Exception(f"{self.name} field {cond_info['cond']} condition is not valid")
+        
+        
+        return result
 
     def refresh_field_visibility(self, forms_value:dict):
         conds = self.get_visibility_conditions()
@@ -426,7 +458,8 @@ class Field:
             #result_cond.append(cond)
 
         checker = conditionsChecker(conds)
-        if checker.check():
+        result,_ = checker.check()
+        if result:
             GUIBackend.set_wgt_visible(frame, True)
         else:
             GUIBackend.set_wgt_visible(frame, False)

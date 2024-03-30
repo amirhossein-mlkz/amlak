@@ -2,7 +2,7 @@ from uiFiles.main_UI import Ui_MainWindow
 from Backend.Regex.regexConstant import regexConstant
 
 #'visible-conditions':[
-#                    {'operator':'in', 'key':'melk-category','value':['land',
+#                    {'cond':'in', 'key':'melk-category','compare-value':['land',
 #                                                                     'aparteman',
 #                                                                     'official',
 #                                                                     'garden',
@@ -28,7 +28,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'step': 1,
                     'type': 'combobox',
                     'options-id' : 'melk-category',
-                    'validation': [
+                    'validation-conditions': [
                         {'cond':'require'}
                     ]
                 },
@@ -73,7 +73,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.addressFormFrame,
                 'step': 2,
                 'type': 'input',
-                'validation': [
+                'validation-conditions': [
                         {'cond':'require'}
                     ]
             },
@@ -86,7 +86,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.ownerName1FormFrame,
                 'step': 3,
                 'type': 'input',
-                'validation': [
+                'validation-conditions': [
                         {'cond':'require'}
                     ]
             },
@@ -109,9 +109,13 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.owner1MobileNumberFormFrame,
                 'step': 3,
                 'type': 'input',
-                'validation': [
+                'validation-conditions': [
                         {'cond':'require'},
-                        {'cond':'regex','pattern':regexConstant.MOBILE_NUMBER, 'error':'شماره همراه را به درستی و با 0 وارد کنید'},
+                        {'cond':'regex',
+                         'key':'owner1-mobile-number', 
+                         'compare-value':regexConstant.MOBILE_NUMBER, 
+                         'error':'شماره همراه را به درستی و با 0 وارد کنید'
+                         },
                     ]
             },
 
@@ -205,7 +209,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.compensationConditionFormFrame,
                 'type': 'input',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'compensation','value':'yes'},
+                    {'cond':'=', 'key':'compensation','compare-value':'yes'},
                 ]
             },
 
@@ -219,7 +223,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'yes', 
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land']},
+                    {'cond':'in', 'key':'melk-category','compare-value':['land']},
                 ]
             },
 
@@ -232,7 +236,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'combobox',
                 'options-id' : 'document-status',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -249,6 +253,9 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.meterageFormError,
                 'frame':ui.meterageFormFrame,
                 'type': 'spinbox',
+                'validation-conditions': [
+                        {'cond':'>',  'key':'meterage', 'compare-value':0, 'error':'متراژ نمیتواند ۰  یا کمتر باشد'}
+                    ]
             },
 
             'building-meterage' : {
@@ -259,7 +266,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.buildingMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'garden',
                                                                      'villa',
                                                                      ]},
@@ -275,7 +282,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.landMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'garden',
                                                                      'villa',
                                                                      ]},
@@ -290,7 +297,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.lengthFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'garden',
                                                                      ]},
                 ]
@@ -304,7 +311,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.widthFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'garden',
                                                                      ]},
                 ]
@@ -318,9 +325,23 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.openingWidthFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['commercial',
+                    {'cond':'in', 'key':'melk-category','compare-value':['commercial',
                                                                      ]},
                 ]
+            },
+            
+
+            'price-calculation'  : {
+                # نحوه محاسبه قیمت
+                'label':ui.PriceCalculationFormLbl,
+                'error':ui.PriceCalculationFormError,
+                'frame':ui.PriceCalculationFormFrame,
+                'options-container': ui.PriceCalculationFormOptionsFrame,
+                'options-id': 'price-calculation',
+                'type': 'radio',
+                'validation-conditions': [
+                        {'cond':'require'}
+                    ]
             },
             
             'total-price'  : {
@@ -329,8 +350,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.totalPriceFormLbl,
                 'error':ui.totalPriceFormError,
                 'frame':ui.totalPriceFormFrame,
-                'type': 'input',
-                'validation': [
+                'type': 'input-number',
+                'validation-conditions': [
                         {'cond':'require'}
                     ]
             },
@@ -341,7 +362,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.unitPriceFormLbl,
                 'error':ui.unitPriceFormError,
                 'frame':ui.unitPriceFormFrame,
-                'type': 'input',
+                'type': 'input-number',
             },
 
             'mortgage-price' : {
@@ -350,8 +371,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.mortgagePriceFormLbl,
                 'error':ui.mortgagePriceFormError,
                 'frame':ui.mortgagePriceFormFrame,
-                'type': 'input',
-                'validation': [
+                'type': 'input-number',
+                'validation-conditions': [
                         {'cond':'require'}
                     ]
             },
@@ -362,8 +383,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.rentPriceFormLbl,
                 'error':ui.rentPriceFormError,
                 'frame':ui.rentPriceFormFrame,
-                'type': 'input',
-                'validation': [
+                'type': 'input-number',
+                'validation-conditions': [
                         {'cond':'require'}
                     ]
             },
@@ -376,7 +397,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.constructionYearFrame,
                 'type': 'input',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'commercial',
                                                                      'villa',
@@ -392,7 +413,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.floorFormFrame,
                 'type': 'input',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'commercial',
@@ -408,7 +429,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.floorCounFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'commercial',
@@ -424,7 +445,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.totalBuildingUnitFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'commercial',
@@ -440,7 +461,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.floorUnitCountFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'commercial',
@@ -474,7 +495,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'combobox',
                 'options-id' : 'light-direction',      
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -494,7 +515,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'rebuilding',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -514,7 +535,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['land',
+                    {'cond':'in', 'key':'melk-category','compare-value':['land',
                                                                      ]},
                 ]
             },
@@ -529,7 +550,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -548,8 +569,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'combobox',
                 'options-id' : 'parking-status',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'parking','value':'have'},
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'=', 'key':'parking','compare-value':'have'},
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -567,8 +588,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.parkingCountFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'parking','value':'have'},
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'=', 'key':'parking','compare-value':'have'},
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -589,7 +610,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -608,7 +629,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.balconyMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'balcony','value':'have'},
+                    {'cond':'=', 'key':'balcony','compare-value':'have'},
                 ]
             },
 
@@ -622,7 +643,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -639,7 +660,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.trassMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'trass','value':'have'},
+                    {'cond':'=', 'key':'trass','compare-value':'have'},
                 ]
             },
 
@@ -654,7 +675,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -671,7 +692,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.warehouseMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'warehouse','value':'have'},
+                    {'cond':'=', 'key':'warehouse','compare-value':'have'},
                     
                 ]
             },
@@ -686,7 +707,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'commercial',
                                                                      'villa',
@@ -703,7 +724,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.privateYardMeterageFormFrame,
                 'type': 'spinbox',
                 'visible-conditions':[
-                    {'operator':'=', 'key':'private-yard','value':'have'},
+                    {'cond':'=', 'key':'private-yard','compare-value':'have'},
                 ]
             },
 
@@ -717,7 +738,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':[
+                    {'cond':'in', 'key':'melk-category','compare-value':[
                                                                      'aparteman',
                                                                      'official',
                                                                      'garden',
@@ -774,7 +795,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'floor-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -792,7 +813,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherFloorMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'floor-material','value':'other'},
+                        {'cond':'contain', 'key':'floor-material','compare-value':'other'},
                     ]
                     
             },
@@ -807,7 +828,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'ceiling-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -825,7 +846,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherCeilingMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'ceiling-material','value':'other'},
+                        {'cond':'contain', 'key':'ceiling-material','compare-value':'other'},
                     ]
             },
 
@@ -839,7 +860,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'walls-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -857,7 +878,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherWallsMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'walls-material','value':'other'},
+                        {'cond':'contain', 'key':'walls-material','compare-value':'other'},
                     ]
             },
 
@@ -872,7 +893,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'cabinets-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -890,7 +911,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherCabinetsMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'cabinets-material','value':'other'},
+                        {'cond':'contain', 'key':'cabinets-material','compare-value':'other'},
                     ]
             },
 
@@ -905,7 +926,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'warming-system',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -924,7 +945,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherWarmingSystemFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'warming-system','value':'other'},
+                        {'cond':'contain', 'key':'warming-system','compare-value':'other'},
                     ]
             },
 
@@ -939,7 +960,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'cooling-system',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -958,7 +979,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherCoolingSystemFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'cooling-system','value':'other'},
+                        {'cond':'contain', 'key':'cooling-system','compare-value':'other'},
                     ]
             },
 
@@ -973,7 +994,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'kitchen-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -992,7 +1013,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherKitchenMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'kitchen-material','value':'other'},
+                        {'cond':'contain', 'key':'kitchen-material','compare-value':'other'},
                     ]
             },
 
@@ -1007,7 +1028,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'bathroom-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -1026,7 +1047,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherBathroomMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'bathroom-material','value':'other'},
+                        {'cond':'contain', 'key':'bathroom-material','compare-value':'other'},
                     ]
             },
 
@@ -1040,7 +1061,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'wc-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -1058,7 +1079,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherWcMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'wc-material','value':'other'},
+                        {'cond':'contain', 'key':'wc-material','compare-value':'other'},
                     ]
             },
 
@@ -1073,7 +1094,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'door-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -1090,7 +1111,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherDoorMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'door-material','value':'other'},
+                        {'cond':'contain', 'key':'door-material','compare-value':'other'},
                     ]
             },
 
@@ -1105,7 +1126,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'type': 'checkbox',
                 'options-id': 'window-material',
                 'visible-conditions':[
-                    {'operator':'in', 'key':'melk-category','value':['aparteman',
+                    {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
                                                                      'official',
                                                                      'garden',
                                                                      'commercial',
@@ -1122,7 +1143,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'frame':ui.otherWindowMaterialFormFrame,
                     'type': 'input',
                     'visible-conditions':[
-                        {'operator':'contain', 'key':'window-material','value':'other'},
+                        {'cond':'contain', 'key':'window-material','compare-value':'other'},
                     ]
             },
 

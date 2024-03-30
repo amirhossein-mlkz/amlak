@@ -850,7 +850,7 @@ class GUIBackend:
         if block_signal:
             GUIBackend.set_signal_connection(inpt, False)
 
-        inpt.setText(txt)
+        inpt.setText(str(txt))
 
         if block_signal:
             GUIBackend.set_signal_connection(inpt, True)

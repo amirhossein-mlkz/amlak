@@ -35,6 +35,11 @@ def build_estate_gellosaries():
                 'not-have':'ندارد'
             },
 
+            'price-calculation': {
+                'total-price': 'محاسبه براساس قیمت کل',
+                'unit-price': 'محاسبه براساس قیمت هر متر',
+            },
+
             'rebuilding':{
                 'بازسازی' : 'بازسازی',
                 'صفر' : 'صفر',
