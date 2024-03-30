@@ -19,6 +19,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 #     'type': 'select',
                 #     'options-id' : 'melk-status',
                 # },
+        
+        'file-type' : {
+                    'input': ui.fileTypeFormInpt,
+                    'label': ui.fileTypeFormLbl,
+                    'error': ui.fileTypeFormError,
+                    'frame': ui.fileTypeFormFrame,
+                    'step': 1,
+                    'type': 'combobox',
+                    'options-id' : 'file-type',
+                },
 
             'melk-category' : {
                     'input': ui.melkCategoryFormInpt,
@@ -197,6 +207,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.compensationFormError,
                 'frame':ui.compensationFormFrame,
                 'options-container': ui.compensationFormOptionsFrame,
+                'step': 4,
                 'type': 'radio',
                 'options-id' : 'yes',  
             },
@@ -207,11 +218,13 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.compensationConditionFormLbl,
                 'error':ui.compensationConditionFormError,
                 'frame':ui.compensationConditionFormFrame,
+                'step': 4,
                 'type': 'input',
                 'visible-conditions':[
                     {'cond':'=', 'key':'compensation','compare-value':'yes'},
                 ]
             },
+
 
             'participation' : {
                 # مشارکت
@@ -220,6 +233,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.participationFormError,
                 'frame':ui.participationFormFrame,
                 'options-container': ui.participationFormOptionsFrame,
+                'step': 4,
                 'type': 'radio',
                 'options-id' : 'yes', 
                 'visible-conditions':[
@@ -233,6 +247,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.documentStatusLbl,
                 'error':ui.documentStatusError,
                 'frame':ui.documentStatusFrame,
+                'step': 4,
                 'type': 'combobox',
                 'options-id' : 'document-status',
                 'visible-conditions':[
@@ -252,6 +267,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.meterageFormLbl,
                 'error':ui.meterageFormError,
                 'frame':ui.meterageFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'validation-conditions': [
                         {'cond':'>',  'key':'meterage', 'compare-value':0, 'error':'متراژ نمیتواند ۰  یا کمتر باشد'}
@@ -264,6 +280,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.buildingMeterageFormLbl,
                 'error':ui.buildingMeterageFormError,
                 'frame':ui.buildingMeterageFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['land',
@@ -280,6 +297,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.landMeterageFormLbl,
                 'error':ui.landMeterageFormError,
                 'frame':ui.landMeterageFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['land',
@@ -295,6 +313,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.lengthFormLbl,
                 'error':ui.lengthFormError,
                 'frame':ui.lengthFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['land',
@@ -309,6 +328,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.widthFormLbl,
                 'error':ui.widthFormError,
                 'frame':ui.widthFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['land',
@@ -323,6 +343,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.openingWidthFormLbl,
                 'error':ui.openingWidthFormError,
                 'frame':ui.openingWidthFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['commercial',
@@ -338,10 +359,14 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'frame':ui.PriceCalculationFormFrame,
                 'options-container': ui.PriceCalculationFormOptionsFrame,
                 'options-id': 'price-calculation',
+                'step': 4,
                 'type': 'radio',
                 'validation-conditions': [
                         {'cond':'require'}
-                    ]
+                    ],
+                'visible-conditions':[
+                    {'cond':'=', 'key':'file-type','compare-value':'sell'},
+                ]
             },
             
             'total-price'  : {
@@ -350,10 +375,14 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.totalPriceFormLbl,
                 'error':ui.totalPriceFormError,
                 'frame':ui.totalPriceFormFrame,
+                'step': 4,
                 'type': 'input-number',
                 'validation-conditions': [
                         {'cond':'require'}
-                    ]
+                    ],
+                'visible-conditions':[
+                    {'cond':'=', 'key':'file-type','compare-value':'sell'},
+                ]
             },
 
             'unit-price'  : {
@@ -362,7 +391,11 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.unitPriceFormLbl,
                 'error':ui.unitPriceFormError,
                 'frame':ui.unitPriceFormFrame,
+                'step': 4,
                 'type': 'input-number',
+                'visible-conditions':[
+                    {'cond':'=', 'key':'file-type','compare-value':'sell'},
+                ]
             },
 
             'mortgage-price' : {
@@ -371,10 +404,14 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.mortgagePriceFormLbl,
                 'error':ui.mortgagePriceFormError,
                 'frame':ui.mortgagePriceFormFrame,
+                'step': 4,
                 'type': 'input-number',
                 'validation-conditions': [
                         {'cond':'require'}
-                    ]
+                    ],
+                'visible-conditions':[
+                    {'cond':'=', 'key':'file-type','compare-value':'rent'},
+                ]
             },
 
             'rent-price' : {
@@ -383,10 +420,15 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.rentPriceFormLbl,
                 'error':ui.rentPriceFormError,
                 'frame':ui.rentPriceFormFrame,
+                'step': 4,
                 'type': 'input-number',
                 'validation-conditions': [
                         {'cond':'require'}
-                    ]
+                    ],
+                
+                'visible-conditions':[
+                    {'cond':'=', 'key':'file-type','compare-value':'rent'},
+                ]
             },
 
             'construction-year' : {
@@ -395,6 +437,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.constructionYearLbl,
                 'error':ui.constructionYearError,
                 'frame':ui.constructionYearFrame,
+                'step': 4,
                 'type': 'input',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':['aparteman',
@@ -411,6 +454,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.floorFormLbl,
                 'error':ui.floorFormError,
                 'frame':ui.floorFormFrame,
+                'step': 4,
                 'type': 'input',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':[
@@ -427,6 +471,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.floorCounFormLbl,
                 'error':ui.floorCounFormError,
                 'frame':ui.floorCounFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':[
@@ -443,6 +488,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.totalBuildingUnitFormLbl,
                 'error':ui.totalBuildingUnitFormError,
                 'frame':ui.totalBuildingUnitFormFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':[
@@ -459,6 +505,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.floorUnitCountLbl,
                 'error':ui.floorUnitCountError,
                 'frame':ui.floorUnitCountFrame,
+                'step': 4,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'in', 'key':'melk-category','compare-value':[
@@ -492,6 +539,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.lightDirectionLbl,
                 'error':ui.lightDirectionError,
                 'frame':ui.lightDirectionFrame,
+                'step': 4,
                 'type': 'combobox',
                 'options-id' : 'light-direction',      
                 'visible-conditions':[
@@ -512,6 +560,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.rebuildingFormError,
                 'frame':ui.rebuildingFormFrame,
                 'options-container': ui.rebuildingFormOptionsFrame,
+                'step': 4,
                 'type': 'radio',
                 'options-id' : 'rebuilding',
                 'visible-conditions':[
@@ -532,6 +581,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.buildingLicenseFormError,
                 'frame':ui.buildingLicenseFormFrame,
                 'options-container': ui.buildingLicenseFormOptionsFrame,
+                'step': 4,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -547,6 +597,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.parkingFormError,
                 'frame':ui.parkingFormFrame,
                 'options-container': ui.parkingFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -566,6 +617,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.parkingStatusFormLbl,
                 'error':ui.parkingStatusFormError,
                 'frame':ui.parkingStatusFormFrame,
+                'step': 5,
                 'type': 'combobox',
                 'options-id' : 'parking-status',
                 'visible-conditions':[
@@ -586,6 +638,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.parkingCountFormLbl,
                 'error':ui.parkingCountFormError,
                 'frame':ui.parkingCountFormFrame,
+                'step': 5,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'=', 'key':'parking','compare-value':'have'},
@@ -607,6 +660,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.balconyFormError,
                 'frame':ui.balconyFormFrame,
                 'options-container': ui.balconyFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -627,6 +681,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.balconyMeterageFormLbl,
                 'error':ui.balconyMeterageFormError,
                 'frame':ui.balconyMeterageFormFrame,
+                'step': 5,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'=', 'key':'balcony','compare-value':'have'},
@@ -640,6 +695,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.trassFormError,
                 'frame':ui.trassFormFrame,
                 'options-container': ui.trassFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -658,6 +714,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.trassMeterageFormLbl,
                 'error':ui.trassMeterageFormError,
                 'frame':ui.trassMeterageFormFrame,
+                'step': 5,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'=', 'key':'trass','compare-value':'have'},
@@ -672,6 +729,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.warehouseFormError,
                 'frame':ui.warehouseFormFrame,
                 'options-container': ui.warehouseFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -690,6 +748,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.warehouseMeterageFormLbl,
                 'error':ui.warehouseMeterageFormError,
                 'frame':ui.warehouseMeterageFormFrame,
+                'step': 5,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'=', 'key':'warehouse','compare-value':'have'},
@@ -704,6 +763,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.privateYardFormError,
                 'frame':ui.privateYardFormFrame,
                 'options-container': ui.privateYardFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -722,6 +782,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.privateYardMeterageFormLbl,
                 'error':ui.privateYardMeterageFormError,
                 'frame':ui.privateYardMeterageFormFrame,
+                'step': 5,
                 'type': 'spinbox',
                 'visible-conditions':[
                     {'cond':'=', 'key':'private-yard','compare-value':'have'},
@@ -735,6 +796,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.elevatorFormError,
                 'frame':ui.elevatorFormFrame,
                 'options-container': ui.elevatorFormOptionsFrame,
+                'step': 5,
                 'type': 'radio',
                 'options-id' : 'have',
                 'visible-conditions':[
@@ -758,6 +820,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.otherFeaturesFormError,
                 'frame':ui.otherFeaturesFormFrame,
                 'options-container': ui.otherFeaturesFormOptionsFrame,
+                'step': 5,
                 'type': 'checkbox',
                 'options-id' : 'other-features',
             },
@@ -768,6 +831,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'label':ui.branchFormLbl,
                 'error':ui.branchFormError,
                 'frame':ui.branchFormFrame,
+                'step': 5,
                 'options-container': ui.branchFormOptionsFrame,
                 'type': 'checkbox',
                 'options-id' : 'branch',
@@ -792,6 +856,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.floorMaterialFormError,
                 'frame':ui.floorMaterialFormFrame,
                 'options-container': ui.floorMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'floor-material',
                 'visible-conditions':[
@@ -811,6 +876,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'label':None,
                     'error':None,
                     'frame':ui.otherFloorMaterialFormFrame,
+                    'step': 6,
                     'type': 'input',
                     'visible-conditions':[
                         {'cond':'contain', 'key':'floor-material','compare-value':'other'},
@@ -825,6 +891,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.ceilingMaterialFormError,
                 'frame':ui.ceilingMaterialFormFrame,
                 'options-container': ui.ceilingMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'ceiling-material',
                 'visible-conditions':[
@@ -839,15 +906,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-ceiling-material' : {
-                    #‌ سایر جنس سقف
-                    'input':ui.otherCeilingMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherCeilingMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'ceiling-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس سقف
+                'input':ui.otherCeilingMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherCeilingMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'ceiling-material','compare-value':'other'},
+                ]
             },
 
             'walls-material' : {
@@ -857,6 +925,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.wallsMaterialFormError,
                 'frame':ui.wallsMaterialFormFrame,
                 'options-container': ui.wallsMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'walls-material',
                 'visible-conditions':[
@@ -871,15 +940,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-walls-material' : {
-                    #‌ سایر جنس دیوار
-                    'input':ui.otherWallsMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherWallsMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'walls-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس دیوار
+                'input':ui.otherWallsMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherWallsMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'walls-material','compare-value':'other'},
+                ]
             },
 
 
@@ -890,6 +960,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.cabinetsMaterialFormError,
                 'frame':ui.cabinetsMaterialFormFrame,
                 'options-container': ui.cabinetsMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'cabinets-material',
                 'visible-conditions':[
@@ -904,15 +975,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-cabinets-material' : {
-                    #‌ سایر جنس کابینت
-                    'input':ui.otherCabinetsMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherCabinetsMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'cabinets-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس کابینت
+                'input':ui.otherCabinetsMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherCabinetsMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'cabinets-material','compare-value':'other'},
+                ]
             },
 
 
@@ -923,6 +995,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.warmingSystemFormError,
                 'frame':ui.warmingSystemFormFrame,
                 'options-container': ui.warmingSystemFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'warming-system',
                 'visible-conditions':[
@@ -938,15 +1011,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-warming-system' : {
-                    #‌ سایر سیستم گرمایشی
-                    'input':ui.otherWarmingSystemFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherWarmingSystemFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'warming-system','compare-value':'other'},
-                    ]
+                #‌ سایر سیستم گرمایشی
+                'input':ui.otherWarmingSystemFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherWarmingSystemFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'warming-system','compare-value':'other'},
+                ]
             },
 
 
@@ -957,6 +1031,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.coolingSystemFormError,
                 'frame':ui.coolingSystemFormFrame,
                 'options-container': ui.coolingSystemFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'cooling-system',
                 'visible-conditions':[
@@ -972,15 +1047,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-cooling-system' : {
-                    #‌ سایر سیستم سرمایشی
-                    'input':ui.otherCoolingSystemFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherCoolingSystemFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'cooling-system','compare-value':'other'},
-                    ]
+                #‌ سایر سیستم سرمایشی
+                'input':ui.otherCoolingSystemFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherCoolingSystemFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'cooling-system','compare-value':'other'},
+                ]
             },
 
 
@@ -991,6 +1067,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.kitchenMaterialFormError,
                 'frame':ui.kitchenMaterialFormFrame,
                 'options-container': ui.kitchenMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'kitchen-material',
                 'visible-conditions':[
@@ -1006,15 +1083,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-kitchen-material' : {
-                    #‌ سایر جنس آشپزخانه
-                    'input':ui.otherKitchenMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherKitchenMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'kitchen-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس آشپزخانه
+                'input':ui.otherKitchenMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherKitchenMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'kitchen-material','compare-value':'other'},
+                ]
             },
 
 
@@ -1025,6 +1103,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.bathroomMaterialFormError,
                 'frame':ui.bathroomMaterialFormFrame,
                 'options-container': ui.bathroomMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'bathroom-material',
                 'visible-conditions':[
@@ -1040,15 +1119,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-bathroom-material' : {
-                    #‌ سایر جنس حمام
-                    'input':ui.otherBathroomMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherBathroomMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'bathroom-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس حمام
+                'input':ui.otherBathroomMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherBathroomMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'bathroom-material','compare-value':'other'},
+                ]
             },
 
             'wc-material' : {
@@ -1058,6 +1138,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.wcMaterialFormError,
                 'frame':ui.wcMaterialFormFrame,
                 'options-container': ui.wcMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'wc-material',
                 'visible-conditions':[
@@ -1072,15 +1153,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-wc-material' : {
-                    #‌ سایر جنس سرویس بهداشتی
-                    'input':ui.otherWcMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherWcMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'wc-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس سرویس بهداشتی
+                'input':ui.otherWcMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherWcMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'wc-material','compare-value':'other'},
+                ]
             },
 
 
@@ -1091,6 +1173,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.doorMaterialFormError,
                 'frame':ui.doorMaterialFormFrame,
                 'options-container': ui.doorMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'door-material',
                 'visible-conditions':[
@@ -1104,15 +1187,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-door-material' : {
-                    #‌ سایر جنس درب
-                    'input':ui.otherDoorMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherDoorMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'door-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس درب
+                'input':ui.otherDoorMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherDoorMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'door-material','compare-value':'other'},
+                ]
             },
 
 
@@ -1123,6 +1207,7 @@ def build_estate_form_info(ui:Ui_MainWindow):
                 'error':ui.windowMaterialFormError,
                 'frame':ui.windowMaterialFormFrame,
                 'options-container': ui.windowMaterialFormOptionsFrame,
+                'step': 6,
                 'type': 'checkbox',
                 'options-id': 'window-material',
                 'visible-conditions':[
@@ -1136,15 +1221,16 @@ def build_estate_form_info(ui:Ui_MainWindow):
             },
 
             'other-window-material' : {
-                    #‌ سایر جنس پنجره
-                    'input':ui.otherWindowMaterialFormInpt,
-                    'label':None,
-                    'error':None,
-                    'frame':ui.otherWindowMaterialFormFrame,
-                    'type': 'input',
-                    'visible-conditions':[
-                        {'cond':'contain', 'key':'window-material','compare-value':'other'},
-                    ]
+                #‌ سایر جنس پنجره
+                'input':ui.otherWindowMaterialFormInpt,
+                'label':None,
+                'error':None,
+                'frame':ui.otherWindowMaterialFormFrame,
+                'step': 6,
+                'type': 'input',
+                'visible-conditions':[
+                    {'cond':'contain', 'key':'window-material','compare-value':'other'},
+                ]
             },
 
             'description' : {
@@ -1152,7 +1238,8 @@ def build_estate_form_info(ui:Ui_MainWindow):
                     'input':ui.descriptionFormInpt,
                     'label':ui.descriptionFormLbl,
                     'error':ui.descriptionFormError,
-                    'frame':ui.descriptionFormError,
+                    'frame':ui.descriptionFormFrame,
+                    'step': 8,
                     'type': 'input',
             },
 

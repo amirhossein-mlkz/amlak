@@ -18,10 +18,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractScrollArea, QApplication, QButtonGroup, QCheckBox,
     QComboBox, QFrame, QGridLayout, QHBoxLayout,
     QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QMenuBar, QPushButton, QRadioButton, QScrollArea,
-    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
-    QStatusBar, QTabWidget, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+    QPushButton, QRadioButton, QScrollArea, QSizePolicy,
+    QSpacerItem, QSpinBox, QStackedWidget, QStatusBar,
+    QTabWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QVBoxLayout, QWidget)
 import assets_rc
 import assets_rc
 
@@ -29,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1084, 932)
+        MainWindow.resize(872, 981)
         MainWindow.setMinimumSize(QSize(0, 0))
         MainWindow.setStyleSheet(u"/**************************Global Font***************************/\n"
 "#MainWindow,\n"
@@ -1118,13 +1118,6 @@ class Ui_MainWindow(object):
         self.gridLayout_11 = QGridLayout()
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.gridLayout_11.setContentsMargins(-1, 31, -1, -1)
-        self.frame_32 = QFrame(self.form_step1)
-        self.frame_32.setObjectName(u"frame_32")
-        self.frame_32.setFrameShape(QFrame.StyledPanel)
-        self.frame_32.setFrameShadow(QFrame.Raised)
-
-        self.gridLayout_11.addWidget(self.frame_32, 0, 1, 1, 1)
-
         self.melkCategoryFormFrame = QFrame(self.form_step1)
         self.melkCategoryFormFrame.setObjectName(u"melkCategoryFormFrame")
         self.verticalLayout_55 = QVBoxLayout(self.melkCategoryFormFrame)
@@ -1156,6 +1149,30 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addWidget(self.frame_33, 0, 0, 1, 1)
 
+        self.fileTypeFormFrame = QFrame(self.form_step1)
+        self.fileTypeFormFrame.setObjectName(u"fileTypeFormFrame")
+        self.verticalLayout_167 = QVBoxLayout(self.fileTypeFormFrame)
+        self.verticalLayout_167.setObjectName(u"verticalLayout_167")
+        self.verticalLayout_167.setContentsMargins(1, 1, -1, -1)
+        self.fileTypeFormLbl = QLabel(self.fileTypeFormFrame)
+        self.fileTypeFormLbl.setObjectName(u"fileTypeFormLbl")
+
+        self.verticalLayout_167.addWidget(self.fileTypeFormLbl)
+
+        self.fileTypeFormError = QLabel(self.fileTypeFormFrame)
+        self.fileTypeFormError.setObjectName(u"fileTypeFormError")
+
+        self.verticalLayout_167.addWidget(self.fileTypeFormError)
+
+        self.fileTypeFormInpt = QComboBox(self.fileTypeFormFrame)
+        self.fileTypeFormInpt.setObjectName(u"fileTypeFormInpt")
+        self.fileTypeFormInpt.setMinimumSize(QSize(87, 37))
+
+        self.verticalLayout_167.addWidget(self.fileTypeFormInpt)
+
+
+        self.gridLayout_11.addWidget(self.fileTypeFormFrame, 0, 1, 1, 1)
+
 
         self.verticalLayout_8.addLayout(self.gridLayout_11)
 
@@ -1173,7 +1190,7 @@ class Ui_MainWindow(object):
         self.scrollArea_6.setWidgetResizable(True)
         self.scrollAreaWidgetContents_6 = QWidget()
         self.scrollAreaWidgetContents_6.setObjectName(u"scrollAreaWidgetContents_6")
-        self.scrollAreaWidgetContents_6.setGeometry(QRect(0, 0, 847, 602))
+        self.scrollAreaWidgetContents_6.setGeometry(QRect(0, 0, 635, 602))
         self.verticalLayout_162 = QVBoxLayout(self.scrollAreaWidgetContents_6)
         self.verticalLayout_162.setObjectName(u"verticalLayout_162")
         self.label_34 = QLabel(self.scrollAreaWidgetContents_6)
@@ -1303,7 +1320,7 @@ class Ui_MainWindow(object):
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 847, 1632))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 679, 1632))
         self.verticalLayout_20 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.label_49 = QLabel(self.scrollAreaWidgetContents_3)
@@ -1565,7 +1582,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, -1048, 847, 2890))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, -845, 742, 2890))
         self.verticalLayout_14 = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.label_19 = QLabel(self.scrollAreaWidgetContents)
@@ -2203,7 +2220,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -1300, 847, 1873))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, -347, 710, 1873))
         self.verticalLayout_18 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.label_35 = QLabel(self.scrollAreaWidgetContents_2)
@@ -2621,7 +2638,7 @@ class Ui_MainWindow(object):
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 847, 1609))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 661, 1609))
         self.verticalLayout_23 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.label_51 = QLabel(self.scrollAreaWidgetContents_4)
@@ -3248,6 +3265,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.form_stackwidget)
 
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 21, -1, -1)
         self.frame1 = QFrame(self.page_register_property)
         self.frame1.setObjectName(u"frame1")
         self.horizontalLayout_2 = QHBoxLayout(self.frame1)
@@ -3279,7 +3299,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.form_prev_btn)
 
 
-        self.verticalLayout_5.addWidget(self.frame1)
+        self.verticalLayout_3.addWidget(self.frame1)
+
+        self.estateFormSubmit = QPushButton(self.page_register_property)
+        self.estateFormSubmit.setObjectName(u"estateFormSubmit")
+
+        self.verticalLayout_3.addWidget(self.estateFormSubmit)
+
+
+        self.verticalLayout_5.addLayout(self.verticalLayout_3)
 
         self.pages.addWidget(self.page_register_property)
         self.page_estate = QWidget()
@@ -5218,10 +5246,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setStretch(0, 10)
         self.horizontalLayout_5.setStretch(1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1084, 30))
-        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -5230,8 +5254,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.pages.setCurrentIndex(0)
-        self.form_stackwidget.setCurrentIndex(3)
+        self.pages.setCurrentIndex(1)
+        self.form_stackwidget.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(2)
 
 
@@ -5289,6 +5313,11 @@ class Ui_MainWindow(object):
         self.melkCategoryFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
         self.melkCategoryFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.melkCategoryFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
+        self.fileTypeFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0646\u0648\u0639 \u0641\u0627\u06cc\u0644 \u062b\u0628\u062a\u06cc", None))
+        self.fileTypeFormLbl.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-label", None))
+        self.fileTypeFormError.setText(QCoreApplication.translate("MainWindow", u"\u062e\u0637\u0627 \u0631\u062e \u062f\u0627\u062f\u0647", None))
+        self.fileTypeFormError.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
+        self.fileTypeFormInpt.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"\u0622\u062f\u0631\u0633", None))
         self.label_34.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-step-title", None))
         self.regionFormLbl.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0646\u0637\u0642\u0647", None))
@@ -5612,6 +5641,8 @@ class Ui_MainWindow(object):
         self.estateStepErrorLabel.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-field-error", None))
         self.form_prev_btn.setText(QCoreApplication.translate("MainWindow", u"\u0642\u0628\u0644\u06cc", None))
         self.form_prev_btn.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
+        self.estateFormSubmit.setText(QCoreApplication.translate("MainWindow", u"\u062b\u0628\u062a", None))
+        self.estateFormSubmit.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"form-btn", None))
         self.label_93.setText(QCoreApplication.translate("MainWindow", u"\u0645\u0644\u06a9 \u06f5\u06f3\u06f8", None))
         self.label_93.setProperty("styleClass", QCoreApplication.translate("MainWindow", u"header", None))
         self.label_92.setText(QCoreApplication.translate("MainWindow", u"\u0641\u0639\u0627\u0644", None))

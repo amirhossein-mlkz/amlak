@@ -29,6 +29,7 @@ class formUI:
             form_ui = {
                 'next_btn': self.ui.form_next_btn,
                 'prev_btn': self.ui.form_prev_btn,
+                'submit_btn': self.ui.estateFormSubmit,
                 'pages': self.ui.form_stackwidget,
                 'error_label': self.ui.estateStepErrorLabel
             }

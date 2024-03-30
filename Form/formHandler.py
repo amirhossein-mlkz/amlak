@@ -1,14 +1,11 @@
 from __future__ import annotations
-import copy
-import re
 
 from PySide6 import QtWidgets
 
 
-from Backend.Utils.Glossary import singleGlossary, GlossaryHandler
+from Backend.Utils.Glossary import GlossaryHandler
 from uiUtils.guiBackend import GUIBackend
-from uiFiles.main_UI import Ui_MainWindow
-from Backend.Utils.conditionsChecker import conditionsChecker
+from .fieldHandler import Field
 
 
 
@@ -26,6 +23,7 @@ class FormHandler:
                  form_fields_info:dict[str,dict], 
                  gloassaries:GlossaryHandler,
                  form_ui: dict[str, QtWidgets.QWidget] = {},
+                 is_multi_step = False
                  ) -> None:
         """_summary_
 
@@ -39,12 +37,15 @@ class FormHandler:
         self.gloassaries = gloassaries
         self.form_fields_dict = form_fields_info
         self.form_ui = form_ui
+        self.is_multi_step = is_multi_step
+
         self.curent_step = 0
         self.last_complete_step = self.curent_step
 
         self.next_callback = None
         self.prev_callback = None
         self.field_change_callback = None
+        self.enable_fields = []
         
         self.handle_form_ui()
         self.render_options()
@@ -77,13 +78,18 @@ class FormHandler:
                 GUIBackend.button_connector(wgt, self.prev_step)
                 assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui is neccesury in multi step_form"
             
+            elif key == 'submit_btn':
+                GUIBackend.button_connector(wgt, self.submit)
+                if self.is_multi_step:
+                    GUIBackend.set_wgt_visible(wgt, False)
+
             elif key in ['pages', 'error_label']:
                 pass
 
             else:
                 raise f"{key} is not a valid form. only {self.VALID_FORM_UI_KEYS} could be used"
 
-
+        
 
     def render_options(self,):
 
@@ -164,25 +170,42 @@ class FormHandler:
         self.update_form_value(field_name, field_value)
 
         #check field validation and show error if not valid
+
         field.check_validation(self.form_values)
 
         #check visibility of other fields base on this field
         relative_fields_names = self.get_child_field_visibility(field_name)
-        for field_name in relative_fields_names:
-            relative_field = self.get_field(field_name)
-            relative_field.refresh_field_visibility(self.form_values)
+        self.refresh_visibility(relative_fields_names)
+
         
         self.field_change_callback(field)
     
-    def check_step_validation(self, step):
-        step +=1 #beacuse in code step is from 0
-        validation = True
+    def get_fields_of_step(self, step:int):
+        """step start from 0
+
+        Args:
+            step (int): _description_
+        """
+        step+=1 #beacuse in code step is from 0 but in form dictionary start from 1
+        res = []
         for field_name in self.get_fields_list():
             field = self.get_field(field_name)
             if field.is_for_this_step(step):
-                field_validation = field.check_validation(self.form_values)
-                if not field_validation:
-                    validation = False
+                res.append(field_name)
+        return res
+
+    
+    def check_validation(self, fields_name:list[str]):
+        validation = True
+        
+        for field_name in fields_name:
+            if field_name not in self.enable_fields:
+                continue
+
+            field = self.get_field(field_name)
+            field_validation = field.check_validation(self.form_values)
+            if not field_validation:
+                validation = False
         
         if validation:
             self.write_form_error(None)
@@ -191,53 +214,73 @@ class FormHandler:
         
         return validation
     
-    def refresh_visibility(self,):
-        for field_name in self.get_fields_list():
+    def refresh_visibility(self, fields_name:list[str]=None):
+        """refresh visibility of fields_name base on current situation
+
+        Args:
+            fields_name (list[str]): if be None, check all fields
+        """
+        if fields_name is None:
+            fields_name = self.get_fields_list()
+            
+        for field_name in fields_name:
             field = self.get_field(field_name)
-            field.refresh_field_visibility(self.form_values)
-    
-
-    def next_step(self,):
-        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
-        pages_wgt= self.form_ui['pages']
-
-        self.curent_step = GUIBackend.get_stack_widget_idx(pages_wgt)
-        if self.check_step_validation(self.curent_step):
-            step_count = GUIBackend.get_stack_widget_count(pages_wgt)
-            self.curent_step+=1
-            self.curent_step = min(self.curent_step, step_count-1)
-            GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
-            self.last_complete_step = max(self.last_complete_step, self.curent_step)
-        
-        if self.next_callback is not None:
-            self.next_callback()
+            state = field.refresh_field_visibility(self.form_values)
+            if state:
+                if field_name not in self.enable_fields:
+                    self.enable_fields.append(field_name)
+            else:
+                if field_name in self.enable_fields:
+                    self.enable_fields.remove(field_name)
 
 
-    def prev_step(self,):
-        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
-        pages_wgt= self.form_ui['pages']
-
-        #self.curent_step = GUIBackend.get_stack_widget_idx(pages_wgt)
-        self.curent_step-=1
-        self.curent_step = max(self.curent_step, 0)
-        GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
-        
-        self.write_form_error(None)
-
-        if self.prev_callback is not None:
-            self.prev_callback()
 
     def go_to_step(self, step):
-        #check if we back in prev step
-        if self.curent_step< self.last_complete_step:
-            if not self.check_step_validation(self.curent_step):
-                return False
         pages_wgt= self.form_ui['pages']
-        if step <= self.last_complete_step:
-            self.curent_step = step
-            GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
-            return True
-        return False
+
+        step_count = GUIBackend.get_stack_widget_count(pages_wgt)
+        step = min(step, step_count-1)
+        step = max(step, 0)
+
+        #check validation if we want go to next steps
+        if step > self.curent_step:
+            fields_name = self.get_fields_of_step(self.curent_step)
+            if not self.check_validation(fields_name):
+                return False
+            
+        #if step <= self.last_complete_step:
+        self.curent_step = step
+        self.last_complete_step = max(self.last_complete_step, self.curent_step)
+
+        GUIBackend.set_stack_widget_idx(pages_wgt, self.curent_step)
+
+        prev_btn = self.form_ui.get('prev_btn')
+        if prev_btn is not None:
+            if self.curent_step == 0:
+                GUIBackend.set_wgt_visible(prev_btn, False)
+            else:
+                GUIBackend.set_wgt_visible(prev_btn, True)
+
+        next_btn = self.form_ui.get('next_btn')
+        if next_btn is not None:
+            if self.curent_step == step_count-1:
+                GUIBackend.set_wgt_visible(next_btn, False)
+            else:
+                GUIBackend.set_wgt_visible(next_btn, True)
+
+        submit_btn = self.form_ui.get('submit_btn')
+        if submit_btn is not None:
+            if self.curent_step == step_count-1:
+                GUIBackend.set_wgt_visible(submit_btn, True)
+            else:
+                GUIBackend.set_wgt_visible(submit_btn, False)
+
+
+
+
+
+        return True
+        #return False
     
     def write_form_error(self, txt):
         wgt = self.form_ui.get('error_label')
@@ -251,7 +294,28 @@ class FormHandler:
             GUIBackend.set_label_text(wgt, str(txt))
 
 
+    def next_step(self,):
+        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
+        pages_wgt= self.form_ui['pages']
 
+        self.curent_step = GUIBackend.get_stack_widget_idx(pages_wgt)
+        self.go_to_step(self.curent_step+1)
+        
+        if self.next_callback is not None:
+            self.next_callback()
+
+
+    def prev_step(self,):
+        assert 'pages' in self.form_ui.keys(), "'pages' key in form_ui dict is neccessury for multi step form"
+        self.go_to_step(self.curent_step-1)
+        
+        self.write_form_error(None)
+
+        if self.prev_callback is not None:
+            self.prev_callback()
+    
+    def submit(self,):
+        print('submit')
 
     
     
@@ -260,207 +324,4 @@ class FormHandler:
 
 
 
-
-#_______________________________________________________________________________________________
-#
-#
-#
-#_______________________________________________________________________________________________
-class Field:
-
-    def __init__(self,name:str, dict_info:dict, glassory:singleGlossary=None):
-        self.name = name
-        self.dict_info = dict_info
-        self.glassory = glassory
-    
-    def is_option_field(self,) -> bool:
-        return bool(self.dict_info.get('options-id'))
-    
-    def is_for_this_step(self, step):
-        return step == self.dict_info.get('step', -1)
-    
-    def set_enablity(self, state):
-        inpt = self.get_input()
-        GUIBackend.set_disable_enable(inpt, state)
-
-    def set_value(self, value):
-        inpt = self.get_input()
-        GUIBackend.set_input(inpt, value, block_signal=True)
-    
-    def get_error_label(self,) -> QtWidgets.QLabel:
-        return self.dict_info.get('error')
-    
-    def get_options_id(self,) -> str:
-        return self.dict_info.get('options-id')
-    
-    
-    def get_type(self,) -> str:
-        return self.dict_info.get('type')
-    
-    def get_input(self,):
-        return self.dict_info.get('input')
-    
-    def get_options_container(self,) ->QtWidgets.QFrame:
-        return self.dict_info.get('options-container')
-    
-    def get_visibility_conditions(self,)-> dict:
-        return copy.deepcopy(self.dict_info.get('visible-conditions',[]))
-    
-    def get_validation_conditions(self,)-> dict:
-        return copy.deepcopy(self.dict_info.get('validation-conditions',[]))
-    
-    def get_container(self,) -> QtWidgets.QFrame:
-        return self.dict_info.get('frame')
-    
-    def show_error(self, text):
-        error_lbl = self.get_error_label()
-        if error_lbl:
-            if text is None:
-                GUIBackend.set_wgt_visible(error_lbl, False)
-            else:
-                GUIBackend.set_label_text(error_lbl, text)
-                GUIBackend.set_wgt_visible(error_lbl, True)
-
-    
-    def get_value(self,):
-        ftype = self.get_type()
-        finput = self.get_input()
-        if ftype == 'radio':
-            for key, _finput in finput.items():
-                if GUIBackend.get_radio_value(_finput):
-                    return key
-            return None
-                
-        elif ftype == 'checkbox':
-            reults = []
-            for key, _finput in finput.items():
-                if GUIBackend.get_checkbox_value(_finput):
-                    reults.append(key)
-            return reults
-        
-        elif ftype == 'combobox':
-            value = GUIBackend.get_combobox_selected(combo=finput)
-            key = self.glassory.value2key(value)
-            return key
-        
-        elif ftype == 'input-number':
-            value = GUIBackend.get_input(finput)
-            if value:
-                return int(value)
-            return 0
-                
-            
-        
-        return GUIBackend.get_input(finput)
-    
-    def connect(self, event_func):
-        field_input = self.get_input()
-        if isinstance(field_input, dict):
-            for single_field in field_input.values():
-                GUIBackend.connector(single_field, event_func, args=(self.name,))
-        else:
-            GUIBackend.connector(field_input, event_func, args=(self.name,))
-    
-        
-    
-    def get_visibility_master_fields(self,)->list[str]:
-        """returns list of fields that effect on visibility
-        of this field
-
-        Returns:
-            list[str]: 
-        """
-        conds = self.get_visibility_conditions()
-        if conds:
-            return list(map(lambda x:x['key'], conds))
-        else:
-            return []
-    
-    def render_options(self, options_values:list[str]):
-        ftype = self.get_type()
-
-        if ftype=='combobox':
-            field = self.get_input()
-            options_values = self.glassory.get_values()
-            GUIBackend.set_combobox_items(field, options_values)
-
-        
-
-        elif ftype in ['radio','checkbox']:
-            options_container = self.get_options_container()
-            options_keys = self.glassory.get_keys()
-
-            layout = options_container.layout()
-            GUIBackend.set_layout_alignment(layout,'r')
-
-            options_input_field = {}
-            for key in options_keys:
-                value = self.glassory.key2value(key)
-                if ftype=='radio':
-                    opt = QtWidgets.QRadioButton(text=value)
-
-                elif ftype =='checkbox':
-                    opt = QtWidgets.QCheckBox(text=value)
-                    
-                GUIBackend.set_layout_direction(opt,'rtl')
-                GUIBackend.add_widget(layout, opt)
-                options_input_field[key] =opt
-
-            self.dict_info['input'] = options_input_field
-        
-        else:
-            raise Exception(f"{self.name} field type is incorect")
-    
-    def check_validation(self,forms_value) -> tuple[bool,str]:
-        value = self.get_value()
-        conds = self.get_validation_conditions()
-
-        for cond in conds:
-            oprand_fname = cond.get('key')
-            if oprand_fname is not None:
-                oprand_value = forms_value[oprand_fname]
-                cond['key'] = oprand_value
-            else:
-                cond['key'] = self.get_value()
-
-        text = None
-
-        checker = conditionsChecker(conds)
-        result, reject_cond_info = checker.check()
-
-        if not result:
-            cond = reject_cond_info['cond']
-            text = reject_cond_info.get('error')
-            if not text:
-                if cond == 'require':
-                    text =  'این فیلد ضروری است'
-
-                elif cond == 'regex':
-                    text =  'به درستی وارد نمایید'
-
-        self.show_error(text)
-
-                
-                # else:
-                #     raise Exception(f"{self.name} field {cond_info['cond']} condition is not valid")
-        
-        
-        return result
-
-    def refresh_field_visibility(self, forms_value:dict):
-        conds = self.get_visibility_conditions()
-        frame = self.get_container()
- 
-        for cond in conds:
-            oprand_fname = cond['key']
-            oprand_value = forms_value[oprand_fname]
-            cond['key'] = oprand_value
-            #result_cond.append(cond)
-
-        checker = conditionsChecker(conds)
-        result,_ = checker.check()
-        if result:
-            GUIBackend.set_wgt_visible(frame, True)
-        else:
-            GUIBackend.set_wgt_visible(frame, False)
 

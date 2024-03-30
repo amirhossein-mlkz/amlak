@@ -7,6 +7,11 @@ def build_estate_gellosaries():
                 'no': 'ندارد'
             },
 
+            'file-type':{
+                'rent':'اجاره',
+                'sell':'فروش',
+            },
+
             'melk-category':{
                 '':'--انتخاب کنید--',
                 'aparteman':'آپارتمان',
@@ -15,8 +20,6 @@ def build_estate_gellosaries():
                 'garden':'باغ',
                 'commercial':'تجاری',
                 'villa':'ویلایی',
-
-                
             },
 
             'city':{
